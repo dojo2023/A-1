@@ -15,15 +15,15 @@
 
 	<form name="myForm" method="POST" action="/WEB-INF/jsp/mypage.jsp">
 
-		  <div class="username"><input type="text" name="username" value=${username}></div>
+		  <div class="username"><input type="text" name="username" value="${username}"></div>
 	      <div class="exp">${exp}exp</div>
 	      <div class="birthday_display">${birthday_display}</div>
 	      <div class="sex">${sex}</div>
 	      <div class="height">身長</div>
-	      <div class="height_input"><input type="text" name="height" value=${height}></div>
+	      <div class="height_input"><input type="text" name="height" value="${height}"></div>
 	      <div class="unit_height">cm</div>
 	      <div class="weight">体重</div>
-	      <div class="weight_input"><input type="text" name="weight" value=${weight}></div>
+	      <div class="weight_input"><input type="text" name="weight" value="${weight}"></div>
 	      <div class="unit_weight">kg</div>
 	      <div class="mail">E-mail</div>
 	      <div class="mail_address_display">${mail_address_display}</div>
