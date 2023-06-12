@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>リザルトページ</title>
 </head>
 <body>
-
+<h1>リザルトページちゃん</h1>
 </body>
 </html>

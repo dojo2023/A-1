@@ -56,5 +56,3 @@ public class MypageServlet extends HttpServlet {
     }
 }
 
-
-}
