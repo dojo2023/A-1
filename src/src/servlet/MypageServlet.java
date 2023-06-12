@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,9 +28,17 @@ public class MypageServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		/*if (session.getAttribute("id") == null) {
+			response.sendRedirect("/jiro_power/LoginServlet");
+			return;
+		}*/
+
+		// 月間ランキングページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -45,5 +54,4 @@ public class MypageServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
     }
-
 }
