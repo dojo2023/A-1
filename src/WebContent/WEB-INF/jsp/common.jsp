@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>トレーニング記録ページ</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>トレーニング記録ページちゃん</h1>
+
 </body>
 </html>
