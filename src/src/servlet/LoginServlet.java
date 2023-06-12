@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.UserinformationDao;
+import model.Userinformation;
+
 /**
  * Servlet implementation class LoginServlet
  */
@@ -32,17 +35,16 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("ID");
+		String email = request.getParameter("EMAIL");
 		String pw = request.getParameter("PW");
-		String name = request.getParameter("NAME");
 
 		// ログイン処理を行う
-		IdpwDAO iDao = new IdpwDAO();
-		if (iDao.isLoginOK(new Idpw(id, pw,name))) {	// ログイン成功
+		UserinformationDao uDao = new UserinformationDao();
+		if (uDao.isLoginOK(new Userinformation(email, pw,))) {	// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			session.setAttribute("name", new LoginUser(name));
-			session.setAttribute("id", new LoginUser(id));
+			session.setAttribute("email", new LoginUser(email));
+			session.setAttribute("pw", new LoginUser(pw));
 
 			// メニューサーブレットにリダイレクトする
 			response.sendRedirect("/simpleBC/MenuServlet");
