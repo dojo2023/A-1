@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>ユーザー登録</h1>
 </body>
 </html>
