@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>月間ランキングページ</title>
 </head>
 <body>
-
+<h1>月間ランキングページちゃん</h1>
 </body>
 </html>

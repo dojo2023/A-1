@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class TrainingRecordServlet
@@ -28,7 +29,14 @@ public class TrainingRecordServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// ログインページにフォワードする
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		/*if (session.getAttribute("id") == null) {
+			response.sendRedirect("/jiro_power/LoginServlet");
+			return;
+		}*/
+
+		// 検索ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -36,9 +44,14 @@ public class TrainingRecordServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		/*if (session.getAttribute("id") == null) {
+			response.sendRedirect("/jiro_power/LoginServlet");
+			return;
+		}*/
+		// リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+    }
 }

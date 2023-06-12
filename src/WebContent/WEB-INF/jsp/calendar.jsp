@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>カレンダー</title>
 </head>
 <body>
-
+<h1>カレンダーページちゃん</h1>
 </body>
 </html>

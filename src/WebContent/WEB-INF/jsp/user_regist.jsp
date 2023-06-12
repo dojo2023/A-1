@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ユーザー登録ページ</title>
 </head>
 <body>
-
+<h1>ユーザー登録ページちゃん</h1>
 </body>
 </html>
