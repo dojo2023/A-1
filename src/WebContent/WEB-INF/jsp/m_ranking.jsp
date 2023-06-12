@@ -7,6 +7,9 @@
 <title>月間ランキングページ</title>
 </head>
 <body>
-<h1>月間ランキングページちゃん</h1>
+<div class="ranking">Monthly Ranking</div>
+<input type="button" value="Ranking">
+<input type="button" value="Monthly">
+<input type="button" value="Weekly">
 </body>
 </html>
