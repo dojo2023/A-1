@@ -33,7 +33,7 @@ public class LogoutServlet extends HttpServlet {
 				session.invalidate();
 
 				// ログインページにリダイレクトする
-				response.sendRedirect("/jiro_power/LoginServlet");
+				response.sendRedirect("/LoginServlet");
 			}
 
 }
