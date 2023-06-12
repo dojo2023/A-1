@@ -8,5 +8,39 @@
 </head>
 <body>
 <h1>トレーニング記録ページちゃん</h1>
+<!-- 画面上部ステータス表示 -->
+	<div class="status">
+		<header>
+			<img src=""> <!-- ロゴ貼る -->
+			<p>${level}</p> <!--  {}の中身変える-->
+			<p><div id="current_date"></div> <!--  id名前合わせる-->
+			<p>${name}</p> <!--  {}の中身変える-->
+		</header>
+	</div>
+	<form method="POST" action="/jiro_power/TrainingRecordServlet">
+	<input type="date">
+	<select name="training_name">
+	<option>種目1</option>
+	<option>種目2</option>
+	<option>種目3</option>
+	</select>
+	<input type = "number" name="training_weight"><p>kg</p>
+	<input type = "number" name="training_times"><p>回</p>
+	<input type = "number" name="training_set"><p>セット</p>
+	<input type = "button" name="training_plus" value="+">
+	<input type = "submit" name="record" value="登録">
+	</form>
+
+
+<!-- 画面下部メニューバー表示 -->
+	<div class="menu">
+		<footer>
+			<a href="jiro_power/Web-INF/jsp/training_record.jsp"><img src="" alt="記録"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="jiro_power/Web-INF/jsp/calendar.jsp"><img src=""alt="カレンダー"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="jiro_power/Web-INF/jsp/ranking.jsp"><img src="" alt="ランキング"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="jiro_power/Web-INF/jsp/timer.jsp"><img src="" alt="タイマー"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src="" alt="マイページ"></a> <!-- srcの後、アイコンのリンク入れる -->
+		</footer>
+	</div>
 </body>
 </html>
