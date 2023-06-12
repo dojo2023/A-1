@@ -18,8 +18,9 @@
 
 			<p>※パスワードは8文字以上20文字以内です。</p>
 
-			<input type="submit" name="ログイン" value="Go!">
+			<input type="submit" name="login" value="ログイン">
 		</form>
+			<p>※メールアドレス又はパスワードが間違っています。</p>
 	</div> <!-- id="login" -->
 
 	<a href="jiro_power/Web-INF/jsp/user_regist.jsp"></a>
