@@ -29,6 +29,7 @@ public class TrainingRecordServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		/*if (session.getAttribute("id") == null) {
@@ -38,6 +39,10 @@ public class TrainingRecordServlet extends HttpServlet {
 
 		// 検索ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/trainig_record.jsp");
+=======
+		// トレーニング記録ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
+>>>>>>> decf4030edf37fbf79b98fbd837e08d82bd55c1d
 		dispatcher.forward(request, response);
 	}
 
