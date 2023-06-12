@@ -37,7 +37,7 @@ public class MypageServlet extends HttpServlet {
 		}*/
 
 		// 月間ランキングページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/jiro_power/WEB-INF/jsp/mypage.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 		dispatcher.forward(request, response);
 	}
 
