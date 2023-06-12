@@ -36,8 +36,8 @@ public class TrainingRecordServlet extends HttpServlet {
 			return;
 		}*/
 
-		// 検索ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/trainig_record.jsp");
+		// トレーニング記録ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
 		dispatcher.forward(request, response);
 	}
 
