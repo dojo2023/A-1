@@ -1,3 +1,6 @@
+/**
+ *
+ */
 
 var start = document.getElementById('start');
             start.addEventListener('click',count_start, false);

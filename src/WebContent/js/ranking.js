@@ -1,3 +1,6 @@
+/**
+ *
+ */
 /* 顔文字のドーナツチャートの部分の処理 */
 
 let inputData ='${Expsum.rankingData}';

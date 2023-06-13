@@ -1,9 +1,6 @@
 /**
  *
  */
-
-
-
 function displayDateTime() {
     var datetimeElement = document.getElementById("datetime");
 
