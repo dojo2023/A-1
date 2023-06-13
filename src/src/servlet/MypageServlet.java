@@ -36,7 +36,7 @@ public class MypageServlet extends HttpServlet {
 			return;
 		}*/
 
-		// 月間ランキングページにフォワードする
+		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -54,4 +54,6 @@ public class MypageServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
     }
+
+	/*シェア画面（リザルト画面）*/
 }
