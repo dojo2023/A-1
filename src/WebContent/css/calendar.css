@@ -1,1 +1,33 @@
 @charset "UTF-8";
+
+.yearMonth{
+  margin: 10px;
+  font-weight: bold;
+}
+#calendar {
+  margin: 10px auto;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.day{
+  background: rgb(233, 255, 255);
+  font-weight: bold;
+}
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+/* 土曜日 */
+td:nth-child(6) {
+  color: royalblue;
+}
+/* 日曜日 */
+td:last-child {
+  color: red;
+}
+.today{
+  background: rgb(212, 212, 212);
+}

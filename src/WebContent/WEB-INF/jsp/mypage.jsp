@@ -5,15 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>マイページ</title>
+
 </head>
 <body>
+
+ <div class="datetime" id="datetime"></div>
 <h1>My Page</h1>
 
 	<div class="title">
 	 	<div class="label">My Page</div>
 	 </div>
 
-	<form name="myForm" method="POST" action="/WEB-INF/jsp/mypage.jsp">
+	<form name="mypage" method="POST" action="/WEB-INF/jsp/mypage.jsp">
 
 		  <div class="username"><input type="text" name="username" value="${username}"></div>
 	      <div class="exp">${exp}exp</div>
@@ -42,6 +45,6 @@
 	 <a href="jiro_power/Web-INF/jsp/logout.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
 	</div>
 
-
+<script src="./js/mypage.js"></script>
 </body>
 </html>
