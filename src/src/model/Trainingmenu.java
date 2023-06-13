@@ -1,41 +1,39 @@
 package model;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.io.Serializable;
 
-/**
- * Servlet implementation class Trainingmenu
- */
-@WebServlet("/Trainingmenu")
-public class Trainingmenu extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Trainingmenu() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+public class Trainingmenu implements Serializable{
+	//こっからフィールド
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	private int training_menu_id;
+	private String training_menu;
+	private double training_menu_magnification;
+
+	//コンストラクタ
+	public Trainingmenu(int training_menu_id, String training_menu, double training_menu_magnification) {
+		super();
+		this.training_menu_id = training_menu_id;
+		this.training_menu = training_menu;
+		this.training_menu_magnification = training_menu_magnification;
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	//セッター・ゲッター
+	public int getTraining_menu_id() {
+		return training_menu_id;
 	}
-
+	public void setTraining_menu_id(int training_menu_id) {
+		this.training_menu_id = training_menu_id;
+	}
+	public String getTraining_menu() {
+		return training_menu;
+	}
+	public void setTraining_menu(String training_menu) {
+		this.training_menu = training_menu;
+	}
+	public double getTraining_menu_magnification() {
+		return training_menu_magnification;
+	}
+	public void setTraining_menu_magnification(double training_menu_magnification) {
+		this.training_menu_magnification = training_menu_magnification;
+	}
 }
