@@ -13,7 +13,8 @@ public class Userinformation implements Serializable{
 	private int user_height;
 	private int user_weight;
 
-	//コンストラクタ
+//コンストラクタ
+	//全部入れ
 	public Userinformation(int user_id, String user_name, int user_sex, String user_birth, String user_mail_address,
 			String user_password, int user_height, int user_weight) {
 		super();
@@ -26,6 +27,39 @@ public class Userinformation implements Serializable{
 		this.user_height = user_height;
 		this.user_weight = user_weight;
 	}
+
+
+	//ログイン用
+	public Userinformation(String user_mail_address, String user_password) {
+		super();
+		this.user_mail_address = user_mail_address;
+		this.user_password = user_password;
+	}
+
+
+
+	//ユーザー登録用
+	public Userinformation(String user_name, int user_sex, String user_birth, String user_mail_address,
+			String user_password, int user_height, int user_weight) {
+		super();
+		this.user_name = user_name;
+		this.user_sex = user_sex;
+		this.user_birth = user_birth;
+		this.user_mail_address = user_mail_address;
+		this.user_password = user_password;
+		this.user_height = user_height;
+		this.user_weight = user_weight;
+	}
+
+	//ユーザー情報更新用
+	public Userinformation(String user_name, int user_height, int user_weight, int user_id) {
+		super();
+		this.user_name = user_name;
+		this.user_height = user_height;
+		this.user_weight = user_weight;
+		this.user_id = user_id;
+	}
+
 
 	//セッター・ゲッター
 	public int getUser_id() {
