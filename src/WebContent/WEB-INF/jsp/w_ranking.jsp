@@ -31,11 +31,11 @@
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
 		<footer>
-			<a href="jiro_power/Web-INF/jsp/training_record.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/calendar.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/ranking.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/timer.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="jiro_power/Web-INF/jsp/training_record.jsp"><img src="./WebContent/img/record.png"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="jiro_power/Web-INF/jsp/calendar.jsp"><img src="./WebContent/img/calender.png"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="jiro_power/Web-INF/jsp/ranking.jsp"><img src="./WebContent/img/ranking.png"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="jiro_power/Web-INF/jsp/timer.jsp"><img src="./WebContent/img/timer.png"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src="./WebContent/img/mypage.png"></a> <!-- srcの後、アイコンのリンク入れる -->
 		</footer>
 	</div>
 
