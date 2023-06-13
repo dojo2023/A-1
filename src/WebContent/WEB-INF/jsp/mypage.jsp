@@ -18,7 +18,7 @@
 
 	<form name="mypage" method="POST" action="/WEB-INF/jsp/mypage.jsp">
 
-		  <div class="username"><input type="text" name="username" value="${username}"></div>
+		  <div class="username"><input type="text" name="username" value="${username}"></div> <!-- user.username -->
 	      <div class="exp">${exp}exp</div>
 	      <div class="birthday_display">${birthday_display}</div>
 	      <div class="sex">${sex}</div>
