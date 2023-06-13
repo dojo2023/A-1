@@ -1,41 +1,24 @@
 package model;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.io.Serializable;
 
-/**
- * Servlet implementation class Alltable
- */
-@WebServlet("/Alltable")
-public class Alltable extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Alltable() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+public class Alltable implements Serializable{
+	//こっからフィールド
+	private int user_id;
+	private String user_name;
+	private int user_sex;
+	private String user_birth;
+	private String user_mail_address;
+	private String user_password;
+	private int user_height;
+	private int user_weight;
+	private int training_menu_id;
+	private String training_menu;
+	private double training_menu_magnification;
+	private int training_record_id;
+	private String training_record_date;
+	private double training_weight;
+	private int training_count;
+	private int training_set;
+	private int training_exp;
 }
