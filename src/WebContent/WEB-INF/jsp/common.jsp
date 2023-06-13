@@ -28,5 +28,6 @@
 		</footer>
 	</div>
 	<script src="/WebContent/common.js"></script>
+<script src="./js/common.js"></script>
 </body>
 </html>

@@ -13,6 +13,7 @@
 <p class="yearMonth"></p>
 <div id="calendar"></div>
 
+<script src="./js/calendar.js"></script>
 </body>
 
 <script>
