@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <!-- 画面上部ステータス表示 -->
 	<div class="status">
 		<header>
@@ -28,5 +27,6 @@
 			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
 		</footer>
 	</div>
+	<script src="/WebContent/common.js"></script>
 </body>
 </html>
