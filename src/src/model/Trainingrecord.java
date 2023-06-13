@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 
+//フィールド
 public class Trainingrecord implements Serializable {
 
 private int user_id;
@@ -12,7 +13,7 @@ private int training_count;
 private int training_set;
 private int training_exp;
 
-
+//コンストラクタ
 public Trainingrecord(int user_id, int training_record_id, String training_record_date, double training_weight,
 		int training_count, int training_set, int training_exp) {
 	super();
