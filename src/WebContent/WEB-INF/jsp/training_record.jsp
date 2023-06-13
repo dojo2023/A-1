@@ -7,6 +7,7 @@
 <title>トレーニング記録ページ</title>
 </head>
 <body>
+
 <h1>トレーニング記録ページちゃん</h1>
 <!-- 画面上部ステータス表示 -->
 	<div class="status">
@@ -42,6 +43,7 @@
 			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src="" alt="マイページ"></a> <!-- srcの後、アイコンのリンク入れる -->
 		</footer>
 	</div>
+<script src="./js/common.js"></script>
 <script src="./js/training_record.js"></script>
 </body>
 </html>
