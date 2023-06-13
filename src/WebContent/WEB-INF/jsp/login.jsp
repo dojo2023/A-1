@@ -25,5 +25,6 @@
 	</div> <!-- id="login" -->
 
 	<a href="jiro_power/Web-INF/jsp/user_regist.jsp"></a>
+<script src="./js/login.js"></script>
 </body>
 </html>

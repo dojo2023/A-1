@@ -59,5 +59,6 @@
 		</form>
 	</div> <!-- id="login" -->
 
+<script src="./js/user_regist.js"></script>
 </body>
 </html>

@@ -42,5 +42,6 @@
 			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src="" alt="マイページ"></a> <!-- srcの後、アイコンのリンク入れる -->
 		</footer>
 	</div>
+<script src="./js/training_record.js"></script>
 </body>
 </html>
