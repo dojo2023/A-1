@@ -27,7 +27,7 @@
 			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
 		</footer>
 	</div>
-	<script src="/WebContent/common.js"></script>
+
 <script src="./js/common.js"></script>
 </body>
 </html>
