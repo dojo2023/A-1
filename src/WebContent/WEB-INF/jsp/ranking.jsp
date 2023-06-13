@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>総合ランキングページ</title>
+<title>総合ランキング</title>
 </head>
 <body>
-<h1>総合ランキングページちゃん</h1>
+<div class="ranking">Ranking</div>
+
+<input type="button" value="Ranking">
+<input type="button" value="Monthly">
+<input type="button" value="Weekly">
 </body>
 </html>
