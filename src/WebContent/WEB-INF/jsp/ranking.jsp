@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/jiro_power/css/ranking.css">
+
 <title>総合ランキング</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
@@ -33,14 +35,34 @@
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
 		<footer>
-			<a href="jiro_power/Web-INF/jsp/training_record.jsp"><img src="./img/record.png"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/calendar.jsp"><img src="./img/calender.png"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/ranking.jsp"><img src="./img/ranking.png"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/timer.jsp"><img src="./img/timer.png"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src="./img/mypage.png"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="/jiro_power/TrainingRecordServlet"><img src="./img/record.png"></a>
+			<a href="/jiro_power/CalendarServlet"><img src="./img/calender.png"></a>
+			<a href="/jiro_power/RankingServlet"><img src="./img/ranking.png"></a>
+			<a href="/jiro_power/TimerServlet"><img src="./img/timer.png"></a>
+			<a href="/jiro_power/MypageServlet"><img src="./img/mypage.png"></a>
 		</footer>
 	</div>
 
-<script src="./js/ranking.js"></script>
+<script>
+/* 顔文字のドーナツチャートの部分の処理 */
+
+let inputData ='${Expsum.rankingData}';
+let context = document.querySelector("#kimochi").getContext('2d')
+new Chart(context, {
+  type: 'bar',
+  data: {
+    labels: ['1','2','3','4','5','6','7','8','9','10'],
+    datasets: [{
+      /* ここで取得した配列の中身を分解して配置する */
+      data: [inputData[0], inputData[1],inputData[2],inputData[3],inputData[4],inputData[5],inputData[6],inputData[7],inputData[8],inputData[9]],
+      backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19'],
+    }]
+  },
+  options: {
+  indexAxis: 'y',
+    responsive: false,
+  }
+});
+</script>
 </body>
 </html>

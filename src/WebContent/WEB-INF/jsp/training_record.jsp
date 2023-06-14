@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/jiro_power/css/training_record.css">
+
 <title>トレーニング記録ページ</title>
 </head>
 <body>
@@ -36,13 +38,14 @@
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
 		<footer>
-			<a href="jiro_power/Web-INF/jsp/training_record.jsp"><img src="./img/record.png" alt="記録"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/calendar.jsp"><img src="./img/calender.png"alt="カレンダー"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/ranking.jsp"><img src="./img/ranking.png" alt="ランキング"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/timer.jsp"><img src="./img/timer.png" alt="タイマー"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src="./img/mypage.png" alt="マイページ"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="/jiro_power/TrainingRecordServlet"><img src="./img/record.png"></a>
+			<a href="/jiro_power/CalendarServlet"><img src="./img/calender.png"></a>
+			<a href="/jiro_power/RankingServlet"><img src="./img/ranking.png"></a>
+			<a href="/jiro_power/TimerServlet"><img src="./img/timer.png"></a>
+			<a href="/jiro_power/MypageServlet"><img src="./img/mypage.png"></a>
 		</footer>
 	</div>
+
 <script src="./js/common.js"></script>
 <script src="./js/training_record.js"></script>
 </body>

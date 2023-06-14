@@ -46,8 +46,6 @@ public class UserinformationDaoTest {
 					"MK",1,"2000-09-13","mk@mk","mk",170,65
 					);
 
-			Userinformation gloTes = insTes;
-
 			if (dao.insert(insTes)) {
 				System.out.println("登録成功！");
 				List<Userinformation> cardList1 = dao.select(insTes);

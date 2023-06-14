@@ -72,8 +72,6 @@ public class UserinformationDao {
 
 	public List<Userinformation> select(Userinformation param) {
 
-		Connection conn = null;
-
 		List<Userinformation> cardList = new ArrayList<Userinformation>();
 
 		// 結果を返す

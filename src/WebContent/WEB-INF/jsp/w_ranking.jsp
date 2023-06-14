@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>週間ランキングページ</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="/jiro_power/css/w_ranking.css">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
@@ -28,14 +30,15 @@
 <input type="button" value="Ranking">
 <input type="button" value="Monthly">
 <input type="button" value="Weekly">
+
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
 		<footer>
-			<a href="jiro_power/Web-INF/jsp/training_record.jsp"><img src="./img/record.png"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/calendar.jsp"><img src="./img/calender.png"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/ranking.jsp"><img src="./img/ranking.png"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/timer.jsp"><img src="./img/timer.png"></a> <!-- srcの後、アイコンのリンク入れる -->
-			<a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src="./img/mypage.png"></a> <!-- srcの後、アイコンのリンク入れる -->
+			<a href="/jiro_power/TrainingRecordServlet"><img src="./img/record.png"></a>
+			<a href="/jiro_power/CalendarServlet"><img src="./img/calender.png"></a>
+			<a href="/jiro_power/RankingServlet"><img src="./img/ranking.png"></a>
+			<a href="/jiro_power/TimerServlet"><img src="./img/timer.png"></a>
+			<a href="/jiro_power/MypageServlet"><img src="./img/mypage.png"></a>
 		</footer>
 	</div>
 
