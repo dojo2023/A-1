@@ -22,6 +22,7 @@
 		</header>
 	</div>
 
+<hr>
  <div class="datetime" id="datetime"></div>
 <div class=title>My Page</div>
 
@@ -54,6 +55,8 @@
 	<div class="logout" id="logout">
 	 <a href="./jsp/logout.jsp"><img src=""></a> <!-- srcの後、ログアウトアイコンのリンク入れる -->
 	</div>
+
+	<hr>
 
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
