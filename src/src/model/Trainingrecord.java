@@ -5,26 +5,50 @@ import java.io.Serializable;
 //フィールド
 public class Trainingrecord implements Serializable {
 
-private int user_id;
+
 private int training_record_id;
 private String training_record_date;
+private int user_id;
+private String training_menu;
 private double training_weight;
 private int training_count;
 private int training_set;
 private int training_exp;
 
 //コンストラクタ
-public Trainingrecord(int user_id, int training_record_id, String training_record_date, double training_weight,
+public Trainingrecord( int training_record_id, String training_record_date,int user_id,String training_menu, double training_weight,
 		int training_count, int training_set, int training_exp) {
 	super();
-	this.user_id = user_id;
+
 	this.training_record_id = training_record_id;
 	this.training_record_date = training_record_date;
+	this.user_id = user_id;
+	this.training_menu = training_menu;
 	this.training_weight = training_weight;
 	this.training_count = training_count;
 	this.training_set = training_set;
 	this.training_exp = training_exp;
 }
+
+
+public Trainingrecord(int training_record_id, String training_record_date, int user_id, String training_menu,
+		double training_weight, int training_count, int training_set) {
+	super();
+	this.training_record_id = training_record_id;
+	this.training_record_date = training_record_date;
+	this.user_id = user_id;
+	this.training_menu = training_menu;
+	this.training_weight = training_weight;
+	this.training_count = training_count;
+	this.training_set = training_set;
+}
+
+
+public Trainingrecord(int training_exp) {
+	super();
+	this.training_exp = training_exp;
+}
+
 
 //セッターとゲッターよ
 public int getUser_id() {
@@ -94,5 +118,15 @@ public int getTraining_exp() {
 
 public void setTraining_exp(int training_exp) {
 	this.training_exp = training_exp;
+}
+
+
+public String getTraining_menu() {
+	return training_menu;
+}
+
+
+public void setTraining_menu(String training_menu) {
+	this.training_menu = training_menu;
 }
 }

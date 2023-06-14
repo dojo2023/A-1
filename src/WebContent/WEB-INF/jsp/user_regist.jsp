@@ -61,9 +61,17 @@
 			<p>※体重が入力されていません。</p>
 
 			<input type="submit" name="regist" value="登録">
+
 		</form>
 	</div> <!-- id="login" -->
+<h1>自作確認画面が表示されるよ！</h1>
 
+	<form id="myForm" action="リンク先のURL" method="GET">
+		<!--なんかないと嫌なのでテキストボックスを無駄に定義  -->
+		<input type="text" name="tx" value="">
+		<!-- ボタンを押して確認ウィンドウを出すためにjavaScriptの関数を呼び出す -->
+		<button onclick="showConfirmationDialog(event)">ボタンを押して確認</button>
+	</form>
 <script src="./js/user_regist.js"></script>
 </body>
 </html>
