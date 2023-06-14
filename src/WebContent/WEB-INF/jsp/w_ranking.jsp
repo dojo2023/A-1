@@ -7,6 +7,7 @@
 <title>週間ランキングページ</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="stylesheet" href="/jiro_power/css/w_ranking.css">
+<link rel="stylesheet" href="/jiro_power/css/common.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>

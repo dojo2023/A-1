@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/jiro_power/css/calendar.css">
+<link rel="stylesheet" href="/jiro_power/css/common.css">
 
 <title>カレンダー</title>
 </head>

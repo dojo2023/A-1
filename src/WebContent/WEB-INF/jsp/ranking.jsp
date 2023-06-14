@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/jiro_power/css/ranking.css">
+<link rel="stylesheet" href="/jiro_power/css/common.css">
 
 <title>総合ランキング</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">

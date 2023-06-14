@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/jiro_power/css/training_record.css">
+<link rel="stylesheet" href="/jiro_power/css/common.css">
 
 <title>トレーニング記録ページ</title>
 </head>
