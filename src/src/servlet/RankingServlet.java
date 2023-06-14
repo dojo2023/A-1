@@ -41,24 +41,17 @@ public class RankingServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 
 		/* //絵文字のデータを疑似的に作り出す
-				ArrayList<String> kaoList = new ArrayList<String>();
-				rankingData.add("20");
+				ArrayList<String> rankingData = new ArrayList<String>();
+				rankingData.add("");
 				rankingData.add("50");
 				rankingData.add("10");
 				rankingData.add("15");
 				rankingData.add("10");
+
 				//とりあえずリクエストスコープへセットする
 				request.setAttribute("rankingData", rankingData);
 
-				//もう一個
-				ArrayList<String> xxList = new ArrayList<String>();
-				xxList.add("15");
-				xxList.add("20");
-				xxList.add("35");
-				xxList.add("20");
-				xxList.add("10");
-				//とりあえずリクエストスコープへセットする
-				request.setAttribute("xxList", xxList);
+
 
 				//chart.jspに遷移させる
 				String path="/WEB-INF/jsp/ranking.jsp";
