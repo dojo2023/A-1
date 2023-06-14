@@ -245,4 +245,105 @@ public class UserinformationDao {
 			// 結果を返す
 			return result;
 }
+
+		//体重を持っていくよ
+		public int UW(Userinformation uw) {
+			Connection conn = null;
+			int result = 0;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+
+				// SQL文を準備する
+				String sqlUw = "select user_weight "
+					+ "from user_information where user_id = ?";
+				PreparedStatement pStmtUw = conn.prepareStatement(sqlUw);
+				pStmtUw.setInt(1,uw.getUser_id());
+
+				// SELECT文を実行し、結果表を取得する
+				ResultSet rs = pStmtUw.executeQuery();
+
+			if (rs.next()) {
+				result =rs.getInt( "User_weight");
+			};
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				result = 0;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				result = 0;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						result = 0;
+					}
+				}
+			}
+
+			// 結果を返す
+					return result;
+		}
+
+
+		//性別を持っていくよ
+		public int US(Userinformation us) {
+			Connection conn = null;
+			int result = 0;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+
+				// SQL文を準備する
+				String sqlUs = "select User_sex "
+					+ "from user_information where user_id = ?";
+				PreparedStatement pStmtUs = conn.prepareStatement(sqlUs);
+				pStmtUs.setInt(1,us.getUser_id());
+
+				// SELECT文を実行し、結果表を取得する
+				ResultSet rs = pStmtUs.executeQuery();
+
+			if (rs.next()) {
+				result =rs.getInt( "user_sex");
+			};
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				result = 0;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				result = 0;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						result = 0;
+					}
+				}
+			}
+
+			// 結果を返す
+					return result;
+		}
 }
