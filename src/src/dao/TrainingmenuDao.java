@@ -1,41 +1,61 @@
 package dao;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-/**
- * Servlet implementation class TrainingmenuDao
- */
-@WebServlet("/TrainingmenuDao")
-public class TrainingmenuDao extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TrainingmenuDao() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+import model.Trainingmenu;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+public class TrainingmenuDao{
+	// 引数tmで指定されたレコードを登録し、成功したらtrueを返す
+			public String insert(Trainingmenu tm) {
+				Connection conn = null;
+				String result = null;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
 
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+
+					// SQL文を準備する
+					String sqlTm = "select training_menu_magnification "
+						+ "from training_menu where training_menu = ?";
+					PreparedStatement pStmtTm = conn.prepareStatement(sqlTm);
+					pStmtTm.setString(1,tm.getTraining_menu());
+
+					// SELECT文を実行し、結果表を取得する
+					ResultSet rs = pStmtTm.executeQuery();
+
+				if (rs.next()) {
+					result =rs.getString( "training_menu_magnification");
+				};
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					result = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					result = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							result = null;
+						}
+					}
+				}
+
+				// 結果を返す
+						return result;
+			}
 }

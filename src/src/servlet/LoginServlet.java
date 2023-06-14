@@ -40,12 +40,12 @@ public class LoginServlet extends HttpServlet {
 
 		// ログイン処理を行う
 		UserinformationDao uDao = new UserinformationDao();
-		String uid =  uDao.isLoginOK(new Userinformation(email, pw));
-		if(uid != null) {
+		String id =  uDao.isLoginOK(new Userinformation(email, pw));
+		if(id != null) {
 			// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			session.setAttribute("id", new LoginUser(uid));
+			session.setAttribute("id", new LoginUser(id));
 
 			// 記録サーブレットにリダイレクトする
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");
