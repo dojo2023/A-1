@@ -6,6 +6,10 @@ body {
 
 }
 
+.title {
+	color: #FFFFFF;
+}
+
 .yearMonth{
   margin: 10px;
   font-weight: bold;

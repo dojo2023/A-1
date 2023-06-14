@@ -3,5 +3,43 @@
 body {
 	background-color:#c0c0c0;
 
+}
 
+.title {
+	color: #FFFFFF;
+	font-size: 30px;
+	font-family: fantasy;
+	text-align: center;
+}
+
+
+
+
+
+.logout {
+  width: 260px;
+  height: 35px;
+  background: #f0eeee;
+  border: 1px solid #c0c0c0;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #736ca1;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 6px;
+  margin-top: 10px;
+}
+
+.logout {
+  opacity: 0.8;
+  text-align: center;
+}
+
+.logout :active{
+  opacity: 0.6;
+}
+
+.logout :focus{
+  outline: none;
 }

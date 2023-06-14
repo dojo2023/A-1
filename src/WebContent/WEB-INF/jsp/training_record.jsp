@@ -5,12 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/jiro_power/css/training_record.css">
+<link rel="stylesheet" href="/jiro_power/css/common.css">
 
 <title>トレーニング記録ページ</title>
 </head>
 <body>
-
-<h1>トレーニング記録ページちゃん</h1>
 <!-- 画面上部ステータス表示 -->
 	<div class="status">
 		<header>
@@ -19,6 +18,7 @@
 			<p><div id="current_date"></div> <!--  id名前合わせる-->
 			<p>${name}</p> <!--  {}の中身変える-->
 		</header>
+	<div class="title">Training Record</div>
 	</div>
 	<form method="POST" action="/jiro_power/TrainingRecordServlet">
 	<input type="date">

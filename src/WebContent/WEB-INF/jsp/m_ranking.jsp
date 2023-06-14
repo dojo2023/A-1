@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/jiro_power/css/m_ranking.css">
+<link rel="stylesheet" href="/jiro_power/css/common.css">
 
 <title>月間ランキングページ</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -24,13 +25,13 @@
 		</header>
 	</div>
 
-<div class="ranking">Monthly Ranking</div>
+<div class="title">Monthly Ranking</div>
 <!-- ここにグラフ -->
 <canvas width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
-<input type="button" value="Ranking">
-<input type="button" value="Monthly">
-<input type="button" value="Weekly">
+<input type="submit" value="Ranking">
+<input type="submit" value="Monthly">
+<input type="submit" value="Weekly">
 
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">

@@ -1,1 +1,158 @@
 @charset "UTF-8";
+body {
+	background-color:#c0c0c0;
+}
+
+.title {
+	color: #ffffff;
+}
+/* ダイアログボックス本体のカスタムスタイルを定義 */
+.custom-dialog {
+	/*背景色の指定  */
+	background-color: lightblue;
+	/*内余白の指定  */
+	padding: 10px;
+	/*まわりの線の指定  */
+	border: 1px solid blue;
+	/*枠の角を丸める  */
+	border-radius: 5px;
+	/*幅指定  */
+	width: 300px;
+	/*高さ指定  */
+	height: 200px;
+
+	/*場所の指定を相対的にする  */
+	position: relative;
+	/*今いる場所の上から30pxの場所へ移動  */
+	top: 30px;
+	/*今いる場所の左から50pxの場所へ移動  */
+	left: 50px;
+}
+
+/*右上のバツボタンのスタイル  */
+.close-button {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+}
+
+/*YESボタンのスタイル設定  */
+.yes-button {
+	width: 130px;
+	height: 40px;
+	color: #fff;
+	border-radius: 50px;
+	padding: 10px 25px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), inset -7px
+		-7px 10px 0px rgba(0, 0, 0, .1), 7px 7px 20px 0px rgba(0, 0, 0, .1),
+		4px 4px 5px 0px rgba(0, 0, 0, .1);
+	text-shadow: 2px 2px 3px rgba(255, 255, 255, .5), -4px -4px 6px
+		rgba(116, 125, 136, .2);
+	outline: none;
+}
+
+/*ホバーなどの設定 */
+.btn-1 {
+	border: none;
+	transition: all 0.3s ease;
+	overflow: hidden;
+	color: #1fd1f9;
+	color: green;
+}
+
+.btn-1:after {
+	position: absolute;
+	content: " ";
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #5fe0fd;
+	transition: all 0.3s ease;
+}
+
+.btn-1:hover {
+	background: transparent;
+	box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5), -4px -4px 6px 0
+		rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+		inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+	color: #fff;
+}
+
+.btn-1:hover:after {
+	-webkit-transform: scale(2) rotate(180deg);
+	transform: scale(2) rotate(180deg);
+	box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5), -4px -4px 6px 0
+		rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+		inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+/*NOボタンのスタイル設定  */
+.no_button {
+	width: 130px;
+	height: 40px;
+	color: #fff;
+	border-radius: 50px;
+	padding: 10px 25px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), inset -7px
+		-7px 10px 0px rgba(0, 0, 0, .1), 7px 7px 20px 0px rgba(0, 0, 0, .1),
+		4px 4px 5px 0px rgba(0, 0, 0, .1);
+	text-shadow: 2px 2px 3px rgba(255, 255, 255, .5), -4px -4px 6px
+		rgba(116, 125, 136, .2);
+	outline: none;
+}
+/*ホバーなどの設定 */
+.btn-2 {
+	border: none;
+	transition: all 0.3s ease;
+	overflow: hidden;
+	color: #1fd1f9;
+	color: red;
+}
+
+.btn-2:after {
+	position: absolute;
+	content: " ";
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #5fe0fd;
+	transition: all 0.3s ease;
+}
+
+.btn-2:hover {
+	background: transparent;
+	box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5), -4px -4px 6px 0
+		rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+		inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+	color: #fff;
+}
+
+.btn-2:hover:after {
+	-webkit-transform: scale(2) rotate(180deg);
+	transform: scale(2) rotate(180deg);
+	box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5), -4px -4px 6px 0
+		rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+		inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
