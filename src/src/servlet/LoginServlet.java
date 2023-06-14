@@ -53,8 +53,8 @@ public class LoginServlet extends HttpServlet {
 		else {									// ログイン失敗
 
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking.jsp");
-			dispatcher.forward(request, response);
+			//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking.jsp");
+			//dispatcher.forward(request, response);
 		}
 	}
 }

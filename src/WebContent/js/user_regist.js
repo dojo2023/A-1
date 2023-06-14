@@ -14,7 +14,7 @@
 			//<div></div>タグを作り出す　dialogという変数に格納
 			dialog = document.createElement("div");
 			//その中に文字列を入れる
-			dialog.innerHTML = "実行するのかい？しないのかい？？？<hr>";
+			dialog.innerHTML = "登録しますか？<hr>";
 			//CSSをあとで適用させるので、上記のdivタグにクラスをつける
 			dialog.className = "custom-dialog";
 
@@ -30,7 +30,7 @@
 			//<input type="button">を作成する　confirmButtonという変数に格納
 			var confirmButton = document.createElement("button");
 			//上記のボタンの中に文字列を入れる
-			confirmButton.innerHTML = "YES";
+			confirmButton.innerHTML = "はい";
 			//ボタンへのCSSの適用
 			confirmButton.className = "yes-button";
 			confirmButton.classList.add("btn-1");
@@ -45,7 +45,7 @@
 			//<input type="button">を作成する cancelButtonという変数に格納
 			var cancelButton = document.createElement("button");
 			//上記のボタンに文字列を入れる
-			cancelButton.innerHTML = "NO";
+			cancelButton.innerHTML = "いいえ";
 			//ボタンへのCSSの適用
 			cancelButton.className = "no_button";
 			cancelButton.classList.add("btn-2");
@@ -55,21 +55,11 @@
 				dialog.style.display = "none";
 			};
 
-			/* 画像の詳細設定 */
-			var img1 = document.createElement("img");
-			img1.src = "./img/R0020071.png";
-			img1.width = 70; // 幅を200ピクセルに指定
-			img1.height = 80; // 高さを150ピクセルに指定
-			img1.className = "img_cl";
-
-
 
 			//ダイアログボックスの子要素（中身）にYESとNOのボタンを格納する
 			dialog.appendChild(confirmButton);
 
 			dialog.appendChild(cancelButton);
-			//画像を配置する
-			dialog.appendChild(img1);
 
 
 

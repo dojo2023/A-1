@@ -18,7 +18,7 @@
 	</header>
 
 	<div id="regist">
-		<form name='user_regist' method="POST" action="/jiro_power/LoginServlet">
+		<form id="myForm" name='user_regist' method="POST" action="/jiro_power/LoginServlet">
 			<label>ユーザー名</label>
 			<input type="text" id="user_name" name="User_Name"
 			placeholder="8文字以内" maxlength="8" required>
