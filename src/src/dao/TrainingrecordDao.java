@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import model.Trainingrecord;
 
 public class TrainingrecordDao {
-	
+
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 		public boolean insert(Trainingrecord card) {
 			Connection conn = null;
@@ -23,58 +23,57 @@ public class TrainingrecordDao {
 
 				// SQL文を準備する
 							String sql = "insert into TRAINING_RECORD"
-									+ "(training_record_date,user_id,training_menu,training_weight,training_count,training_set,training_exp)"
+									+ "(training_record_date,"
+									+ "user_id,"
+									+ "training_menu,"
+									+ "training_weight,"
+									+ "training_count,"
+									+ "training_set,"
+									+ "training_exp)"
 									+ "VALUES(GETTIME(), ?, ?, ?, ?, ?, ?)";
 							PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-							if (card.getUser_name() != null && !card.getUser_name().equals("")) {
-								pStmt.setString(1, card.getUser_name());
+							if (card.getUser_id() != 0) {
+								pStmt.setInt(1, card.getUser_id());
 							}
 							else {
-								pStmt.setString(1, null);
+								pStmt.setInt(1, 0);
 							}
 
-							if (card.getUser_sex() != 0) {
-								pStmt.setInt(2, card.getUser_sex());
+							if (card.getTraining_menu() != null) {
+								pStmt.setString(2, card.getTraining_menu());
 							}
 							else {
-								pStmt.setInt(2, 0);
+								pStmt.setString(2, null);
 							}
 
-							if (card.getUser_birth() != null && !card.getUser_birth().equals("")) {
-								pStmt.setString(3, card.getUser_birth());
+							if (card.getTraining_weight() != 0) {
+								pStmt.setDouble(3, card.getTraining_weight());
 							}
 							else {
-								pStmt.setString(3, null);
+								pStmt.setDouble(3, 0);
 							}
 
-							if (card.getUser_mail_address() != null && !card.getUser_mail_address().equals("")) {
-								pStmt.setString(4, card.getUser_mail_address());
+							if (card.getTraining_count() != 0) {
+								pStmt.setInt(4, card.getTraining_count());
 							}
 							else {
-								pStmt.setString(4, null);
+								pStmt.setInt(4, 0);
 							}
 
-							if (card.getUser_password() != null && !card.getUser_password().equals("")) {
-								pStmt.setString(5, card.getUser_password());
+							if (card.getTraining_set() != 0) {
+								pStmt.setInt(5, card.getTraining_set());
 							}
 							else {
-								pStmt.setString(5, null);
+								pStmt.setInt(5, 0);
 							}
 
-							if (card.getUser_height() != 0) {
-								pStmt.setInt(6, card.getUser_height());
+							if (card.getTraining_exp() != 0) {
+								pStmt.setInt(6, card.getTraining_exp());
 							}
 							else {
 								pStmt.setInt(6, 0);
-							}
-
-							if (card.getUser_weight() != 0) {
-								pStmt.setInt(7, card.getUser_weight());
-							}
-							else {
-								pStmt.setInt(7, 0);
 							}
 
 							// SQL文を実行する
