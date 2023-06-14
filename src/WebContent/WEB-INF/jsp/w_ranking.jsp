@@ -27,9 +27,9 @@
 <!-- ここにグラフ -->
 <canvas width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
-<input type="button" value="Ranking">
-<input type="button" value="Monthly">
-<input type="button" value="Weekly">
+<input type="submit" value="Ranking">
+<input type="submit" value="Monthly">
+<input type="submit" value="Weekly">
 
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
