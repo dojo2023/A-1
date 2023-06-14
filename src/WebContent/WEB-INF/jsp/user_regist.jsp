@@ -9,6 +9,9 @@
 <title>ユーザー登録ページ</title>
 </head>
 <body>
+
+<div class=title>Registration</div>
+
 	<header>
 		<a href="jiro_power/Web-INF/jsp/login.jsp"></a> <!-- 戻るボタン -->
 		<img src=""> <!-- ロゴ貼る -->
