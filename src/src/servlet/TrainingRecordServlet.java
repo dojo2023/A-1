@@ -31,12 +31,12 @@ public class TrainingRecordServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		/*if (session.getAttribute("id") == null) {
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
-		}*/
+		}
 
-		// 検索ページにフォワードする
+		// 記録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -47,10 +47,10 @@ public class TrainingRecordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		/*if (session.getAttribute("id") == null) {
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
-		}*/
+		}
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
     }

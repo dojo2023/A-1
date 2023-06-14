@@ -12,9 +12,9 @@ import model.Userinformation;
 
 public class UserinformationDao {
 	// ログインできるならtrueを返す
-	public boolean isLoginOK(Userinformation userinformation) {
+	public String isLoginOK(Userinformation userinformation) {
 		Connection conn = null;
-		boolean loginResult = false;
+		String loginResult = null;
 
 		try {
 			// JDBCドライバを読み込む
@@ -24,7 +24,7 @@ public class UserinformationDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from user_information where user_mail_address = ? and user_password = ?";
+			String sql = "select * from user_information where user_mail_address = ? and user_password = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1,userinformation.getUser_mail_address());
 			pStmt.setString(2,userinformation.getUser_password());
@@ -32,19 +32,26 @@ public class UserinformationDao {
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
-			// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
-			rs.next();
-			if (rs.getInt("count(*)") == 1) {
-				loginResult = true;
-			}
+			// メールアドレスとパスワードが一致するユーザーがいたかどうかをチェックする
+			if (rs.next()) {
+				loginResult =rs.getString( "user_id");
+			};
+			/*俺は正しかった
+			 * if (rs.getInt("count(*)") == 1) {
+				String UID = "select user_id from user_information where user_mail_address = ? and user_password = ?";
+				PreparedStatement pStmtUID = conn.prepareStatement(UID);
+				pStmtUID.setString(1,userinformation.getUser_mail_address());
+				pStmtUID.setString(2,userinformation.getUser_password());
+
+			}*/
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			loginResult = false;
+			loginResult = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			loginResult = false;
+			loginResult = null;
 		}
 		finally {
 			// データベースを切断
@@ -54,7 +61,7 @@ public class UserinformationDao {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					loginResult = false;
+					loginResult = null;
 				}
 			}
 		}

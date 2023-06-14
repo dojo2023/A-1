@@ -56,7 +56,8 @@ for (let w = 0; w < 6; w++) {
       '<td class="is-disabled">' + num + "</td>";
     dayCount++;
   }
-} else if (dayCount > endDayCount) {
+} 
+else if (dayCount > endDayCount) {
 	  // 末尾の日数を超えた
 	  let num = dayCount - endDayCount;
 	  calendarHtml +=

@@ -11,10 +11,10 @@
 	<div id="login">
 		<form name='form-login' method="POST" action="/jiro_power/LoginServlet">
 			<span class="fontawesome-user"></span>
-				<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" required>
+				<input type="email" id="email" name="EMAIL" placeholder="mail_address" required>
 
 			<span class="fontawesome-lock"></span>
-				<input type="password" id="password" name="PW" placeholder="password"
+				<input type="password" id="pw" name="PW" placeholder="password"
 				minlength="8" maxlength="20" required>
 
 			<p>※パスワードは8文字以上20文字以内です。</p>
