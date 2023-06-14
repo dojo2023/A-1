@@ -49,7 +49,7 @@
 	</div>
 
 	<div class="update" id="update">
-	 <a href="/jiro_power/MypageServlet"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
+	 <a href="/jiro_power/MypageServlet"><img src="./img/reload.png"></a> <!-- srcの後、アイコンのリンク入れる -->
 	</div>
 
 <!-- 	<div class="logout" id="logout">
