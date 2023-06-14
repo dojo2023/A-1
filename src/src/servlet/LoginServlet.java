@@ -40,8 +40,8 @@ public class LoginServlet extends HttpServlet {
 
 		// ログイン処理を行う
 		UserinformationDao uDao = new UserinformationDao();
-		String id =  uDao.isLoginOK(new Userinformation(email, pw));
-		if(id != null) {
+		int id =  Integer.parseInt(uDao.isLoginOK(new Userinformation(email, pw)));
+		if(id != 0) {
 			// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 		else {									// ログイン失敗
 
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/TrainingRecord.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

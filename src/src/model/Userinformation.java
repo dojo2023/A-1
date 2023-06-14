@@ -60,6 +60,18 @@ public class Userinformation implements Serializable{
 		this.user_id = user_id;
 	}
 
+	//ユーザーの体重
+	public Userinformation(int user_weight) {
+		super();
+		this.user_weight = user_weight;
+	}
+
+	//ユーザーの性別
+	public Userinformation(int user_sex) {
+		super();
+		this.user_sex = user_sex;
+	}
+
 
 	//セッター・ゲッター
 	public int getUser_id() {

@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -30,50 +31,56 @@ public class TrainingrecordDao {
 									+ "training_count,"
 									+ "training_set,"
 									+ "training_exp)"
-									+ "VALUES(GETTIME(), ?, ?, ?, ?, ?, ?)";
+									+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
 							PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-							if (card.getUser_id() != 0) {
-								pStmt.setInt(1, card.getUser_id());
+							if (card.getTraining_record_date() != null) {
+								pStmt.setDate(1, (Date) card.getTraining_record_date());
 							}
 							else {
-								pStmt.setInt(1, 0);
+								pStmt.setDate(1, null);
+							}
+							if (card.getUser_id() != 0) {
+								pStmt.setInt(2, card.getUser_id());
+							}
+							else {
+								pStmt.setInt(2, 0);
 							}
 
 							if (card.getTraining_menu() != null) {
-								pStmt.setString(2, card.getTraining_menu());
+								pStmt.setString(3, card.getTraining_menu());
 							}
 							else {
-								pStmt.setString(2, null);
+								pStmt.setString(3, null);
 							}
 
 							if (card.getTraining_weight() != 0) {
-								pStmt.setDouble(3, card.getTraining_weight());
+								pStmt.setDouble(4, card.getTraining_weight());
 							}
 							else {
-								pStmt.setDouble(3, 0);
+								pStmt.setDouble(4, 0);
 							}
 
 							if (card.getTraining_count() != 0) {
-								pStmt.setInt(4, card.getTraining_count());
-							}
-							else {
-								pStmt.setInt(4, 0);
-							}
-
-							if (card.getTraining_set() != 0) {
-								pStmt.setInt(5, card.getTraining_set());
+								pStmt.setInt(5, card.getTraining_count());
 							}
 							else {
 								pStmt.setInt(5, 0);
 							}
 
-							if (card.getTraining_exp() != 0) {
-								pStmt.setInt(6, card.getTraining_exp());
+							if (card.getTraining_set() != 0) {
+								pStmt.setInt(6, card.getTraining_set());
 							}
 							else {
 								pStmt.setInt(6, 0);
+							}
+
+							if (card.getTraining_exp() != 0) {
+								pStmt.setInt(7, card.getTraining_exp());
+							}
+							else {
+								pStmt.setInt(7, 0);
 							}
 
 							// SQL文を実行する

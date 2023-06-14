@@ -17,6 +17,17 @@ public class Trainingmenu implements Serializable{
 		this.training_menu_magnification = training_menu_magnification;
 	}
 
+	public Trainingmenu(double training_menu_magnification) {
+		super();
+		this.training_menu_magnification = training_menu_magnification;
+	}
+
+
+	public Trainingmenu(String training_menu) {
+		super();
+		this.training_menu = training_menu;
+	}
+
 	//セッター・ゲッター
 	public int getTraining_menu_id() {
 		return training_menu_id;

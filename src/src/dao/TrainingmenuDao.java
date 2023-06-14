@@ -10,9 +10,9 @@ import model.Trainingmenu;
 
 public class TrainingmenuDao{
 	// 引数tmで指定されたレコードを登録し、成功したらtrueを返す
-			public String insert(Trainingmenu tm) {
+			public double MAGMAG(Trainingmenu tm) {
 				Connection conn = null;
-				String result = null;
+				double result = 0;
 
 				try {
 					// JDBCドライバを読み込む
@@ -31,16 +31,16 @@ public class TrainingmenuDao{
 					ResultSet rs = pStmtTm.executeQuery();
 
 				if (rs.next()) {
-					result =rs.getString( "training_menu_magnification");
+					result =rs.getDouble( "training_menu_magnification");
 				};
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					result = null;
+					result = 0;
 				}
 				catch (ClassNotFoundException e) {
 					e.printStackTrace();
-					result = null;
+					result = 0;
 				}
 				finally {
 					// データベースを切断
@@ -50,7 +50,7 @@ public class TrainingmenuDao{
 						}
 						catch (SQLException e) {
 							e.printStackTrace();
-							result = null;
+							result = 0;
 						}
 					}
 				}

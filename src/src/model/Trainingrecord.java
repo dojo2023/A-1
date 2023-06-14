@@ -1,13 +1,14 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 //フィールド
 public class Trainingrecord implements Serializable {
 
 
 private int training_record_id;
-private String training_record_date;
+private Date training_record_date;
 private int user_id;
 private String training_menu;
 private double training_weight;
@@ -16,7 +17,7 @@ private int training_set;
 private int training_exp;
 
 //コンストラクタ
-public Trainingrecord( int training_record_id, String training_record_date,int user_id,String training_menu, double training_weight,
+public Trainingrecord( int training_record_id, Date training_record_date,int user_id,String training_menu, double training_weight,
 		int training_count, int training_set, int training_exp) {
 	super();
 
@@ -31,7 +32,7 @@ public Trainingrecord( int training_record_id, String training_record_date,int u
 }
 
 
-public Trainingrecord(int training_record_id, String training_record_date, int user_id, String training_menu,
+public Trainingrecord(int training_record_id, Date training_record_date, int user_id, String training_menu,
 		double training_weight, int training_count, int training_set) {
 	super();
 	this.training_record_id = training_record_id;
@@ -71,12 +72,12 @@ public void setTraining_record_id(int training_record_id) {
 }
 
 
-public String getTraining_record_date() {
+public Date getTraining_record_date() {
 	return training_record_date;
 }
 
 
-public void setTraining_record_date(String training_record_date) {
+public void setTraining_record_date(Date training_record_date) {
 	this.training_record_date = training_record_date;
 }
 
