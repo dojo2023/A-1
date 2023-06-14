@@ -42,13 +42,13 @@ public class RankingServlet extends HttpServlet {
 
 		/* //絵文字のデータを疑似的に作り出す
 				ArrayList<String> kaoList = new ArrayList<String>();
-				kaoList.add("20");
-				kaoList.add("50");
-				kaoList.add("10");
-				kaoList.add("15");
-				kaoList.add("10");
+				rankingData.add("20");
+				rankingData.add("50");
+				rankingData.add("10");
+				rankingData.add("15");
+				rankingData.add("10");
 				//とりあえずリクエストスコープへセットする
-				request.setAttribute("kaoList", kaoList);
+				request.setAttribute("rankingData", rankingData);
 
 				//もう一個
 				ArrayList<String> xxList = new ArrayList<String>();
@@ -61,7 +61,7 @@ public class RankingServlet extends HttpServlet {
 				request.setAttribute("xxList", xxList);
 
 				//chart.jspに遷移させる
-				String path="/WEB-INF/jsp/chart.jsp";
+				String path="/WEB-INF/jsp/ranking.jsp";
 				RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 				dispatcher.forward(request, response); */
 	}
