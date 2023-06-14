@@ -45,16 +45,29 @@
 
 
 	<div class="share" id="share">
-	 <a href="./jsp/result.jsp"><img src="./img/record.png"></a> <!-- srcの後、アイコンのリンク入れる -->
+	 <a href="/jiro_power/ResultServlet"><img src="./img/share.png"></a> <!-- srcの後、アイコンのリンク入れる -->
 	</div>
 
 	<div class="update" id="update">
-	 <a href="./jsp/mypage.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
+	 <a href="/jiro_power/MypageServlet"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
 	</div>
 
-	<div class="logout" id="logout">
-	 <a href="./jsp/logout.jsp"><img src=""></a> <!-- srcの後、ログアウトアイコンのリンク入れる -->
+<!-- 	<div class="logout" id="logout">
+	 <a href="/jiro_power/LogoutServlet"><img src=""></a> srcの後、ログアウトアイコンのリンク入れる
 	</div>
+
+	<input type="submit" class="logout" value="Logout" id="pass">
+-->
+
+<!-- 	<form>
+  		<input type="button" class="logout" value="Logout" id="pass">
+	</form>
+
+	<a href="/jiro_power/LoginServlet" class="logout">Logout</a> -->
+
+	<input type="button" class="logout" value="Logout" onclick="window.location.href='/jiro_power/LoginServlet'">
+
+
 
 	<hr>
 
