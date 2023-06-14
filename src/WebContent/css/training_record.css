@@ -1,1 +1,8 @@
 @charset "UTF-8";
+body {
+   background-color:#c0c0c0;
+}
+
+.title {
+	color: #ffffff;
+}
