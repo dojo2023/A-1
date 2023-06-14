@@ -16,6 +16,7 @@ new Chart(context, {
     }]
   },
   options: {
+  indexAxis: 'y',
     responsive: false,
   }
 });
