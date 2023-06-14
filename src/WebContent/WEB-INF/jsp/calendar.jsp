@@ -20,7 +20,7 @@
 		</header>
 	</div>
 
-<h1>カレンダーページちゃん</h1>
+<div class="title">Calendar</div>
 <p class="yearMonth"></p>
 <div id="calendar"></div>
 

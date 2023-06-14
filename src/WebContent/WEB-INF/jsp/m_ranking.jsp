@@ -24,7 +24,7 @@
 		</header>
 	</div>
 
-<div class="ranking">Monthly Ranking</div>
+<div class="title">Monthly Ranking</div>
 <!-- ここにグラフ -->
 <canvas width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
