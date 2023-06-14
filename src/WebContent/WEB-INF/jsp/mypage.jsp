@@ -24,9 +24,6 @@
  <div class="datetime" id="datetime"></div>
 <div class=title>My Page</div>
 
-	<div class="title">
-	 	<div class="label">My Page</div>
-	</div>
 
 	<form name="mypage" method="POST" action="/WEB-INF/jsp/mypage.jsp">
 
