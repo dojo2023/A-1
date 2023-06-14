@@ -1,48 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/jiro_power/css/timer.css">
-
-<title>タイマーページ</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/jiro_power/css/timer.css">
+    <title>Timer with Progress Indicator</title>
 </head>
 <body>
-<!-- 画面上部ステータス表示 -->
-	<div class="status">
-		<header>
-			<img src=""> <!-- ロゴ貼る -->
-			<p>${level}</p> <!--  {}の中身変える-->
-			<p><div id="current_date"></div> <!--  id名前合わせる-->
-			<p>${name}</p> <!--  {}の中身変える-->
-		</header>
-	</div>
 
-<h1>タイマーページちゃん</h1>
-<div class=timer>Timer</div><!-- 文字を表示 -->
-<div class=trainingtime>Training Time</div><!-- 文字を表示 -->
-<!-----タイマーの60分を表示------------------------------------------>
-            <p id="default">60：00</p>
-<!-----スタートボタンを表示----------------------------------------->
-            <button id="start">スタート</button>
-<!-----ストップボタンを表示----------------------------------------->
-            <button id="stop">ストップ</button>
-<!-----リセットボタンを表示----------------------------------------->
-            <button id="reset">リセット</button>
+    <div class="main-container center">
 
-<!-- 画面下部メニューバー表示 -->
-	<div class="menu">
-		<footer>
-			<a href="/jiro_power/TrainingRecordServlet"><img src="./img/record.png"></a>
-			<a href="/jiro_power/CalendarServlet"><img src="./img/calender.png"></a>
-			<a href="/jiro_power/RankingServlet"><img src="./img/ranking.png"></a>
-			<a href="/jiro_power/TimerServlet"><img src="./img/timer.png"></a>
-			<a href="/jiro_power/MypageServlet"><img src="./img/mypage.png"></a>
-		</footer>
-	</div>
-<script src="./js/common.js"></script>
-<script src="./js/timer.js"></script>
+    <div class="circle-container center">
+        <div class="semicircle"></div>
+        <div class="semicircle"></div>
+        <div class="semicircle"></div>
+        <div class="outermost-circle"></div>
+    </div>
+    </div>
+
+    <!-- timer -->
+    <div class ="timer-container center">
+    <div class="timer center"></div>
+    </div>
+
+    <script src="/jiro_power/js/timer.js"></script>
+     <div class="timer center"></div>
+
 </body>
 </html>
