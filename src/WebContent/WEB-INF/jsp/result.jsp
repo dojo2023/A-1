@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h1>リザルトページちゃん</h1>
+<div class=title>Result</div>
 		<img src=""> <!-- ロゴ貼る -->
 		<p>${name}</p> <!--  {}の中身変える-->
 		<p>${level}</p> <!--  {}の中身変える-->

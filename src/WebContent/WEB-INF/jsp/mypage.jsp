@@ -22,11 +22,8 @@
 	</div>
 
  <div class="datetime" id="datetime"></div>
-<h1>My Page</h1>
+<div class=title>My Page</div>
 
-	<div class="title">
-	 	<div class="label">My Page</div>
-	</div>
 
 	<form name="mypage" method="POST" action="/WEB-INF/jsp/mypage.jsp">
 
@@ -50,11 +47,11 @@
 	</div>
 
 	<div class="update" id="update">
-	 <a href="jiro_power/Web-INF/jsp/mypage.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
+	 <a href="./jsp/mypage.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
 	</div>
 
 	<div class="logout" id="logout">
-	 <a href="jiro_power/Web-INF/jsp/logout.jsp"><img src=""></a> <!-- srcの後、アイコンのリンク入れる -->
+	 <a href="./jsp/logout.jsp"><img src=""></a> <!-- srcの後、ログアウトアイコンのリンク入れる -->
 	</div>
 
 <!-- 画面下部メニューバー表示 -->

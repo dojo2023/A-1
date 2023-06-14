@@ -11,6 +11,8 @@
 </head>
 <body>
 
+<div class=title>Timer</div>
+
     <div class="main-container center">
 
     <div class="circle-container center">
