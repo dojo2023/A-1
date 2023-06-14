@@ -24,7 +24,7 @@
 		</header>
 	</div>
 
-<div class="ranking">Ranking</div>
+<div class="title">Ranking</div>
 <!-- ここにグラフ -->
 <canvas width="300" height="400"></canvas>
 <!-- 切り替えボタン -->

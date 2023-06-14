@@ -7,6 +7,7 @@
 <title>ログイン</title>
 </head>
 <body>
+    <div class="title">Login</div>
 	<img src=""> <!-- ロゴ貼る -->
 	<div id="login">
 		<form name='form-login' method="POST" action="/jiro_power/LoginServlet">

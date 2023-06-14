@@ -23,7 +23,7 @@
 		</header>
 	</div>
 
-<div class="ranking">Weekly Ranking</div>
+<div class="title">Weekly Ranking</div>
 <!-- ここにグラフ -->
 <canvas width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
