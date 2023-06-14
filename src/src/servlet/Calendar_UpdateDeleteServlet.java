@@ -14,13 +14,13 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class Calendar_UpdateDelete
  */
 @WebServlet("/Calendar_UpdateDelete")
-public class Calendar_UpdateDelete extends HttpServlet {
+public class Calendar_UpdateDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Calendar_UpdateDelete() {
+    public Calendar_UpdateDeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
