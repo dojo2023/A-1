@@ -1,5 +1,6 @@
 package test;
 
+import java.sql.Date;
 import java.util.List;
 
 import dao.TrainingrecordDao;
@@ -8,6 +9,7 @@ import model.Trainingrecord;
 public class TrainingRecordDaoTest {
 	public static void main(String[] args) {
 		//testTrainingRegist(); トレーニング記録登録のテスト
+		testTrainingRecordSearch(); //トレーニング記録検索のテスト
 		testTrainingRecordUpdate(); //トレーニング記録更新のテスト
 	}
 
@@ -38,6 +40,29 @@ public class TrainingRecordDaoTest {
 				System.out.println("登録失敗！");
 			}
 	}*/
+
+	//select()のテスト
+	public static void testTrainingRecordSearch() {
+		TrainingrecordDao dao = new TrainingrecordDao();
+		System.out.println("---------- select()のテスト ----------");
+		Trainingrecord seRec = new Trainingrecord(Date.valueOf("2023-06-15"), 1);
+
+		if (dao.select(seRec) != null) {
+			System.out.println("検索成功！");
+			List<Trainingrecord> recordList1 = dao.select(seRec);
+			for (Trainingrecord record : recordList1) {
+				System.out.println("training_menu：" + record.getTraining_menu());
+				System.out.println("training_weight : " + record.getTraining_weight());
+				System.out.println("training_count : " + record.getTraining_count());
+				System.out.println("training_set : " + record.getTraining_set());
+				System.out.println("training_exp : " + record.getTraining_exp());
+			}
+		}
+		else {
+			System.out.println("更新失敗！");
+		}
+	}
+
 	//update()のテスト
 
 	public static void testTrainingRecordUpdate(){
@@ -50,11 +75,11 @@ public class TrainingRecordDaoTest {
 			System.out.println("更新成功！");
 			List<Trainingrecord> recordList1 = dao.select(upRec);
 			for (Trainingrecord record : recordList1) {
-				System.out.println("TRAINING_MENU：" + record.getTraining_menu());
-				System.out.println("TRAINING_WEIGHT : " + record.getTraining_weight());
-				System.out.println("TRAINING_COUNT : " + record.getTraining_count());
-				System.out.println("TRAINING_SET : " + record.getTraining_set());
-				System.out.println("TRAINING_EXP : " + record.getTraining_exp());
+				System.out.println("training_menu：" + record.getTraining_menu());
+				System.out.println("training_weight : " + record.getTraining_weight());
+				System.out.println("training_count : " + record.getTraining_count());
+				System.out.println("training_set : " + record.getTraining_set());
+				System.out.println("training_exp : " + record.getTraining_exp());
 			}
 		}
 		else {

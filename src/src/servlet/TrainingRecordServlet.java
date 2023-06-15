@@ -63,8 +63,6 @@ public class TrainingRecordServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				String strDate = request.getParameter("training_record_date");
 	            Date training_record_date = Date.valueOf(strDate);
-	            System.out.println("Date型 = " +  training_record_date);
-				System.out.println(session.getAttribute("id")+ "AAAAAAAAAAAAAA");
 				int user_id =  (int) session.getAttribute("id");
 				String training_menu = request.getParameter("training_menu");
 				double training_weight = Double.parseDouble(request.getParameter("training_weight"));

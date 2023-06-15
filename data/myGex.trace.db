@@ -193,3 +193,15 @@ update USER_INFORMATION set USER_NAME=?, USER_HEIGHT=?, USER_WEIGHT=?, where USE
 org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE USER_INFORMATION SET USER_NAME=?, USER_HEIGHT=?, USER_WEIGHT=?, WHERE[*] USER_ID=? "; 期待されるステートメント "identifier"
 Syntax error in SQL statement "UPDATE USER_INFORMATION SET USER_NAME=?, USER_HEIGHT=?, USER_WEIGHT=?, WHERE[*] USER_ID=? "; expected "identifier"; SQL statement:
 update USER_INFORMATION set USER_NAME=?, USER_HEIGHT=?, USER_WEIGHT=?, where USER_ID=? [42001-199]
+2023-06-15 16:12:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SELECT * FROM TRAINING_RECORD WHEREUSER_ID =[*]? "
+Syntax error in SQL statement "SELECT * FROM TRAINING_RECORD WHEREUSER_ID =[*]? "; SQL statement:
+select * from TRAINING_RECORD WHEREuser_id =? [42000-199]
+2023-06-15 16:12:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "SET" が見つかりません
+Table "SET" not found; SQL statement:
+update set TRAINING_RECORD where(training_menu,training_weight,training_count,training_set,training_exp)VALUES(?, ?, ?, ?, ?) [42102-199]
+2023-06-15 16:12:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "SET" が見つかりません
+Table "SET" not found; SQL statement:
+update set TRAINING_RECORD where(training_menu,training_weight,training_count,training_set,training_exp)VALUES(?, ?, ?, ?, ?) [42102-199]
