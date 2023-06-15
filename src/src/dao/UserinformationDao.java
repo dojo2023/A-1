@@ -12,9 +12,9 @@ import model.Userinformation;
 
 public class UserinformationDao {
 	// ログインできるならtrueを返す
-	public String isLoginOK(Userinformation userinformation) {
+	public int isLoginOK(Userinformation userinformation) {
 		Connection conn = null;
-		String loginResult = null;
+		int loginResult = 0;
 
 		try {
 			// JDBCドライバを読み込む
@@ -34,7 +34,7 @@ public class UserinformationDao {
 
 			// メールアドレスとパスワードが一致するユーザーがいたかどうかをチェックする
 			if (rs.next()) {
-				loginResult =rs.getString( "user_id");
+				loginResult =rs.getInt( "user_id");
 			};
 			/*俺は正しかった
 			 * if (rs.getInt("count(*)") == 1) {
@@ -47,11 +47,11 @@ public class UserinformationDao {
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			loginResult = null;
+			loginResult = 0;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			loginResult = null;
+			loginResult = 0;
 		}
 		finally {
 			// データベースを切断
@@ -61,7 +61,7 @@ public class UserinformationDao {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					loginResult = null;
+					loginResult = 0;
 				}
 			}
 		}

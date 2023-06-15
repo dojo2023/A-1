@@ -16,7 +16,7 @@ public class UserinformationDaoTest {
 	// ユーザーが見つかる場合のテスト
 	public static void testIsLoginOK1() {
 		UserinformationDao dao = new UserinformationDao();
-		if (dao.isLoginOK(new Userinformation("jiro@jiro", "jirojiro")) != null) {
+		if (dao.isLoginOK(new Userinformation("jiro@jiro", "jirojiro")) != 0) {
 			System.out.println("testIsLoginOK1：テストが成功しました");
 		}
 		else {
@@ -27,7 +27,7 @@ public class UserinformationDaoTest {
 	// ユーザーが見つからない場合のテスト
 	public static void testIsLoginOK2() {
 		UserinformationDao dao = new UserinformationDao();
-		if (dao.isLoginOK(new Userinformation("DOJO", "pass")) != null) {
+		if (dao.isLoginOK(new Userinformation("DOJO", "pass")) != 0) {
 			System.out.println("testIsLoginOK2：テストが成功しました");
 		}
 		else {
