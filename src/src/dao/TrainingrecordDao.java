@@ -23,7 +23,7 @@ public class TrainingrecordDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
 
 				// SQL文を準備する
 							String sql = "insert into TRAINING_RECORD"
@@ -123,7 +123,7 @@ public class TrainingrecordDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
 
 				// SQL文を準備する
 				String sql = "update set TRAINING_RECORD where"
@@ -207,7 +207,7 @@ public class TrainingrecordDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
 
 				// SQL文を準備する
 				String sql = "delete from TRAINING_RECORD where training_record_id = ? ";
@@ -250,19 +250,18 @@ public class TrainingrecordDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
 
 				// SQL文を準備する
-				String sql = "select * from TRAINING_RECORD WHERE "
-						+ "training_record_date,"
-						+ "user_id "
-						+ "VALUES (?, ?)";
+				String sql = "select * from TRAINING_RECORD WHERE"
+						+ "(training_record_date = ? ,"
+						+ "user_id =?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
 				if (param.getTraining_record_date() != null) {
-
-					pStmt.setDate(1, (Date) param.getTraining_record_date());
+					java.sql.Date sqlDate = new java.sql.Date(param.getTraining_record_date().getTime());
+					pStmt.setDate(1, sqlDate);
 				}
 				else {
 					pStmt.setDate(1, null);
