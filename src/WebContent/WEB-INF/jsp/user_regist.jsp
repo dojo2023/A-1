@@ -62,7 +62,8 @@
 			<br>
 			<p>※体重が入力されていません。</p>
 
-			<input type="submit" name="regist" value="登録" onclick="showConfirmationDialog(event)">
+			<!-- <input type="submit" name="regist" value="登録" onclick="showConfirmationDialog(event)"> -->
+			<input type="button" name="regist" value="登録" onclick="showConfirmationDialog(event)">
 
 		</form>
 	</div> <!-- id="login" -->
