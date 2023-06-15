@@ -18,7 +18,7 @@
 	</header>
 
 	<div id="regist">
-		<form id="myForm" name='user_regist' method="POST" action="/jiro_power/LoginServlet" >
+		<form id="myForm" name='user_regist' method="GET" action="/jiro_power/LoginServlet" >
 			<label>ユーザー名</label>
 			<input type="text" id="user_name" name="User_Name" class ="user_name"
 			placeholder="8文字以内" maxlength="8" required>
@@ -39,7 +39,7 @@
 			<p>※入力されたパスワードは不適正です。</p>
 
 			<label>性別</label>
-				<input type="radio" id="sexChoice1" name="sex" value=1>
+				<input type="radio" id="sexChoice1" name="sex" value=1 checked>
 				<label>man</label>
 
 				<input type="radio" id="sexChoice2" name="sex" value=2>

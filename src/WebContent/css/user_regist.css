@@ -31,7 +31,7 @@ body {
 	height: 200px;
 
 	/*場所の指定を相対的にする  */
-	position: relative;
+	position: relative;  							/* absoluteで指定する */
 	/*今いる場所の上から30pxの場所へ移動  */
 	top: 30px;
 	/*今いる場所の左から50pxの場所へ移動  */

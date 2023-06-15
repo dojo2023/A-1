@@ -11,6 +11,7 @@
 
 // フォームの送信時に実行される関数
 function validateForm(event) {
+
   var userName = document.getElementById("user_name").value;
 
   // ユーザー名のチェック
@@ -18,9 +19,11 @@ function validateForm(event) {
     document.getElementById("user_name_error").textContent = "ユーザー名が記入されていません。";
     event.preventDefault(); // フォームの送信を中止
     return false;
+  }else{
+  	 document.getElementById("user_name_error").textContent = "";
   }
 
-	/*  else if (userName === ""){
+	/*  if (userName === ""){
 
 	  }*/
 
@@ -44,10 +47,10 @@ function validateForm(event) {
 
 	  }*/
 
-  else {
+/*  else {
     document.getElementById("user_name_error").textContent = "";
   }
-
+*/
   // 以下、他の項目のチェックを追加する
 
   return true; // フォームの送信を許可
@@ -83,12 +86,12 @@ function showConfirmationDialog(event) {
 
   // フォームのバリデーションを実行
   if (validateForm(event)) {
-    // 確認ダイアログを表示
+   /* // 確認ダイアログを表示
     if (confirm("登録しますか？")) {
       // フォームを送信
       document.getElementById("myForm").submit(); // フォームを送信する
-    }
-  }
+    }*/
+
 
   if (dialog) {
 				// 既存のダイアログが存在する場合は削除する
@@ -151,7 +154,7 @@ function showConfirmationDialog(event) {
 			document.body.appendChild(dialog);
 
 }
-
+}
 
 /*
  var dialog; // ダイアログ要素の参照を保持する変数
