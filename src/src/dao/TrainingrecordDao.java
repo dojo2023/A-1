@@ -36,7 +36,7 @@ public class TrainingrecordDao {
 
 				// SQL文を完成させる
 							if (card.getTraining_record_date() != null) {
-								
+
 								pStmt.setDate(1, (Date) card.getTraining_record_date());
 							}
 							else {
@@ -109,6 +109,132 @@ public class TrainingrecordDao {
 
 			// 結果を返す
 				return result;
+		}
+	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
+		public boolean update(Trainingrecord card) {
+			Connection conn = null;
+			boolean result = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+
+				// SQL文を準備する
+				String sql = "update set TRAINING_RECORD where"
+						+ "(training_menu,"
+						+ "training_weight,"
+						+ "training_count,"
+						+ "training_set,"
+						+ "training_exp)"
+						+ "VALUES(?, ?, ?, ?, ?)";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+				if (card.getTraining_menu() != null) {
+
+					pStmt.setString(1, card.getTraining_menu());
+				}
+				else {
+					pStmt.setString(1, null);
+				}
+				if (card.getTraining_weight() != 0) {
+					pStmt.setDouble(2, card.getTraining_weight());
+				}
+				else {
+					pStmt.setDouble(2, 0);
+				}
+
+				if (card.getTraining_count() != 0) {
+					pStmt.setInt(3, card.getTraining_count());
+				}
+				else {
+					pStmt.setInt(3, 0);
+				}
+
+				if (card.getTraining_set() != 0) {
+					pStmt.setInt(4, card.getTraining_set());
+				}
+				else {
+					pStmt.setInt(4, 0);
+				}
+
+				if (card.getTraining_exp() != 0) {
+					pStmt.setInt(5, card.getTraining_exp());
+				}
+				else {
+					pStmt.setInt(5, 0);
+				}
+			// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					result = true;
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			finally {
+			// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+			// 結果を返す
+			return result;
+		}
+
+		// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
+		public boolean delete(String number) {
+			Connection conn = null;
+			boolean result = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+
+				// SQL文を準備する
+				String sql = "delete from TRAINING_RECORD where training_record_id = ? ";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					result = true;
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+			// 結果を返す
+			return result;
 		}
 
 }

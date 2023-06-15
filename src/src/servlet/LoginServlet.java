@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UserinformationDao;
-import model.LoginUser;
 import model.Userinformation;
 
 /**
@@ -40,12 +39,14 @@ public class LoginServlet extends HttpServlet {
 
 		// ログイン処理を行う
 		UserinformationDao uDao = new UserinformationDao();
-		int id =  Integer.parseInt(uDao.isLoginOK(new Userinformation(email, pw)));
+		int id =  uDao.isLoginOK(new Userinformation(email, pw));
+
 		if(id != 0) {
 			// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			session.setAttribute("id", new LoginUser(id));
+			session.setAttribute("id",id);
+			System.out.println(session.getAttribute("id"));
 
 			// 記録サーブレットにリダイレクトする
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");

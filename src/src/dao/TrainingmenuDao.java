@@ -19,7 +19,7 @@ public class TrainingmenuDao{
 					Class.forName("org.h2.Driver");
 
 					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
 
 					// SQL文を準備する
 					String sqlTm = "select training_menu_magnification "

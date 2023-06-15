@@ -39,10 +39,10 @@
 			<p>※入力されたパスワードは不適正です。</p>
 
 			<label>性別</label>
-				<input type="radio" id="sexChoice1" name="sex" value="man">
+				<input type="radio" id="sexChoice1" name="sex" value=1>
 				<label>man</label>
 
-				<input type="radio" id="sexChoice2" name="sex" value="woman">
+				<input type="radio" id="sexChoice2" name="sex" value=2>
 				<label>woman</label>
 			<br>
 			<p>※どちらか選択してください。</p>
