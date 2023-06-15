@@ -21,14 +21,24 @@
 	<div class="title">Training Record</div>
 	</div>
 	<form method="POST" action="/jiro_power/TrainingRecordServlet">
-	<input type="date">
-	<select name="training_name">
-	<option>種目1</option>
-	<option>種目2</option>
-	<option>種目3</option>
+	<input type="date" name= "training_record_date">
+	<select name="training_menu">
+	<option>ベンチプレス</option>
+	<option>チェストプレス</option>
+	<option>ダンベルフライ</option>
+	<option>ラットプルダウン</option>
+	<option>デッドリフト</option>
+	<option>スクワット</option>
+	<option>レッグプレス</option>
+	<option>レッグエクステンション</option>
+	<option>サイドレイズ</option>
+	<option>フロントレイズ</option>
+	<option>ショルダープレス</option>
+	<option>アームカール</option>
+	<option>腹筋</option>
 	</select>
 	<input type = "number" name="training_weight"><p>kg</p>
-	<input type = "number" name="training_times"><p>回</p>
+	<input type = "number" name="training_count"><p>回</p>
 	<input type = "number" name="training_set"><p>セット</p>
 	<input type = "button" name="training_plus" value="+">
 	<input type = "submit" name="record" value="登録">

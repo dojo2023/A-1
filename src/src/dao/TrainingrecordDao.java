@@ -36,6 +36,7 @@ public class TrainingrecordDao {
 
 				// SQL文を完成させる
 							if (card.getTraining_record_date() != null) {
+								
 								pStmt.setDate(1, (Date) card.getTraining_record_date());
 							}
 							else {

@@ -1,8 +1,7 @@
 package servlet;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -64,9 +63,8 @@ public class TrainingRecordServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
 				int training_id  = 0;
-				String strDate = request.getParameter("training_record_id");
-				SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
-	            Date training_record_date = sdFormat.parse(strDate);
+				String strDate = request.getParameter("training_record_date");
+	            Date training_record_date = Date.valueOf(strDate);
 	            System.out.println("Date型 = " +  training_record_date);
 				System.out.println(session.getAttribute("id")+ "AAAAAAAAAAAAAA");
 				LoginUser lu = (LoginUser) session.getAttribute("id");
