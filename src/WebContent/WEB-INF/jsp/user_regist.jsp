@@ -18,7 +18,7 @@
 	</header>
 
 	<div id="regist">
-		<form name='user_regist' method="POST" action="/jiro_power/UserRegistServlet">
+		<form id="myForm" name='user_regist' method="POST" action="/jiro_power/LoginServlet">
 			<label>ユーザー名</label>
 			<input type="text" id="user_name" name="User_Name"
 			placeholder="8文字以内" maxlength="8" required>
@@ -60,18 +60,10 @@
 			<br>
 			<p>※体重が入力されていません。</p>
 
-			<input type="submit" name="regist" value="登録">
+			<input type="submit" name="regist" value="登録" onclick="showConfirmationDialog(event)">
 
 		</form>
 	</div> <!-- id="login" -->
-<h1>自作確認画面が表示されるよ！</h1>
-
-	<form id="myForm" action="リンク先のURL" method="GET">
-		<!--なんかないと嫌なのでテキストボックスを無駄に定義  -->
-		<input type="text" name="tx" value="">
-		<!-- ボタンを押して確認ウィンドウを出すためにjavaScriptの関数を呼び出す -->
-		<button onclick="showConfirmationDialog(event)">ボタンを押して確認</button>
-	</form>
 <script src="./js/user_regist.js"></script>
 </body>
 </html>

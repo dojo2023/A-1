@@ -8,12 +8,16 @@ body {
 }
 /* ダイアログボックス本体のカスタムスタイルを定義 */
 .custom-dialog {
+	/* 文字の色 */
+	color: #ffffff;
+	/* 中央揃え */
+	text-align: center;
 	/*背景色の指定  */
-	background-color: lightblue;
+	background-color: #242424;
 	/*内余白の指定  */
 	padding: 10px;
 	/*まわりの線の指定  */
-	border: 1px solid blue;
+	border: 1px solid #5aff19;
 	/*枠の角を丸める  */
 	border-radius: 5px;
 	/*幅指定  */
@@ -66,7 +70,7 @@ body {
 	transition: all 0.3s ease;
 	overflow: hidden;
 	color: #1fd1f9;
-	color: green;
+	color:#5aff19;
 }
 
 .btn-1:after {
