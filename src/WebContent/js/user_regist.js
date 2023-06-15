@@ -18,7 +18,33 @@ function validateForm(event) {
     document.getElementById("user_name_error").textContent = "ユーザー名が記入されていません。";
     event.preventDefault(); // フォームの送信を中止
     return false;
-  } else {
+  }
+
+	/*  else if (userName === ""){
+
+	  }*/
+
+	/*  else if (userName === ""){
+
+	  }*/
+
+	/*  else if (userName === ""){
+
+	  }*/
+
+	/*  else if (userName === ""){
+
+	  }*/
+
+	/*  else if (userName === ""){
+
+	  }*/
+
+	/*  else if (userName === ""){
+
+	  }*/
+
+  else {
     document.getElementById("user_name_error").textContent = "";
   }
 
@@ -62,7 +88,9 @@ function showConfirmationDialog(event) {
       // フォームを送信
       document.getElementById("myForm").submit(); // フォームを送信する
     }
-  }if (dialog) {
+  }
+
+  if (dialog) {
 				// 既存のダイアログが存在する場合は削除する
 				dialog.remove();
 			}
