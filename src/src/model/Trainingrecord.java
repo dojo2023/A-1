@@ -31,12 +31,25 @@ public Trainingrecord( int training_record_id, Date training_record_date,int use
 	this.training_exp = training_exp;
 }
 
+//トレーニング記録登録のコンストラクタ
 
 public Trainingrecord(Date training_record_date, int user_id, String training_menu,
 		double training_weight, int training_count, int training_set, int training_exp) {
 	super();
 	this.training_record_date = training_record_date;
 	this.user_id = user_id;
+	this.training_menu = training_menu;
+	this.training_weight = training_weight;
+	this.training_count = training_count;
+	this.training_set = training_set;
+	this.training_exp = training_exp;
+}
+
+//トレーニング記録更新のコンストラクタ
+
+public Trainingrecord(String training_menu, double training_weight, int training_count, int training_set,
+		int training_exp) {
+	super();
 	this.training_menu = training_menu;
 	this.training_weight = training_weight;
 	this.training_count = training_count;
