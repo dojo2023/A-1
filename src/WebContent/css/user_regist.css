@@ -6,6 +6,11 @@ body {
 .title {
 	color: #ffffff;
 }
+
+.error-message {
+  color: red;
+}
+
 /* ダイアログボックス本体のカスタムスタイルを定義 */
 .custom-dialog {
 	/* 文字の色 */

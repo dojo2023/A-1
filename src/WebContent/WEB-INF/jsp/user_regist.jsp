@@ -18,12 +18,14 @@
 	</header>
 
 	<div id="regist">
-		<form id="myForm" name='user_regist' method="POST" action="/jiro_power/LoginServlet">
+		<form id="myForm" name='user_regist' method="POST" action="/jiro_power/LoginServlet" >
 			<label>ユーザー名</label>
-			<input type="text" id="user_name" name="User_Name"
+			<input type="text" id="user_name" name="User_Name" class ="user_name"
 			placeholder="8文字以内" maxlength="8" required>
 			<br>
 			<p>ユーザー名が記入されていません。</p>
+			 <p id="user_name_error" class="error-message"></p> <!-- ユーザー名のエラーメッセージ -->
+
 
 			<label>メールアドレス</label>
 			<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" required>
@@ -64,6 +66,6 @@
 
 		</form>
 	</div> <!-- id="login" -->
-<script src="./js/user_regist.js"></script>
+<script src="/jiro_power/js/user_regist.js"></script>
 </body>
 </html>

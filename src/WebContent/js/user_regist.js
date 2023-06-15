@@ -1,6 +1,51 @@
 /**
  *
  */
+
+
+
+
+
+
+/* エラーメッセージ*/
+
+// フォームの送信時に実行される関数
+function validateForm(event) {
+  var userName = document.getElementById("user_name").value;
+
+  // ユーザー名のチェック
+  if (userName === "") {
+    document.getElementById("user_name_error").textContent = "ユーザー名が記入されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  } else {
+    document.getElementById("user_name_error").textContent = "";
+  }
+
+  // 以下、他の項目のチェックを追加する
+
+  return true; // フォームの送信を許可
+}
+
+// 登録ボタンクリック時の処理
+function showConfirmationDialog(event) {
+  event.preventDefault(); // デフォルトのフォーム送信を防ぐ
+
+  // フォームのバリデーションを実行
+  if (validateForm(event)) {
+    // 確認ダイアログを表示
+    if (confirm("登録しますか？")) {
+      // フォームを送信
+      document.getElementById("myForm").submit(); // フォームを送信する
+    }
+  }
+}
+
+
+
+
+
+
  var dialog; // ダイアログ要素の参照を保持する変数
 
 		//ボタンを押したときに呼び出される関数
@@ -67,3 +112,4 @@
 			//そのダイアログボックスをbodyの一番うしろに表示する
 			document.body.appendChild(dialog);
 		}
+
