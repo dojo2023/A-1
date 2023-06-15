@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/jiro_power/css/ranking.css">
 <link rel="stylesheet" href="/jiro_power/css/common.css">
 
@@ -29,9 +30,9 @@
 <!-- ここにグラフ -->
 <canvas width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
-<input type="submit" value="Ranking">
-<input type="submit" value="Monthly">
-<input type="submit" value="Weekly">
+<input type="submit" name="submit" value="Ranking">
+<input type="submit" name="submit" value="Monthly">
+<input type="submit" name="submit" value="Weekly">
 
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">

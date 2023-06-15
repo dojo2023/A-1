@@ -1,7 +1,9 @@
 @charset "UTF-8";
+@media (max-width: 415px) {
 .status {
 	background-color: #242424;
 }
 .menu {
 	background-color: #242424;
+}
 }
