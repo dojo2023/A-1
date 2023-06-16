@@ -312,10 +312,10 @@ public class TrainingrecordDao {
 			return cardList;
 		}
 
-		// 引数paramで検索項目を指定し、検索結果のリストを返す
-				public boolean sum(Trainingrecord param) {
+		// ログインユーザーの総獲得経験値
+				public String sum(Trainingrecord param) {
 					Connection conn = null;
-					boolean result = false;
+					String result = null;
 
 					try {
 						// JDBCドライバを読み込む
@@ -339,14 +339,17 @@ public class TrainingrecordDao {
 						}
 						// SQL文を実行し、結果表を取得する
 						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+
 					}
 					catch (SQLException e) {
 						e.printStackTrace();
-						result = false;
+						result = null;
 					}
 					catch (ClassNotFoundException e) {
 						e.printStackTrace();
-						result = false;
+						result = null;
 					}
 					finally {
 						// データベースを切断
@@ -356,7 +359,7 @@ public class TrainingrecordDao {
 							}
 							catch (SQLException e) {
 								e.printStackTrace();
-								result = false;
+								result = null;
 							}
 						}
 					}
