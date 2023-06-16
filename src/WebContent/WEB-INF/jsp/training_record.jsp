@@ -57,7 +57,7 @@
                     <span class="icon">
                     <ion-icon name="pencil-outline"></ion-icon>
                     </span>
-                    <span class="text">Recode</span>
+                    <span class="text">Record</span>
                 </a>
             </li>
             <li class="list">
@@ -65,7 +65,7 @@
                     <span class="icon">
                     <ion-icon name="calendar-outline"></ion-icon>
                     </span>
-                    <span class="text">calendar</span>
+                    <span class="text">Calendar</span>
                 </a>
             </li>
             <li class="list">
