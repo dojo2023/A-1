@@ -117,7 +117,7 @@ body
     border: 6px solid var(---clr);
     transition: 0.5s;
 }
-.indicator::before
+/* .indicator::before
 {
     content: '';
     position: absolute;
@@ -140,7 +140,7 @@ body
     background: transparent;
     border-top-left-radius: 20%;
     box-shadow: -1px -10px 0 0 var(---clr);
-}
+} */
 
 
 .menu ul li.active:nth-child(1).active ~ .indicator
