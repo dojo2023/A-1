@@ -28,17 +28,14 @@ body {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-:root
-{
-    ---clr: white;
-}
+
 body
 {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: -o-repeating-linear-gradient(---clr);
+    background: -o-repeating-linear-gradient(white);
 }
 .menu
 {
@@ -93,7 +90,7 @@ body
 .menu ul li a .text
 {
     position: absolute;
-    color: var(---clr);
+    color: var(white);
     font-weight: 400;
     font-size: 0.75px;
     letter-spacing: 0.05em;
@@ -114,7 +111,7 @@ body
     height: 70px;
     background: #5AFF19;
     border-radius: 50%;
-    border: 6px solid var(---clr);
+    border: 6px solid var(white);
     transition: 0.5s;
 }
 
@@ -128,7 +125,7 @@ body
     height: 20px;
     background: transparent;
     border-top-left-radius: 20%;
-    box-shadow: 1px -10px 0 0 var(---clr);
+    box-shadow: 1px -10px 0 0 var(white);
 }
 .indicator::after
 {
@@ -140,7 +137,7 @@ body
     height: 20px;
     background: transparent;
     border-top-left-radius: 20%;
-    box-shadow: -1px -10px 0 0 var(---clr);
+    box-shadow: -1px -10px 0 0 var(white);
 } */
 
 
