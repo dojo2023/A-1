@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/jiro_power/css/mypage.css">
 <link rel="stylesheet" href="/jiro_power/css/common.css">
+<meta name="viewport" content="initial-scale=1">
 
 <title>マイページ</title>
 
@@ -91,7 +92,7 @@
                     <span class="icon">
                     <ion-icon name="pencil-outline"></ion-icon>
                     </span>
-                    <span class="text">Recode</span>
+                    <span class="text">Record</span>
                 </a>
             </li>
             <li class="list">
@@ -99,7 +100,7 @@
                     <span class="icon">
                     <ion-icon name="calendar-outline"></ion-icon>
                     </span>
-                    <span class="text">calendar</span>
+                    <span class="text">Calendar</span>
                 </a>
             </li>
             <li class="list">
