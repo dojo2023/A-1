@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1">
 <link rel="stylesheet" href="/jiro_power/css/training_record.css">
 <link rel="stylesheet" href="/jiro_power/css/common.css">
 

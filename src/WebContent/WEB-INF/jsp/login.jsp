@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1">
 <title>ログイン</title>
 </head>
 <body>
