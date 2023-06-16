@@ -55,14 +55,22 @@ function validateForm(event) {
   	 document.getElementById("password_error").textContent = "";
   }
 
-  // 生年月日のチェック
-  if (birth === "") {
-    document.getElementById("birth_error").textContent = "※生年月日が入力されていません。";
+// 生年月日のチェック
+if (birth === "") {
+  document.getElementById("birth_error").textContent = "※生年月日が入力されていません。";
+  event.preventDefault(); // フォームの送信を中止
+  return false;
+} else {
+  var currentDate = new Date();
+  var selectedDate = new Date(birth);
+  if (selectedDate > currentDate) {
+    document.getElementById("birth_error").textContent = "※未来の日付は選択できません。";
     event.preventDefault(); // フォームの送信を中止
     return false;
-  }else{
-  	 document.getElementById("birth_error").textContent = "";
+  } else {
+    document.getElementById("birth_error").textContent = "";
   }
+}
 
   // 身長のチェック
   if (height === "") {
@@ -104,6 +112,8 @@ function validateEmail(email) {
   var regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
   return regex.test(email);
 }
+
+
 
 
 /*

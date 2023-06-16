@@ -30,14 +30,13 @@
 			<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" required>
 			<br>
 			<p id="mail_address_error" class="error-message"></p>
-			<p>※このメールアドレスは既に登録されています。</p>
+			<!-- <p>※このメールアドレスは既に登録されています。</p> -->
 
 			<label>パスワード</label>
 			<input type="password" id="password" name="Password" placeholder="8文字以上20文字以下"
 			minlength="8" maxlength="20" required>
 			<br>
 			<p id="password_error" class="error-message"></p>
-			<p>※入力されたパスワードは不適正です。</p>
 
 			<label>性別</label>
 				<input type="radio" id="sexChoice1" name="sex" value=1 checked>
@@ -46,13 +45,19 @@
 				<input type="radio" id="sexChoice2" name="sex" value=2>
 				<label>woman</label>
 			<br>
-			<p>※どちらか選択してください。</p>
 
 			<label>生年月日</label>
-			<input type="number" id="birth" name="Birth" required>
+			<input type="date" id="birth" name="Birth" max="9999-12-31" required>
 			<br>
-			<p>※生年月日が入力されていません。</p>
 			<p id="birth_error" class="error-message"></p>
+
+<!--  			<label for="dob">生年月日:</label>
+			  <div class="dob-input">
+			    <input type="text" id="dob-day" maxlength="2" placeholder="DD">
+			    <input type="text" id="dob-month" maxlength="2" placeholder="MM">
+			    <input type="text" id="dob-year" maxlength="4" placeholder="YYYY">
+			  </div>
+-->
 
 			<label>身長</label>
 			<input type="number" id="height" name="Height" placeholder="cm単位" min="1" max="300" required>
