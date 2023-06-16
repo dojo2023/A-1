@@ -13,37 +13,81 @@
 function validateForm(event) {
 
   var userName = document.getElementById("user_name").value;
+  var mailAddress = document.getElementById("mail_address").value;
+  var password = document.getElementById("password").value;
+  var birth = document.getElementById("birth").value;
+  var height = document.getElementById("height").value;
+  var weight = document.getElementById("weight").value;
+
 
   // ユーザー名のチェック
   if (userName === "") {
-    document.getElementById("user_name_error").textContent = "ユーザー名が記入されていません。";
+    document.getElementById("user_name_error").textContent = "※ユーザー名が入力されていません。";
     event.preventDefault(); // フォームの送信を中止
     return false;
   }else{
   	 document.getElementById("user_name_error").textContent = "";
   }
 
+  // メールアドレスのチェック
+  if (mailAddress === "") {
+    document.getElementById("mail_address_error").textContent = "※メールアドレスが入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  }else if (!validateEmail(mailAddress)) {
+    document.getElementById("mail_address_error").textContent = "※正しい形式のメールアドレスを入力してください。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  }else{
+  	 document.getElementById("mail_address_error").textContent = "";
+  }
+
+  // パスワードのチェック
+  if (password === "") {
+    document.getElementById("password_error").textContent = "※パスワードが入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  }else if(password.length < 8) {
+	document.getElementById("password_error").textContent = "※パスワードは8文字以上入力してください。";
+	event.preventDefault(); // フォームの送信を中止
+	  return false;
+  }else{
+  	 document.getElementById("password_error").textContent = "";
+  }
+
+  // 生年月日のチェック
+  if (birth === "") {
+    document.getElementById("birth_error").textContent = "※生年月日が入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  }else{
+  	 document.getElementById("birth_error").textContent = "";
+  }
+
+  // 身長のチェック
+  if (height === "") {
+    document.getElementById("height_error").textContent = "※身長が入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  }else{
+  	 document.getElementById("height_error").textContent = "";
+  }
+
+  // 体重のチェック
+  if (weight === "") {
+    document.getElementById("weight_error").textContent = "※体重が入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  }else{
+  	 document.getElementById("weight_error").textContent = "";
+  }
+
+
 	/*  if (userName === ""){
 
 	  }*/
 
-	/*  else if (userName === ""){
-
-	  }*/
-
-	/*  else if (userName === ""){
-
-	  }*/
-
-	/*  else if (userName === ""){
-
-	  }*/
-
-	/*  else if (userName === ""){
-
-	  }*/
-
-	/*  else if (userName === ""){
+	/*  if (userName === ""){
 
 	  }*/
 
@@ -51,9 +95,14 @@ function validateForm(event) {
     document.getElementById("user_name_error").textContent = "";
   }
 */
-  // 以下、他の項目のチェックを追加する
 
   return true; // フォームの送信を許可
+}
+
+// メールアドレスの形式チェック
+function validateEmail(email) {
+  var regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+  return regex.test(email);
 }
 
 
@@ -72,7 +121,6 @@ function showConfirmationDialog(event) {
     }
   }
 }
-
 
 */
 
@@ -100,7 +148,7 @@ function showConfirmationDialog(event) {
 			//<div></div>タグを作り出す　dialogという変数に格納
 			dialog = document.createElement("div");
 			//その中に文字列を入れる
-			dialog.innerHTML = "登録しますか？<hr>";
+			dialog.innerHTML = "この内容で登録しますか？<hr>";
 			//CSSをあとで適用させるので、上記のdivタグにクラスをつける
 			dialog.className = "custom-dialog";
 
@@ -155,6 +203,10 @@ function showConfirmationDialog(event) {
 
 }
 }
+
+
+
+
 
 /*
  var dialog; // ダイアログ要素の参照を保持する変数

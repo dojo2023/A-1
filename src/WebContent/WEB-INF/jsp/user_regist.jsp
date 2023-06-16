@@ -23,19 +23,20 @@
 			<input type="text" id="user_name" name="User_Name" class ="user_name"
 			placeholder="8文字以内" maxlength="8" required>
 			<br>
-			<p>ユーザー名が記入されていません。</p>
-			 <p id="user_name_error" class="error-message"></p> <!-- ユーザー名のエラーメッセージ -->
+			<p id="user_name_error" class="error-message"></p> <!-- ユーザー名のエラーメッセージ -->
 
 
 			<label>メールアドレス</label>
 			<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" required>
 			<br>
+			<p id="mail_address_error" class="error-message"></p>
 			<p>※このメールアドレスは既に登録されています。</p>
 
 			<label>パスワード</label>
 			<input type="password" id="password" name="Password" placeholder="8文字以上20文字以下"
 			minlength="8" maxlength="20" required>
 			<br>
+			<p id="password_error" class="error-message"></p>
 			<p>※入力されたパスワードは不適正です。</p>
 
 			<label>性別</label>
@@ -51,16 +52,17 @@
 			<input type="number" id="birth" name="Birth" required>
 			<br>
 			<p>※生年月日が入力されていません。</p>
+			<p id="birth_error" class="error-message"></p>
 
 			<label>身長</label>
 			<input type="number" id="height" name="Height" placeholder="cm単位" min="1" max="300" required>
 			<br>
-			<p>※身長が入力されていません。</p>
+			<p id="height_error" class="error-message"></p>
 
 			<label>体重</label>
 			<input type="number" id="weight" name="Weight" placeholder="kg単位" min="1" max="300" required>
 			<br>
-			<p>※体重が入力されていません。</p>
+			<p id="weight_error" class="error-message"></p>
 
 			<!-- <input type="submit" name="regist" value="登録" onclick="showConfirmationDialog(event)"> -->
 			<input type="button" name="regist" value="登録" onclick="showConfirmationDialog(event)">
