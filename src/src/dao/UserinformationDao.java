@@ -172,7 +172,7 @@ public class UserinformationDao {
 						}
 
 						if (card.getUser_birth() != null && !card.getUser_birth().equals("")) {
-							pStmt.setString(3, card.getUser_birth());
+							pStmt.setDate(3, card.getUser_birth());
 						}
 						else {
 							pStmt.setString(3, null);
