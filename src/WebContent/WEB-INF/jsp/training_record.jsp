@@ -20,8 +20,8 @@
 		</header>
 	<div class="title">Training Record</div>
 	</div>
-	<form method="POST" action="/jiro_power/TrainingRecordServlet">
-	<input type="date" name= "training_record_date">
+	<form method="POST" action="/jiro_power/TrainingRecordServlet" id="form">
+	<input type="date" name= "training_record_date" Required/>
 	<select name="training_menu">
 	<option>ベンチプレス</option>
 	<option>チェストプレス</option>
@@ -37,24 +37,64 @@
 	<option>アームカール</option>
 	<option>腹筋</option>
 	</select>
-	<input type = "number" name="training_weight"><p>kg</p>
-	<input type = "number" name="training_count"><p>回</p>
-	<input type = "number" name="training_set"><p>セット</p>
-	<input type = "button" name="training_plus" value="+">
+	<input type = "number" name="training_weight" Required/><p>kg</p>
+	<input type = "number" name="training_count" Required/><p>回</p>
+	<input type = "number" name="training_set" Required/><p>セット</p>
+	<button  id = "button"  name="training_plus" disabled>+</button>
 	<input type = "submit" name="record" value="登録">
 	</form>
 
 
 <!-- 画面下部メニューバー表示 -->
-	<div class="menu">
-		<footer>
-			<a href="/jiro_power/TrainingRecordServlet"><img src="./img/record.png"></a>
-			<a href="/jiro_power/CalendarServlet"><img src="./img/calender.png"></a>
-			<a href="/jiro_power/RankingServlet"><img src="./img/ranking.png"></a>
-			<a href="/jiro_power/TimerServlet"><img src="./img/timer.png"></a>
-			<a href="/jiro_power/MypageServlet"><img src="./img/mypage.png"></a>
-		</footer>
-	</div>
+	<!--<div class="menu">
+        <ul>
+            <li class="list active">
+                <a href="/jiro_power/TrainingRecordServlet">
+                    <span class="icon">
+                    <ion-icon name="pencil-outline"></ion-icon>
+                    </span>
+                    <span class="text">Recode</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/jiro_power/CalendarServlet">
+                    <span class="icon">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    </span>
+                    <span class="text">calendar</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/jiro_power/RankingServlet">
+                    <span class="icon">
+                    <ion-icon name="trophy-outline"></ion-icon>
+                    </span>
+                    <span class="text">Ranking</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/jiro_power/TimerServlet">
+                    <span class="icon">
+                    <ion-icon name="timer-outline"></ion-icon>
+                    </span>
+                    <span class="text">Timer</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/jiro_power/MypageServlet">
+                    <span class="icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="text">Mypage</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+        </div>
+
+        <script src="calendar.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>-->
 
 <script src="./js/common.js"></script>
 <script src="./js/training_record.js"></script>

@@ -81,6 +81,7 @@ if (birth === "") {
   	 document.getElementById("height_error").textContent = "";
   }
 
+
   // 体重のチェック
   if (weight === "") {
     document.getElementById("weight_error").textContent = "※体重が入力されていません。";
