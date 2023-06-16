@@ -60,12 +60,12 @@
 -->
 
 			<label>身長</label>
-			<input type="number" id="height" name="Height" placeholder="cm単位" min="1" max="300" required>
+			<input type="number" id="height" name="Height" placeholder="cm単位" min="1" max="300">
 			<br>
 			<p id="height_error" class="error-message"></p>
 
 			<label>体重</label>
-			<input type="number" id="weight" name="Weight" placeholder="kg単位" min="1" max="300" required>
+			<input type="number" id="weight" name="Weight" placeholder="kg単位" min="30" max="300" required>
 			<br>
 			<p id="weight_error" class="error-message"></p>
 
