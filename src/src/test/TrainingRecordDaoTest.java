@@ -12,7 +12,7 @@ public class TrainingRecordDaoTest {
 		//testTrainingRegist(); トレーニング記録登録のテスト
 		//int TRID;
 		testTrainingRecordSearch(); //トレーニング記録検索のテスト
-		testTrainingRecordUpdate(); //トレーニング記録更新のテスト
+		//testTrainingRecordUpdate(); //トレーニング記録更新のテスト
 
 	}
 
@@ -73,7 +73,7 @@ public class TrainingRecordDaoTest {
 
 	//update()のテスト
 
-	public static void testTrainingRecordUpdate(){
+	/*public static void testTrainingRecordUpdate(){
 
 	TrainingrecordDao dao = new TrainingrecordDao();
 	System.out.println("---------- update()のテスト ----------");
@@ -94,5 +94,5 @@ public class TrainingRecordDaoTest {
 		else {
 			System.out.println("更新失敗！");
 		}
-	}
+	}*/
 }
