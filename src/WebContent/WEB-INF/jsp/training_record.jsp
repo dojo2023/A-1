@@ -21,6 +21,8 @@
 	<div class="title">Training Record</div>
 	</div>
 	<form method="POST" action="/jiro_power/TrainingRecordServlet" id="form">
+	<div id="target">
+	<div>
 	<input type="date" name= "training_record_date" Required/>
 	<select name="training_menu">
 	<option>ベンチプレス</option>
@@ -37,9 +39,11 @@
 	<option>アームカール</option>
 	<option>腹筋</option>
 	</select>
-	<input type = "number" name="training_weight" Required/><p>kg</p>
-	<input type = "number" name="training_count" Required/><p>回</p>
-	<input type = "number" name="training_set" Required/><p>セット</p>
+	<input type = "number" name="training_weight" min="1" max="999" Required/><p>kg</p>
+	<input type = "number" name="training_count" min="1" max="999" Required/><p>回</p>
+	<input type = "number" name="training_set" min="1" max="999" Required/><p>セット</p>
+	</div>
+	</div>
 	<button  id = "button"  name="training_plus" disabled>+</button>
 	<input type = "submit" name="record" value="登録">
 	</form>
