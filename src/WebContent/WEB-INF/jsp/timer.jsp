@@ -29,6 +29,53 @@
     <div class="timer center"></div>
     </div>
 
+    <!-- 画面下部メニューバー表示 -->
+	<div class="menu">
+        <ul>
+            <li class="list active">
+                <a href="/jiro_power/TrainingRecordServlet">
+                    <span class="icon">
+                    <ion-icon name="pencil-outline"></ion-icon>
+                    </span>
+                    <span class="text">Record</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/jiro_power/CalendarServlet">
+                    <span class="icon">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    </span>
+                    <span class="text">Calendar</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/jiro_power/RankingServlet">
+                    <span class="icon">
+                    <ion-icon name="trophy-outline"></ion-icon>
+                    </span>
+                    <span class="text">Ranking</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/jiro_power/TimerServlet">
+                    <span class="icon">
+                    <ion-icon name="timer-outline"></ion-icon>
+                    </span>
+                    <span class="text">Timer</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/jiro_power/MypageServlet">
+                    <span class="icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="text">Mypage</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+        </div>
+
     <script src="/jiro_power/js/timer.js"></script>
      <div class="timer center"></div>
 
