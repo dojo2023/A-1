@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("EMAIL");
 		String pw = request.getParameter("PW");
 
@@ -52,12 +53,9 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");
 		}
 		else {									// ログイン失敗
-
 			// 記録ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
-			//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking.jsp");
-			//dispatcher.forward(request, response);
 		}
 	}
 }
