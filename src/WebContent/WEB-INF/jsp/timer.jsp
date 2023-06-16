@@ -32,7 +32,7 @@
     <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
         <ul>
-            <li class="list active">
+            <li class="list ">
                 <a href="/jiro_power/TrainingRecordServlet">
                     <span class="icon">
                     <ion-icon name="pencil-outline"></ion-icon>
@@ -56,7 +56,7 @@
                     <span class="text">Ranking</span>
                 </a>
             </li>
-            <li class="list">
+            <li class="list active">
                 <a href="/jiro_power/TimerServlet">
                     <span class="icon">
                     <ion-icon name="timer-outline"></ion-icon>
