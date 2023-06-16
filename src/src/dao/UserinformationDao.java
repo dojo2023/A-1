@@ -11,6 +11,9 @@ import java.util.List;
 import model.Userinformation;
 
 public class UserinformationDao {
+
+	//ログイン処理のDAO
+
 	// ログインできるならtrueを返す
 	public int isLoginOK(Userinformation userinformation) {
 		Connection conn = null;
@@ -138,6 +141,9 @@ public class UserinformationDao {
 	}
 
 
+	//ユーザー情報登録処理のDAO
+
+
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(Userinformation card) {
 		Connection conn = null;
@@ -233,6 +239,110 @@ public class UserinformationDao {
 			return result;
 	}
 
+
+	//ユーザー情報登録の際のメールアドレス重複チェックの処理のDAO
+
+	public boolean ums(Userinformation umc) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+
+			// SQL文を準備する
+			String sqlUms = "select * "
+				+ "from user_information where user_mail_address = ?";
+			PreparedStatement pStmtUms = conn.prepareStatement(sqlUms);
+			pStmtUms.setString(1,umc.getUser_mail_address());
+
+			// SELECT文を実行し、結果表を取得する
+			ResultSet rs = pStmtUms.executeQuery(sqlUms);
+
+		if (rs.next()) {
+			//重複していた場合の処理
+
+		}
+		else {
+			//重複していない場合の処理
+		}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+				return result;
+	}
+
+	//ユーザー情報登録の際のユーザー名重複チェックの処理のDAO
+
+		public boolean uns(Userinformation unc) {
+			Connection conn = null;
+			boolean result = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+
+				// SQL文を準備する
+				String sqlUns = "select user_name "
+					+ "from user_information where user_name = ?";
+				PreparedStatement pStmtUns = conn.prepareStatement(sqlUns);
+				pStmtUns.setString(1,unc.getUser_name());
+
+				// SELECT文を実行し、結果表を取得する
+				ResultSet rs = pStmtUns.executeQuery(sqlUns);
+
+			if (rs.next()) {
+				//重複していた場合の処理
+			};
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+			// 結果を返す
+					return result;
+		}
+
+
+	//ユーザー情報更新処理のDAO(マイページ用)
+
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
 		public boolean update(Userinformation card) {
 			Connection conn = null;
@@ -305,7 +415,9 @@ public class UserinformationDao {
 			return result;
 }
 
-		//体重を持っていくよ
+		//トレーニング記録のための体重を持っていくよの処理のDAO
+
+
 		public int UW(Userinformation uw) {
 			Connection conn = null;
 			int result = 0;
@@ -356,7 +468,8 @@ public class UserinformationDao {
 		}
 
 
-		//性別を持っていくよ
+		//経験値の算出のための性別を持っていくよの処理のDAO
+
 		public int US(Userinformation us) {
 			Connection conn = null;
 			int result = 0;

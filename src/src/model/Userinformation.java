@@ -71,7 +71,7 @@ public class Userinformation implements Serializable{
 
 
 
-
+	//体重と性別の検索用
 	public Userinformation(int user_id) {
 		super();
 		this.user_id = user_id;
