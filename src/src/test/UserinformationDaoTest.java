@@ -1,5 +1,6 @@
 package test;
 
+import java.sql.Date;
 import java.util.List;
 
 import dao.UserinformationDao;
@@ -43,7 +44,7 @@ public class UserinformationDaoTest {
 
 			System.out.println("---------- insert()のテスト ----------");
 			Userinformation insTes = new Userinformation(
-					"MK",1,"2000-09-13","mk@mk","mk",170,65
+					"MK",1,Date.valueOf("2000-09-13"),"mk@mk","mk",170,65
 					);
 
 			if (dao.insert(insTes)) {
