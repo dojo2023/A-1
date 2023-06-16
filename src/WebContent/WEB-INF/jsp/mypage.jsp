@@ -71,7 +71,7 @@
 
 	<hr>
 <!--
-<!-- 画面下部メニューバー表示 -->
+// 画面下部メニューバー表示
 	<div class="menu">
 		<footer>
 			<a href="/jiro_power/TrainingRecordServlet"><img src="./img/record.png"></a>
