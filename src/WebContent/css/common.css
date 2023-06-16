@@ -35,7 +35,7 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: -o-repeating-linear-gradient(white);
+    background-color : white;
 }
 .menu
 {
@@ -90,7 +90,7 @@ body
 .menu ul li a .text
 {
     position: absolute;
-    color: var(white);
+    color: white;
     font-weight: 400;
     font-size: 0.75px;
     letter-spacing: 0.05em;
@@ -111,7 +111,8 @@ body
     height: 70px;
     background: #5AFF19;
     border-radius: 50%;
-    border: 6px solid var(white);
+    border: 6px solid ;
+    border-color : white;
     transition: 0.5s;
 }
 
