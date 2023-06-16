@@ -205,3 +205,35 @@ update set TRAINING_RECORD where(training_menu,training_weight,training_count,tr
 org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "SET" が見つかりません
 Table "SET" not found; SQL statement:
 update set TRAINING_RECORD where(training_menu,training_weight,training_count,training_set,training_exp)VALUES(?, ?, ?, ?, ?) [42102-199]
+2023-06-16 10:48:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET,TRAINING_EXP)VALUES[*](?, ?, ?, ?, ?)WHERE TRAINING_RECORD_ID "; 期待されるステートメント "="
+Syntax error in SQL statement "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET,TRAINING_EXP)VALUES[*](?, ?, ?, ?, ?)WHERE TRAINING_RECORD_ID "; expected "="; SQL statement:
+update TRAINING_RECORD set(training_menu,training_weight,training_count,training_set,training_exp)VALUES(?, ?, ?, ?, ?)WHERE training_record_id [42001-199]
+2023-06-16 10:49:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET,TRAINING_EXP) VALUES[*](?, ?, ?, ?, ?) WHERE TRAINING_RECORD_ID "; 期待されるステートメント "="
+Syntax error in SQL statement "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET,TRAINING_EXP) VALUES[*](?, ?, ?, ?, ?) WHERE TRAINING_RECORD_ID "; expected "="; SQL statement:
+update TRAINING_RECORD set(training_menu,training_weight,training_count,training_set,training_exp) VALUES(?, ?, ?, ?, ?) WHERE training_record_id [42001-199]
+2023-06-16 10:53:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET,TRAINING_EXP) VALUES[*](?, ?, ?, ?, ?) WHERE TRAINING_RECORD_ID = ? "; 期待されるステートメント "="
+Syntax error in SQL statement "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET,TRAINING_EXP) VALUES[*](?, ?, ?, ?, ?) WHERE TRAINING_RECORD_ID = ? "; expected "="; SQL statement:
+update TRAINING_RECORD set(training_menu,training_weight,training_count,training_set,training_exp) VALUES(?, ?, ?, ?, ?) WHERE training_record_id = ? [42001-199]
+2023-06-16 10:54:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET,TRAINING_EXP) VALUES[*] (?, ?, ?, ?, ?) WHERE TRAINING_RECORD_ID = ? "; 期待されるステートメント "="
+Syntax error in SQL statement "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET,TRAINING_EXP) VALUES[*] (?, ?, ?, ?, ?) WHERE TRAINING_RECORD_ID = ? "; expected "="; SQL statement:
+update TRAINING_RECORD set(training_menu,training_weight,training_count,training_set,training_exp) VALUES (?, ?, ?, ?, ?) WHERE training_record_id = ? [42001-199]
+2023-06-16 10:58:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET)VALUES[*] (?, ?, ?, ?) WHERE TRAINING_RECORD_ID = ? "; 期待されるステートメント "="
+Syntax error in SQL statement "UPDATE TRAINING_RECORD SET(TRAINING_MENU,TRAINING_WEIGHT,TRAINING_COUNT,TRAINING_SET)VALUES[*] (?, ?, ?, ?) WHERE TRAINING_RECORD_ID = ? "; expected "="; SQL statement:
+update TRAINING_RECORD set(training_menu,training_weight,training_count,training_set)VALUES (?, ?, ?, ?) WHERE training_record_id = ? [42001-199]
+2023-06-16 11:00:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE TRAINING_RECORD SET(TRAINING_MENU =[*] ?,TRAINING_WEIGHT = ?,TRAINING_COUNT = ?,TRAINING_SET = ?)WHERE TRAINING_RECORD_ID = ? "; 期待されるステートメント "., ,, )"
+Syntax error in SQL statement "UPDATE TRAINING_RECORD SET(TRAINING_MENU =[*] ?,TRAINING_WEIGHT = ?,TRAINING_COUNT = ?,TRAINING_SET = ?)WHERE TRAINING_RECORD_ID = ? "; expected "., ,, )"; SQL statement:
+update TRAINING_RECORD set(training_menu = ?,training_weight = ?,training_count = ?,training_set = ?)WHERE training_record_id = ? [42001-199]
+2023-06-16 11:00:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE TRAINING_RECORD SET(TRAINING_MENU =[*]?,TRAINING_WEIGHT = ?,TRAINING_COUNT = ?,TRAINING_SET = ?)WHERE TRAINING_RECORD_ID = ? "; 期待されるステートメント "., ,, )"
+Syntax error in SQL statement "UPDATE TRAINING_RECORD SET(TRAINING_MENU =[*]?,TRAINING_WEIGHT = ?,TRAINING_COUNT = ?,TRAINING_SET = ?)WHERE TRAINING_RECORD_ID = ? "; expected "., ,, )"; SQL statement:
+update TRAINING_RECORD set(training_menu =?,training_weight = ?,training_count = ?,training_set = ?)WHERE training_record_id = ? [42001-199]
+2023-06-16 11:01:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE TRAINING_RECORD SETTRAINING_MENU =[*] ?,TRAINING_WEIGHT = ?,TRAINING_COUNT = ?,TRAINING_SET = ?WHERE TRAINING_RECORD_ID = ? "; 期待されるステートメント "SET"
+Syntax error in SQL statement "UPDATE TRAINING_RECORD SETTRAINING_MENU =[*] ?,TRAINING_WEIGHT = ?,TRAINING_COUNT = ?,TRAINING_SET = ?WHERE TRAINING_RECORD_ID = ? "; expected "SET"; SQL statement:
+update TRAINING_RECORD settraining_menu = ?,training_weight = ?,training_count = ?,training_set = ?WHERE training_record_id = ? [42001-199]

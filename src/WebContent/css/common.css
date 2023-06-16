@@ -1,9 +1,20 @@
 @charset "UTF-8";
-@media (max-width: 415px) {
+body {
+		background-color:#c0c0c0;
+		width: 410px;
+		height: 890px;
+   }
+
+/* ステータスバー */
 .status {
 	background-color: #242424;
 }
+
+/* メニューバー */
 .menu {
 	background-color: #242424;
-}
+	position: absolute; /* 絶対位置 */
+	bottom: 0; /* 下に固定 */
+	display: flex;
+	justify-content: space-evenly; /* 左右均等 */
 }

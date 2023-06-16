@@ -45,7 +45,7 @@ public Trainingrecord(Date training_record_date, int user_id, String training_me
 	this.training_exp = training_exp;
 }
 
-//トレーニング記録更新のコンストラクタ
+//トレーニング記録結果表示のコンストラクタ
 
 public Trainingrecord(String training_menu, double training_weight, int training_count, int training_set,
 		int training_exp) {
@@ -56,6 +56,18 @@ public Trainingrecord(String training_menu, double training_weight, int training
 	this.training_set = training_set;
 	this.training_exp = training_exp;
 }
+
+//トレーニング記録更新のコンストラクタ
+
+public Trainingrecord(String training_menu, double training_weight, int training_count, int training_set) {
+	super();
+	this.training_menu = training_menu;
+	this.training_weight = training_weight;
+	this.training_count = training_count;
+	this.training_set = training_set;
+}
+
+
 
 //トレーニング記録検索のコンストラクタ
 

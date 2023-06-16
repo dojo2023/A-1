@@ -1,17 +1,18 @@
 @charset "UTF-8";
-@media (max-width: 415px) {
-/*画面端に余裕を持たせる*/　
-   .wrapper {
-        margin: 0 8px;
-   }
-   body {
+
+body {
 		background-color:#c0c0c0;
+		width: 410px;
+		height: 890px;
    }
-	.title {
+
+.title {
 		color: #FFFFFF;
-   } input[name="submit"] {
+   }
+
+input[name="submit"] {
    		display: inline;
    }
 
-}
+
 

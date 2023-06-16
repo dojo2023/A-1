@@ -126,13 +126,13 @@ public class TrainingrecordDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
 
 				// SQL文を準備する
-				String sql = "update set TRAINING_RECORD where"
-						+ "(training_menu,"
-						+ "training_weight,"
-						+ "training_count,"
-						+ "training_set,"
-						+ "training_exp)"
-						+ "VALUES(?, ?, ?, ?, ?)";
+				String sql = "update TRAINING_RECORD "
+						+ "set "
+						+ "training_menu = ?,"
+						+ "training_weight = ?,"
+						+ "training_count = ?,"
+						+ "training_set = ?"
+						+ "WHERE training_record_id = ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -164,8 +164,9 @@ public class TrainingrecordDao {
 					pStmt.setInt(4, 0);
 				}
 
-				if (card.getTraining_exp() != 0) {
-					pStmt.setInt(5, card.getTraining_exp());
+
+				if (card.getTraining_record_id() != 0) {
+					pStmt.setInt(5, card.getTraining_record_id());
 				}
 				else {
 					pStmt.setInt(5, 0);
@@ -310,4 +311,57 @@ public class TrainingrecordDao {
 			// 結果を返す
 			return cardList;
 		}
+
+		// 引数paramで検索項目を指定し、検索結果のリストを返す
+				public boolean sum(Trainingrecord param) {
+					Connection conn = null;
+					boolean result = false;
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+
+						// SQL文を準備する
+						String sql = "select sum (training_exp) from TRAINING_RECORD WHERE "
+								+ "user_id =?";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+
+						// SQL文を完成させる
+
+						if (param.getUser_id() != 0) {
+							pStmt.setInt(1,param.getUser_id());
+						}
+						else {
+							pStmt.setInt(1,0);
+						}
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						result = false;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						result = false;
+					}
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								result = false;
+							}
+						}
+					}
+
+					// 結果を返す
+					return result;
+				}
 }
