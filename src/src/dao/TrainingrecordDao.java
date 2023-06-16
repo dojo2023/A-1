@@ -254,14 +254,14 @@ public class TrainingrecordDao {
 
 				// SQL文を準備する
 				String sql = "select * from TRAINING_RECORD WHERE"
-						+ "(training_record_date = ? ,"
+						+ "(training_record_date = ? "
+						+ "AND "
 						+ "user_id =?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
 				if (param.getTraining_record_date() != null) {
-					java.sql.Date sqlDate = new java.sql.Date(param.getTraining_record_date().getTime());
-					pStmt.setDate(1, sqlDate);
+					pStmt.setDate(1,param.getTraining_record_date());
 				}
 				else {
 					pStmt.setDate(1, null);

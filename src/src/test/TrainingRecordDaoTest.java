@@ -59,7 +59,7 @@ public class TrainingRecordDaoTest {
 			}
 		}
 		else {
-			System.out.println("更新失敗！");
+			System.out.println("検索失敗！");
 		}
 	}
 
