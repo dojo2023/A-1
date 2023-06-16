@@ -267,7 +267,7 @@ public class UserinformationDao {
 
 		}
 		else {
-			//重複していない場合の処理
+			//重複していない場合の処理(いらないかも)
 		}
 		}
 		catch (SQLException e) {
@@ -316,7 +316,10 @@ public class UserinformationDao {
 
 			if (rs.next()) {
 				//重複していた場合の処理
-			};
+			}
+			else {
+				//重複していない場合の処理(いらないかも)
+			}
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
