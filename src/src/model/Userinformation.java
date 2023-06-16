@@ -1,13 +1,14 @@
 package model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 public class Userinformation implements Serializable{
 	//こっからフィールド
 	private int user_id;
 	private String user_name;
 	private int user_sex;
-	private String user_birth;
+	private Date user_birth;
 	private String user_mail_address;
 	private String user_password;
 	private int user_height;
@@ -15,7 +16,8 @@ public class Userinformation implements Serializable{
 
 //コンストラクタ
 	//全部入れ
-	public Userinformation(int user_id, String user_name, int user_sex, String user_birth, String user_mail_address,
+
+	public Userinformation(int user_id, String user_name, int user_sex, Date user_birth, String user_mail_address,
 			String user_password, int user_height, int user_weight) {
 		super();
 		this.user_id = user_id;
@@ -39,7 +41,8 @@ public class Userinformation implements Serializable{
 
 
 	//ユーザー登録用
-	public Userinformation(String user_name, int user_sex, String user_birth, String user_mail_address,
+
+	public Userinformation(String user_name, int user_sex, Date user_birth, String user_mail_address,
 			String user_password, int user_height, int user_weight) {
 		super();
 		this.user_name = user_name;
@@ -51,6 +54,10 @@ public class Userinformation implements Serializable{
 		this.user_weight = user_weight;
 	}
 
+
+
+
+
 	//ユーザー情報更新用
 	public Userinformation(String user_name, int user_height, int user_weight, int user_id) {
 		super();
@@ -60,17 +67,10 @@ public class Userinformation implements Serializable{
 		this.user_id = user_id;
 	}
 
-	/*///ユーザーの体重
-	public Userinformation(int user_weight) {
-		super();
-		this.user_weight = user_weight;
-	}
 
-	//ユーザーの性別
-	public Userinformation(int user_sex) {
-		super();
-		this.user_sex = user_sex;
-	}*/
+
+
+
 
 	public Userinformation(int user_id) {
 		super();
@@ -106,11 +106,11 @@ public class Userinformation implements Serializable{
 		this.user_sex = user_sex;
 	}
 
-	public String getUser_birth() {
+	public Date getUser_birth() {
 		return user_birth;
 	}
 
-	public void setUser_birth(String user_birth) {
+	public void setUser_birth(Date user_birth) {
 		this.user_birth = user_birth;
 	}
 

@@ -31,10 +31,10 @@ public class CalendarServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		/*if (session.getAttribute("id") == null) {
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
-		}*/
+		}
 
 		// カレンダーページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/calendar.jsp");
@@ -47,10 +47,10 @@ public class CalendarServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		/*if (session.getAttribute("id") == null) {
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
-		}*/
+		}
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
     }

@@ -237,3 +237,11 @@ update TRAINING_RECORD set(training_menu =?,training_weight = ?,training_count =
 org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE TRAINING_RECORD SETTRAINING_MENU =[*] ?,TRAINING_WEIGHT = ?,TRAINING_COUNT = ?,TRAINING_SET = ?WHERE TRAINING_RECORD_ID = ? "; 期待されるステートメント "SET"
 Syntax error in SQL statement "UPDATE TRAINING_RECORD SETTRAINING_MENU =[*] ?,TRAINING_WEIGHT = ?,TRAINING_COUNT = ?,TRAINING_SET = ?WHERE TRAINING_RECORD_ID = ? "; expected "SET"; SQL statement:
 update TRAINING_RECORD settraining_menu = ?,training_weight = ?,training_count = ?,training_set = ?WHERE training_record_id = ? [42001-199]
+2023-06-16 13:55:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "USERINFROMATION" が見つかりません
+Table "USERINFROMATION" not found; SQL statement:
+select user_name from Userinfromation WHERE user_id =? [42102-199]
+2023-06-16 13:56:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "USERINFORMATION" が見つかりません
+Table "USERINFORMATION" not found; SQL statement:
+select user_name from Userinformation WHERE user_id =? [42102-199]
