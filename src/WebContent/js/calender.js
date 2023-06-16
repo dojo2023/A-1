@@ -1,81 +1,78 @@
-/**
- *
- */
- const calendar = document.getElementById("calendar");
-const yearMonth = document.querySelector(".yearMonth");
-const days = ["月", "火", "水", "木", "金", "土", "日"];
-const date = new Date();
-let year = date.getFullYear();
-let month = date.getMonth() + 1;
-// HTMLを組み立てる変数
-let calendarHtml = "";
+	const week = ["日", "月", "火", "水", "木", "金", "土"];
+	const today = new Date();
+	// 月末だとずれる可能性があるため、1日固定で取得
+	var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
-// 年月の表示
-yearMonth.textContent = `${year}年${month}月`;
-
-calendarHtml += "<table><tr>";
-
-// 曜日の行を作成(テーブル1行目)
-for (let i = 0; i < days.length; i++) {
-  // 曜日を表示させる1行目にはクラスdayを付与する
-  calendarHtml += "<td class='day'>" + days[i] + "</td>";
-}
-
-calendarHtml += "</tr>";
-//前月の最後の日の情報
-const lastMonthEndDate = new Date(year, month - 1, 0);
-// 前月の末日
-const lastMonthEndDayCount = lastMonthEndDate.getDate();
-// 月の最初の日の曜日を取得
-const startDay = startDate.getDay();
-
-// 6週分の行を生成
-for (let w = 0; w < 6; w++) {
-  calendarHtml += "<tr>";
-
-  // 月～日まで
-  for (let d = 0; d < 7; d++) {
-    if (w == 0 && d < startDay - 1) { // 第一週目で、且つ今月1日の曜日の前まで
-      // 1行目で1日の前の日付
-      let num = lastMonthEndDayCount - startDay + d + 2;
-      calendarHtml +=
-        '<td class="is-disabled">' + num + "</td>";
-  }
-}
-  let dayCount = 1; // 日にちのカウント
-
-  if (w == 0 && d < startDay - 1) {
-    // 1行目で1日の前の日付
-    let num = lastMonthEndDayCount - startDay + d + 2;
-    calendarHtml +=
-      '<td class="is-disabled">' + num + "</td>";
-  } else if (dayCount > endDayCount) {
-    // 末尾の日数を超えた
-    let num = dayCount - endDayCount;
-    calendarHtml +=
-      '<td class="is-disabled">' + num + "</td>";
-    dayCount++;
-  }
-} 
-else if (dayCount > endDayCount) {
-	  // 末尾の日数を超えた
-	  let num = dayCount - endDayCount;
-	  calendarHtml +=
-	    '<td class="is-disabled">' + num + "</td>";
-	  dayCount++;
-	} else {
-	  // 今日の日付にクラスtodayを付与
-	  if(dayCount == today){
-	    calendarHtml += `<td class="today">${dayCount}</td>`;
-	    dayCount++;
-	  }else{
-	    calendarHtml += `<td>${dayCount}</td>`;
-	    dayCount++;
-	  }
+	// 初期表示
+	window.onload = function () {
+	    showProcess(today, calendar);
+	    };
+	// 前の月表示
+	function prev(){
+	    showDate.setMonth(showDate.getMonth() - 1);
+	    showProcess(showDate);
 	}
-//trをすべて取得
-const tr = document.querySelectorAll(".calendar-container tr")
-// 最終行の最初のtdにクラスis-disabledが含まれていれば、最終行を削除
-if(tr[6].firstChild.classList.contains("is-disabled")){
-  tr[6].remove();
-}
+
+	// 次の月表示
+	function next(){
+	    showDate.setMonth(showDate.getMonth() + 1);
+	    showProcess(showDate);
+	}
+
+	// カレンダー表示
+	function showProcess(date) {
+	    var year = date.getFullYear();
+	    var month = date.getMonth();
+	    document.querySelector('#header').innerHTML = year + "年 " + (month + 1) + "月";
+
+	    var calendar = createProcess(year, month);
+	    document.querySelector('#calendar').innerHTML = calendar;
+	}
+
+	// カレンダー作成
+	function createProcess(year, month) {
+	    // 曜日
+	    var calendar = "<table><tr class='dayOfWeek'>";
+	    for (var i = 0; i < week.length; i++) {
+	        calendar += "<th>" + week[i] + "</th>";
+	    }
+	    calendar += "</tr>";
+
+	    var count = 0;
+	    var startDayOfWeek = new Date(year, month, 1).getDay();
+	    var endDate = new Date(year, month + 1, 0).getDate();
+	    var lastMonthEndDate = new Date(year, month, 0).getDate();
+	    var row = Math.ceil((startDayOfWeek + endDate) / week.length);
+
+	    // 1行ずつ設定
+	    for (var i = 0; i < row; i++) {
+	        calendar += "<tr>";
+	        // 1colum単位で設定
+	        for (var j = 0; j < week.length; j++) {
+	            if (i == 0 && j < startDayOfWeek) {
+	                // 1行目で1日まで先月の日付を設定
+	                calendar += "<td class='disabled'>" + (lastMonthEndDate - startDayOfWeek + j + 1) + "</td>";
+	            } else if (count >= endDate) {
+	                // 最終行で最終日以降、翌月の日付を設定
+	                count++;
+	                calendar += "<td class='disabled'>" + (count - endDate) + "</td>";
+	            } else {
+	                // 当月の日付を曜日に照らし合わせて設定
+	                count++;
+	                if(year == today.getFullYear()
+	                  && month == (today.getMonth())
+	                  && count == today.getDate()){
+	                    calendar += "<td class='today'>" + count + "</td>";
+	                } else {
+						//表示したい項目がある場合は、ここでリンクを設定する
+	                    calendar += "<td>" + count + "<br>"
+	                    +"<a href=''>テスト文字列"+year+"</a>"
+	                    +"</td>";
+
+	                }
+	            }
+	        }
+	        calendar += "</tr>";
+	    }
+	    return calendar;
+	}
