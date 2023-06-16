@@ -49,6 +49,12 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("id",id);
 			System.out.println(session.getAttribute("id"));
 
+			//セッションスコープにユーザー名を格納する
+			String name =  uDao.name(new Userinformation(id));
+			session.setAttribute("name",name);
+			System.out.println(session.getAttribute("name"));
+
+
 			// 記録サーブレットにリダイレクトする
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");
 		}

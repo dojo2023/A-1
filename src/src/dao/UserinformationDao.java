@@ -70,6 +70,65 @@ public class UserinformationDao {
 				return loginResult;
 	}
 
+	// ログインユーザーのユーザーネーム
+	public String name(Userinformation userinformation) {
+		Connection conn = null;
+		String result = null;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+
+			// SQL文を準備する
+			String sql = "select user_name from User_information WHERE "
+					+ "user_id =?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+
+			if (userinformation.getUser_id() != 0) {
+				pStmt.setInt(1,userinformation.getUser_id());
+			}
+			else {
+				pStmt.setInt(1,0);
+			}
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// メールアドレスとパスワードが一致するユーザーがいたかどうかをチェックする
+			if (rs.next()) {
+				result =rs.getString( "user_name");
+					};
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			result = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			result = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					result = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
 	public List<Userinformation> select(Userinformation param) {
 
 		List<Userinformation> cardList = new ArrayList<Userinformation>();
