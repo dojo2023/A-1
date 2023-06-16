@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -57,7 +58,7 @@ public class UserRegistServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				String user_name = request.getParameter("USER_NAME");
 				int user_sex = Integer.parseInt(request.getParameter("USER_SEX"));
-				String user_birth = request.getParameter("USER_BIRTH");
+				Date user_birth = Date.valueOf(request.getParameter("USER_BIRTH"));
 				String user_mail_address = request.getParameter("USER_MAIL_ADDRESS");
 				String user_password = request.getParameter("USER_PASSWORD");
 				int user_height = Integer.parseInt(request.getParameter("USER_HEIGHT"));
