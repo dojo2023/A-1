@@ -117,6 +117,7 @@ body
     border: 6px solid var(---clr);
     transition: 0.5s;
 }
+
 /* .indicator::before
 {
     content: '';
