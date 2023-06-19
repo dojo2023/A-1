@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");
 		}
 		else {									// ログイン失敗
-			// 記録ページにフォワードする
+			// ログインページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 		}
