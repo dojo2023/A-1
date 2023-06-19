@@ -67,8 +67,8 @@ public class MypageServlet extends HttpServlet {
 
 
 		//登録処理を行う
-		UserinformationDao uiDao = new UserinformationDao();
-		if(uiDao.update(new Userinformation(user_name, user_height, user_weight))) {
+		UserinformationDao uDao = new UserinformationDao();
+		if(uDao.update(new Userinformation(user_name, user_height, user_weight))) {
 			//登録成功
 			//登録成功時の処理を書く
 
