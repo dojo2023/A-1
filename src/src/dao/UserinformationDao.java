@@ -74,9 +74,9 @@ public class UserinformationDao {
 	}
 
 	// ログインユーザーのユーザーネーム
-	public String name(Userinformation userinformation) {
+	public Userinformation ui(Userinformation userinformation) {
 		Connection conn = null;
-		String result = null;
+		Userinformation user =null;
 
 		try {
 			// JDBCドライバを読み込む
@@ -86,7 +86,7 @@ public class UserinformationDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select user_name from User_information WHERE "
+			String sql = "select * from User_information WHERE "
 					+ "user_id =?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -101,19 +101,26 @@ public class UserinformationDao {
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
-			// メールアドレスとパスワードが一致するユーザーがいたかどうかをチェックする
-			if (rs.next()) {
-				result =rs.getString( "user_name");
-					};
+				// 結果表をコレクションにコピーする
+				while (rs.next()) {
+					user = new Userinformation();
+					user.setUser_name(rs.getString("user_name"));
+					user.setUser_birth(rs.getDate("user_birth"));
+					user.setUser_sex(rs.getInt("user_sex"));
+					user.setUser_height(rs.getInt("user_height"));
+					user.setUser_weight(rs.getInt("user_weight"));
+					user.setUser_mail_address(rs.getString("user_mail_address"));
+				}
+				}
 
-		}
+
 		catch (SQLException e) {
 			e.printStackTrace();
-			result = null;
+			user = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			result = null;
+			user = null;
 		}
 		finally {
 			// データベースを切断
@@ -123,13 +130,13 @@ public class UserinformationDao {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					result = null;
+					user = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return result;
+		return user;
 	}
 
 	public List<Userinformation> select(Userinformation param) {

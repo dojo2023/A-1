@@ -17,6 +17,12 @@ public class Userinformation implements Serializable{
 //コンストラクタ
 	//全部入れ
 
+	public Userinformation() {
+		this.user_name="";
+		this.user_mail_address = "";
+		this.user_password = "";
+	}
+
 	public Userinformation(int user_id, String user_name, int user_sex, Date user_birth, String user_mail_address,
 			String user_password, int user_height, int user_weight) {
 		super();
