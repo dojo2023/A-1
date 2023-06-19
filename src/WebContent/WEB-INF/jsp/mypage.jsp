@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,7 @@
 <link rel="stylesheet" href="/jiro_power/css/mypage.css">
 <link rel="stylesheet" href="/jiro_power/css/common.css">
 <meta name="viewport" content="initial-scale=1">
+
 
 <title>マイページ</title>
 
@@ -30,19 +32,21 @@
 
 	<form name="mypage" method="POST" action="/WEB-INF/jsp/mypage.jsp">
 
-		  <div class="user_name"><input type="text" name="User_Name" value="${User_Name}"
+		  <div class="user_name"><input type="text" name="User_Name" value="${name}"
 		  placeholder="8文字以内" maxlength="8" required></div> <!-- user.username -->
 	      <div class="exp">${exp}exp</div>
-	      <div class="birthday_display">${birthday_display}</div>
-	      <div class="sex">${sex}</div>
+	      <div class="birthday_display">${user_birth}</div>
+	      <div class="sex"><c:choose> <c:when test = "${${user_sex} == 1}">MEN</c:when><c:otherwise>WOMEN</c:otherwise></c:choose></div>
 	      <div class="height">身長</div>
-	      <div class="height_input"><input type="text" name="height" value="${height}"></div>
+	      <div class="height_input"><input type="text" name="User_Height" value="${user_height}"
+	      placeholder="cm単位" min="1" max="300" required></div>
 	      <div class="unit_height">cm</div>
 	      <div class="weight">体重</div>
-	      <div class="weight_input"><input type="text" name="weight" value="${weight}"></div>
+	      <div class="weight_input"><input type="text" name="User_Weight" value="${user_weight}"
+	      placeholder="kg単位" min="30" max="300" required></div>
 	      <div class="unit_weight">kg</div>
 	      <div class="mail_address">E-mail</div>
-	      <div class="mail_address_display">${mail_address_display}</div>
+	      <div class="mail_address_display">${user_mail_address}</div>
 	</form>
 
 

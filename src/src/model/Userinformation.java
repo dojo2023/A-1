@@ -70,6 +70,12 @@ public class Userinformation implements Serializable{
 
 
 
+	//メールアドレス重複チェック用
+	public Userinformation(String user_mail_address) {
+		super();
+		this.user_mail_address = user_mail_address;
+	}
+
 
 	//体重と性別の検索用
 	public Userinformation(int user_id) {
@@ -77,6 +83,14 @@ public class Userinformation implements Serializable{
 		this.user_id = user_id;
 	}
 
+
+
+	public Userinformation(String user_name, int user_height, int user_weight) {
+		super();
+		this.user_name = user_name;
+		this.user_height = user_height;
+		this.user_weight = user_weight;
+	}
 
 
 	//セッター・ゲッター
