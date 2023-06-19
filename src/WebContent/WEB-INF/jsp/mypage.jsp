@@ -36,8 +36,7 @@
 		  placeholder="8文字以内" maxlength="8" required></div> <!-- user.username -->
 	      <div class="exp">${exp}exp</div>
 	      <div class="birthday_display">${user_birth}</div>
-	      <c:choose> <c:when test = "${${user_sex} == 1}">MEN</c:when><c:otherwise></c:otherwise></c:choose> {WOMEN}
-	      <div class="sex"></div>
+	      <div class="sex"><c:choose> <c:when test = "${${user_sex} == 1}">MEN</c:when><c:otherwise>WOMEN</c:otherwise></c:choose></div>
 	      <div class="height">身長</div>
 	      <div class="height_input"><input type="text" name="User_Height" value="${user_height}"
 	      placeholder="cm単位" min="1" max="300" required></div>
