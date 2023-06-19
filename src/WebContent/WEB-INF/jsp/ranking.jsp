@@ -26,7 +26,7 @@
 
 <div class="title">Ranking</div>
 <!-- ここにグラフ -->
-<canvas width="300" height="400"></canvas>
+<canvas id="rannking" width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
 <input type="submit" name="submit" value="Ranking">
 <input type="submit" name="submit" value="Monthly">
@@ -86,10 +86,10 @@
 <script src="./js/common.js"></script>
 
 <script>
-/* 顔文字のドーナツチャートの部分の処理 */
+/* 横棒グラフの処理 */
 
-let inputData ='${Expsum.rankingData}';
-let context = document.querySelector("#kimochi").getContext('2d')
+let inputData = ${cardList};
+let context = document.querySelector("#ranking").getContext('2d')
 new Chart(context, {
   type: 'bar',
   data: {

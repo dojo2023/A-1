@@ -1,6 +1,9 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import dao.TrainingrecordDao;
+import model.Trainingrecord;
 
 /**
  * Servlet implementation class RankingServlet
@@ -40,23 +46,26 @@ public class RankingServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking.jsp");
 		dispatcher.forward(request, response);
 
-		/* //絵文字のデータを疑似的に作り出す
-				ArrayList<String> rankingData = new ArrayList<String>();
-				rankingData.add("");
-				rankingData.add("50");
-				rankingData.add("10");
-				rankingData.add("15");
-				rankingData.add("10");
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		int user_id =  (int) session.getAttribute("id");
+		String user_name = request.getParameter("user_name");
+		int training_exp = Integer.parseInt(request.getParameter("training_exp"));
+
+		 // Daoからデータを取り出す
+		TrainingrecordDao TRDao = new TrainingrecordDao ();
+		List<Trainingrecord> cardList = TRDao.select(new Trainingrecord(training_exp));
+
+		List descList = cardList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()); // ソート処理 降順
+
 
 				//とりあえずリクエストスコープへセットする
-				request.setAttribute("rankingData", rankingData);
-
-
+				request.setAttribute("cardList", cardList);
 
 				//chart.jspに遷移させる
 				String path="/WEB-INF/jsp/ranking.jsp";
 				RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-				dispatcher.forward(request, response); */
+				dispatcher.forward(request, response);
 	}
 
 	/**
