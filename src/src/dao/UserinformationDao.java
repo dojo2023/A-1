@@ -144,8 +144,8 @@ public class UserinformationDao {
 	//ユーザー情報登録処理のDAO
 
 
-	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(Userinformation card) {
+	// 引数recordで指定されたレコードを登録し、成功したらtrueを返す
+	public boolean insert(Userinformation record) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -163,50 +163,50 @@ public class UserinformationDao {
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-						if (card.getUser_name() != null && !card.getUser_name().equals("")) {
-							pStmt.setString(1, card.getUser_name());
+						if (record.getUser_name() != null && !record.getUser_name().equals("")) {
+							pStmt.setString(1, record.getUser_name());
 						}
 						else {
 							pStmt.setString(1, null);
 						}
 
-						if (card.getUser_sex() != 0) {
-							pStmt.setInt(2, card.getUser_sex());
+						if (record.getUser_sex() != 0) {
+							pStmt.setInt(2, record.getUser_sex());
 						}
 						else {
 							pStmt.setInt(2, 0);
 						}
 
-						if (card.getUser_birth() != null && !card.getUser_birth().equals("")) {
-							pStmt.setDate(3, card.getUser_birth());
+						if (record.getUser_birth() != null && !record.getUser_birth().equals("")) {
+							pStmt.setDate(3, record.getUser_birth());
 						}
 						else {
 							pStmt.setString(3, null);
 						}
 
-						if (card.getUser_mail_address() != null && !card.getUser_mail_address().equals("")) {
-							pStmt.setString(4, card.getUser_mail_address());
+						if (record.getUser_mail_address() != null && !record.getUser_mail_address().equals("")) {
+							pStmt.setString(4, record.getUser_mail_address());
 						}
 						else {
 							pStmt.setString(4, null);
 						}
 
-						if (card.getUser_password() != null && !card.getUser_password().equals("")) {
-							pStmt.setString(5, card.getUser_password());
+						if (record.getUser_password() != null && !record.getUser_password().equals("")) {
+							pStmt.setString(5, record.getUser_password());
 						}
 						else {
 							pStmt.setString(5, null);
 						}
 
-						if (card.getUser_height() != 0) {
-							pStmt.setInt(6, card.getUser_height());
+						if (record.getUser_height() != 0) {
+							pStmt.setInt(6, record.getUser_height());
 						}
 						else {
 							pStmt.setInt(6, 0);
 						}
 
-						if (card.getUser_weight() != 0) {
-							pStmt.setInt(7, card.getUser_weight());
+						if (record.getUser_weight() != 0) {
+							pStmt.setInt(7, record.getUser_weight());
 						}
 						else {
 							pStmt.setInt(7, 0);
@@ -264,17 +264,20 @@ public class UserinformationDao {
 
 		if (rs.next()) {
 			//重複していた場合の処理
-
+			result = false;
 		}
 		else {
 			//重複していない場合の処理(いらないかも)
+			result = true;
 		}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
+			result = false;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
+			result = false;
 		}
 		finally {
 			// データベースを切断
@@ -284,6 +287,7 @@ public class UserinformationDao {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
+					result = false;
 				}
 			}
 		}
@@ -316,16 +320,20 @@ public class UserinformationDao {
 
 			if (rs.next()) {
 				//重複していた場合の処理
+				result = false;
 			}
 			else {
 				//重複していない場合の処理(いらないかも)
+				result = true;
 			}
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
+				result = false;
 			}
 			catch (ClassNotFoundException e) {
 				e.printStackTrace();
+				result = false;
 			}
 			finally {
 				// データベースを切断
@@ -335,6 +343,7 @@ public class UserinformationDao {
 					}
 					catch (SQLException e) {
 						e.printStackTrace();
+						result = false;
 					}
 				}
 			}

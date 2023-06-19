@@ -70,6 +70,12 @@ public class Userinformation implements Serializable{
 
 
 
+	//メールアドレス重複チェック用
+	public Userinformation(String user_mail_address) {
+		super();
+		this.user_mail_address = user_mail_address;
+	}
+
 
 	//体重と性別の検索用
 	public Userinformation(int user_id) {
