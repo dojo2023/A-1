@@ -19,16 +19,25 @@ body {
 .logout {
   width: 260px;
   height: 35px;
-  background: #f0eeee;
-  border: 1px solid #c0c0c0;
+  /* background: #f0eeee; */
+  background: #242424;
+  border: 1px solid #242424;
   cursor: pointer;
   border-radius: 8px;
-  color: #736ca1;
+  /* color: #736ca1; */
+  color: white;
   font-family: 'Exo', sans-serif;
   font-size: 16px;
   font-weight: 400;
   padding: 6px;
   margin-top: 10px;
+/*   text-shadow:
+    0 0 0.05em #5AFF19,
+    0 0 0.10em #5AFF19,
+    0 0 0.15em #5AFF19,
+    0 0 0.15em #5AFF19;
+  filter: saturate(30%); */
+  box-shadow: 0 0 10px #5AFF19;
 }
 
 .logout {
@@ -43,3 +52,12 @@ body {
 .logout :focus{
   outline: none;
 }
+
+::-webkit-input-placeholder{
+   color: rgba(173, 176, 215, 0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+

@@ -2,7 +2,7 @@
  *
  */
 
-/* テスト用　時計*/
+/* テスト用　時計
 function displayDateTime() {
     var datetimeElement = document.getElementById("datetime");
 
@@ -20,6 +20,7 @@ function displayDateTime() {
     displayDateTime();
   };
 
+*/
 
 /*  ダイアログ表示*/
   		var dialog; // ダイアログ要素の参照を保持する変数
