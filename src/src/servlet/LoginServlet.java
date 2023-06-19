@@ -39,29 +39,21 @@ public class LoginServlet extends HttpServlet {
 		String pw = request.getParameter("PW");
 
 		// ログイン処理を行う
-		UserinformationDao uDao = new UserinformationDao();
-		int id =  uDao.isLoginOK(new Userinformation(email, pw));
-
-		String user_name =  uDao.name(new Userinformation(id));
-		String birth =  uDao.birth(new Userinformation(id));
-		int sex =  uDao.sex(new Userinformation(id));
-		int height =  uDao.height(new Userinformation(id));
-		int weight =  uDao.weight(new Userinformation(id));
-		String mail_address =  uDao.name(new Userinformation(id));
-
-
-
+		UserinformationDao uiDao = new UserinformationDao();
+		int id =  uiDao.isLoginOK(new Userinformation(email, pw));
 		if(id != 0) {
 			// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-
 			session.setAttribute("id",id);
-			System.out.println(session.getAttribute("id"));
-			//セッションスコープにユーザー名を格納する
-			session.setAttribute("name",name);
-			System.out.println(session.getAttribute("name"));
 
+		HttpSession sessionUi = request.getSession();
+		Userinformation user = uiDao.ui(new Userinformation(id));
+		sessionUi.setAttribute("user_name",user.getUser_name());
+		sessionUi.setAttribute("user_birth",user.getUser_birth());
+		sessionUi.setAttribute("user_height",user.getUser_height());
+		sessionUi.setAttribute("user_weight",user.getUser_weight());
+		sessionUi.setAttribute("user_mail_address",user.getUser_mail_address());
 
 			// 記録サーブレットにリダイレクトする
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");
