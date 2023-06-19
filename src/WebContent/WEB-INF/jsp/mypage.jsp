@@ -36,10 +36,12 @@
 	      <div class="birthday_display">${birthday_display}</div>
 	      <div class="sex">${sex}</div>
 	      <div class="height">身長</div>
-	      <div class="height_input"><input type="text" name="height" value="${height}"></div>
+	      <div class="height_input"><input type="text" name="height" value="${height}"
+	      placeholder="cm単位" min="1" max="300" required></div>
 	      <div class="unit_height">cm</div>
 	      <div class="weight">体重</div>
-	      <div class="weight_input"><input type="text" name="weight" value="${weight}"></div>
+	      <div class="weight_input"><input type="text" name="weight" value="${weight}"
+	      placeholder="kg単位" min="30" max="300" required></div>
 	      <div class="unit_weight">kg</div>
 	      <div class="mail_address">E-mail</div>
 	      <div class="mail_address_display">${mail_address_display}</div>
