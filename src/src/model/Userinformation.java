@@ -85,6 +85,14 @@ public class Userinformation implements Serializable{
 
 
 
+	public Userinformation(String user_name, int user_height, int user_weight) {
+		super();
+		this.user_name = user_name;
+		this.user_height = user_height;
+		this.user_weight = user_weight;
+	}
+
+
 	//セッター・ゲッター
 	public int getUser_id() {
 		return user_id;
