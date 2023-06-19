@@ -1,6 +1,8 @@
 /**
  *
  */
+
+/* テスト用　時計*/
 function displayDateTime() {
     var datetimeElement = document.getElementById("datetime");
 
@@ -74,7 +76,7 @@ function displayDateTime() {
 				dialog.style.display = "none";
 			};
 
-			/* 画像の詳細設定 */
+			/* 画像の詳細設定 */s
 			var img1 = document.createElement("img");
 			img1.src = "./img/R0020071.png";
 			img1.width = 70; // 幅を200ピクセルに指定

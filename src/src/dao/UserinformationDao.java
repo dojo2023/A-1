@@ -24,7 +24,7 @@ public class UserinformationDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/myGex", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SELECT文を準備する
 			String sql = "select * from user_information where user_mail_address = ? and user_password = ?";

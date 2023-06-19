@@ -30,7 +30,8 @@
 
 	<form name="mypage" method="POST" action="/WEB-INF/jsp/mypage.jsp">
 
-		  <div class="username"><input type="text" name="username" value="${username}"></div> <!-- user.username -->
+		  <div class="user_name"><input type="text" name="User_Name" value="${User_Name}"
+		  placeholder="8文字以内" maxlength="8" required></div> <!-- user.username -->
 	      <div class="exp">${exp}exp</div>
 	      <div class="birthday_display">${birthday_display}</div>
 	      <div class="sex">${sex}</div>
@@ -40,7 +41,7 @@
 	      <div class="weight">体重</div>
 	      <div class="weight_input"><input type="text" name="weight" value="${weight}"></div>
 	      <div class="unit_weight">kg</div>
-	      <div class="mail">E-mail</div>
+	      <div class="mail_address">E-mail</div>
 	      <div class="mail_address_display">${mail_address_display}</div>
 	</form>
 
