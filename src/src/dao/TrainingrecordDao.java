@@ -23,7 +23,7 @@ public class TrainingrecordDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
 							String sql = "insert into TRAINING_RECORD"
@@ -123,7 +123,7 @@ public class TrainingrecordDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
 				String sql = "update TRAINING_RECORD "
@@ -208,7 +208,7 @@ public class TrainingrecordDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
 				String sql = "delete from TRAINING_RECORD where training_record_id = ? ";
@@ -251,7 +251,7 @@ public class TrainingrecordDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
 				String sql = "select * from TRAINING_RECORD WHERE"
@@ -322,7 +322,7 @@ public class TrainingrecordDao {
 						Class.forName("org.h2.Driver");
 
 						// データベースに接続する
-						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 						// SQL文を準備する
 						String sql = "select sum (training_exp) from TRAINING_RECORD WHERE "

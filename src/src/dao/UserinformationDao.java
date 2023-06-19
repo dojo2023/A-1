@@ -83,7 +83,7 @@ public class UserinformationDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SQL文を準備する
 			String sql = "select user_name from User_information WHERE "
@@ -154,7 +154,7 @@ public class UserinformationDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SQL文を準備する
 						String sql = "insert into USER_INFORMATION "
@@ -251,7 +251,7 @@ public class UserinformationDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SQL文を準備する
 			String sqlUms = "select * "
@@ -303,7 +303,7 @@ public class UserinformationDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
 				String sqlUns = "select user_name "
@@ -356,7 +356,7 @@ public class UserinformationDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
 				String sql = "update USER_INFORMATION set USER_NAME=?, USER_HEIGHT=?, USER_WEIGHT=? where USER_ID=?";
@@ -430,7 +430,7 @@ public class UserinformationDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
 				String sqlUw = "select user_weight "
@@ -482,7 +482,7 @@ public class UserinformationDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/myGex", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
 				String sqlUs = "select User_sex "

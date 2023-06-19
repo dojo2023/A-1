@@ -76,7 +76,7 @@ public class UserRegistServlet extends HttpServlet {
 				}
 				else {//登録失敗
 					//登録失敗時の処理を書く
-					//ログインページにフォワードする
+					//ユーザー情報登録ページにフォワードする
 			    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
 			    	dispatcher.forward(request, response);
 					}
