@@ -70,12 +70,15 @@ public class UserRegistServlet extends HttpServlet {
 						user_password, user_height, user_weight))) {
 					//登録成功
 					//登録成功時の処理を書く
+					//ログインページにフォワードする
+			    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			    	dispatcher.forward(request, response);
 				}
 				else {//登録失敗
 					//登録失敗時の処理を書く
+					//ログインページにフォワードする
+			    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+			    	dispatcher.forward(request, response);
 					}
-    	//ログインページにフォワードする
-    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-    	dispatcher.forward(request, response);
     }
 }
