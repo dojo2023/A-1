@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -53,6 +54,15 @@ public class MypageServlet extends HttpServlet {
 		}*/
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
+				String user_name = request.getParameter("USER_NAME");
+				int user_sex = Integer.parseInt(request.getParameter("SEX"));
+				Date user_birth = Date.valueOf(request.getParameter("USER_BIRTH"));
+				String user_mail_address = request.getParameter("USER_MAIL_ADDRESS");
+				String user_password = request.getParameter("USER_PASSWORD");
+				int user_height = Integer.parseInt(request.getParameter("USER_HEIGHT"));
+				int user_weight = Integer.parseInt(request.getParameter("USER_WEIGHT"));
+
+
     }
 
 	/*シェア画面（リザルト画面）*/
