@@ -42,15 +42,23 @@ public class LoginServlet extends HttpServlet {
 		UserinformationDao uDao = new UserinformationDao();
 		int id =  uDao.isLoginOK(new Userinformation(email, pw));
 
+		String user_name =  uDao.name(new Userinformation(id));
+		String birth =  uDao.birth(new Userinformation(id));
+		int sex =  uDao.sex(new Userinformation(id));
+		int height =  uDao.height(new Userinformation(id));
+		int weight =  uDao.weight(new Userinformation(id));
+		String mail_address =  uDao.name(new Userinformation(id));
+
+
+
 		if(id != 0) {
 			// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
+
 			session.setAttribute("id",id);
 			System.out.println(session.getAttribute("id"));
-
 			//セッションスコープにユーザー名を格納する
-			String name =  uDao.name(new Userinformation(id));
 			session.setAttribute("name",name);
 			System.out.println(session.getAttribute("name"));
 

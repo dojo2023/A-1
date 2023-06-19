@@ -22,6 +22,7 @@
 
 	    <!-- カレンダー -->
 	    <div id="calendar"></div>
+	    <div class = "event">トレーニング記録</div>
 	</div>
 
 <!-- 画面上部ステータス表示 -->
