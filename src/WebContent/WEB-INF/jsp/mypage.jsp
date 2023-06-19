@@ -32,17 +32,17 @@
 
 	<form name="mypage" method="POST" action="/WEB-INF/jsp/mypage.jsp">
 
-		  <div class="user_name"><input type="text" name="User_Name" value="${name}"
+		  <div class="user_name"><input type="text" name="user_name" value="${user_name}"
 		  placeholder="8文字以内" maxlength="8" required></div> <!-- user.username -->
 	      <div class="exp">${exp}exp</div>
 	      <div class="birthday_display">${user_birth}</div>
 	      <div class="sex"><c:choose> <c:when test = "${user_sex == 1}">MEN</c:when><c:otherwise>WOMEN</c:otherwise></c:choose></div>
 	      <div class="height">身長</div>
-	      <div class="height_input"><input type="text" name="User_Height" value="${user_height}"
+	      <div class="height_input"><input type="text" name="user_height" value="${user_height}"
 	      placeholder="cm単位" min="1" max="300" required></div>
 	      <div class="unit_height">cm</div>
 	      <div class="weight">体重</div>
-	      <div class="weight_input"><input type="text" name="User_Weight" value="${user_weight}"
+	      <div class="weight_input"><input type="text" name="user_weight" value="${user_weight}"
 	      placeholder="kg単位" min="30" max="300" required></div>
 	      <div class="unit_weight">kg</div>
 	      <div class="mail_address">E-mail</div>
@@ -54,8 +54,9 @@
 	 <a href="/jiro_power/ResultServlet"><img src="./img/share.png"></a> <!-- srcの後、アイコンのリンク入れる -->
 	</div>
 
-	<div class="update" id="update">
-	 <a href="/jiro_power/MypageServlet"><img src="./img/reload.png"></a> <!-- srcの後、アイコンのリンク入れる -->
+	<div class="update" >
+	<input type="submit" id="update" name= "update" value = "update">
+	<img src="./img/reload.png"> <!-- srcの後、アイコンのリンク入れる -->
 	</div>
 
 <!-- 	<div class="logout" id="logout">

@@ -47,13 +47,13 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("id",id);
 
-		HttpSession sessionUi = request.getSession();
 		Userinformation user = uiDao.ui(new Userinformation(id));
-		sessionUi.setAttribute("user_name",user.getUser_name());
-		sessionUi.setAttribute("user_birth",user.getUser_birth());
-		sessionUi.setAttribute("user_height",user.getUser_height());
-		sessionUi.setAttribute("user_weight",user.getUser_weight());
-		sessionUi.setAttribute("user_mail_address",user.getUser_mail_address());
+		session.setAttribute("user_name_session",user.getUser_name());
+		session.setAttribute("user_birth_session",user.getUser_birth());
+		session.setAttribute("user_sex_session",user.getUser_sex());
+		session.setAttribute("user_height_session",user.getUser_height());
+		session.setAttribute("user_weight_session",user.getUser_weight());
+		session.setAttribute("user_mail_address_session",user.getUser_mail_address());
 
 			// 記録サーブレットにリダイレクトする
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");
