@@ -21,35 +21,41 @@
 		</header>
 	<div class="title">Training Record</div>
 	</div>
-	<form method="POST" action="/jiro_power/TrainingRecordServlet" id="form">
-	<div id="target">
-	<div>
-	<input type="date" name= "training_record_date" Required/>
-	<select name="training_menu">
-	<option>ベンチプレス</option>
-	<option>チェストプレス</option>
-	<option>ダンベルフライ</option>
-	<option>ラットプルダウン</option>
-	<option>デッドリフト</option>
-	<option>スクワット</option>
-	<option>レッグプレス</option>
-	<option>レッグエクステンション</option>
-	<option>サイドレイズ</option>
-	<option>フロントレイズ</option>
-	<option>ショルダープレス</option>
-	<option>アームカール</option>
-	<option>腹筋</option>
-	</select>
-	<input type = "number" name="training_weight" min="1" max="999" Required/><p>kg</p>
-	<input type = "number" name="training_count" min="1" max="999" Required/><p>回</p>
-	<input type = "number" name="training_set" min="1" max="999" Required/><p>セット</p>
-	</div>
-	</div>
-	<button  id = "button"  name="training_plus" disabled>+</button>
-	<input type = "submit" name="record" value="登録">
-	</form>
 
-
+    <form method="POST" action="/jiro_power/TrainingRecordServlet" id="form">
+	<div class="input-form" id="input-form">
+        <!--テンプレート作成-->
+        <template id="form-template">
+            <div class="record" id="record">
+        <!--id属性にはフォーム追加時にインデント番号を付与-->
+                <input type="date"  name="training_record_date" id=""Required/>
+                <select name="training_menu" id="">
+				<option>ベンチプレス</option>
+				<option>チェストプレス</option>
+				<option>ダンベルフライ</option>
+				<option>ラットプルダウン</option>
+				<option>デッドリフト</option>
+				<option>スクワット</option>
+				<option>レッグプレス</option>
+				<option>レッグエクステンション</option>
+				<option>サイドレイズ</option>
+				<option>フロントレイズ</option>
+				<option>ショルダープレス</option>
+				<option>アームカール</option>
+				<option>腹筋</option>
+				</select>
+				<input type = "number" name="training_weight" min="1" max="999" id="" Required/><p>kg</p>
+                <input type="number" name="training_count" min="1" max="999" id="" Required/><p>回</p>
+                <input type = "number" name="training_set" min="1" max="999" id="" Required/><p>セット</p>
+      		    </div>
+        		</template>
+        	</div>
+				<input type = "submit" name="record" value="登録">
+				</form>
+    <!--ボタンをクリックしたらJavascriptファイル内の関数addForm()を実行する-->
+  			  <div class="bt_addForm">
+       		  <input type="button" value="+" onclick="addForm()">
+   			  </div>
 <!-- 画面下部メニューバー表示 -->
 	<!--<div class="menu">
         <ul>
