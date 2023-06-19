@@ -65,9 +65,9 @@ public class UserRegistServlet extends HttpServlet {
 				int user_weight = Integer.parseInt(request.getParameter("USER_WEIGHT"));
 
 
-				UserinformationDao uiDao = new UserinformationDao();
+				UserinformationDao uDao = new UserinformationDao();
 		//メールアドレス重複チェックを行う
-				boolean mailAddressCheck = uiDao.ums(new Userinformation(user_mail_address));
+				boolean mailAddressCheck = uDao.ums(new Userinformation(user_mail_address));
 				if(mailAddressCheck == false) {
 					request.setAttribute("mac", mailAddressCheck);
 					// ユーザー登録ページにリダイレクトする
@@ -75,7 +75,7 @@ public class UserRegistServlet extends HttpServlet {
 				}
 
 		//ユーザー名重複チェックを行う
-				boolean userNameCheck = uiDao.uns(new Userinformation(user_name));
+				boolean userNameCheck = uDao.uns(new Userinformation(user_name));
 				if(userNameCheck == false) {
 					request.setAttribute("unc", userNameCheck);
 					// ユーザー登録ページにリダイレクトする
@@ -83,7 +83,7 @@ public class UserRegistServlet extends HttpServlet {
 				}
 		//登録処理を行う
 
-				if(uiDao.insert(new Userinformation(user_name, user_sex, user_birth, user_mail_address,
+				if(uDao.insert(new Userinformation(user_name, user_sex, user_birth, user_mail_address,
 						user_password, user_height, user_weight))) {
 					//登録成功
 					//登録成功時の処理を書く
