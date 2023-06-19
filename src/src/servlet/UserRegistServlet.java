@@ -68,18 +68,18 @@ public class UserRegistServlet extends HttpServlet {
 				UserinformationDao uiDao = new UserinformationDao();
 		//メールアドレス重複チェックを行う
 				boolean mailAddressCheck = uiDao.ums(new Userinformation(user_mail_address));
-				if(mailAddressCheck = false) {
-					//ユーザー情報登録ページにフォワードする
-			    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-			    	dispatcher.forward(request, response);
+				if(mailAddressCheck == false) {
+					request.setAttribute("mac", mailAddressCheck);
+					// ユーザー登録ページにリダイレクトする
+					response.sendRedirect("/jiro_power/UserRegistServlet");
 				}
 
 		//ユーザー名重複チェックを行う
 				boolean userNameCheck = uiDao.uns(new Userinformation(user_name));
-				if(userNameCheck = false) {
-					//ユーザー情報登録ページにフォワードする
-			    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-			    	dispatcher.forward(request, response);
+				if(userNameCheck == false) {
+					request.setAttribute("unc", userNameCheck);
+					// ユーザー登録ページにリダイレクトする
+					response.sendRedirect("/jiro_power/UserRegistServlet");
 				}
 		//登録処理を行う
 
