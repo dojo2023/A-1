@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,6 +37,16 @@ public class CalendarServlet extends HttpServlet {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
 		}
+
+		CalendarBeans bean = new CalendarBeans();
+		bean.setDate(new Date());
+		bean.setName("山田");
+		//ひとつだけだけど、ArrayListに値を入れる（0と１番目だけ）
+		ArrayList<CalendarBeans> list = new ArrayList<CalendarBeans>();
+		list.add(bean);
+		list.add(bean);
+		request.setAttribute("list", list);
+
 
 		// カレンダーページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/calendar.jsp");
