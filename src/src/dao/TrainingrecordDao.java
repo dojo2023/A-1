@@ -313,9 +313,9 @@ public class TrainingrecordDao {
 		}
 
 		// ログインユーザーの総獲得経験値
-				public String sum(Trainingrecord param) {
+				public int sum(Trainingrecord param) {
 					Connection conn = null;
-					String result = null;
+					int result = 0;
 
 					try {
 						// JDBCドライバを読み込む
@@ -341,15 +341,17 @@ public class TrainingrecordDao {
 						ResultSet rs = pStmt.executeQuery();
 
 						// 結果表をコレクションにコピーする
-
+						if (rs.next()) {
+						result = rs.getInt("exp_sum");
+						}
 					}
 					catch (SQLException e) {
 						e.printStackTrace();
-						result = null;
+						result = 0;
 					}
 					catch (ClassNotFoundException e) {
 						e.printStackTrace();
-						result = null;
+						result = 0;
 					}
 					finally {
 						// データベースを切断
@@ -359,7 +361,7 @@ public class TrainingrecordDao {
 							}
 							catch (SQLException e) {
 								e.printStackTrace();
-								result = null;
+								result = 0;
 							}
 						}
 					}

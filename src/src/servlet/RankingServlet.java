@@ -54,7 +54,7 @@ public class RankingServlet extends HttpServlet {
 
 		 // Daoからデータを取り出す
 		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		List<Trainingrecord> cardList = TRDao.select(new Trainingrecord(training_exp));
+		int exp_sum = TRDao.sum(new Trainingrecord(user_id));
 
 		List descList = cardList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()); // ソート処理 降順
 
