@@ -55,6 +55,9 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("user_weight_session",user.getUser_weight());
 		session.setAttribute("user_mail_address_session",user.getUser_mail_address());
 
+		System.out.println(session.getAttribute("user_name_session"));
+
+
 			// 記録サーブレットにリダイレクトする
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");
 		}
