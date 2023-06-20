@@ -8,3 +8,51 @@ body {
 .title {
 	color: #FFFFFF;
 }
+
+/*
+#showPassword {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  width: 32px;
+  height: 30px;
+  background-image: url(/jiro_power/img/eye6.png);
+  background-size: cover;
+  cursor: pointer;
+  position:relative;
+  top:12.5px;
+  top:7	px;
+
+}
+*/
+
+.password-wrapper {
+  position: relative;
+}
+
+#showPasswordLabel {
+  position: relative;
+  cursor: pointer;
+}
+
+#showPasswordLabel img {
+  width: 24px;
+  height: 24px;
+}
+
+.strikethrough {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  display: none;
+  width: 18px;
+  height: 2px;
+  background-color: white;
+}
+
+#showPasswordLabel:hover .strikethrough {
+  display: block;
+}

@@ -1,6 +1,6 @@
 //ボタン再誕の儀
 const form = document.getElementById("form");
-const button = document.getElementById("button");
+const button = document.getElementById("submit");
 
 form.addEventListener("input", update);
 form.addEventListener("change", update);
