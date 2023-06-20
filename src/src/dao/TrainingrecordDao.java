@@ -336,7 +336,7 @@ public class TrainingrecordDao {
 	}
 
 	//全ユーザーの総経験値を出すDAO
-	/*public List<Trainingrecord> sumAll(Trainingrecord param) {
+	public List<Trainingrecord> sumAll(Trainingrecord param) {
 		Connection conn = null;
 		List<Trainingrecord> expSumList = new ArrayList<Trainingrecord>();
 
@@ -349,24 +349,16 @@ public class TrainingrecordDao {
 
 			// SQL文を準備する
 			String sql = "select user_id, sum (training_exp) as EXP_SUM from TRAINING_RECORD "
-					+ "group by user_id";
+					+ "group by USER_ID order by sum (training_exp) desc limit 10";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			// SQL文を完成させる
-
-			if (param.getUser_id() != 0) {
-				pStmt.setInt(1,param.getUser_id());
-			}
-			else {
-				pStmt.setInt(1,0);
-			}
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				Trainingrecord expSum = new Trainingrecord(
-				rs.getInt("training_exp"));
+				rs.getInt("exp_sum"));
 				expSumList.add(expSum);
 			}
 		}
@@ -393,5 +385,5 @@ public class TrainingrecordDao {
 
 		// 結果を返す
 		return expSumList;
-	}*/
+	}
 }
