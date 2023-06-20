@@ -56,3 +56,8 @@ body {
 #showPasswordLabel:hover .strikethrough {
   display: block;
 }
+
+/* エラーメッセージのデザイン */
+.error-message {
+  color: red;
+}
