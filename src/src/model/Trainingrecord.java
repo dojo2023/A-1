@@ -82,6 +82,12 @@ public Trainingrecord(Date training_record_date, int user_id) {
 	this.user_id = user_id;
 }
 
+//経験値計算用
+public Trainingrecord(int user_id) {
+	super();
+	this.user_id = user_id;
+}
+
 //セッターとゲッターよ
 public int getUser_id() {
 	return user_id;
