@@ -1,9 +1,7 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,27 +35,28 @@ public class RankingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		/*if (session.getAttribute("id") == null) {
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
-		}*/
+		}
 
-		// ランキングページにフォワードする
+		/*// ランキングページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking.jsp");
 		dispatcher.forward(request, response);
+		*/
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		int user_id =  (int) session.getAttribute("id");
 		String user_name = request.getParameter("user_name");
-		int training_exp = Integer.parseInt(request.getParameter("training_exp"));
 
 		 // Daoからデータを取り出す
 		TrainingrecordDao TRDao = new TrainingrecordDao ();
 		int exp_sum = TRDao.sum(new Trainingrecord(user_id));
 
-		List descList = cardList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()); // ソート処理 降順
-
+		//cardListに入れたい
+		ArrayList<Trainingrecord> cardList = new ArrayList<Trainingrecord>();
+		cardList.add(exp_sum);
 
 				//とりあえずリクエストスコープへセットする
 				request.setAttribute("cardList", cardList);
@@ -74,10 +73,10 @@ public class RankingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		/*if (session.getAttribute("id") == null) {
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
-		}*/
+		}
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
     }
