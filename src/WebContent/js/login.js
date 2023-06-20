@@ -46,18 +46,16 @@
 
 	// フォームの送信時に実行される関数
 	function validateForm(event) {
-		alert("アラートだよ");
 
 		/*event.preventDefault(); // デフォルトのフォーム送信を防ぐ*/
 
 		  var mailAddress = document.getElementById("mail_address").value;
 		  var password = document.getElementById("textPassword").value;
-		  alert(mailAddress);
+
 
 		let n=0;
 		// メールアドレスのチェック
 		if (mailAddress == "") {
-		alert("if文はいったよ");
 		  document.getElementById("mail_address_error").textContent = "※メールアドレスが入力されていません。";
 		  /*event.preventDefault(); // フォームの送信を中止*/
 		  n+=1;
