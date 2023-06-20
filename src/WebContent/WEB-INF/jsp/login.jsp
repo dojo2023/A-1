@@ -36,6 +36,8 @@
 			<p>※メールアドレス又はパスワードが間違っています。</p>
 	</div> <!-- id="login" -->
 
+	<input type="button" class="logout" value="新規登録はこちら" onclick="window.location.href='/jiro_power/UserRegistServlet'">
+
 	<a href="jiro_power/Web-INF/jsp/user_regist.jsp"></a>
 <script src="./js/login.js"></script>
 </body>
