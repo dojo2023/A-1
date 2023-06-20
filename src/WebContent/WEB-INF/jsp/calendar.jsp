@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.google.gson.Gson" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -25,6 +26,7 @@
 	    <!-- カレンダー -->
 	    <div id="calendar"></div>
 	    <div class = "event">トレーニング記録</div>
+
 	</div>
 
 <!-- 画面上部ステータス表示 -->
@@ -163,26 +165,39 @@
 	                	calendar += "<td class='today'>" + count +"<br>"  ;
 			          	for(var i=0;i<list.length;i++){
 	                		var bean = list[i];
-	                		var date = new Date(bean.date);
-	                		var y = date.getFullYear(); // 年の取得
+	                		var date = new Date(bean.training_record_date);
+	                		var ss = bean.training_record_date.split(" ");
+
+
+							var y = ss[2];
+							var d = ss[1].replace(",","");
+							var m = ss[0].replace("月","");
+	/*                 		var y = date.getFullYear(); // 年の取得
 	                		var m= date.getMonth() + 1; // 月の取得（0-11の範囲で返されるため、+1する）
-	                		var d = date.getDate(); // 日の取得
+	                		var d = date.getDate(); // 日の取得 */
 
 	                		if(year==y && (month+1)==m && count==d){
+	                			//追加したいタグを追加
 	                			calendar += "<a href=''>konnni</a> </td>";
 	                		}
-	                	}
 	                } else {
 						//表示したい項目がある場合は、ここでリンクを設定する
 	                    calendar += "<td>" + count + "<br>"
 	                    for(var i=0;i<list.length;i++){
 	                		var bean = list[i];
-	                		var date = new Date(bean.date);
-	                		var y = date.getFullYear(); // 年の取得
+	                		var date = new Date(bean.training_record_date);
+
+	                		var ss = bean.training_record_date.split(" ");
+							var y = ss[2];
+							var d = ss[1].replace(",","");
+							var m = ss[0].replace("月","");
+	/*                 		var y = date.getFullYear(); // 年の取得
 	                		var m= date.getMonth() + 1; // 月の取得（0-11の範囲で返されるため、+1する）
-	                		var d = date.getDate(); // 日の取得
+	                		var d = date.getDate(); // 日の取得 */
+
 	                		if(year==y && (month+1)==m && count==d){
 	                			//追加したいタグを追加
+	                			calendar += "<a href=''>konnni</a> </td>";
 	                		}
 	                	}
 	                }

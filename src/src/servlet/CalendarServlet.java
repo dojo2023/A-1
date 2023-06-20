@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import dao.TrainingrecordDao;
+import model.Trainingrecord;
 
 /**
  * Servlet implementation class CalendarServlet
@@ -38,14 +40,28 @@ public class CalendarServlet extends HttpServlet {
 			return;
 		}
 
-		CalendarBeans bean = new CalendarBeans();
+
+
+		int user_id = (int) session.getAttribute("id");
+		TrainingrecordDao tDao = new TrainingrecordDao();
+
+		ArrayList<Trainingrecord>list= new ArrayList<Trainingrecord>();
+		list = tDao.select(new Trainingrecord(user_id));
+		request.setAttribute("list",list );
+
+		System.out.println(list.get(1).getTraining_record_id());
+
+
+		/*CalendarBeans bean = new CalendarBeans();
 		bean.setDate(new Date());
 		bean.setName("山田");
 		//ひとつだけだけど、ArrayListに値を入れる（0と１番目だけ）
 		ArrayList<CalendarBeans> list = new ArrayList<CalendarBeans>();
 		list.add(bean);
 		list.add(bean);
-		request.setAttribute("list", list);
+		request.setAttribute("list",list );*/
+
+
 
 
 		// カレンダーページにフォワードする
