@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/jiro_power/css/login.css">
-<link rel="stylesheet" href="/jiro_power/css/common.css">
+<!-- <link rel="stylesheet" href="/jiro_power/css/common.css"> -->
 <meta name="viewport" content="initial-scale=1">
 <title>ログイン</title>
 </head>
