@@ -3,7 +3,6 @@
  */
 
 
-
 	/*目隠し機能*/
 	function togglePasswordVisibility() {
 	  var passwordField = document.getElementById("pw");
@@ -42,41 +41,9 @@
 
 
 /* エラーメッセージ*/
-/*  document.querySelector('form[name="form-login"]').addEventListener('submit', function(event) {
-    var mailAddress = document.getElementById('mail_address').value;
-    var password = document.getElementById('pw').value;
-    var mailAddressError = document.getElementById('mail_address_error');
-    var passwordError = document.getElementById('password_error');
-    var isValid = true;
-
-    mailAddressError.textContent = '';
-    passwordError.textContent = '';
-
-    if (mailAddress.trim() === '') {
-      mailAddressError.textContent = '※メールアドレスが入力されていません。';
-      isValid = false;
-    }
-
-    if (password.trim() === '') {
-      passwordError.textContent = '※パスワードが入力されていません。';
-      isValid = false;
-    } else if (password.length < 8) {
-      passwordError.textContent = '※パスワードは8文字以上入力してください。';
-      isValid = false;
-    }
-
-    if (!isValid) {
-      event.preventDefault(); // フォームの送信を中止
-    }
-  });
-
-  */
-
 
 // フォームの送信時に実行される関数
 function validateForm(event) {
-
-event.preventDefault(); // デフォルトのフォーム送信を防ぐ
 
   var mailAddress = document.getElementById("mail_address").value;
   var password = document.getElementById("pw").value;

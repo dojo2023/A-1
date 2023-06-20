@@ -13,29 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Lvsum")
 public class Lvsum extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Lvsum() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
-}
+    public static void main(String[] args) {
+    for(int i=0; i<10000; i++) {
+    	int requiredExp = 10;
+    	requiredExp = requiredExp + requiredExp * i;
+    	while(requiredExp > ${exp_sum}) {
+    		int level = i + 1;
+    		break;
+    	};
+    };
+    };
+};
