@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String email = request.getParameter("EMAIL");
+		String email = request.getParameter("Mail_Address");
 		String pw = request.getParameter("PW");
 
 		// ログイン処理を行う
@@ -62,6 +62,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");
 		}
 		else {									// ログイン失敗
+			request.setAttribute("errMsg", "※メールアドレス、またはパスワードが間違っています。");
 			// ログインページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);

@@ -5,36 +5,63 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/jiro_power/css/login.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <!-- <link rel="stylesheet" href="/jiro_power/css/common.css"> -->
 <meta name="viewport" content="initial-scale=1">
 <title>ログイン</title>
+
+    <style>
+      #textPassword {
+        border: none;
+      }
+      #fieldPassword {
+        border-width: thin;
+        border-style: solid;
+        width: 200px;
+      }
+    </style>
+
 </head>
 <body>
     <div class="title">Login</div>
 	<img src=""> <!-- ロゴ貼る -->
 	<div id="login">
-		<form name='form-login' method="POST" action="/jiro_power/LoginServlet">
+		<form name='form-login' id="fieldPassword" method="POST" action="/jiro_power/LoginServlet">
 			<span class="fontawesome-user"></span>
-				<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" required>
+				<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" >
 			<br><br>
 			<p id="mail_address_error" class="error-message"></p>
 
+
 			<span class="fontawesome-lock"></span>
 			<div class= "password-wwrapper">
-				<input type="password" id="pw" name="PW" placeholder="password"
-				minlength="8" maxlength="20" required>
+
+				<input type="password" id="textPassword" name="PW" placeholder="password"
+				min="8" maxlength="20" >
+				<span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
+
+
+<!-- 	<form id="fieldPassword">
+      <input type="password" id="textPassword" value="password123">
+      <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
+    </form> -->
 			<!-- <input type="checkbox" class="checkbox" id="showPassword"> -->
-			<label for="showPassword" id="showPasswordLabel">
+<!-- 			<label for="showPassword" id="showPasswordLabel">
       			<img src="./img/eye6.png" alt="Show Password">
       			<span class="strikethrough"></span>
       		</label>
+-->
+
       		</div>
 			<br>
 			<p id="password_error" class="error-message"></p>
 
 			<p>※パスワードは8文字以上20文字以内です。</p>
 
-			<input type="submit" name="login" value="ログイン">
+			<input type="submit" name="login" value="ログイン" onclick="return validateForm()">
+			<div style="color:red">
+			${errMsg}
+			</div>
 		</form>
 			<p>※メールアドレス又はパスワードが間違っています。</p>
 	</div> <!-- id="login" -->
