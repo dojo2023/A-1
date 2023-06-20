@@ -68,6 +68,7 @@ public class TrainingRecordServlet extends HttpServlet {
 				double training_weight = Double.parseDouble(request.getParameter("training_weight"));
 				int training_count = Integer.parseInt(request.getParameter("training_count"));
 				int training_set = Integer.parseInt(request.getParameter("training_set"));
+				String training_record_dow = request.getParameter("training_record_dow");
 
 				//TrainingmenuDaoの倍率だけのメソッドを用意してをnewする。
 				TrainingmenuDao TMDao = new TrainingmenuDao();
@@ -90,7 +91,9 @@ public class TrainingRecordServlet extends HttpServlet {
 
 				// 登録処理を行う
 				TrainingrecordDao TRDao = new TrainingrecordDao ();
-				if (TRDao.insert(new Trainingrecord(training_record_date,user_id,training_menu, training_weight, training_count,training_set,training_exp))) {	// 登録成功
+				if (TRDao.insert(new Trainingrecord(training_record_date,
+						user_id,training_menu, training_weight,
+						training_count,training_set,training_exp, training_record_dow))) {	// 登録成功
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
 					dispatcher.forward(request, response);
 				}

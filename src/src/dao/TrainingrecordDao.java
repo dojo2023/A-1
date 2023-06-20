@@ -33,8 +33,9 @@ public class TrainingrecordDao {
 					+ "training_weight,"
 					+ "training_count,"
 					+ "training_set,"
-					+ "training_exp)"
-					+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
+					+ "training_exp"
+					+ "training_record_dow)"
+					+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -44,6 +45,7 @@ public class TrainingrecordDao {
 			} else {
 				pStmt.setDate(1, null);
 			}
+
 			if (card.getUser_id() != 0) {
 				pStmt.setInt(2, card.getUser_id());
 			} else {
@@ -78,6 +80,12 @@ public class TrainingrecordDao {
 				pStmt.setInt(7, card.getTraining_exp());
 			} else {
 				pStmt.setInt(7, 0);
+			}
+
+			if (card.getTraining_record_dow() != null) {
+				pStmt.setString(8, card.getTraining_record_dow());
+			} else {
+				pStmt.setString(8, null);
 			}
 
 			// SQL文を実行する

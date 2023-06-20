@@ -35,7 +35,7 @@
 
 			<label>パスワード</label>
 			<input type="password" id="password" name="Password" placeholder="8文字以上20文字以下"
-			minlength="8" maxlength="20" required>
+			min="8" maxlength="20" required>
 			<br>
 			<p id="password_error" class="error-message"></p>
 
