@@ -31,38 +31,32 @@
 
 
 	<form name="mypage" method="POST" action="/jiro_power/Mypage_UpdateDeleteServlet">
-	  	<input type="text" name="user_name" value="${user_name_session}"placeholder="8文字以内" maxlength="8" required>
-		<input type="text" name="user_height" value="${user_height_session}"placeholder="cm単位" min="1" max="300" required>
-		<input type="text" name="user_weight" value="${user_weight_session}" placeholder="kg単位" min="30" max="300" required>
-		<input type="submit" id="update" name= "update" value = "update">
-	</form>
+
+		<div class="user_name"><input type="text" name="user_name" value="${user_name_session}"
+		  placeholder="8文字以内" maxlength="8" required></div> <!-- user.username -->
 	      <div class="exp">${exp}exp</div>
 	      <div class="birthday_display">${user_birth_session}</div>
-	      <div class="sex">
-		      <c:choose>
-		      <c:when test = "${user_sex_session == 1}">MEN</c:when>
-		      <c:otherwise>WOMEN</c:otherwise>
-		      </c:choose>
-	      </div>
+	      <div class="sex"><c:choose> <c:when test = "${user_sex_session == 1}">MEN</c:when><c:otherwise>WOMEN</c:otherwise></c:choose></div>
 	      <div class="height">身長</div>
-	      <div class="height_input">
-
-	      </div>
+	      <div class="height_input"><input type="text" name="user_height" value="${user_height_session}"
+	      placeholder="cm単位" min="1" max="300" required></div>
 	      <div class="unit_height">cm</div>
 	      <div class="weight">体重</div>
-	      <div class="weight_input">
-
-	      </div>
+	      <div class="weight_input"><input type="text" name="user_weight" value="${user_weight_session}"
+	      placeholder="kg単位" min="30" max="300" required></div>
 	      <div class="unit_weight">kg</div>
 	      <div class="mail_address">E-mail</div>
 	      <div class="mail_address_display">${user_mail_address_session}</div>
+	      <div class="update" ><input type="submit" id="update" name= "update" value = "update">
+	      <img src="./img/reload.png"> <!-- srcの後、アイコンのリンク入れる -->
+		</div>
+	</form>
 	      <div class="share" id="share">
 			<a href="/jiro_power/ResultServlet"><img src="./img/share.png"></a> <!-- srcの後、アイコンのリンク入れる -->
 		</div>
-		<div class="update" >
 
-			<img src="./img/reload.png"> <!-- srcの後、アイコンのリンク入れる -->
-		</div>
+
+
 
 
 
