@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/jiro_power/css/login.css">
+<link rel="stylesheet" href="/jiro_power/css/common.css">
 <meta name="viewport" content="initial-scale=1">
 <title>ログイン</title>
 </head>
@@ -16,8 +18,16 @@
 				<input type="email" id="email" name="EMAIL" placeholder="mail_address" required>
 
 			<span class="fontawesome-lock"></span>
+			<div class= "password-wwrapper">
 				<input type="password" id="pw" name="PW" placeholder="password"
 				minlength="8" maxlength="20" required>
+			<!-- <input type="checkbox" class="checkbox" id="showPassword"> -->
+			<label for="showPassword" id="showPasswordLabel">
+      			<img src="./img/eye6.png" alt="Show Password">
+      			<span class="strikethrough"></span>
+      		</label>
+      		</div>
+			<br>
 
 			<p>※パスワードは8文字以上20文字以内です。</p>
 
