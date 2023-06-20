@@ -25,7 +25,8 @@
 
 <div class="title">Weekly Ranking</div>
 <!-- ここにグラフ -->
-<canvas width="300" height="400"></canvas>
+<canvas id="mwranking" width="300" height="400"></canvas>
+<canvas id="wwranking" width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
 <input type="submit" value="Ranking">
 <input type="submit" value="Monthly">
@@ -77,14 +78,49 @@
             <div class="indicator"></div>
         </ul>
         </div>
-
+		<script src="./js/common.js"></script>
         <script src="./js/ranking.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-<script src="./js/common.js"></script>
+<script>
+/* 横棒グラフの処理 */
 
-<script src="./js/common.js"></script>
-<script src="./js/ranking.js"></script>
+let rankData = ${cardList};
+let context = document.querySelector("#mwranking").getContext('2d')
+new Chart(context, {
+  type: 'bar',
+  data: {
+    labels: ['1','2','3','4','5'],
+    datasets: [{
+      /* ここで取得した配列の中身を分解して配置する */
+      data: [rankData[0], rankData[1],rankData[2],rankData[3],rankData[4]],
+      backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
+    }]
+  },
+  options: {
+  indexAxis: 'y',
+    responsive: false,
+  }
+});
+
+let rankData = ${cardList};
+let context = document.querySelector("#wwranking").getContext('2d')
+new Chart(context, {
+  type: 'bar',
+  data: {
+    labels: ['1','2','3','4','5'],
+    datasets: [{
+      /* ここで取得した配列の中身を分解して配置する */
+      data: [rankData[0], rankData[1],rankData[2],rankData[3],rankData[4]],
+      backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
+    }]
+  },
+  options: {
+  indexAxis: 'y',
+    responsive: false,
+  }
+});
+</script>
 </body>
 </html>

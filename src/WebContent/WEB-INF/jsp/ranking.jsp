@@ -26,7 +26,7 @@
 
 <div class="title">Ranking</div>
 <!-- ここにグラフ -->
-<canvas id="rannking" width="300" height="400"></canvas>
+<canvas id="ranking" width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
 <input type="submit" name="submit" value="Ranking">
 <input type="submit" name="submit" value="Monthly">
@@ -79,16 +79,15 @@
         </ul>
         </div>
 
-        <script src="./js/ranking.js"></script>
+		<script src="./js/common.js"></script>
+        <!-- <script src="./js/ranking.js"></script>  -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-<script src="./js/common.js"></script>
 
 <script>
 /* 横棒グラフの処理 */
 
-let inputData = ${cardList};
+let rankData = ${cardList};
 let context = document.querySelector("#ranking").getContext('2d')
 new Chart(context, {
   type: 'bar',
@@ -96,7 +95,7 @@ new Chart(context, {
     labels: ['1','2','3','4','5','6','7','8','9','10'],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [inputData[0], inputData[1],inputData[2],inputData[3],inputData[4],inputData[5],inputData[6],inputData[7],inputData[8],inputData[9]],
+      data: [rankData[0], rankData[1],rankData[2],rankData[3],rankData[4],rankData[5],rankData[6],rankData[7],rankData[8],rankData[9]],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19'],
     }]
   },
