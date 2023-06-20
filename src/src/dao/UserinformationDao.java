@@ -458,7 +458,7 @@ public class UserinformationDao {
 				ResultSet rs = pStmtUw.executeQuery();
 
 			if (rs.next()) {
-				result =rs.getInt( "User_weight");
+				result =rs.getInt("User_weight");
 			};
 			}
 			catch (SQLException e) {

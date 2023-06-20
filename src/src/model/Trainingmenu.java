@@ -17,6 +17,11 @@ public class Trainingmenu implements Serializable{
 		this.training_menu_magnification = training_menu_magnification;
 	}
 
+	//String型の初期値null避け
+	public Trainingmenu() {
+		this.training_menu = "";
+	}
+
 	public Trainingmenu(double training_menu_magnification) {
 		super();
 		this.training_menu_magnification = training_menu_magnification;

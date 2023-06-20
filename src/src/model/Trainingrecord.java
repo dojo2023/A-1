@@ -31,6 +31,11 @@ public Trainingrecord( int training_record_id, Date training_record_date,int use
 	this.training_exp = training_exp;
 }
 
+//String型の初期値null避け
+	public Trainingrecord() {
+		this.training_menu = "";
+	}
+
 //トレーニング記録登録のコンストラクタ
 
 public Trainingrecord(Date training_record_date, int user_id, String training_menu,
@@ -74,6 +79,12 @@ public Trainingrecord(String training_menu, double training_weight, int training
 public Trainingrecord(Date training_record_date, int user_id) {
 	super();
 	this.training_record_date = training_record_date;
+	this.user_id = user_id;
+}
+
+//経験値計算用
+public Trainingrecord(int user_id) {
+	super();
 	this.user_id = user_id;
 }
 
