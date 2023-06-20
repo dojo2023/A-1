@@ -1,4 +1,4 @@
-//ボタン再誕の儀
+/*ボタン再誕の儀(しなくてよくない？)
 const form = document.getElementById("form");
 const button = document.getElementById("submit");
 
@@ -11,12 +11,12 @@ function update() {
     button.disabled = false;
     return;
   }
-}
+}*/
 
 let i = 1
 
 function addForm() {
-    // 8人以上なら処理を終了する
+    // 5個で処理を終了
     if (i > 5) {
         return;
 
@@ -27,28 +27,11 @@ function addForm() {
         // templateの内容を複製
         const new_form = template.content.cloneNode(true);
 
-        // 子要素を指定しname属性の値を変更
-        const new_form_date = new_form.children[0].children[0];
-        new_form_date.id = 'date-'+i;
-
-        const new_form_menu = new_form.children[0].children[1];
-        new_form_menu.id = 'menu-'+i;
-
-        const new_form_weight = new_form.children[0].children[2];
-        new_form_weight.id = 'weight-'+i;
-
-        const new_form_count = new_form.children[0].children[3];
-        new_form_count.id = 'count-'+i;
-
-        const new_form_set = new_form.children[0].children[4];
-        new_form_set.id = 'set-'+i;
-
 
         //親要素を取得し 複製した要素を追加
         const parent = document.getElementById("input-form");
         parent.appendChild(new_form);
 
-       //インデント番号を更新
         i++;
     }
 }

@@ -50,7 +50,7 @@
       		    </div>
         		</template>
         	</div>
-				<input type = "submit" name="record" value="登録" id="submit" disabled>
+				<input type = "submit" name="record" value="登録" id="submit">
 				</form>
     <!--ボタンをクリックしたらJavascriptファイル内の関数addForm()を実行する-->
   			  <div class="bt_addForm">
