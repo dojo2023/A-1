@@ -24,8 +24,11 @@
 
 </head>
 <body>
-    <div class="title">Login</div>
+
 	<img src=""> <!-- ロゴ貼る -->
+	<br>
+    <div class="title">Login</div>
+
 	<div id="login">
 		<form name='form-login' id="fieldPassword" method="POST" action="/jiro_power/LoginServlet">
 			<span class="fontawesome-user"></span>

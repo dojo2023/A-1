@@ -38,3 +38,15 @@ function addForm() {
 		//ページ読み込み時に関数addForm()を実行
 		window.addEventListener('DOMContentLoaded', addForm);
 
+  function deleteLastRecord() {
+      // 最後のレコード要素を取得
+  var recordElements = document.getElementsByClassName('record');
+  var lastRecord = recordElements[recordElements.length - 1];
+
+    if(recordElements.length!=1) {
+        // レコード要素を削除
+         lastRecord.remove();
+    }
+
+
+}

@@ -267,7 +267,7 @@ public class UserinformationDao {
 			pStmtUms.setString(1,umc.getUser_mail_address());
 
 			// SELECT文を実行し、結果表を取得する
-			ResultSet rs = pStmtUms.executeQuery(sqlUms);
+			ResultSet rs = pStmtUms.executeQuery();
 
 		if (rs.next()) {
 			//重複していた場合の処理
@@ -323,7 +323,7 @@ public class UserinformationDao {
 				pStmtUns.setString(1,unc.getUser_name());
 
 				// SELECT文を実行し、結果表を取得する
-				ResultSet rs = pStmtUns.executeQuery(sqlUns);
+				ResultSet rs = pStmtUns.executeQuery();
 
 			if (rs.next()) {
 				//重複していた場合の処理

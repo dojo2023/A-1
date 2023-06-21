@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.google.gson.Gson" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,7 +91,7 @@
 <script>
 /* 横棒グラフの処理 */
 
-let rankData = ${cardList};
+let rankData =<%= new Gson().toJson(request.getAttribute("rankList")) %>;
 let context = document.querySelector("#mmranking").getContext('2d')
 new Chart(context, {
   type: 'bar',
@@ -108,7 +109,7 @@ new Chart(context, {
   }
 });
 
-let rankData = ${cardList};
+let rankData =<%= new Gson().toJson(request.getAttribute("rankList")) %>;
 let context = document.querySelector("#wmranking").getContext('2d')
 new Chart(context, {
   type: 'bar',
