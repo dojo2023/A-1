@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Alltable;
 import model.Trainingrecord;
 
 public class TrainingrecordDao {
@@ -355,18 +356,25 @@ public class TrainingrecordDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select user_id, sum (training_exp) as EXP_SUM from TRAINING_RECORD "
-					+ "group by USER_ID order by sum (training_exp) desc limit 10";
+			String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM from TRAINING_RECORD join USER_INFORMATION "
+					+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
+					+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 10";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+			System.out.println(sql);
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				Trainingrecord expSum = new Trainingrecord(
+				/*Trainingrecord expSum = new Trainingrecord(
 				rs.getInt("exp_sum"));
-				expSumList.add(expSum);
+				expSumList.add(expSum);*/
+
+				Alltable al = new Alltable();
+
+				al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
+				al.setUser_name(rs.getString("user_name"));
 			}
 		}
 		catch (SQLException e) {

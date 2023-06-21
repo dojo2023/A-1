@@ -1,7 +1,7 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -52,14 +52,11 @@ public class RankingServlet extends HttpServlet {
 
 		 // Daoからデータを取り出す
 		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		int exp_sum = TRDao.sum(new Trainingrecord(user_id));
+		List<Trainingrecord> exp_sum = TRDao.sumAll(new Trainingrecord(user_id));
 
-		//cardListに入れたい
-		ArrayList<Trainingrecord> cardList = new ArrayList<Trainingrecord>();
-		cardList.add(exp_sum);
 
 				//とりあえずリクエストスコープへセットする
-				request.setAttribute("cardList", cardList);
+				request.setAttribute("rankList", exp_sum);
 
 				//chart.jspに遷移させる
 				String path="/WEB-INF/jsp/ranking.jsp";
