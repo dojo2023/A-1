@@ -166,9 +166,8 @@
 			          	for(var i=0;i<list.length;i++){
 	                		var bean = list[i];
 	                		var date = new Date(bean.training_record_date);
+	                		/* alert(date); */
 	                		var ss = bean.training_record_date.split(" ");
-
-
 							var y = ss[2];
 							var d = ss[1].replace(",","");
 							var m = ss[0].replace("月","");
@@ -180,13 +179,14 @@
 	                			//追加したいタグを追加
 	                			calendar += "<a href=''>konnni</a> </td>";
 	                		}
+			          	}
 	                } else {
 						//表示したい項目がある場合は、ここでリンクを設定する
-	                    calendar += "<td>" + count + "<br>"
+	                    calendar += "<td class = 'otherdays'>" + count + "<br>"
 	                    for(var i=0;i<list.length;i++){
 	                		var bean = list[i];
 	                		var date = new Date(bean.training_record_date);
-
+	                		/* alert(date); */
 	                		var ss = bean.training_record_date.split(" ");
 							var y = ss[2];
 							var d = ss[1].replace(",","");
@@ -197,7 +197,7 @@
 
 	                		if(year==y && (month+1)==m && count==d){
 	                			//追加したいタグを追加
-	                			calendar += "<a href=''>konnni</a> </td>";
+	                			calendar += " <a href=''>konnni</a> </td>";
 	                		}
 	                	}
 	                }

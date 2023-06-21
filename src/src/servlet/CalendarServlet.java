@@ -49,7 +49,7 @@ public class CalendarServlet extends HttpServlet {
 		list = tDao.select(new Trainingrecord(user_id));
 		request.setAttribute("list",list );
 
-		System.out.println(list.get(1).getTraining_record_id());
+		System.out.println(list.get(1).getTraining_record_date());
 
 
 		/*CalendarBeans bean = new CalendarBeans();
