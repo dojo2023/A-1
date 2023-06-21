@@ -22,37 +22,38 @@
 	</div>
     <form method="POST" action="/jiro_power/TrainingRecordServlet" id="form">
 	<div class="input-form" id="input-form">
-        <!--テンプレート作成-->
-        <template id="form-template">
-            <div class="record" id="record">
-                <input type="date"  name="training_record_date" Required/><br>
-                <select name="training_menu">
-				<option>ベンチプレス</option>
-				<option>チェストプレス</option>
-				<option>ダンベルフライ</option>
-				<option>ラットプルダウン</option>
-				<option>デッドリフト</option>
-				<option>スクワット</option>
-				<option>レッグプレス</option>
-				<option>レッグエクステンション</option>
-				<option>サイドレイズ</option>
-				<option>フロントレイズ</option>
-				<option>ショルダープレス</option>
-				<option>アームカール</option>
-				<option>腹筋</option>
-				</select><br>
-				<input type = "number" name="training_weight" min="1" max="999"  Required/><label>kg</label><br>
-                <input type="number" name="training_count" min="1" max="999"  Required/><label>回</label><br>
-                <input type = "number" name="training_set" min="1" max="999"  Required/><label>セット</label><br>
-      		    </div>
-        		</template>
-        	</div>
-				<input type = "submit" name="record" value="登録" id="submit">
-				</form>
-    <!--ボタンをクリックしたらJavascriptファイル内の関数addForm()を実行する-->
+<!--テンプレート作成-->
+       <template id="form-template">
+          <div class="record" id="record">
+              <input type="date"  name="training_record_date" id="t_date" Required/><br>
+                 <select name="training_menu" id="t_menu">
+                    <option>ベンチプレス</option>
+                    <option>チェストプレス</option>
+                    <option>ダンベルフライ</option>
+                    <option>ラットプルダウン</option>
+                    <option>デッドリフト</option>
+                    <option>スクワット</option>
+                    <option>レッグプレス</option>
+                    <option>レッグエクステンション</option>
+                    <option>サイドレイズ</option>
+                    <option>フロントレイズ</option>
+                    <option>ショルダープレス</option>
+                    <option>アームカール</option>
+                    <option>腹筋</option>
+                 </select><br>
+                    <input type = "number" name="training_weight" min="1" max="999" class="t_body" Required/><label class="t_body2">kg</label><br>
+                    <input type="number" name="training_count" min="1" max="999" class="t_body" Required/><label class="t_body2">回</label><br>
+                    <input type = "number" name="training_set" min="1" max="999" class="t_body" Required/><label class="t_body2">セット</label><br>
+           </div>
+        </template>
+      </div>
+<!--ボタンをクリックしたらJavascriptファイル内の関数addForm()を実行する-->
   			  <div class="bt_addForm">
        		  <input type="button" value="+" onclick="addForm()">
    			  </div>
+   			  <input type="button" onclick="deleteLastRecord()" value="最後のレコードを削除">
+              <input type = "submit" name="record" value="登録" id="submit">
+              </form>
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
         <ul>

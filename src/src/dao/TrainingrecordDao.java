@@ -344,9 +344,9 @@ public class TrainingrecordDao {
 	}
 
 	//全ユーザーの総経験値を出すDAO
-	public List<Trainingrecord> sumAll(Trainingrecord param) {
+	public List<Alltable> sumAll(Trainingrecord param) {
 		Connection conn = null;
-		List<Trainingrecord> expSumList = new ArrayList<Trainingrecord>();
+		List<Alltable> expSumList = new ArrayList<Alltable>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -375,6 +375,7 @@ public class TrainingrecordDao {
 
 				al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
 				al.setUser_name(rs.getString("user_name"));
+				expSumList.add(al);
 			}
 		}
 		catch (SQLException e) {

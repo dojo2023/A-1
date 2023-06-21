@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.TrainingrecordDao;
+import model.Alltable;
 import model.Trainingrecord;
 
 /**
@@ -52,8 +53,8 @@ public class RankingServlet extends HttpServlet {
 
 		 // Daoからデータを取り出す
 		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		List<Trainingrecord> exp_sum = TRDao.sumAll(new Trainingrecord(user_id));
-
+		List<Alltable> exp_sum = TRDao.sumAll(new Trainingrecord(user_id));
+        // System.out.println(exp_sum.size());
 
 				//とりあえずリクエストスコープへセットする
 				request.setAttribute("rankList", exp_sum);

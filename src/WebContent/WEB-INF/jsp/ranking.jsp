@@ -90,16 +90,16 @@
 
 let rankData =<%= new Gson().toJson(request.getAttribute("rankList")) %>;
 
-alert(rankData);
 let context = document.querySelector("#ranking").getContext('2d')
 new Chart(context, {
   type: 'bar',
   data: {
-    labels: ['1','2','3','4','5','6','7','8','9','10'],
+	  /* あとで10位まで項目追加 */
+    labels: ['1'+rankData[0].user_name,'2'+rankData[1].user_name,'3'+rankData[2].user_name,'4'+rankData[3].user_name,'5'+rankData[4].user_name,'6'+rankData[5].user_name],
     datasets: [{
-      /* ここで取得した配列の中身を分解して配置する */
-      data: [rankData[0], rankData[1],rankData[2],rankData[3],rankData[4],rankData[5],rankData[6],rankData[7],rankData[8],rankData[9]],
-      backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19'],
+      /* ここで取得した配列の中身を分解して配置する、10位まで追加予定 */
+      data: [rankData[0].training_exp, rankData[1].training_exp,rankData[2].training_exp,rankData[3].training_exp,rankData[4].training_exp,rankData[5].training_exp],
+      backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19']
     }]
   },
   options: {
