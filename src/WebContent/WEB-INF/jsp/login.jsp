@@ -10,16 +10,17 @@
 <meta name="viewport" content="initial-scale=1">
 <title>ログイン</title>
 
-    <style>
+<!--     <style>
       #textPassword {
         border: none;
       }
-      #fieldPassword {
+       #fieldPassword {
         border-width: thin;
         border-style: solid;
         width: 200px;
       }
     </style>
+ -->
 
 </head>
 <body>
@@ -29,7 +30,7 @@
 		<form name='form-login' id="fieldPassword" method="POST" action="/jiro_power/LoginServlet">
 			<span class="fontawesome-user"></span>
 				<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" >
-			<br><br>
+			<br>
 			<p id="mail_address_error" class="error-message"></p>
 
 
@@ -41,10 +42,7 @@
 				<span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
 
 
-<!-- 	<form id="fieldPassword">
-      <input type="password" id="textPassword" value="password123">
-      <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
-    </form> -->
+
 			<!-- <input type="checkbox" class="checkbox" id="showPassword"> -->
 <!-- 			<label for="showPassword" id="showPasswordLabel">
       			<img src="./img/eye6.png" alt="Show Password">
@@ -53,17 +51,15 @@
 -->
 
       		</div>
-			<br>
-			<p id="password_error" class="error-message"></p>
 
-			<p>※パスワードは8文字以上20文字以内です。</p>
+			<p id="password_error" class="error-message"></p>
 
 			<input type="submit" name="login" value="ログイン" onclick="return validateForm()">
 			<div style="color:red">
 			${errMsg}
 			</div>
 		</form>
-			<p>※メールアドレス又はパスワードが間違っています。</p>
+
 	</div> <!-- id="login" -->
 
 	<input type="button" class="create" value="新規登録はこちら" onclick="window.location.href='/jiro_power/UserRegistServlet'">

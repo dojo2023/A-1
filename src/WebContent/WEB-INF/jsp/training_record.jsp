@@ -19,17 +19,14 @@
 			<p><div id="current_date"></div> <!--  id名前合わせる-->
 			<p>${name}</p> <!--  {}の中身変える-->
 		</header>
-	<div class="title">Training Record</div>
 	</div>
-
     <form method="POST" action="/jiro_power/TrainingRecordServlet" id="form">
 	<div class="input-form" id="input-form">
         <!--テンプレート作成-->
         <template id="form-template">
             <div class="record" id="record">
-        <!--id属性にはフォーム追加時にインデント番号を付与-->
-                <input type="date"  name="training_record_date" id=""Required/>
-                <select name="training_menu" id="">
+                <input type="date"  name="training_record_date" Required/><br>
+                <select name="training_menu">
 				<option>ベンチプレス</option>
 				<option>チェストプレス</option>
 				<option>ダンベルフライ</option>
@@ -43,10 +40,10 @@
 				<option>ショルダープレス</option>
 				<option>アームカール</option>
 				<option>腹筋</option>
-				</select>
-				<input type = "number" name="training_weight" min="1" max="999" id="" Required/><p>kg</p>
-                <input type="number" name="training_count" min="1" max="999" id="" Required/><p>回</p>
-                <input type = "number" name="training_set" min="1" max="999" id="" Required/><p>セット</p>
+				</select><br>
+				<input type = "number" name="training_weight" min="1" max="999"  Required/><label>kg</label><br>
+                <input type="number" name="training_count" min="1" max="999"  Required/><label>回</label><br>
+                <input type = "number" name="training_set" min="1" max="999"  Required/><label>セット</label><br>
       		    </div>
         		</template>
         	</div>
@@ -57,7 +54,7 @@
        		  <input type="button" value="+" onclick="addForm()">
    			  </div>
 <!-- 画面下部メニューバー表示 -->
-	<!--<div class="menu">
+	<div class="menu">
         <ul>
             <li class="list active">
                 <a href="/jiro_power/TrainingRecordServlet">
@@ -105,7 +102,7 @@
 
         <script src="calendar.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>-->
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <script src="./js/common.js"></script>
 <script src="./js/training_record.js"></script>

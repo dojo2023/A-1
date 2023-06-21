@@ -22,12 +22,13 @@ public class Alltable implements Serializable{
 	private int training_count;
 	private int training_set;
 	private int training_exp;
+	private String training_record_dow;
 
 	//こっからコンストラクタ
 	public Alltable(int user_id, String user_name, int user_sex, String user_birth, String user_mail_address,
 			String user_password, int user_height, int user_weight, int training_menu_id, String training_menu,
 			double training_menu_magnification, int training_record_id, String training_record_date,
-			double training_weight, int training_count, int training_set, int training_exp) {
+			double training_weight, int training_count, int training_set, int training_exp, String training_record_dow) {
 		super();
 		this.user_id = user_id;
 		this.user_name = user_name;
@@ -46,6 +47,7 @@ public class Alltable implements Serializable{
 		this.training_count = training_count;
 		this.training_set = training_set;
 		this.training_exp = training_exp;
+		this.training_record_dow = training_record_dow;
 	}
 
 	//こっからセッター・ゲッター
@@ -183,5 +185,13 @@ public class Alltable implements Serializable{
 
 	public void setTraining_exp(int training_exp) {
 		this.training_exp = training_exp;
+	}
+
+	public String getTraining_record_dow() {
+		return training_record_dow;
+	}
+
+	public void setTraining_record_dow(String training_record_dow) {
+		this.training_record_dow = training_record_dow;
 	}
 }
