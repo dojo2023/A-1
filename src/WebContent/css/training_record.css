@@ -3,6 +3,37 @@ body {
    background-color:#c0c0c0;
 }
 
-.title {
-	color: #ffffff;
+#t_date{
+   position: relative;
+   display: block;
+  margin: auto;
+}
+
+#t_menu{
+   position: relative;
+   bottom:10px;
+   right: 100px;
+}
+
+.t_body{
+   position: relative;
+   bottom: 33px;
+   left: 100px;
+}
+
+.t_body2{
+   position: relative;
+   bottom: 33px;
+   left: 100px;
+   background-color: white;
+   margin-left: 10%;
+}
+
+#submit{
+   display: block;
+  margin: auto;
+}
+
+.bt_addForm{
+   float: left;
 }
