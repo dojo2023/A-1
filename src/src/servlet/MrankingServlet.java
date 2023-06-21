@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.TrainingrecordDao;
+import model.Alltable;
 import model.Trainingrecord;
 
 /**
@@ -45,21 +46,22 @@ public class MrankingServlet extends HttpServlet {
 		dispatcher.forward(request, response); */
 
 		// リクエストパラメータを取得する
-		request.setCharacterEncoding("UTF-8");
-		int user_id =  (int) session.getAttribute("id");
+				request.setCharacterEncoding("UTF-8");
+				int user_id =  (int) session.getAttribute("id");
+				String user_name = request.getParameter("user_name");
 
-		 // Daoからデータを取り出す
-		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		List<Trainingrecord> exp_sum = TRDao.sumAll(new Trainingrecord(user_id));
+				 // Daoからデータを取り出す
+				TrainingrecordDao TRDao = new TrainingrecordDao ();
+				List<Alltable> exp_sum = TRDao.sumAll(new Trainingrecord(user_id));
+		        // System.out.println(exp_sum.size());
 
-				//とりあえずリクエストスコープへセットする
-				request.setAttribute("rankList", exp_sum);
+						//とりあえずリクエストスコープへセットする
+						request.setAttribute("rankList", exp_sum);
 
-
-				//chart.jspに遷移させる
-				String path="/WEB-INF/jsp/m_ranking.jsp";
-				RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-				dispatcher.forward(request, response);
+						//chart.jspに遷移させる
+						String path="/WEB-INF/jsp/m_ranking.jsp";
+						RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+						dispatcher.forward(request, response);
 	}
 
 	/**

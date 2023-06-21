@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import model.Alltable;
@@ -343,7 +344,7 @@ public class TrainingrecordDao {
 		return result;
 	}
 
-	//全ユーザーの総経験値を出すDAO
+	//上位10ユーザーの総経験値を出すDAO
 	public List<Alltable> sumAll(Trainingrecord param) {
 		Connection conn = null;
 		List<Alltable> expSumList = new ArrayList<Alltable>();
@@ -356,11 +357,13 @@ public class TrainingrecordDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM from TRAINING_RECORD join USER_INFORMATION "
+			String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
+					+ "from TRAINING_RECORD join USER_INFORMATION "
 					+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
 					+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 10";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			System.out.println(sql);
+
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -402,4 +405,84 @@ public class TrainingrecordDao {
 		// 結果を返す
 		return expSumList;
 	}
+
+	//月間総経験値を出すDAO
+		public List<Alltable> sumAll(Trainingrecord param) {
+			Connection conn = null;
+			List<Alltable> expSumList = new ArrayList<Alltable>();
+
+
+			//日付指定
+			Date date = new Date(System.currentTimeMillis());
+			java.util.Date utilDate = date;
+			Date sqlDate = new Date(utilDate.getTime());
+			Calendar c = Calendar.getInstance();
+			c.setTime(utilDate);
+			int month = c.get(Calendar.MONTH) +1;
+			int year = c.get(Calendar.YEAR);
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
+
+				// SQL文を準備する
+				String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
+						+ "from TRAINING_RECORD join USER_INFORMATION "
+						+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
+						+ "where TRAINING_RECORD_DATE like ? "
+						+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 10";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+				System.out.println(sql);
+
+				String stYear = String.valueOf(year);
+				String stMonth = String.valueOf(month);
+				if (stMonth.length()==1) {
+					stMonth = "0" + stMonth;
+				}
+				pStmt.setString(1, "%" + stYear + "-" + stMonth + "%");
+
+
+				// SQL文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				// 結果表をコレクションにコピーする
+				while (rs.next()) {
+					/*Trainingrecord expSum = new Trainingrecord(
+					rs.getInt("exp_sum"));
+					expSumList.add(expSum);*/
+
+					Alltable al = new Alltable();
+
+					al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
+					al.setUser_name(rs.getString("user_name"));
+					expSumList.add(al);
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				expSumList = null;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				expSumList = null;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						expSumList = null;
+					}
+				}
+			}
+
+			// 結果を返す
+			return expSumList;
+		}
 }
