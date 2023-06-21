@@ -129,6 +129,16 @@
 	    document.querySelector('#calendar').innerHTML = calendar;
 	}
 
+	//クラス付与
+		const td = document.querySelectorAll('.btn');
+	function activeLink(){
+	td.forEach((item) =>
+	item.classList.remove('active'));
+	this.classList.add('active');
+	}
+	td.forEach((item) =>
+	item.addEventListener('click',activeLink));
+
 	// カレンダー作成
 	function createProcess(year, month) {
 	    // 曜日
@@ -164,6 +174,7 @@
 	                if(year == today.getFullYear() && month == (today.getMonth())&& count == today.getDate()){
 	                	calendar += "<td class='today'>" + count +"<br>"  ;
 			          	for(var i=0;i<list.length;i++){
+			          		calendar += "<input type='button' id = 'btn' value='nasi'onclick='test()'>";
 	                		var bean = list[i];
 	                		var date = new Date(bean.training_record_date);
 	                		/* alert(date); */
@@ -177,12 +188,15 @@
 
 	                		if(year==y && (month+1)==m && count==d){
 	                			//追加したいタグを追加
-	                			calendar += "<a href=''>konnni</a> </td>";
+	                			 calendar += "<input type='button' value='aru'onclick='test()'></td>";
 	                		}
+	                		/* else if(y==0 && m == 0 && d==0) {
+	                			calendar += "<input type='button' value='nasi'onclick='test()'></td>";
+                		} */
 			          	}
 	                } else {
 						//表示したい項目がある場合は、ここでリンクを設定する
-	                    calendar += "<td class = 'otherdays'>" + count + "<br>"
+	                  if(calendar += "<td class = 'otherdays'>" + "<a href ="" onclick = 'test()'>count</a>"){
 	                    for(var i=0;i<list.length;i++){
 	                		var bean = list[i];
 	                		var date = new Date(bean.training_record_date);
@@ -195,11 +209,16 @@
 	                		var m= date.getMonth() + 1; // 月の取得（0-11の範囲で返されるため、+1する）
 	                		var d = date.getDate(); // 日の取得 */
 
-	                		if(year==y && (month+1)==m && count==d){
+	                		 if(year==y && (month+1)==m && count==d){
 	                			//追加したいタグを追加
-	                			calendar += " <a href=''>konnni</a> </td>";
-	                		}
+	                			calendar += "</td>";
+	                    	}
+	                		/* else{
+	                			 calendar += "</td>";
+	                		} */
 	                	}
+	                  }
+
 	                }
 	            }
 	        }

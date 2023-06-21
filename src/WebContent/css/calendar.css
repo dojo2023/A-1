@@ -26,27 +26,17 @@
 		}
 		th, td {
 		    outline: 1px solid #ddd;
-		    padding-top: 20px;
-		    padding-bottom: 30px;
 		    text-align: center;
+
 		}
 
-		td {
-		position: relative;
-    	overflow: hidden;
-		}
+		.otherdays  a,
+		.today a{
+			display: block;
+			padding:30px;
+			}
 
-		td > a:before{
-	    content:"";
-	    position: absolute;
-	    width:100vw;
-	    height:100vh;
-	    -moz-transform: translateX(-50%) translateY(-50%);
-	    -webkit-transform: translateX(-50%) translateY(-50%);
-	    transform: translateX(-50%) translateY(-50%);
-	    left:50%;
-	    top:50%;
-		}
+
 
 		/*日曜日*/
 		td:first-child {
