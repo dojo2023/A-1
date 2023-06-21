@@ -30,7 +30,7 @@ public Trainingrecord( int training_record_id, Date training_record_date,int use
 	this.training_count = training_count;
 	this.training_set = training_set;
 	this.training_exp = training_exp;
-	this.setTraining_record_dow(training_record_dow);
+	this.training_record_dow =training_record_dow;
 }
 
 //String型の初期値null避け
@@ -42,7 +42,7 @@ public Trainingrecord( int training_record_id, Date training_record_date,int use
 //トレーニング記録登録のコンストラクタ
 
 public Trainingrecord(Date training_record_date, int user_id, String training_menu,
-		double training_weight, int training_count, int training_set, int training_exp, String training_record_dow) {
+		double training_weight, int training_count, int training_set, int training_exp) {
 	super();
 	this.training_record_date = training_record_date;
 	this.user_id = user_id;
@@ -53,6 +53,7 @@ public Trainingrecord(Date training_record_date, int user_id, String training_me
 	this.training_exp = training_exp;
 	this.training_record_dow = training_record_dow;
 }
+
 
 //トレーニング記録結果表示のコンストラクタ
 

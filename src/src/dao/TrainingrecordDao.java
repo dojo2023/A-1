@@ -33,9 +33,8 @@ public class TrainingrecordDao {
 					+ "training_weight,"
 					+ "training_count,"
 					+ "training_set,"
-					+ "training_exp"
-					+ "training_record_dow)"
-					+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+					+ "training_exp)"
+					+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -45,7 +44,6 @@ public class TrainingrecordDao {
 			} else {
 				pStmt.setDate(1, null);
 			}
-
 			if (card.getUser_id() != 0) {
 				pStmt.setInt(2, card.getUser_id());
 			} else {
@@ -80,12 +78,6 @@ public class TrainingrecordDao {
 				pStmt.setInt(7, card.getTraining_exp());
 			} else {
 				pStmt.setInt(7, 0);
-			}
-
-			if (card.getTraining_record_dow() != null) {
-				pStmt.setString(8, card.getTraining_record_dow());
-			} else {
-				pStmt.setString(8, null);
 			}
 
 			// SQL文を実行する
@@ -226,9 +218,9 @@ public class TrainingrecordDao {
 	}
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Trainingrecord> select(Trainingrecord param) {
+	public ArrayList<Trainingrecord> select(Trainingrecord param) {
 		Connection conn = null;
-		List<Trainingrecord> cardList = new ArrayList<Trainingrecord>();
+		ArrayList<Trainingrecord> trainingList = new ArrayList<Trainingrecord>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -238,42 +230,49 @@ public class TrainingrecordDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from TRAINING_RECORD WHERE"
-					+ "(training_record_date = ? "
-					+ "AND "
-					+ "user_id =?)";
+			String sql = "select * from TRAINING_RECORD WHERE "
+					+ "user_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (param.getTraining_record_date() != null) {
+			/*if (param.getTraining_record_date() != null) {
 				pStmt.setDate(1, param.getTraining_record_date());
 			} else {
 				pStmt.setDate(1, null);
-			}
+			}*/
+
+
 			if (param.getUser_id() != 0) {
-				pStmt.setInt(2, param.getUser_id());
+				pStmt.setInt(1, param.getUser_id());
 			} else {
-				pStmt.setInt(2, 0);
+				pStmt.setInt(1, 0);
 			}
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				Trainingrecord card = new Trainingrecord(
+
+				System.out.println(rs.getDate("training_record_date"));
+				Trainingrecord record = new Trainingrecord(
+						rs.getDate("training_record_date"),
+						rs.getInt("training_record_id"),
 						rs.getString("training_menu"),
 						rs.getDouble("training_weight"),
 						rs.getInt("training_count"),
 						rs.getInt("training_set"),
 						rs.getInt("training_exp"));
-				cardList.add(card);
+				record.setTraining_record_id(rs.getInt("training_record_id"));
+				System.out.println(rs.getInt("training_record_id"));
+				trainingList.add(record);
 			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-			cardList = null;
+			trainingList = null;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			cardList = null;
+			trainingList = null;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -281,13 +280,13 @@ public class TrainingrecordDao {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					cardList = null;
+					trainingList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return cardList;
+		return trainingList;
 	}
 
 	// ログインユーザーの総獲得経験値

@@ -49,6 +49,10 @@ public class Alltable implements Serializable{
 		this.training_exp = training_exp;
 		this.training_record_dow = training_record_dow;
 	}
+	public Alltable() {
+
+	}
+
 
 	//こっからセッター・ゲッター
 	public int getUser_id() {
