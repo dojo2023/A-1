@@ -11,22 +11,16 @@
     <title>Timer with Progress Indicator</title>
 </head>
 <body>
-
-<div class=title>Timer</div>
-
-    <div class="main-container center">
-
-    <div class="circle-container center">
-        <div class="semicircle"></div>
-        <div class="semicircle"></div>
-        <div class="semicircle"></div>
-        <div class="outermost-circle"></div>
+    <div class="container">
+        <div class="wrapper">
+            <p>
+                <span class="mins">60</span>:<span class="seconds">00</span></span>
+            </p> <br>
+            <button class="btn-start">Start</button>
+            <button class="btn-stop">Stop</button>
+            <button class="btn-reset">Reset</button>
+        </div>
     </div>
-    </div>
-
-    <!-- timer -->
-    <div class ="timer-container center">
-    <div class="timer center"></div>
     </div>
 
     <!-- 画面下部メニューバー表示 -->
