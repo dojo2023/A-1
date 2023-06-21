@@ -14,8 +14,16 @@
     <div class="container">
         <div class="wrapper">
             <p>
-                <span class="mins">60</span>:<span class="seconds">00</span></span>
+                <span class="mins">60</span>:<span class="seconds">00</span>
             </p> <br>
+            <!-- セットボタン -->
+			<button class="plus-min">+</button>
+			<button class="minus-min">-</button>
+			<button class="plus-sec">+</button>
+			<button class="minus-sec">-</button>
+			<br>
+
+
             <button class="btn-start">Start</button>
             <button class="btn-stop">Stop</button>
             <button class="btn-reset">Reset</button>
@@ -71,7 +79,7 @@
         </div>
 
     <script src="/jiro_power/js/timer.js"></script>
-     <div class="timer center"></div>
+     <!-- <div class="timer center"></div> -->
 
 </body>
 </html>

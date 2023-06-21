@@ -47,6 +47,26 @@
         box-shadow:  0px 0px 32px 3px #5AFF19;
     }
 }
+
+
+/* 追加- タイマー0の時3秒間色変わるよ */
+/*
+.wrapper.timer-end p::before {
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0px 0px 32px -12px red);
+}
+
+@keyframes shine-red {
+  0%, 100% {
+    box-shadow: 0px 0px 32px -12px red;
+  }
+  50% {
+    box-shadow: 0px 0px 32px 3px red;
+  }
+}
+*/
+
 button{
     background-color: black;
     padding: 30px 30px;
