@@ -76,14 +76,14 @@ public class UserRegistServlet extends HttpServlet {
 
 				}
 
-		//ユーザー名重複チェックを行う
-				boolean userNameCheck = uDao.uns(new Userinformation(user_name));
-				System.out.println(userNameCheck);
-				if(userNameCheck == false) {
-//					request.setAttribute("unc", userNameCheck);
-					request.setAttribute("mac2", "そのユーザー名は既に登録されています。");
-					flg=false;
-				}
+				/*		//ユーザー名重複チェックを行う
+								boolean userNameCheck = uDao.uns(new Userinformation(user_name));
+								System.out.println(userNameCheck);
+								if(userNameCheck == false) {
+				//					request.setAttribute("unc", userNameCheck);
+									request.setAttribute("mac2", "そのユーザー名は既に登録されています。");
+									flg=false;
+								}*/
 		//登録処理を行う
 				if(flg==false) {
 					// ユーザー登録ページにリダイレクトする
@@ -99,12 +99,12 @@ public class UserRegistServlet extends HttpServlet {
 				    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 				    	dispatcher.forward(request, response);
 					}
-					else {//登録失敗
-						//登録失敗時の処理を書く
-						//ユーザー情報登録ページにフォワードする
-				    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-				    	dispatcher.forward(request, response);
-						}
+					/*					else {//登録失敗
+											//登録失敗時の処理を書く
+											//ユーザー情報登録ページにフォワードする
+									    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+									    	dispatcher.forward(request, response);
+											}*/
 				}
     }
 }

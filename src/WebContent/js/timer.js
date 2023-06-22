@@ -127,7 +127,7 @@ function handleTimerEnd() {
   secondsElement.style.color = 'red';*/
 
   // タイマー終了音を再生する
-  const audio = new Audio('../cyber.mp3');  /*/jiro_power/cyber.mp3*/
+  const audio = new Audio('./js/cyber.mp3');  /*/jiro_power/cyber.mp3*/
   audio.play();
 }
 
