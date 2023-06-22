@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.TrainingrecordDao;
 import dao.UserinformationDao;
-import model.Trainingrecord;
 import model.Userinformation;
 
 /**
@@ -42,7 +40,6 @@ public class LoginServlet extends HttpServlet {
 
 		// ログイン処理を行う
 		UserinformationDao uDao = new UserinformationDao();
-		TrainingrecordDao trDao = new TrainingrecordDao();
 		int id =  uDao.isLoginOK(new Userinformation(email, pw));
 		if(id != 0) {
 			// ログイン成功
@@ -58,15 +55,6 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("user_height_session",user.getUser_height());
 		session.setAttribute("user_weight_session",user.getUser_weight());
 		session.setAttribute("user_mail_address_session",user.getUser_mail_address());
-
-		//セッションスコープに総経験値を格納する
-
-		int expSum = trDao.sum(new Trainingrecord(id));
-		System.out.println(expSum);
-		session.setAttribute("exp_sum_session", expSum);
-		System.out.println(session.getAttribute("exp_sum_session"));
-//		System.out.println(session.getAttribute("user_name_session"));
-
 
 			// 記録サーブレットにリダイレクトする
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");

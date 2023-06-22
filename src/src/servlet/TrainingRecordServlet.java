@@ -68,17 +68,17 @@ public class TrainingRecordServlet extends HttpServlet {
 				double training_weight = Double.parseDouble(request.getParameter("training_weight"));
 				int training_count = Integer.parseInt(request.getParameter("training_count"));
 				int training_set = Integer.parseInt(request.getParameter("training_set"));
-				String training_record_dow = request.getParameter("training_record_dow");
+//				String training_record_dow = request.getParameter("training_record_dow");
 
 				//TrainingmenuDaoの倍率だけのメソッドを用意してをnewする。
 				TrainingmenuDao TMDao = new TrainingmenuDao();
 				double mag =  TMDao.MAGMAG(new Trainingmenu(training_menu));
 				//Userinfortationの体重だけのメソッドを用意してnewする。
-				UserinformationDao UIDao = new UserinformationDao();
-				int weight = UIDao.UW(new Userinformation(user_id));
+				UserinformationDao UDao = new UserinformationDao();
+				int weight = UDao.UW(new Userinformation(user_id));
 				//Userinfortationの性別だけのメソッドを用意してnewする。
-				UIDao = new UserinformationDao();
-				int sex = UIDao.US(new Userinformation(user_id));
+				UDao = new UserinformationDao();
+				int sex = UDao.US(new Userinformation(user_id));
 				//経験値計算式
 				int EXP = 0;
 				if(sex == 1) {
@@ -93,7 +93,7 @@ public class TrainingRecordServlet extends HttpServlet {
 				TrainingrecordDao TRDao = new TrainingrecordDao ();
 				if (TRDao.insert(new Trainingrecord(training_record_date,
 						user_id,training_menu, training_weight,
-						training_count,training_set,training_exp, training_record_dow))) {	// 登録成功
+						training_count,training_set,training_exp/*, training_record_dow*/))) {	// 登録成功
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
 					dispatcher.forward(request, response);
 				}
@@ -102,11 +102,19 @@ public class TrainingRecordServlet extends HttpServlet {
 					dispatcher.forward(request, response);
 				}
 
-				// 結果ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
-				dispatcher.forward(request, response);
+				//<テスト>経験値の即時反映
+				int expSum = TRDao.sum(new Trainingrecord(user_id));
+				session.setAttribute("exp_sum_session", expSum);
+
+				//レベル計算
+				for(int i=0; i<100; i++) {
+			    	int requiredExp = 10;
+			    	requiredExp = requiredExp + requiredExp * i;
+			    	if(requiredExp > expSum) {
+			    		int level = i + 1;
+			    		session.setAttribute("level_session", level);
+			    		break;
+			    	};
+			    };
 			}
-
-
     }
-
