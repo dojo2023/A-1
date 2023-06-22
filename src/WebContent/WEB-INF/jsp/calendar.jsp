@@ -27,6 +27,10 @@
 		<div id="calendar"></div>
 		<div id="recordList">トレーニング記録</div>
 
+		<input type="text" name="name" value="" id="test1">
+
+
+
 	</div>
 
 	<!-- 画面上部ステータス表示 -->
@@ -124,6 +128,28 @@
 	td.forEach((item) =>
 	item.addEventListener('click',activeLink));
 
+	//クリック時のイベント
+	function click(){
+		alert('Click');
+		<%-- var list = <%= new Gson().toJson(request.getAttribute("list")) %>;
+		for(var i=0;i<list.length;i++){
+			var bean = list[i];
+			var date = new Date(bean.training_record_date);
+			var ss = bean.training_record_date.split(" ");
+			var y = ss[2];
+			var d = ss[1].replace(",","");
+			var m = ss[0].replace("月","");
+
+			 if(year==y && (month+1)==m && count==d){
+				//追加したいタグを追加
+				var RL =document.getElementById("#recordList");
+				RL.innerHTML += "aaaa";
+				RL.insertAdjacentHTML('beforeend',"aaaaa");
+
+	    	}
+		} --%>
+	}
+
 
 
 	// カレンダー作成
@@ -160,8 +186,8 @@
 
 	                if(year == today.getFullYear() && month == (today.getMonth())&& count == today.getDate()){
 	                	var list = <%= new Gson().toJson(request.getAttribute("list")) %>;
-	                	 calendar += "<td class = 'today'>" +"<a href='#' onclick = 'click()' >"+count+"</a>"+ "</td>" ;
-	            		/*for(var i=0;i<list.length;i++){
+	                	 calendar += "<td class = 'today'>"+count+"<a href='javascript:void(0)' class = 'todayDate' onclick='test1()'>a</a></td>" ;
+	            		for(var i=0;i<list.length;i++){
 	            			var bean = list[i];
 	            			var date = new Date(bean.training_record_date);
 	            			var ss = bean.training_record_date.split(" ");
@@ -169,18 +195,23 @@
 	            			var d = ss[1].replace(",","");
 	            			var m = ss[0].replace("月","");
 
+								function test(){
+									alert("aaa");
+		            				/* calendar +="<a href='#'>aa</a>"; */
+			            			if(year==y && (month+1)==m && count==d){
 
-	            			if(year==y && (month+1)==m && count==d){
-	            				calendar +="<a href='#' javascript:OnLinkClick='Record(bean)'></a>	</td>";
-	            			}else{
-	            				calendar +="<a href='#' javascript:OnLinkClick='Record(bean)'></a>	</td>";
-	            			}
+			            			}else{
+			            				/* calendar +="<a href='#'>bb</a>"; */
+			            			}
+								}
+
 	            		}
- */
+
+
 	                } else {
 	                	var list = <%= new Gson().toJson(request.getAttribute("list")) %>;
-	                	calendar += "<td class = 'otherdays'> "+"<a href='#' onclick = 'click()'>"+count+"</a>" +"</td>";
-	                	/* for(var i=0;i<list.length;i++){
+	                	calendar += "<td class = 'otherdays'> "+count+"<a href='#'>あ</a>";
+	                	for(var i=0;i<list.length;i++){
 	            			var bean = list[i];
 	            			var date = new Date(bean.training_record_date);
 	            			var ss = bean.training_record_date.split(" ");
@@ -188,14 +219,14 @@
 	            			var d = ss[1].replace(",","");
 	            			var m = ss[0].replace("月","");
 
-
+	            			/* calendar +="<a href='#'>ああ</a>"; */
 	            			if(year==y && (month+1)==m && count==d){
-	            				calendar +="<a href='#' javascript:OnLinkClick='Record(bean)'></a>	</td>";
+
 	            			}else{
-	            				calendar +="<a href='#' javascript:OnLinkClick='Record(bean)'></a>	</td>";
+	            				/* calendar +="<a href='#'>いい</a>"; */
 	            			}
-	            		}
- */
+	            		  }calendar +="</td>";
+
 		               /*  calendar += "<td class = 'otherdays' onclick = 'click(count)'>" + count  +" </td>"; */
 
 
@@ -206,26 +237,15 @@
 	    }
 	    return calendar;
 	}
-	//クリック時のイベント
-	function click(){
-		alert('Click');
-		var list = <%= new Gson().toJson(request.getAttribute("list")) %>;
-		for(var i=0;i<list.length;i++){
-			var bean = list[i];
-			var date = new Date(bean.training_record_date);
-			var ss = bean.training_record_date.split(" ");
-			var y = ss[2];
-			var d = ss[1].replace(",","");
-			var m = ss[0].replace("月","");
 
-			 if(year==y && (month+1)==m && count==d){
-				//追加したいタグを追加
-				var RL =document.getElementById("#recordList");
-				RL.innerHTML += "aaaa";
-				RL.insertAdjacentHTML('beforeend',"aaaaa");
+	function test1(){
 
-	    	}
-		}
+		const todayDate = document.querySelector(".todayDate");
+		const today = document.querySelector(".today");
+		todayDate.addEventlistner("click",
+			  today.classList.toggle("js-active");
+		);
+
 	}
 /*
 	function test(){
