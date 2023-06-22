@@ -34,7 +34,7 @@
 
 		<div class="user_name"><input type="text" name="user_name" value="${user_name_session}"
 		  placeholder="8文字以内" maxlength="8" required></div> <!-- user.username -->
-	      <div class="exp">${exp}exp</div>
+	      <div class="exp">${exp_sum_session}exp</div>
 	      <div class="birthday_display">${user_birth_session}</div>
 	      <div class="sex"><c:choose> <c:when test = "${user_sex_session == 1}">MEN</c:when><c:otherwise>WOMEN</c:otherwise></c:choose></div>
 	      <div class="height">身長</div>

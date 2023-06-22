@@ -42,7 +42,7 @@ public Trainingrecord( int training_record_id, Date training_record_date,int use
 //トレーニング記録登録のコンストラクタ
 
 public Trainingrecord(Date training_record_date, int user_id, String training_menu,
-		double training_weight, int training_count, int training_set, int training_exp) {
+		double training_weight, int training_count, int training_set, int training_exp, String training_record_dow) {
 	super();
 	this.training_record_date = training_record_date;
 	this.user_id = user_id;
