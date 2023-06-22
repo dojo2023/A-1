@@ -56,12 +56,12 @@ public class TrainingRecordDaoTest {
 			System.out.println("検索成功！");
 			List<Trainingrecord> recordList1 = dao.select(seRec);
 			for (Trainingrecord record : recordList1) {
-				seRec.setTraining_record_id(record.getTraining_record_id());
-				System.out.println("training_menu：" + record.getTraining_menu());
-				System.out.println("training_weight : " + record.getTraining_weight());
-				System.out.println("training_count : " + record.getTraining_count());
-				System.out.println("training_set : " + record.getTraining_set());
-				System.out.println("training_exp : " + record.getTraining_exp());
+				seRec.setTrainingRecordId(record.getTrainingRecordId());
+				System.out.println("training_menu：" + record.getTrainingMenu());
+				System.out.println("training_weight : " + record.getTrainingWeight());
+				System.out.println("training_count : " + record.getTrainingCount());
+				System.out.println("training_set : " + record.getTrainingSet());
+				System.out.println("training_exp : " + record.getTrainingExp());
 
 				//TRID =  record.getTraining_record_id();
 			}
