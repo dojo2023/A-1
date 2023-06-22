@@ -15,8 +15,8 @@ import model.Trainingrecord;
 
 public class TrainingrecordDao {
 
-	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(Trainingrecord card) {
+	// 引数recordで指定されたレコードを登録し、成功したらtrueを返す
+	public boolean insert(Trainingrecord record) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -40,44 +40,44 @@ public class TrainingrecordDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getTraining_record_date() != null) {
+			if (record.getTrainingRecordDate() != null) {
 
-				pStmt.setDate(1, (Date) card.getTraining_record_date());
+				pStmt.setDate(1, (Date) record.getTrainingRecordDate());
 			} else {
 				pStmt.setDate(1, null);
 			}
-			if (card.getUser_id() != 0) {
-				pStmt.setInt(2, card.getUser_id());
+			if (record.getUserId() != 0) {
+				pStmt.setInt(2, record.getUserId());
 			} else {
 				pStmt.setInt(2, 0);
 			}
 
-			if (card.getTraining_menu() != null) {
-				pStmt.setString(3, card.getTraining_menu());
+			if (record.getTrainingMenu() != null) {
+				pStmt.setString(3, record.getTrainingMenu());
 			} else {
 				pStmt.setString(3, null);
 			}
 
-			if (card.getTraining_weight() != 0) {
-				pStmt.setDouble(4, card.getTraining_weight());
+			if (record.getTrainingWeight() != 0) {
+				pStmt.setDouble(4, record.getTrainingWeight());
 			} else {
 				pStmt.setDouble(4, 0);
 			}
 
-			if (card.getTraining_count() != 0) {
-				pStmt.setInt(5, card.getTraining_count());
+			if (record.getTrainingCount() != 0) {
+				pStmt.setInt(5, record.getTrainingCount());
 			} else {
 				pStmt.setInt(5, 0);
 			}
 
-			if (card.getTraining_set() != 0) {
-				pStmt.setInt(6, card.getTraining_set());
+			if (record.getTrainingSet() != 0) {
+				pStmt.setInt(6, record.getTrainingSet());
 			} else {
 				pStmt.setInt(6, 0);
 			}
 
-			if (card.getTraining_exp() != 0) {
-				pStmt.setInt(7, card.getTraining_exp());
+			if (record.getTrainingExp() != 0) {
+				pStmt.setInt(7, record.getTrainingExp());
 			} else {
 				pStmt.setInt(7, 0);
 			}
@@ -106,7 +106,7 @@ public class TrainingrecordDao {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Trainingrecord card) {
+	public boolean update(Trainingrecord record) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -128,32 +128,32 @@ public class TrainingrecordDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getTraining_menu() != null) {
+			if (record.getTrainingMenu() != null) {
 
-				pStmt.setString(1, card.getTraining_menu());
+				pStmt.setString(1, record.getTrainingMenu());
 			} else {
 				pStmt.setString(1, null);
 			}
-			if (card.getTraining_weight() != 0) {
-				pStmt.setDouble(2, card.getTraining_weight());
+			if (record.getTrainingWeight() != 0) {
+				pStmt.setDouble(2, record.getTrainingWeight());
 			} else {
 				pStmt.setDouble(2, 0);
 			}
 
-			if (card.getTraining_count() != 0) {
-				pStmt.setInt(3, card.getTraining_count());
+			if (record.getTrainingCount() != 0) {
+				pStmt.setInt(3, record.getTrainingCount());
 			} else {
 				pStmt.setInt(3, 0);
 			}
 
-			if (card.getTraining_set() != 0) {
-				pStmt.setInt(4, card.getTraining_set());
+			if (record.getTrainingSet() != 0) {
+				pStmt.setInt(4, record.getTrainingSet());
 			} else {
 				pStmt.setInt(4, 0);
 			}
 
-			if (card.getTraining_record_id() != 0) {
-				pStmt.setInt(5, card.getTraining_record_id());
+			if (record.getTrainingRecordId() != 0) {
+				pStmt.setInt(5, record.getTrainingRecordId());
 			} else {
 				pStmt.setInt(5, 0);
 			}
@@ -181,7 +181,7 @@ public class TrainingrecordDao {
 	}
 
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-	public boolean delete(String number) {
+	public boolean delete(String erase) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -244,8 +244,8 @@ public class TrainingrecordDao {
 			}*/
 
 
-			if (param.getUser_id() != 0) {
-				pStmt.setInt(1, param.getUser_id());
+			if (param.getUserId() != 0) {
+				pStmt.setInt(1, param.getUserId());
 			} else {
 				pStmt.setInt(1, 0);
 			}
@@ -264,7 +264,7 @@ public class TrainingrecordDao {
 						rs.getInt("training_count"),
 						rs.getInt("training_set"),
 						rs.getInt("training_exp"));
-				record.setTraining_record_id(rs.getInt("training_record_id"));
+				record.setTrainingRecordId(rs.getInt("training_record_id"));
 				System.out.println(rs.getInt("training_record_id"));
 				trainingList.add(record);
 			}
@@ -310,8 +310,8 @@ public class TrainingrecordDao {
 
 			// SQL文を完成させる
 
-			if (param.getUser_id() != 0) {
-				pStmt.setInt(1, param.getUser_id());
+			if (param.getUserId() != 0) {
+				pStmt.setInt(1, param.getUserId());
 			} else {
 				pStmt.setInt(1, 0);
 			}
@@ -376,8 +376,8 @@ public class TrainingrecordDao {
 
 				Alltable al = new Alltable();
 
-				al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
-				al.setUser_name(rs.getString("user_name"));
+				al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+				al.setUserName(rs.getString("user_name"));
 				expSumList.add(al);
 			}
 		}
@@ -415,7 +415,7 @@ public class TrainingrecordDao {
 			//日付指定
 			Date date = new Date(System.currentTimeMillis());
 			java.util.Date utilDate = date;
-			Date sqlDate = new Date(utilDate.getTime());
+//			Date sqlDate = new Date(utilDate.getTime());
 			Calendar c = Calendar.getInstance();
 			c.setTime(utilDate);
 			int month = c.get(Calendar.MONTH) +1;
@@ -456,8 +456,8 @@ public class TrainingrecordDao {
 
 					Alltable al = new Alltable();
 
-					al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
-					al.setUser_name(rs.getString("user_name"));
+					al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+					al.setUserName(rs.getString("user_name"));
 					expSumList.add(al);
 				}
 			}
@@ -495,7 +495,7 @@ public class TrainingrecordDao {
 					//日付指定
 					Date date = new Date(System.currentTimeMillis());
 					java.util.Date utilDate = date;
-					Date sqlDate = new Date(utilDate.getTime());
+//					Date sqlDate = new Date(utilDate.getTime());
 					Calendar c = Calendar.getInstance();
 					c.setTime(utilDate);
 					int month = c.get(Calendar.MONTH) +1;
@@ -536,8 +536,8 @@ public class TrainingrecordDao {
 
 							Alltable al = new Alltable();
 
-							al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
-							al.setUser_name(rs.getString("user_name"));
+							al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+							al.setUserName(rs.getString("user_name"));
 							expSumList.add(al);
 						}
 					}
@@ -576,7 +576,7 @@ public class TrainingrecordDao {
 					//日付指定
 					Date date = new Date(System.currentTimeMillis());
 					java.util.Date utilDate = date;
-					Date sqlDate = new Date(utilDate.getTime());
+//					Date sqlDate = new Date(utilDate.getTime());
 					Calendar c = Calendar.getInstance();
 					c.setTime(utilDate);
 					int month = c.get(Calendar.MONTH) +1;
@@ -617,8 +617,8 @@ public class TrainingrecordDao {
 
 							Alltable al = new Alltable();
 
-							al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
-							al.setUser_name(rs.getString("user_name"));
+							al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+							al.setUserName(rs.getString("user_name"));
 							expSumList.add(al);
 						}
 					}
@@ -657,7 +657,7 @@ public class TrainingrecordDao {
 					//日付指定
 					Date date = new Date(System.currentTimeMillis());
 					java.util.Date utilDate = date;
-					Date sqlDate = new Date(utilDate.getTime());
+//					Date sqlDate = new Date(utilDate.getTime());
 					Calendar c = Calendar.getInstance();
 					c.setTime(utilDate);
 					int month = c.get(Calendar.MONTH) +1;
@@ -698,8 +698,8 @@ public class TrainingrecordDao {
 
 							Alltable al = new Alltable();
 
-							al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
-							al.setUser_name(rs.getString("user_name"));
+							al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+							al.setUserName(rs.getString("user_name"));
 							expSumList.add(al);
 						}
 					}

@@ -47,18 +47,18 @@ public class WrankingServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		int user_id =  (int) session.getAttribute("id");
-		String user_name = request.getParameter("user_name");
+		int userId =  (int) session.getAttribute("id");
+//		String userName = request.getParameter("user_name");
 
 		 // Daoからデータを取り出す
 		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		List<Alltable> exp_sum_wm = TRDao.sumWeeklyMen(new Trainingrecord(user_id));
-		List<Alltable> exp_sum_ww = TRDao.sumWeeklyWomen(new Trainingrecord(user_id));
+		List<Alltable> expSumWM = TRDao.sumWeeklyMen(new Trainingrecord(userId));
+		List<Alltable> expSumWW = TRDao.sumWeeklyWomen(new Trainingrecord(userId));
         // System.out.println(exp_sum.size());
 
 				//とりあえずリクエストスコープへセットする
-				request.setAttribute("wmrankList", exp_sum_wm);
-				request.setAttribute("wwrankList", exp_sum_ww);
+				request.setAttribute("wmrankList", expSumWM);
+				request.setAttribute("wwrankList", expSumWW);
 
 				//chart.jspに遷移させる
 				String path="/WEB-INF/jsp/m_ranking.jsp";
@@ -71,8 +71,8 @@ public class WrankingServlet extends HttpServlet {
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		/*if (session.getAttribute("id") == null) {
+    	/*HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
 		}*/

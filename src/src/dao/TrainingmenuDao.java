@@ -25,7 +25,7 @@ public class TrainingmenuDao{
 					String sqlTm = "select training_menu_magnification "
 						+ "from training_menu where training_menu = ?";
 					PreparedStatement pStmtTm = conn.prepareStatement(sqlTm);
-					pStmtTm.setString(1,tm.getTraining_menu());
+					pStmtTm.setString(1,tm.getTrainingMenu());
 
 					// SELECT文を実行し、結果表を取得する
 					ResultSet rs = pStmtTm.executeQuery();

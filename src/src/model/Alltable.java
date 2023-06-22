@@ -5,197 +5,199 @@ import java.io.Serializable;
 public class Alltable implements Serializable{
 
 	//こっからフィールド
-	private int user_id;
-	private String user_name;
-	private int user_sex;
-	private String user_birth;
-	private String user_mail_address;
-	private String user_password;
-	private int user_height;
-	private int user_weight;
-	private int training_menu_id;
-	private String training_menu;
-	private double training_menu_magnification;
-	private int training_record_id;
-	private String training_record_date;
-	private double training_weight;
-	private int training_count;
-	private int training_set;
-	private int training_exp;
-	private String training_record_dow;
+	private int userId;
+	private String userName;
+	private int userSex;
+	private String userBirth;
+	private String userMailAddress;
+	private String userPassword;
+	private int userHeight;
+	private int userWeight;
+	private int trainingMenuId;
+	private String trainingMenu;
+	private double trainingMenuMagnification;
+	private int trainingRecordId;
+	private String trainingRecordDate;
+	private double trainingWeight;
+	private int trainingCount;
+	private int trainingSet;
+	private int trainingExp;
+	private String trainingRecordDow;
 
 	//こっからコンストラクタ
-	public Alltable(int user_id, String user_name, int user_sex, String user_birth, String user_mail_address,
-			String user_password, int user_height, int user_weight, int training_menu_id, String training_menu,
-			double training_menu_magnification, int training_record_id, String training_record_date,
-			double training_weight, int training_count, int training_set, int training_exp, String training_record_dow) {
+	public Alltable(int userId, String userName, int userSex, String userBirth, String userMailAddress,
+			String userPassword, int userHeight, int userWeight, int trainingMenuId, String trainingMenu,
+			double trainingMenuMagnification, int trainingRecordId, String trainingRecordDate, double trainingWeight,
+			int trainingCount, int trainingSet, int trainingExp, String trainingRecordDow) {
 		super();
-		this.user_id = user_id;
-		this.user_name = user_name;
-		this.user_sex = user_sex;
-		this.user_birth = user_birth;
-		this.user_mail_address = user_mail_address;
-		this.user_password = user_password;
-		this.user_height = user_height;
-		this.user_weight = user_weight;
-		this.training_menu_id = training_menu_id;
-		this.training_menu = training_menu;
-		this.training_menu_magnification = training_menu_magnification;
-		this.training_record_id = training_record_id;
-		this.training_record_date = training_record_date;
-		this.training_weight = training_weight;
-		this.training_count = training_count;
-		this.training_set = training_set;
-		this.training_exp = training_exp;
-		this.training_record_dow = training_record_dow;
+		this.userId = userId;
+		this.userName = userName;
+		this.userSex = userSex;
+		this.userBirth = userBirth;
+		this.userMailAddress = userMailAddress;
+		this.userPassword = userPassword;
+		this.userHeight = userHeight;
+		this.userWeight = userWeight;
+		this.trainingMenuId = trainingMenuId;
+		this.trainingMenu = trainingMenu;
+		this.trainingMenuMagnification = trainingMenuMagnification;
+		this.trainingRecordId = trainingRecordId;
+		this.trainingRecordDate = trainingRecordDate;
+		this.trainingWeight = trainingWeight;
+		this.trainingCount = trainingCount;
+		this.trainingSet = trainingSet;
+		this.trainingExp = trainingExp;
+		this.trainingRecordDow = trainingRecordDow;
 	}
+
 	public Alltable() {
 
 	}
 
-
 	//こっからセッター・ゲッター
-	public int getUser_id() {
-		return user_id;
+
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public String getUser_name() {
-		return user_name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public int getUser_sex() {
-		return user_sex;
+	public int getUserSex() {
+		return userSex;
 	}
 
-	public void setUser_sex(int user_sex) {
-		this.user_sex = user_sex;
+	public void setUserSex(int userSex) {
+		this.userSex = userSex;
 	}
 
-	public String getUser_birth() {
-		return user_birth;
+	public String getUserBirth() {
+		return userBirth;
 	}
 
-	public void setUser_birth(String user_birth) {
-		this.user_birth = user_birth;
+	public void setUserBirth(String userBirth) {
+		this.userBirth = userBirth;
 	}
 
-	public String getUser_mail_address() {
-		return user_mail_address;
+	public String getUserMailAddress() {
+		return userMailAddress;
 	}
 
-	public void setUser_mail_address(String user_mail_address) {
-		this.user_mail_address = user_mail_address;
+	public void setUserMailAddress(String userMailAddress) {
+		this.userMailAddress = userMailAddress;
 	}
 
-	public String getUser_password() {
-		return user_password;
+	public String getUserPassword() {
+		return userPassword;
 	}
 
-	public void setUser_password(String user_password) {
-		this.user_password = user_password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
-	public int getUser_height() {
-		return user_height;
+	public int getUserHeight() {
+		return userHeight;
 	}
 
-	public void setUser_height(int user_height) {
-		this.user_height = user_height;
+	public void setUserHeight(int userHeight) {
+		this.userHeight = userHeight;
 	}
 
-	public int getUser_weight() {
-		return user_weight;
+	public int getUserWeight() {
+		return userWeight;
 	}
 
-	public void setUser_weight(int user_weight) {
-		this.user_weight = user_weight;
+	public void setUserWeight(int userWeight) {
+		this.userWeight = userWeight;
 	}
 
-	public int getTraining_menu_id() {
-		return training_menu_id;
+	public int getTrainingMenuId() {
+		return trainingMenuId;
 	}
 
-	public void setTraining_menu_id(int training_menu_id) {
-		this.training_menu_id = training_menu_id;
+	public void setTrainingMenuId(int trainingMenuId) {
+		this.trainingMenuId = trainingMenuId;
 	}
 
-	public String getTraining_menu() {
-		return training_menu;
+	public String getTrainingMenu() {
+		return trainingMenu;
 	}
 
-	public void setTraining_menu(String training_menu) {
-		this.training_menu = training_menu;
+	public void setTrainingMenu(String trainingMenu) {
+		this.trainingMenu = trainingMenu;
 	}
 
-	public double getTraining_menu_magnification() {
-		return training_menu_magnification;
+	public double getTrainingMenuMagnification() {
+		return trainingMenuMagnification;
 	}
 
-	public void setTraining_menu_magnification(double training_menu_magnification) {
-		this.training_menu_magnification = training_menu_magnification;
+	public void setTrainingMenuMagnification(double trainingMenuMagnification) {
+		this.trainingMenuMagnification = trainingMenuMagnification;
 	}
 
-	public int getTraining_record_id() {
-		return training_record_id;
+	public int getTrainingRecordId() {
+		return trainingRecordId;
 	}
 
-	public void setTraining_record_id(int training_record_id) {
-		this.training_record_id = training_record_id;
+	public void setTrainingRecordId(int trainingRecordId) {
+		this.trainingRecordId = trainingRecordId;
 	}
 
-	public String getTraining_record_date() {
-		return training_record_date;
+	public String getTrainingRecordDate() {
+		return trainingRecordDate;
 	}
 
-	public void setTraining_record_date(String training_record_date) {
-		this.training_record_date = training_record_date;
+	public void setTrainingRecordDate(String trainingRecordDate) {
+		this.trainingRecordDate = trainingRecordDate;
 	}
 
-	public double getTraining_weight() {
-		return training_weight;
+	public double getTrainingWeight() {
+		return trainingWeight;
 	}
 
-	public void setTraining_weight(double training_weight) {
-		this.training_weight = training_weight;
+	public void setTrainingWeight(double trainingWeight) {
+		this.trainingWeight = trainingWeight;
 	}
 
-	public int getTraining_count() {
-		return training_count;
+	public int getTrainingCount() {
+		return trainingCount;
 	}
 
-	public void setTraining_count(int training_count) {
-		this.training_count = training_count;
+	public void setTrainingCount(int trainingCount) {
+		this.trainingCount = trainingCount;
 	}
 
-	public int getTraining_set() {
-		return training_set;
+	public int getTrainingSet() {
+		return trainingSet;
 	}
 
-	public void setTraining_set(int training_set) {
-		this.training_set = training_set;
+	public void setTrainingSet(int trainingSet) {
+		this.trainingSet = trainingSet;
 	}
 
-	public int getTraining_exp() {
-		return training_exp;
+	public int getTrainingExp() {
+		return trainingExp;
 	}
 
-	public void setTraining_exp(int training_exp) {
-		this.training_exp = training_exp;
+	public void setTrainingExp(int trainingExp) {
+		this.trainingExp = trainingExp;
 	}
 
-	public String getTraining_record_dow() {
-		return training_record_dow;
+	public String getTrainingRecordDow() {
+		return trainingRecordDow;
 	}
 
-	public void setTraining_record_dow(String training_record_dow) {
-		this.training_record_dow = training_record_dow;
+	public void setTrainingRecordDow(String trainingRecordDow) {
+		this.trainingRecordDow = trainingRecordDow;
 	}
+
 }

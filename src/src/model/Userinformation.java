@@ -5,60 +5,60 @@ import java.sql.Date;
 
 public class Userinformation implements Serializable{
 	//こっからフィールド
-	private int user_id;
-	private String user_name;
-	private int user_sex;
-	private Date user_birth;
-	private String user_mail_address;
-	private String user_password;
-	private int user_height;
-	private int user_weight;
+	private int userId;
+	private String userName;
+	private int userSex;
+	private Date userBirth;
+	private String userMailAddress;
+	private String userPassword;
+	private int userHeight;
+	private int userWeight;
 
 //コンストラクタ
 	//全部入れ
 
-	public Userinformation(int user_id, String user_name, int user_sex, Date user_birth, String user_mail_address,
-			String user_password, int user_height, int user_weight) {
+	public Userinformation(int userId, String userName, int userSex, Date userBirth, String userMailAddress,
+			String userPassword, int userHeight, int userWeight) {
 		super();
-		this.user_id = user_id;
-		this.user_name = user_name;
-		this.user_sex = user_sex;
-		this.user_birth = user_birth;
-		this.user_mail_address = user_mail_address;
-		this.user_password = user_password;
-		this.user_height = user_height;
-		this.user_weight = user_weight;
+		this.userId = userId;
+		this.userName = userName;
+		this.userSex = userSex;
+		this.userBirth = userBirth;
+		this.userMailAddress = userMailAddress;
+		this.userPassword = userPassword;
+		this.userHeight = userHeight;
+		this.userWeight = userWeight;
 	}
 
 	//String型の初期値null避け
 	public Userinformation() {
-		this.user_name="";
-		this.user_mail_address = "";
-		this.user_password = "";
+		this.userName="";
+		this.userMailAddress = "";
+		this.userPassword = "";
 	}
 
 
 	//ログイン用
-	public Userinformation(String user_mail_address, String user_password) {
+	public Userinformation(String userMailAddress, String userPassword) {
 		super();
-		this.user_mail_address = user_mail_address;
-		this.user_password = user_password;
+		this.userMailAddress = userMailAddress;
+		this.userPassword = userPassword;
 	}
 
 
 
 	//ユーザー登録用
 
-	public Userinformation(String user_name, int user_sex, Date user_birth, String user_mail_address,
-			String user_password, int user_height, int user_weight) {
+	public Userinformation(String userName, int userSex, Date userBirth, String userMailAddress,
+			String userPassword, int userHeight, int userWeight) {
 		super();
-		this.user_name = user_name;
-		this.user_sex = user_sex;
-		this.user_birth = user_birth;
-		this.user_mail_address = user_mail_address;
-		this.user_password = user_password;
-		this.user_height = user_height;
-		this.user_weight = user_weight;
+		this.userName = userName;
+		this.userSex = userSex;
+		this.userBirth = userBirth;
+		this.userMailAddress = userMailAddress;
+		this.userPassword = userPassword;
+		this.userHeight = userHeight;
+		this.userWeight = userWeight;
 	}
 
 
@@ -66,106 +66,103 @@ public class Userinformation implements Serializable{
 
 
 	//ユーザー情報更新用
-	public Userinformation(String user_name, int user_height, int user_weight, int user_id) {
+	public Userinformation(String userName, int userHeight, int userWeight, int userId) {
 		super();
-		this.user_name = user_name;
-		this.user_height = user_height;
-		this.user_weight = user_weight;
-		this.user_id = user_id;
+		this.userName = userName;
+		this.userHeight = userHeight;
+		this.userWeight = userWeight;
+		this.userId = userId;
 	}
 
 
 
 
 	//メールアドレス重複チェック用
-	public Userinformation(String user_mail_address) {
+	public Userinformation(String userMailAddress) {
 		super();
-		this.user_mail_address = user_mail_address;
+		this.userMailAddress = userMailAddress;
 	}
 
 
 	//体重と性別の検索用
-	public Userinformation(int user_id) {
+	public Userinformation(int userId) {
 		super();
-		this.user_id = user_id;
+		this.userId = userId;
 	}
 
 
 
-	public Userinformation(String user_name, int user_height, int user_weight) {
+	public Userinformation(String userName, int userHeight, int userWeight) {
 		super();
-		this.user_name = user_name;
-		this.user_height = user_height;
-		this.user_weight = user_weight;
+		this.userName = userName;
+		this.userHeight = userHeight;
+		this.userWeight = userWeight;
 	}
-
 
 	//セッター・ゲッター
-	public int getUser_id() {
-		return user_id;
+
+	public int getUserId() {
+		return userId;
 	}
 
-
-
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public String getUser_name() {
-		return user_name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public int getUser_sex() {
-		return user_sex;
+	public int getUserSex() {
+		return userSex;
 	}
 
-	public void setUser_sex(int user_sex) {
-		this.user_sex = user_sex;
+	public void setUserSex(int userSex) {
+		this.userSex = userSex;
 	}
 
-	public Date getUser_birth() {
-		return user_birth;
+	public Date getUserBirth() {
+		return userBirth;
 	}
 
-	public void setUser_birth(Date user_birth) {
-		this.user_birth = user_birth;
+	public void setUserBirth(Date userBirth) {
+		this.userBirth = userBirth;
 	}
 
-	public String getUser_mail_address() {
-		return user_mail_address;
+	public String getUserMailAddress() {
+		return userMailAddress;
 	}
 
-	public void setUser_mail_address(String user_mail_address) {
-		this.user_mail_address = user_mail_address;
+	public void setUserMailAddress(String userMailAddress) {
+		this.userMailAddress = userMailAddress;
 	}
 
-	public String getUser_password() {
-		return user_password;
+	public String getUserPassword() {
+		return userPassword;
 	}
 
-	public void setUser_password(String user_password) {
-		this.user_password = user_password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
-	public int getUser_height() {
-		return user_height;
+	public int getUserHeight() {
+		return userHeight;
 	}
 
-	public void setUser_height(int user_height) {
-		this.user_height = user_height;
+	public void setUserHeight(int userHeight) {
+		this.userHeight = userHeight;
 	}
 
-	public int getUser_weight() {
-		return user_weight;
+	public int getUserWeight() {
+		return userWeight;
 	}
 
-	public void setUser_weight(int user_weight) {
-		this.user_weight = user_weight;
+	public void setUserWeight(int userWeight) {
+		this.userWeight = userWeight;
 	}
-
 
 }

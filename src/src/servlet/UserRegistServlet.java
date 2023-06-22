@@ -56,20 +56,20 @@ public class UserRegistServlet extends HttpServlet {
 		}*/
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String user_name = request.getParameter("User_Name");
-				int user_sex = Integer.parseInt(request.getParameter("User_Sex"));
-				Date user_birth = Date.valueOf(request.getParameter("User_Birth"));
-				String user_mail_address = request.getParameter("Mail_Address");
-				String user_password = request.getParameter("Password");
-				int user_height = Integer.parseInt(request.getParameter("User_Height"));
-				int user_weight = Integer.parseInt(request.getParameter("User_Weight"));
+				String userName = request.getParameter("User_Name");
+				int userSex = Integer.parseInt(request.getParameter("User_Sex"));
+				Date userBirth = Date.valueOf(request.getParameter("User_Birth"));
+				String userMailAddress = request.getParameter("Mail_Address");
+				String userPassword = request.getParameter("Password");
+				int userHeight = Integer.parseInt(request.getParameter("User_Height"));
+				int userWeight = Integer.parseInt(request.getParameter("User_Weight"));
 				boolean flg = true;
 
 				UserinformationDao uDao = new UserinformationDao();
 		//メールアドレス重複チェックを行う
-				boolean mailAddressCheck = uDao.ums(new Userinformation(user_mail_address));
+				boolean mailAddressCheck = uDao.ums(new Userinformation(userMailAddress));
 				if(mailAddressCheck == false) {
-					System.out.println("aaaaaasssssddddd");
+//					System.out.println("aaaaaasssssddddd");
 //					request.setAttribute("mac", mailAddressCheck);
 					request.setAttribute("mac", "そのメールアドレスは既に登録されています。");
 					flg=false;
@@ -91,8 +91,8 @@ public class UserRegistServlet extends HttpServlet {
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
 			    	dispatcher.forward(request, response);
 				}else {
-					if(uDao.insert(new Userinformation(user_name, user_sex, user_birth, user_mail_address,
-							user_password, user_height, user_weight))) {
+					if(uDao.insert(new Userinformation(userName, userSex, userBirth, userMailAddress,
+							userPassword, userHeight, userWeight))) {
 						//登録成功
 						//登録成功時の処理を書く
 						//ログインページにフォワードする

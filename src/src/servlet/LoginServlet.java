@@ -41,26 +41,26 @@ public class LoginServlet extends HttpServlet {
 		String pw = request.getParameter("PW");
 
 		// ログイン処理を行う
-		UserinformationDao uDao = new UserinformationDao();
+		UserinformationDao UIDao = new UserinformationDao();
 		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		int user_id =  uDao.isLoginOK(new Userinformation(email, pw));
-		if(user_id != 0) {
+		int userId =  UIDao.isLoginOK(new Userinformation(email, pw));
+		if(userId != 0) {
 			// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			session.setAttribute("id",user_id);
+			session.setAttribute("id",userId);
 
 		//セッションスコープに諸情報を格納する
-		Userinformation user = uDao.ui(new Userinformation(user_id));
-		session.setAttribute("user_name_session",user.getUser_name());
-		session.setAttribute("user_birth_session",user.getUser_birth());
-		session.setAttribute("user_sex_session",user.getUser_sex());
-		session.setAttribute("user_height_session",user.getUser_height());
-		session.setAttribute("user_weight_session",user.getUser_weight());
-		session.setAttribute("user_mail_address_session",user.getUser_mail_address());
+		Userinformation user = UIDao.ui(new Userinformation(userId));
+		session.setAttribute("user_name_session",user.getUserName());
+		session.setAttribute("user_birth_session",user.getUserBirth());
+		session.setAttribute("user_sex_session",user.getUserSex());
+		session.setAttribute("user_height_session",user.getUserHeight());
+		session.setAttribute("user_weight_session",user.getUserWeight());
+		session.setAttribute("user_mail_address_session",user.getUserMailAddress());
 
 		//経験値表示
-		int expSum = TRDao.sum(new Trainingrecord(user_id));
+		int expSum = TRDao.sum(new Trainingrecord(userId));
 		session.setAttribute("exp_sum_session", expSum);
 
 		//レベル計算
