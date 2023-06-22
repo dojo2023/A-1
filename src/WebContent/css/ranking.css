@@ -12,7 +12,7 @@ body {
 		top: 0;
    }
 
-input[name="submit"] {
+input[type="button"] {
 	position: absolute;
         left: 0;
    }

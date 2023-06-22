@@ -29,9 +29,9 @@
 <!-- ここにグラフ -->
 <canvas id="ranking" width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
-<input type="submit" name="submit" value="Ranking">
-<input type="submit" name="submit" value="Monthly">
-<input type="submit" name="submit" value="Weekly">
+<input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
+<input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">
+<input type="button" value="Weekly" onclick="window.location.href='/jiro_power/WrankingServlet'">
 
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
