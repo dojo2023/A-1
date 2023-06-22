@@ -25,15 +25,16 @@
 			placeholder="8文字以内" maxlength="8" required>
 			<br>
 			<p id="user_name_error" class="error-message"></p> <!-- ユーザー名のエラーメッセージ -->
-			${mac2}
-			<br>
+			<%-- ${mac2} --%>
+
 
 			<label>メールアドレス</label>
 			<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" value="${param.Mail_Address}" required>
 			<br>
-			<p id="mail_address_error" class="error-message"></p>
-			${mac}
+			<p id="mail_address_error" class="error-message"></p> <!-- メールアドレスのエラーメッセージ -->
+			<span class="error-message">${mac}</span><!-- エラーメッセージを赤色で表示 -->
 			<br>
+
 			<label>パスワード</label>
 			<input type="password" id="password" name="Password" placeholder="8文字以上20文字以下"
 			min="8" maxlength="20" required>
