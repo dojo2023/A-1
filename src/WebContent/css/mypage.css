@@ -13,6 +13,10 @@ body {
 }
 
 
+  .update {
+    cursor: pointer; /* マウスポインターを表示 */
+  }
+
 
 
 

@@ -34,32 +34,47 @@
 
 		<div class="user_name"><input type="text" name="user_name" value="${user_name_session}"
 		  placeholder="8文字以内" maxlength="8" required></div> <!-- user.username -->
-	      <div class="exp">${exp_sum_session}exp</div>
+
+		  <div class="exp">${exp_sum_session} exp</div>		<!-- 経験値表示 -->
+
 	      <div class="birthday_display">${user_birth_session}</div>
-	      <div class="sex"><c:choose> <c:when test = "${user_sex_session == 1}">MEN</c:when><c:otherwise>WOMEN</c:otherwise></c:choose></div>
+
+	      <div class="sex"><c:choose> <c:when test = "${user_sex_session == 1}">MEN</c:when>
+	      <c:otherwise>WOMEN</c:otherwise></c:choose></div>
+
 	      <div class="height">身長</div>
 	      <div class="height_input"><input type="text" name="user_height" value="${user_height_session}"
 	      placeholder="cm単位" min="1" max="300" required></div>
 	      <div class="unit_height">cm</div>
+
 	      <div class="weight">体重</div>
 	      <div class="weight_input"><input type="text" name="user_weight" value="${user_weight_session}"
 	      placeholder="kg単位" min="30" max="300" required></div>
 	      <div class="unit_weight">kg</div>
+
 	      <div class="mail_address">E-mail</div>
 	      <div class="mail_address_display">${user_mail_address_session}</div>
-	      <div class="update" ><input type="submit" id="update" name= "update" value = "update">
-	      <img src="./img/reload.png"> <!-- srcの後、アイコンのリンク入れる -->
-		</div>
+
 	</form>
-	      <div class="share" id="share">
-			<a href="/jiro_power/ResultServlet"><img src="./img/share.png"></a> <!-- srcの後、アイコンのリンク入れる -->
-		</div>
 
+		<!-- シェアボタン -->
+	      	<div class="share" id="share">
+			<a href="/jiro_power/ResultServlet"><img src="./img/share.png"></a>
+			</div>
 
+		<!-- 更新ボタン -->
+		  <div class="update" >
+			  <input type="submit" id="update" name= "update" value = "" style="display: none;" onclick="window.location.href='/jiro_power/MypageServlet'">
+				  <label for="update">
+			      <img src="./img/reload.png" alt="Reload" >
+			      </label>
+		  </div>
 
+		 <!--  シェアボタンと同じように更新ボタン書くか？？ -->
 
-
-
+		<!-- ログアウトボタン -->
+			<input type="button" class="logout" value="Logout"
+			onclick="window.location.href='/jiro_power/LoginServlet'">
 
 
 <!-- 	<div class="logout" id="logout">
@@ -75,23 +90,8 @@
 
 	<a href="/jiro_power/LoginServlet" class="logout">Logout</a> -->
 
-	<input type="button" class="logout" value="Logout" onclick="window.location.href='/jiro_power/LoginServlet'">
-
-
 
 	<hr>
-<!--
-// 画面下部メニューバー表示
-	<div class="menu">
-		<footer>
-			<a href="/jiro_power/TrainingRecordServlet"><img src="./img/record.png"></a>
-			<a href="/jiro_power/CalendarServlet"><img src="./img/calender.png"></a>
-			<a href="/jiro_power/RankingServlet"><img src="./img/ranking.png"></a>
-			<a href="/jiro_power/TimerServlet"><img src="./img/timer.png"></a>
-			<a href="/jiro_power/MypageServlet"><img src="./img/mypage.png"></a>
-		</footer>
-	</div>
- -->
 
  <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
@@ -138,11 +138,25 @@
             </li>
             <div class="indicator"></div>
         </ul>
-        </div>
+     </div>
 
-        <script src="calendar.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+     <!--
+// 画面下部メニューバー表示
+	<div class="menu">
+		<footer>
+			<a href="/jiro_power/TrainingRecordServlet"><img src="./img/record.png"></a>
+			<a href="/jiro_power/CalendarServlet"><img src="./img/calender.png"></a>
+			<a href="/jiro_power/RankingServlet"><img src="./img/ranking.png"></a>
+			<a href="/jiro_power/TimerServlet"><img src="./img/timer.png"></a>
+			<a href="/jiro_power/MypageServlet"><img src="./img/mypage.png"></a>
+		</footer>
+	</div>
+ -->
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <script src="./js/common.js"></script>
 <script src="./js/mypage.js"></script>
