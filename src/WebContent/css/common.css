@@ -6,7 +6,7 @@ body {
    }
 
 /* ステータスバー */
-.menu
+.status
 {
     position: relative;
     position: fixed;
@@ -20,7 +20,7 @@ body {
     display: flex;
     align-items: center;
 }
-.menu
+.status
 {
     left: 0;
 }
