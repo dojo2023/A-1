@@ -102,7 +102,7 @@ public class TrainingRecordServlet extends HttpServlet {
 					dispatcher.forward(request, response);
 				}
 
-				//<テスト>経験値の即時反映
+				//経験値の即時反映
 				int expSum = TRDao.sum(new Trainingrecord(user_id));
 				session.setAttribute("exp_sum_session", expSum);
 
