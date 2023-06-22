@@ -55,6 +55,15 @@
 	      <div class="mail_address">E-mail</div>
 	      <div class="mail_address_display">${user_mail_address_session}</div>
 
+		  <input type="hidden" name="update" id="one" >
+	      		<!-- 更新ボタン -->
+ 		  <div class="update" >
+			  <input type="image" src="./img/reload.png"  id="update" name= "update1" value = "update" onclick="document.getElementById('one').value='update'" >
+				<!--   <label for="update">
+			      <img src="./img/reload.png" alt="Reload" >
+			      </label>-->
+		  </div>
+
 	</form>
 
 		<!-- シェアボタン -->
@@ -62,15 +71,15 @@
 			<a href="/jiro_power/ResultServlet"><img src="./img/share.png"></a>
 			</div>
 
-		<!-- 更新ボタン -->
-		  <div class="update" >
-			  <input type="submit" id="update" name= "update" value = "" style="display: none;" onclick="window.location.href='/jiro_power/MypageServlet'">
-				  <label for="update">
-			      <img src="./img/reload.png" alt="Reload" >
-			      </label>
-		  </div>
+
+
 
 		 <!--  シェアボタンと同じように更新ボタン書くか？？ -->
+		 	<!-- 更新ボタン -->
+<!-- 	      	<div class="update" id="update">
+			<a href="/jiro_power/MypageServle"><img src="./img/reload.png"></a>
+			</div> -->
+
 
 		<!-- ログアウトボタン -->
 			<input type="button" class="logout" value="Logout"
