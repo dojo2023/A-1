@@ -51,7 +51,7 @@
   			  <div class="bt_addForm">
        		  <input type="button" value="+" onclick="addForm()">
    			  </div>
-   			  <input type="button" onclick="deleteLastRecord()" value="最後のレコードを削除">
+   			  <input type="button" onclick="deleteLastRecord()" value="-">
               <input type = "submit" name="record" value="登録" id="submit">
               </form>
 <!-- 画面下部メニューバー表示 -->
