@@ -12,15 +12,18 @@
 </head>
 <body>
 <!-- 画面上部ステータス表示 -->
-	<div class="status">
-		<header>
-			<img src=""> <!-- ロゴ貼る -->
-			<p><p>${level_session}</p></p> <!--  {}の中身変える-->
-			<p><div id="current_date"></div> <!--  id名前合わせる-->
-			<p>${user_name_session}</p> <!--  {}の中身変える-->
-		</header>
-	</div>
-
+	<header>
+        <div class="status">
+            <div id="logo"><img src="0qMHkiUhEaGNQct1687312152_1687312306.png" width="260" height="260" alt="ロゴ"></div>
+            <div class="menucoler">
+            <h1 class="level pulsate">$[level]</h1>
+            <div class="allname">
+            <div id="names">Name</div>
+            <div id="name">$[name]</div>
+            </div>
+        </div>
+    </div>
+        </header>
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
         <ul>

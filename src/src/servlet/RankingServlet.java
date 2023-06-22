@@ -48,16 +48,16 @@ public class RankingServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		int user_id =  (int) session.getAttribute("id");
-		String user_name = request.getParameter("user_name");
+		int userId =  (int) session.getAttribute("id");
+//		String userName = request.getParameter("user_name");
 
 		 // Daoからデータを取り出す
 		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		List<Alltable> exp_sum = TRDao.sumAll(new Trainingrecord(user_id));
+		List<Alltable> expSum = TRDao.sumAll(new Trainingrecord(userId));
         // System.out.println(exp_sum.size());
 
 				//とりあえずリクエストスコープへセットする
-				request.setAttribute("rankList", exp_sum);
+				request.setAttribute("rankList", expSum);
 
 				//chart.jspに遷移させる
 				String path="/WEB-INF/jsp/ranking.jsp";

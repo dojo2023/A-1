@@ -15,7 +15,7 @@ public class UserinformationDao {
 	//ログイン処理のDAO
 
 	// ログインできるならtrueを返す
-	public int isLoginOK(Userinformation userinformation) {
+	public int isLoginOK(Userinformation userInformation) {
 		Connection conn = null;
 		int loginResult = 0;
 
@@ -29,8 +29,8 @@ public class UserinformationDao {
 			// SELECT文を準備する
 			String sql = "select * from user_information where user_mail_address = ? and user_password = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1,userinformation.getUser_mail_address());
-			pStmt.setString(2,userinformation.getUser_password());
+			pStmt.setString(1,userInformation.getUserMailAddress());
+			pStmt.setString(2,userInformation.getUserPassword());
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -74,7 +74,7 @@ public class UserinformationDao {
 	}
 
 	// ログインユーザーのユーザー情報
-	public Userinformation ui(Userinformation userinformation) {
+	public Userinformation ui(Userinformation userInformation) {
 		Connection conn = null;
 		Userinformation user =null;
 
@@ -92,8 +92,8 @@ public class UserinformationDao {
 
 			// SQL文を完成させる
 
-			if (userinformation.getUser_id() != 0) {
-				pStmt.setInt(1,userinformation.getUser_id());
+			if (userInformation.getUserId() != 0) {
+				pStmt.setInt(1,userInformation.getUserId());
 			}
 			else {
 				pStmt.setInt(1,0);
@@ -104,12 +104,12 @@ public class UserinformationDao {
 				// 結果表をコレクションにコピーする
 				while (rs.next()) {
 					user = new Userinformation();
-					user.setUser_name(rs.getString("user_name"));
-					user.setUser_birth(rs.getDate("user_birth"));
-					user.setUser_sex(rs.getInt("user_sex"));
-					user.setUser_height(rs.getInt("user_height"));
-					user.setUser_weight(rs.getInt("user_weight"));
-					user.setUser_mail_address(rs.getString("user_mail_address"));
+					user.setUserName(rs.getString("user_name"));
+					user.setUserBirth(rs.getDate("user_birth"));
+					user.setUserSex(rs.getInt("user_sex"));
+					user.setUserHeight(rs.getInt("user_height"));
+					user.setUserWeight(rs.getInt("user_weight"));
+					user.setUserMailAddress(rs.getString("user_mail_address"));
 				}
 				}
 
@@ -141,10 +141,10 @@ public class UserinformationDao {
 
 	public List<Userinformation> select(Userinformation param) {
 
-		List<Userinformation> cardList = new ArrayList<Userinformation>();
+		List<Userinformation> userList = new ArrayList<Userinformation>();
 
 		// 結果を返す
-				return cardList;
+				return userList;
 	}
 
 
@@ -170,50 +170,50 @@ public class UserinformationDao {
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-						if (record.getUser_name() != null && !record.getUser_name().equals("")) {
-							pStmt.setString(1, record.getUser_name());
+						if (record.getUserName() != null && !record.getUserName().equals("")) {
+							pStmt.setString(1, record.getUserName());
 						}
 						else {
 							pStmt.setString(1, null);
 						}
 
-						if (record.getUser_sex() != 0) {
-							pStmt.setInt(2, record.getUser_sex());
+						if (record.getUserSex() != 0) {
+							pStmt.setInt(2, record.getUserSex());
 						}
 						else {
 							pStmt.setInt(2, 0);
 						}
 
-						if (record.getUser_birth() != null && !record.getUser_birth().equals("")) {
-							pStmt.setDate(3, record.getUser_birth());
+						if (record.getUserBirth() != null && !record.getUserBirth().equals("")) {
+							pStmt.setDate(3, record.getUserBirth());
 						}
 						else {
 							pStmt.setString(3, null);
 						}
 
-						if (record.getUser_mail_address() != null && !record.getUser_mail_address().equals("")) {
-							pStmt.setString(4, record.getUser_mail_address());
+						if (record.getUserMailAddress() != null && !record.getUserMailAddress().equals("")) {
+							pStmt.setString(4, record.getUserMailAddress());
 						}
 						else {
 							pStmt.setString(4, null);
 						}
 
-						if (record.getUser_password() != null && !record.getUser_password().equals("")) {
-							pStmt.setString(5, record.getUser_password());
+						if (record.getUserPassword() != null && !record.getUserPassword().equals("")) {
+							pStmt.setString(5, record.getUserPassword());
 						}
 						else {
 							pStmt.setString(5, null);
 						}
 
-						if (record.getUser_height() != 0) {
-							pStmt.setInt(6, record.getUser_height());
+						if (record.getUserHeight() != 0) {
+							pStmt.setInt(6, record.getUserHeight());
 						}
 						else {
 							pStmt.setInt(6, 0);
 						}
 
-						if (record.getUser_weight() != 0) {
-							pStmt.setInt(7, record.getUser_weight());
+						if (record.getUserWeight() != 0) {
+							pStmt.setInt(7, record.getUserWeight());
 						}
 						else {
 							pStmt.setInt(7, 0);
@@ -264,7 +264,7 @@ public class UserinformationDao {
 			String sqlUms = "select * "
 				+ "from user_information where user_mail_address = ?";
 			PreparedStatement pStmtUms = conn.prepareStatement(sqlUms);
-			pStmtUms.setString(1,umc.getUser_mail_address());
+			pStmtUms.setString(1,umc.getUserMailAddress());
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmtUms.executeQuery();
@@ -305,65 +305,65 @@ public class UserinformationDao {
 
 	//ユーザー情報登録の際のユーザー名重複チェックの処理のDAO
 
-		public boolean uns(Userinformation unc) {
-			Connection conn = null;
-			boolean result = false;
-
-			try {
-				// JDBCドライバを読み込む
-				Class.forName("org.h2.Driver");
-
-				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
-
-				// SQL文を準備する
-				String sqlUns = "select user_name "
-					+ "from user_information where user_name = ?";
-				PreparedStatement pStmtUns = conn.prepareStatement(sqlUns);
-				pStmtUns.setString(1,unc.getUser_name());
-
-				// SELECT文を実行し、結果表を取得する
-				ResultSet rs = pStmtUns.executeQuery();
-
-			if (rs.next()) {
-				//重複していた場合の処理
-				result = false;
-			}
-			else {
-				//重複していない場合の処理(いらないかも)
-				result = true;
-			}
-			}
-			catch (SQLException e) {
-				e.printStackTrace();
-				result = false;
-			}
-			catch (ClassNotFoundException e) {
-				e.printStackTrace();
-				result = false;
-			}
-			finally {
-				// データベースを切断
-				if (conn != null) {
-					try {
-						conn.close();
-					}
-					catch (SQLException e) {
-						e.printStackTrace();
-						result = false;
-					}
-				}
-			}
-
-			// 結果を返す
-					return result;
-		}
+//		public boolean uns(Userinformation unc) {
+//			Connection conn = null;
+//			boolean result = false;
+//
+//			try {
+//				// JDBCドライバを読み込む
+//				Class.forName("org.h2.Driver");
+//
+//				// データベースに接続する
+//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
+//
+//				// SQL文を準備する
+//				String sqlUns = "select user_name "
+//					+ "from user_information where user_name = ?";
+//				PreparedStatement pStmtUns = conn.prepareStatement(sqlUns);
+//				pStmtUns.setString(1,unc.getUserName());
+//
+//				// SELECT文を実行し、結果表を取得する
+//				ResultSet rs = pStmtUns.executeQuery();
+//
+//			if (rs.next()) {
+//				//重複していた場合の処理
+//				result = false;
+//			}
+//			else {
+//				//重複していない場合の処理(いらないかも)
+//				result = true;
+//			}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//				result = false;
+//			}
+//			catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//				result = false;
+//			}
+//			finally {
+//				// データベースを切断
+//				if (conn != null) {
+//					try {
+//						conn.close();
+//					}
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						result = false;
+//					}
+//				}
+//			}
+//
+//			// 結果を返す
+//					return result;
+//		}
 
 
 	//ユーザー情報更新処理のDAO(マイページ用)
 
-	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-		public boolean update(Userinformation card) {
+	// 引数recordで指定されたレコードを更新し、成功したらtrueを返す
+		public boolean update(Userinformation record) {
 			Connection conn = null;
 			boolean result = false;
 
@@ -380,29 +380,29 @@ public class UserinformationDao {
 
 				// SQL文を完成させる
 
-				if (card.getUser_name() != null && !card.getUser_name().equals("")) {
-					pStmt.setString(1, card.getUser_name());
+				if (record.getUserName() != null && !record.getUserName().equals("")) {
+					pStmt.setString(1, record.getUserName());
 				}
 				else {
 					pStmt.setString(1, null);
 				}
 
-				if (card.getUser_height() != 0) {
-					pStmt.setInt(2, card.getUser_height());
+				if (record.getUserHeight() != 0) {
+					pStmt.setInt(2, record.getUserHeight());
 				}
 				else {
 					pStmt.setInt(2, 0);
 				}
 
-				if (card.getUser_weight() != 0) {
-					pStmt.setInt(3, card.getUser_weight());
+				if (record.getUserWeight() != 0) {
+					pStmt.setInt(3, record.getUserWeight());
 				}
 				else {
 					pStmt.setInt(3, 0);
 				}
 
-				if (card.getUser_id() != 0) {
-					pStmt.setInt(4, card.getUser_id());
+				if (record.getUserId() != 0) {
+					pStmt.setInt(4, record.getUserId());
 				}
 				else {
 					pStmt.setInt(4, 0);
@@ -452,7 +452,7 @@ public class UserinformationDao {
 				String sqlUw = "select user_weight "
 					+ "from user_information where user_id = ?";
 				PreparedStatement pStmtUw = conn.prepareStatement(sqlUw);
-				pStmtUw.setInt(1,uw.getUser_id());
+				pStmtUw.setInt(1,uw.getUserId());
 
 				// SELECT文を実行し、結果表を取得する
 				ResultSet rs = pStmtUw.executeQuery();
@@ -504,7 +504,7 @@ public class UserinformationDao {
 				String sqlUs = "select User_sex "
 					+ "from user_information where user_id = ?";
 				PreparedStatement pStmtUs = conn.prepareStatement(sqlUs);
-				pStmtUs.setInt(1,us.getUser_id());
+				pStmtUs.setInt(1,us.getUserId());
 
 				// SELECT文を実行し、結果表を取得する
 				ResultSet rs = pStmtUs.executeQuery();

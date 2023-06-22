@@ -5,51 +5,58 @@ import java.io.Serializable;
 public class Trainingmenu implements Serializable{
 	//こっからフィールド
 
-	private int training_menu_id;
-	private String training_menu;
-	private double training_menu_magnification;
+	private int trainingMenuId;
+	private String trainingMenu;
+	private double trainingMenuMagnification;
 
 	//コンストラクタ
-	public Trainingmenu(int training_menu_id, String training_menu, double training_menu_magnification) {
+	public Trainingmenu(int trainingMenuId, String trainingMenu, double trainingMenuMagnification) {
 		super();
-		this.training_menu_id = training_menu_id;
-		this.training_menu = training_menu;
-		this.training_menu_magnification = training_menu_magnification;
+		this.trainingMenuId = trainingMenuId;
+		this.trainingMenu = trainingMenu;
+		this.trainingMenuMagnification = trainingMenuMagnification;
 	}
 
 	//String型の初期値null避け
 	public Trainingmenu() {
-		this.training_menu = "";
+		this.trainingMenu = "";
 	}
 
-	public Trainingmenu(double training_menu_magnification) {
+	public Trainingmenu(double trainingMenuMagnification) {
 		super();
-		this.training_menu_magnification = training_menu_magnification;
+		this.trainingMenuMagnification = trainingMenuMagnification;
 	}
 
 
-	public Trainingmenu(String training_menu) {
+	public Trainingmenu(String trainingMenu) {
 		super();
-		this.training_menu = training_menu;
+		this.trainingMenu = trainingMenu;
 	}
 
 	//セッター・ゲッター
-	public int getTraining_menu_id() {
-		return training_menu_id;
+
+	public int getTrainingMenuId() {
+		return trainingMenuId;
 	}
-	public void setTraining_menu_id(int training_menu_id) {
-		this.training_menu_id = training_menu_id;
+
+	public void setTrainingMenuId(int trainingMenuId) {
+		this.trainingMenuId = trainingMenuId;
 	}
-	public String getTraining_menu() {
-		return training_menu;
+
+	public String getTrainingMenu() {
+		return trainingMenu;
 	}
-	public void setTraining_menu(String training_menu) {
-		this.training_menu = training_menu;
+
+	public void setTrainingMenu(String trainingMenu) {
+		this.trainingMenu = trainingMenu;
 	}
-	public double getTraining_menu_magnification() {
-		return training_menu_magnification;
+
+	public double getTrainingMenuMagnification() {
+		return trainingMenuMagnification;
 	}
-	public void setTraining_menu_magnification(double training_menu_magnification) {
-		this.training_menu_magnification = training_menu_magnification;
+
+	public void setTrainingMenuMagnification(double trainingMenuMagnification) {
+		this.trainingMenuMagnification = trainingMenuMagnification;
 	}
+
 }

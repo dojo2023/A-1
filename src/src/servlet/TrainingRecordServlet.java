@@ -62,38 +62,38 @@ public class TrainingRecordServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
 				String strDate = request.getParameter("training_record_date");
-	            Date training_record_date = Date.valueOf(strDate);
-				int user_id =  (int) session.getAttribute("id");
-				String training_menu = request.getParameter("training_menu");
-				double training_weight = Double.parseDouble(request.getParameter("training_weight"));
-				int training_count = Integer.parseInt(request.getParameter("training_count"));
-				int training_set = Integer.parseInt(request.getParameter("training_set"));
-//				String training_record_dow = request.getParameter("training_record_dow");
+	            Date trainingRecordDate = Date.valueOf(strDate);
+				int userId =  (int) session.getAttribute("id");
+				String trainingMenu = request.getParameter("training_menu");
+				double trainingWeight = Double.parseDouble(request.getParameter("training_weight"));
+				int trainingCount = Integer.parseInt(request.getParameter("training_count"));
+				int trainingSet = Integer.parseInt(request.getParameter("training_set"));
+//				String trainingRecordDow = request.getParameter("training_record_dow");
 
 				//TrainingmenuDaoの倍率だけのメソッドを用意してをnewする。
 				TrainingmenuDao TMDao = new TrainingmenuDao();
-				double mag =  TMDao.MAGMAG(new Trainingmenu(training_menu));
+				double mag =  TMDao.MAGMAG(new Trainingmenu(trainingMenu));
 				//Userinfortationの体重だけのメソッドを用意してnewする。
-				UserinformationDao UDao = new UserinformationDao();
-				int weight = UDao.UW(new Userinformation(user_id));
+				UserinformationDao UIDao = new UserinformationDao();
+				int weight = UIDao.UW(new Userinformation(userId));
 				//Userinfortationの性別だけのメソッドを用意してnewする。
-				UDao = new UserinformationDao();
-				int sex = UDao.US(new Userinformation(user_id));
+				UIDao = new UserinformationDao();
+				int userSex = UIDao.US(new Userinformation(userId));
 				//経験値計算式
 				int EXP = 0;
-				if(sex == 1) {
-					EXP = (int) ((int) (training_weight * training_count *  training_set * mag )/ weight );
+				if(userSex == 1) {
+					EXP = (int) ((int) (trainingWeight * trainingCount *  trainingSet * mag )/ weight );
 				}
-				else if(sex == 2) {
-					EXP = (int) ((int) (training_weight * training_count *  training_set * mag )/ weight * 1.5);
+				else if(userSex == 2) {
+					EXP = (int) ((int) (trainingWeight * trainingCount *  trainingSet * mag )/ weight * 1.5);
 				}
-				int training_exp = EXP;
+				int trainingExp = EXP;
 
 				// 登録処理を行う
 				TrainingrecordDao TRDao = new TrainingrecordDao ();
-				if (TRDao.insert(new Trainingrecord(training_record_date,
-						user_id,training_menu, training_weight,
-						training_count,training_set,training_exp/*, training_record_dow*/))) {	// 登録成功
+				if (TRDao.insert(new Trainingrecord(trainingRecordDate,
+						userId,trainingMenu, trainingWeight,
+						trainingCount,trainingSet,trainingExp/*, training_record_dow*/))) {	// 登録成功
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
 					dispatcher.forward(request, response);
 				}
@@ -103,12 +103,12 @@ public class TrainingRecordServlet extends HttpServlet {
 				}
 
 				//経験値の即時反映
-				int expSum = TRDao.sum(new Trainingrecord(user_id));
+				int expSum = TRDao.sum(new Trainingrecord(userId));
 				session.setAttribute("exp_sum_session", expSum);
 
 				//レベル計算
+				int requiredExp = 10;
 				for(int i=0; i<100; i++) {
-			    	int requiredExp = 10;
 			    	requiredExp = requiredExp + requiredExp * i;
 			    	if(requiredExp > expSum) {
 			    		int level = i + 1;
