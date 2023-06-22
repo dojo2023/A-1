@@ -73,7 +73,7 @@ public class UserinformationDao {
 				return loginResult;
 	}
 
-	// ログインユーザーのユーザーネーム
+	// ログインユーザーのユーザー情報
 	public Userinformation ui(Userinformation userinformation) {
 		Connection conn = null;
 		Userinformation user =null;

@@ -15,11 +15,11 @@ private double training_weight;
 private int training_count;
 private int training_set;
 private int training_exp;
-private String training_record_dow;
+//private String training_record_dow;
 
 //コンストラクタ
 public Trainingrecord( int training_record_id, Date training_record_date,int user_id,String training_menu, double training_weight,
-		int training_count, int training_set, int training_exp, String training_record_dow) {
+		int training_count, int training_set, int training_exp/*, String training_record_dow*/) {
 	super();
 
 	this.training_record_id = training_record_id;
@@ -30,19 +30,19 @@ public Trainingrecord( int training_record_id, Date training_record_date,int use
 	this.training_count = training_count;
 	this.training_set = training_set;
 	this.training_exp = training_exp;
-	this.training_record_dow =training_record_dow;
+//	this.training_record_dow =training_record_dow;
 }
 
 //String型の初期値null避け
 	public Trainingrecord() {
 		this.training_menu = "";
-		this.setTraining_record_dow("");
+//		this.setTraining_record_dow("");
 	}
 
 //トレーニング記録登録のコンストラクタ
 
 public Trainingrecord(Date training_record_date, int user_id, String training_menu,
-		double training_weight, int training_count, int training_set, int training_exp) {
+		double training_weight, int training_count, int training_set, int training_exp/*, String training_record_dow*/) {
 	super();
 	this.training_record_date = training_record_date;
 	this.user_id = user_id;
@@ -51,7 +51,7 @@ public Trainingrecord(Date training_record_date, int user_id, String training_me
 	this.training_count = training_count;
 	this.training_set = training_set;
 	this.training_exp = training_exp;
-	this.training_record_dow = training_record_dow;
+//	this.training_record_dow = training_record_dow;
 }
 
 
@@ -173,11 +173,11 @@ public void setTraining_menu(String training_menu) {
 	this.training_menu = training_menu;
 }
 
-public String getTraining_record_dow() {
-	return training_record_dow;
-}
-
-public void setTraining_record_dow(String training_record_dow) {
-	this.training_record_dow = training_record_dow;
-}
+//public String getTraining_record_dow() {
+//	return training_record_dow;
+//}
+//
+//public void setTraining_record_dow(String training_record_dow) {
+//	this.training_record_dow = training_record_dow;
+//}
 }

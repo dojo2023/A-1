@@ -407,7 +407,7 @@ public class TrainingrecordDao {
 	}
 
 	//月間総経験値を出すDAO
-		public List<Alltable> sumAll(Trainingrecord param) {
+		public List<Alltable> sumMonthly(Trainingrecord param) {
 			Connection conn = null;
 			List<Alltable> expSumList = new ArrayList<Alltable>();
 
