@@ -42,16 +42,16 @@ public class LoginServlet extends HttpServlet {
 
 		// ログイン処理を行う
 		UserinformationDao uDao = new UserinformationDao();
-		TrainingrecordDao trDao = new TrainingrecordDao();
-		int id =  uDao.isLoginOK(new Userinformation(email, pw));
-		if(id != 0) {
+		TrainingrecordDao TRDao = new TrainingrecordDao ();
+		int user_id =  uDao.isLoginOK(new Userinformation(email, pw));
+		if(user_id != 0) {
 			// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			session.setAttribute("id",id);
+			session.setAttribute("id",user_id);
 
 		//セッションスコープに諸情報を格納する
-		Userinformation user = uDao.ui(new Userinformation(id));
+		Userinformation user = uDao.ui(new Userinformation(user_id));
 		session.setAttribute("user_name_session",user.getUser_name());
 		session.setAttribute("user_birth_session",user.getUser_birth());
 		session.setAttribute("user_sex_session",user.getUser_sex());
@@ -59,14 +59,20 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("user_weight_session",user.getUser_weight());
 		session.setAttribute("user_mail_address_session",user.getUser_mail_address());
 
-		//セッションスコープに総経験値を格納する
-
-		int expSum = trDao.sum(new Trainingrecord(id));
-		System.out.println(expSum);
+		//経験値表示
+		int expSum = TRDao.sum(new Trainingrecord(user_id));
 		session.setAttribute("exp_sum_session", expSum);
-		System.out.println(session.getAttribute("exp_sum_session"));
-//		System.out.println(session.getAttribute("user_name_session"));
 
+		//レベル計算
+		for(int i=0; i<100; i++) {
+	    	int requiredExp = 10;
+	    	requiredExp = requiredExp + requiredExp * i;
+	    	if(requiredExp > expSum) {
+	    		int level = i + 1;
+	    		session.setAttribute("level_session", level);
+	    		break;
+	    	};
+	    };
 
 			// 記録サーブレットにリダイレクトする
 			response.sendRedirect("/jiro_power/TrainingRecordServlet");
