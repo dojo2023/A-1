@@ -36,10 +36,10 @@ public class MrankingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		/*if (session.getAttribute("id") == null) {
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
-		}*/
+		}
 
 		// 月間ランキングページにフォワードする
 		/* RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/m_ranking.jsp");
@@ -52,11 +52,13 @@ public class MrankingServlet extends HttpServlet {
 
 				 // Daoからデータを取り出す
 				TrainingrecordDao TRDao = new TrainingrecordDao ();
-				List<Alltable> exp_sum = TRDao.sumAll(new Trainingrecord(user_id));
+				List<Alltable> exp_sum_mm = TRDao.sumMonthlyMen(new Trainingrecord(user_id));
+				List<Alltable> exp_sum_mw = TRDao.sumMonthlyWomen(new Trainingrecord(user_id));
 		        // System.out.println(exp_sum.size());
 
 						//とりあえずリクエストスコープへセットする
-						request.setAttribute("rankList", exp_sum);
+						request.setAttribute("mmrankList", exp_sum_mm);
+						request.setAttribute("mwrankList", exp_sum_mw);
 
 						//chart.jspに遷移させる
 						String path="/WEB-INF/jsp/m_ranking.jsp";
