@@ -1,6 +1,5 @@
 
 
-/*タイマーJS編集した。ミスあったら直してね。ファリハ。*/
 // タイマー要素の取得
 const minsElement = document.querySelector('.mins');
 const secondsElement = document.querySelector('.seconds');
