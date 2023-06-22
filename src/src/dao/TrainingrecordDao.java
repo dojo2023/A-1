@@ -406,8 +406,8 @@ public class TrainingrecordDao {
 		return expSumList;
 	}
 
-	//月間総経験値を出すDAO
-		public List<Alltable> sumMonthly(Trainingrecord param) {
+	//男性月間総経験値を出すDAO
+		public List<Alltable> sumMonthlyMen(Trainingrecord param) {
 			Connection conn = null;
 			List<Alltable> expSumList = new ArrayList<Alltable>();
 
@@ -432,8 +432,8 @@ public class TrainingrecordDao {
 				String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
 						+ "from TRAINING_RECORD join USER_INFORMATION "
 						+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
-						+ "where TRAINING_RECORD_DATE like ? "
-						+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 10";
+						+ "where TRAINING_RECORD_DATE like ? and USER_SEX = 1 "
+						+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				System.out.println(sql);
 
@@ -485,4 +485,246 @@ public class TrainingrecordDao {
 			// 結果を返す
 			return expSumList;
 		}
+
+		//女性月間総経験値を出すDAO
+				public List<Alltable> sumMonthlyWomen(Trainingrecord param) {
+					Connection conn = null;
+					List<Alltable> expSumList = new ArrayList<Alltable>();
+
+
+					//日付指定
+					Date date = new Date(System.currentTimeMillis());
+					java.util.Date utilDate = date;
+					Date sqlDate = new Date(utilDate.getTime());
+					Calendar c = Calendar.getInstance();
+					c.setTime(utilDate);
+					int month = c.get(Calendar.MONTH) +1;
+					int year = c.get(Calendar.YEAR);
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
+
+						// SQL文を準備する
+						String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
+								+ "from TRAINING_RECORD join USER_INFORMATION "
+								+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
+								+ "where TRAINING_RECORD_DATE like ? and USER_SEX = 2 "
+								+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+						System.out.println(sql);
+
+						String stYear = String.valueOf(year);
+						String stMonth = String.valueOf(month);
+						if (stMonth.length()==1) {
+							stMonth = "0" + stMonth;
+						}
+						pStmt.setString(1, "%" + stYear + "-" + stMonth + "%");
+
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							/*Trainingrecord expSum = new Trainingrecord(
+							rs.getInt("exp_sum"));
+							expSumList.add(expSum);*/
+
+							Alltable al = new Alltable();
+
+							al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
+							al.setUser_name(rs.getString("user_name"));
+							expSumList.add(al);
+						}
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						expSumList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						expSumList = null;
+					}
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								expSumList = null;
+							}
+						}
+					}
+
+					// 結果を返す
+					return expSumList;
+				}
+
+
+				//男性週間総経験値を出すDAO
+				public List<Alltable> sumWeeklyMen(Trainingrecord param) {
+					Connection conn = null;
+					List<Alltable> expSumList = new ArrayList<Alltable>();
+
+
+					//日付指定
+					Date date = new Date(System.currentTimeMillis());
+					java.util.Date utilDate = date;
+					Date sqlDate = new Date(utilDate.getTime());
+					Calendar c = Calendar.getInstance();
+					c.setTime(utilDate);
+					int month = c.get(Calendar.MONTH) +1;
+					int year = c.get(Calendar.YEAR);
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
+
+						// SQL文を準備する
+						String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
+								+ "from TRAINING_RECORD join USER_INFORMATION "
+								+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
+								+ "where TRAINING_RECORD_DATE like ? and USER_SEX = 1 "
+								+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+						System.out.println(sql);
+
+						String stYear = String.valueOf(year);
+						String stMonth = String.valueOf(month);
+						if (stMonth.length()==1) {
+							stMonth = "0" + stMonth;
+						}
+						pStmt.setString(1, "%" + stYear + "-" + stMonth + "%");
+
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							/*Trainingrecord expSum = new Trainingrecord(
+							rs.getInt("exp_sum"));
+							expSumList.add(expSum);*/
+
+							Alltable al = new Alltable();
+
+							al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
+							al.setUser_name(rs.getString("user_name"));
+							expSumList.add(al);
+						}
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						expSumList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						expSumList = null;
+					}
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								expSumList = null;
+							}
+						}
+					}
+
+					// 結果を返す
+					return expSumList;
+				}
+
+
+				//女性月間総経験値を出すDAO
+				public List<Alltable> sumWeeklyWomen(Trainingrecord param) {
+					Connection conn = null;
+					List<Alltable> expSumList = new ArrayList<Alltable>();
+
+
+					//日付指定
+					Date date = new Date(System.currentTimeMillis());
+					java.util.Date utilDate = date;
+					Date sqlDate = new Date(utilDate.getTime());
+					Calendar c = Calendar.getInstance();
+					c.setTime(utilDate);
+					int month = c.get(Calendar.MONTH) +1;
+					int year = c.get(Calendar.YEAR);
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
+
+						// SQL文を準備する
+						String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
+								+ "from TRAINING_RECORD join USER_INFORMATION "
+								+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
+								+ "where TRAINING_RECORD_DATE like ? and USER_SEX = 2 "
+								+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+						System.out.println(sql);
+
+						String stYear = String.valueOf(year);
+						String stMonth = String.valueOf(month);
+						if (stMonth.length()==1) {
+							stMonth = "0" + stMonth;
+						}
+						pStmt.setString(1, "%" + stYear + "-" + stMonth + "%");
+
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							/*Trainingrecord expSum = new Trainingrecord(
+							rs.getInt("exp_sum"));
+							expSumList.add(expSum);*/
+
+							Alltable al = new Alltable();
+
+							al.setTraining_exp(rs.getInt("SUM(TRAINING_EXP)"));
+							al.setUser_name(rs.getString("user_name"));
+							expSumList.add(al);
+						}
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						expSumList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						expSumList = null;
+					}
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								expSumList = null;
+							}
+						}
+					}
+
+					// 結果を返す
+					return expSumList;
+				}
 }

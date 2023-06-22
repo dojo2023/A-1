@@ -26,12 +26,12 @@
 
 <div class="title">Weekly Ranking</div>
 <!-- ここにグラフ -->
-<canvas id="mwranking" width="300" height="400"></canvas>
+<canvas id="wmranking" width="300" height="400"></canvas>
 <canvas id="wwranking" width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
-<input type="submit" value="Ranking">
-<input type="submit" value="Monthly">
-<input type="submit" value="Weekly">
+<input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
+<input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">
+<input type="button" value="Weekly" onclick="window.location.href='/jiro_power/WrankingServlet'">
 
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
@@ -87,15 +87,15 @@
 <script>
 /* 横棒グラフの処理 */
 
-let rankData =<%= new Gson().toJson(request.getAttribute("rankList")) %>;
-let context = document.querySelector("#mwranking").getContext('2d')
+let wmrankData =<%= new Gson().toJson(request.getAttribute("wmrankList")) %>;
+let context = document.querySelector("#wmranking").getContext('2d')
 new Chart(context, {
   type: 'bar',
   data: {
     labels: ['1','2','3','4','5'],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [rankData[0], rankData[1],rankData[2],rankData[3],rankData[4]],
+      data: [wmrankData[0], wmrankData[1],wmrankData[2],wmrankData[3],wmrankData[4]],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },
@@ -105,7 +105,7 @@ new Chart(context, {
   }
 });
 
-let rankData =<%= new Gson().toJson(request.getAttribute("rankList")) %>;
+let wwrankData =<%= new Gson().toJson(request.getAttribute("wwrankList")) %>;
 let context = document.querySelector("#wwranking").getContext('2d')
 new Chart(context, {
   type: 'bar',
@@ -113,7 +113,7 @@ new Chart(context, {
     labels: ['1','2','3','4','5'],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [rankData[0], rankData[1],rankData[2],rankData[3],rankData[4]],
+      data: [wwrankData[0], wwrankData[1],wwrankData[2],wwrankData[3],wwrankData[4]],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },

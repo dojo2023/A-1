@@ -29,11 +29,11 @@
 <div class="title">Monthly Ranking</div>
 <!-- ここにグラフ -->
 <canvas id="mmranking" width="300" height="400"></canvas>
-<canvas id="wmranking" width="300" height="400"></canvas>
+<canvas id="mwranking" width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
-<input type="submit" value="Ranking">
-<input type="submit" value="Monthly">
-<input type="submit" value="Weekly">
+<input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
+<input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">
+<input type="button" value="Weekly" onclick="window.location.href='/jiro_power/WrankingServlet'">
 
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
@@ -91,15 +91,15 @@
 <script>
 /* 横棒グラフの処理 */
 
-let rankData =<%= new Gson().toJson(request.getAttribute("rankList")) %>;
-let context = document.querySelector("#mmranking").getContext('2d')
-new Chart(context, {
+let mmrankData =<%= new Gson().toJson(request.getAttribute("mmrankList")) %>;
+let mmcontext = document.querySelector("#mmranking").getContext('2d')
+new Chart(mmcontext, {
   type: 'bar',
   data: {
-    labels: ['1','2','3','4','5'],
+    labels: ['1'+mmrankData[0].user_name,'2'+mmrankData[1].user_name,'3'+mmrankData[2].user_name,'4'+mmrankData[3].user_name,'5'+mmrankData[4].user_name],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [rankData[0], rankData[1],rankData[2],rankData[3],rankData[4]],
+      data: [mmrankData[0].training_exp, mmrankData[1].training_exp,mmrankData[2].training_exp,mmrankData[3].training_exp,mmrankData[4].training_exp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },
@@ -109,15 +109,15 @@ new Chart(context, {
   }
 });
 
-let rankData =<%= new Gson().toJson(request.getAttribute("rankList")) %>;
-let context = document.querySelector("#wmranking").getContext('2d')
-new Chart(context, {
+let mwrankData =<%= new Gson().toJson(request.getAttribute("mwrankList")) %>;
+let mwcontext = document.querySelector("#mwranking").getContext('2d')
+new Chart(mwcontext, {
   type: 'bar',
   data: {
-    labels: ['1','2','3','4','5'],
+    labels: ['1'+mwrankData[0].user_name,'2'+mwrankData[1].user_name,'3'+mwrankData[2].user_name,'4'+mwrankData[3].user_name,'5'+mwrankData[4].user_name],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [rankData[0], rankData[1],rankData[2],rankData[3],rankData[4]],
+      data: [mwrankData[0].training_exp, mwrankData[1].training_exp,mwrankData[2].training_exp,mwrankData[3].training_exp,mwrankData[4].training_exp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },

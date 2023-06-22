@@ -17,7 +17,7 @@ let i = 1
 
 function addForm() {
     // 5個で処理を終了
-    if (i > 5) {
+    if (i > 3) {
         return;
 
     } else {
@@ -46,7 +46,6 @@ function addForm() {
     if(recordElements.length!=1) {
         // レコード要素を削除
          lastRecord.remove();
+        i--;
     }
-
-
-}
+    }
