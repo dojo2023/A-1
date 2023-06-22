@@ -2,25 +2,69 @@
  *
  */
 
-/* テスト用　時計
-function displayDateTime() {
-    var datetimeElement = document.getElementById("datetime");
 
-    // 現在の日付と時間を取得
-    var currentDate = new Date();
-    var date = currentDate.toLocaleDateString();
-    var time = currentDate.toLocaleTimeString();
 
-    // 日付と時間を表示
-    datetimeElement.innerHTML = "" + date + "<br>" +time;
+/* エラーメッセージ*/
+
+// フォームの送信時に実行される関数
+function validateForm(event) {
+
+  var userName = document.getElementById("user_name").value;
+  var height = document.getElementById("height").value;
+  var weight = document.getElementById("weight").value;
+
+
+  // ユーザー名のチェック
+  if (user_name === "") {
+    document.getElementById("user_name_error").textContent = "※ユーザー名が入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  }else{
+  	 document.getElementById("user_name_error").textContent = "";
   }
 
-  // ページが読み込まれた時に実行
-  window.onload = function() {
-    displayDateTime();
-  };
 
+
+
+
+
+  // 身長のチェック
+  if (user_height === "") {
+    document.getElementById("height_error").textContent = "※身長が入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  }else{
+  	 document.getElementById("height_error").textContent = "";
+  }
+
+
+  // 体重のチェック
+  if (user_weight === "") {
+    document.getElementById("weight_error").textContent = "※体重が入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  }else{
+  	 document.getElementById("weight_error").textContent = "";
+  }
+
+
+	/*  if (userName === ""){
+
+	  }*/
+
+	/*  if (userName === ""){
+
+	  }*/
+
+/*  else {
+    document.getElementById("user_name_error").textContent = "";
+  }
 */
+
+  return true; // フォームの送信を許可
+}
+
+
 
 /*  ダイアログ表示*/
   		var dialog; // ダイアログ要素の参照を保持する変数
@@ -99,3 +143,25 @@ function displayDateTime() {
 			//そのダイアログボックスをbodyの一番うしろに表示する
 			document.body.appendChild(dialog);
 		}
+
+
+
+/* テスト用　時計
+function displayDateTime() {
+    var datetimeElement = document.getElementById("datetime");
+
+    // 現在の日付と時間を取得
+    var currentDate = new Date();
+    var date = currentDate.toLocaleDateString();
+    var time = currentDate.toLocaleTimeString();
+
+    // 日付と時間を表示
+    datetimeElement.innerHTML = "" + date + "<br>" +time;
+  }
+
+  // ページが読み込まれた時に実行
+  window.onload = function() {
+    displayDateTime();
+  };
+
+*/
