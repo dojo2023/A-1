@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="com.google.gson.Gson" %>
+<%@ page import="com.google.gson.Gson"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -10,92 +10,77 @@
 <link rel="stylesheet" href="/jiro_power/css/calendar.css">
 <link rel="stylesheet" href="/jiro_power/css/common.css">
 
-    <title>Calendar</title>
+<title>Calendar</title>
 </head>
 <body>
-    <div class="wrapper">
-	    <!-- xxxx年xx月を表示 -->
-	    <h1 id="header"></h1>
+	<div class="wrapper">
+		<!-- xxxx年xx月を表示 -->
+		<h1 id="header"></h1>
 
-	    <!-- ボタンクリックで月移動 -->
-	    <div id="next-prev-button">
-	        <button id="prev" onclick="prev()">‹</button>
-	        <button id="next" onclick="next()">›</button>
-	    </div>
+		<!-- ボタンクリックで月移動 -->
+		<div id="next-prev-button">
+			<button id="prev" onclick="prev()">‹</button>
+			<button id="next" onclick="next()">›</button>
+		</div>
 
-	    <!-- カレンダー -->
-	    <div id="calendar"></div>
-	    <div class = "event">トレーニング記録</div>
+		<!-- カレンダー -->
+		<div id="calendar"></div>
+		<div id="recordList">トレーニング記録</div>
 
 	</div>
 
-<!-- 画面上部ステータス表示 -->
+	<!-- 画面上部ステータス表示 -->
 	<div class="status">
 		<header>
-			<img src=""> <!-- ロゴ貼る -->
-			<p>${level}</p> <!--  {}の中身変える-->
-			<p><div id="current_date"></div> <!--  id名前合わせる-->
-			<p>${name}</p> <!--  {}の中身変える-->
+			<img src="">
+			<!-- ロゴ貼る -->
+			<p>${level}</p>
+			<!--  {}の中身変える-->
+			<p>
+			<div id="current_date"></div>
+			<!--  id名前合わせる-->
+			<p>${name}</p>
+			<!--  {}の中身変える-->
 		</header>
 	</div>
 
-<div class="title">Calendar</div>
-<p class="yearMonth"></p>
-<div id="calendar"></div>
 
-<!-- 画面下部メニューバー表示 -->
+
+	<!-- 画面下部メニューバー表示 -->
 	<div class="menu">
-        <ul>
-            <li class="list">
-                <a href="/jiro_power/TrainingRecordServlet">
-                    <span class="icon">
-                    <ion-icon name="pencil-outline"></ion-icon>
-                    </span>
-                    <span class="text">Recode</span>
-                </a>
-            </li>
-            <li class="list active">
-                <a href="/jiro_power/CalendarServlet">
-                    <span class="icon">
-                    <ion-icon name="calendar-outline"></ion-icon>
-                    </span>
-                    <span class="text">calendar</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="/jiro_power/RankingServlet">
-                    <span class="icon">
-                    <ion-icon name="trophy-outline"></ion-icon>
-                    </span>
-                    <span class="text">Ranking</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="/jiro_power/TimerServlet">
-                    <span class="icon">
-                    <ion-icon name="timer-outline"></ion-icon>
-                    </span>
-                    <span class="text">Timer</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="/jiro_power/MypageServlet">
-                    <span class="icon">
-                    <ion-icon name="person-outline"></ion-icon>
-                    </span>
-                    <span class="text">Mypage</span>
-                </a>
-            </li>
-            <div class="indicator"></div>
-        </ul>
-        </div>
+		<ul>
+			<li class="list"><a href="/jiro_power/TrainingRecordServlet">
+					<span class="icon"> <ion-icon name="pencil-outline"></ion-icon>
+				</span> <span class="text">Recode</span>
+			</a></li>
+			<li class="list active"><a href="/jiro_power/CalendarServlet">
+					<span class="icon"> <ion-icon name="calendar-outline"></ion-icon>
+				</span> <span class="text">calendar</span>
+			</a></li>
+			<li class="list"><a href="/jiro_power/RankingServlet"> <span
+					class="icon"> <ion-icon name="trophy-outline"></ion-icon>
+				</span> <span class="text">Ranking</span>
+			</a></li>
+			<li class="list"><a href="/jiro_power/TimerServlet"> <span
+					class="icon"> <ion-icon name="timer-outline"></ion-icon>
+				</span> <span class="text">Timer</span>
+			</a></li>
+			<li class="list"><a href="/jiro_power/MypageServlet"> <span
+					class="icon"> <ion-icon name="person-outline"></ion-icon>
+				</span> <span class="text">Mypage</span>
+			</a></li>
+			<div class="indicator"></div>
+		</ul>
+	</div>
 
 
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<script type="module"
+		src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule
+		src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-		<!-- <script src="./js/calendar.js"></script> -->
-		<script src="./js/common.js"></script>
+	<!-- <script src="./js/calendar.js"></script> -->
+	<script src="./js/common.js"></script>
 
 	<script>
 	const week = ["日", "月", "火", "水", "木", "金", "土"];
@@ -139,6 +124,8 @@
 	td.forEach((item) =>
 	item.addEventListener('click',activeLink));
 
+
+
 	// カレンダー作成
 	function createProcess(year, month) {
 	    // 曜日
@@ -153,7 +140,7 @@
 	    var endDate = new Date(year, month + 1, 0).getDate();
 	    var lastMonthEndDate = new Date(year, month, 0).getDate();
 	    var row = Math.ceil((startDayOfWeek + endDate) / week.length);
-	    var list = <%= new Gson().toJson(request.getAttribute("list")) %>;
+	    var list = <%=new Gson().toJson(request.getAttribute("list"))%>;
 	    // 1行ずつ設定
 	    for (var i = 0; i < row; i++) {
 	        calendar += "<tr>";
@@ -172,52 +159,45 @@
 	                console.log("year"+year+"::"+today.getFullYear());
 
 	                if(year == today.getFullYear() && month == (today.getMonth())&& count == today.getDate()){
-	                	calendar += "<td class='today'>" + count +"<br>"  ;
-			          	for(var i=0;i<list.length;i++){
-			          		calendar += "<input type='button' id = 'btn' value='nasi'onclick='test()'>";
-	                		var bean = list[i];
-	                		var date = new Date(bean.training_record_date);
-	                		/* alert(date); */
-	                		var ss = bean.training_record_date.split(" ");
-							var y = ss[2];
-							var d = ss[1].replace(",","");
-							var m = ss[0].replace("月","");
-	/*                 		var y = date.getFullYear(); // 年の取得
-	                		var m= date.getMonth() + 1; // 月の取得（0-11の範囲で返されるため、+1する）
-	                		var d = date.getDate(); // 日の取得 */
+	                	var list = <%= new Gson().toJson(request.getAttribute("list")) %>;
+	                	 calendar += "<td class = 'today'>" +"<a href='#' onclick = 'click()' >"+count+"</a>"+ "</td>" ;
+	            		/*for(var i=0;i<list.length;i++){
+	            			var bean = list[i];
+	            			var date = new Date(bean.training_record_date);
+	            			var ss = bean.training_record_date.split(" ");
+	            			var y = ss[2];
+	            			var d = ss[1].replace(",","");
+	            			var m = ss[0].replace("月","");
 
-	                		if(year==y && (month+1)==m && count==d){
-	                			//追加したいタグを追加
-	                			 calendar += "<input type='button' value='aru'onclick='test()'></td>";
-	                		}
-	                		/* else if(y==0 && m == 0 && d==0) {
-	                			calendar += "<input type='button' value='nasi'onclick='test()'></td>";
-                		} */
-			          	}
+
+	            			if(year==y && (month+1)==m && count==d){
+	            				calendar +="<a href='#' javascript:OnLinkClick='Record(bean)'></a>	</td>";
+	            			}else{
+	            				calendar +="<a href='#' javascript:OnLinkClick='Record(bean)'></a>	</td>";
+	            			}
+	            		}
+ */
 	                } else {
-						//表示したい項目がある場合は、ここでリンクを設定する
-	                  if(calendar += "<td class = 'otherdays'>" + "<a href ="" onclick = 'test()'>count</a>"){
-	                    for(var i=0;i<list.length;i++){
-	                		var bean = list[i];
-	                		var date = new Date(bean.training_record_date);
-	                		/* alert(date); */
-	                		var ss = bean.training_record_date.split(" ");
-							var y = ss[2];
-							var d = ss[1].replace(",","");
-							var m = ss[0].replace("月","");
-	/*                 		var y = date.getFullYear(); // 年の取得
-	                		var m= date.getMonth() + 1; // 月の取得（0-11の範囲で返されるため、+1する）
-	                		var d = date.getDate(); // 日の取得 */
+	                	var list = <%= new Gson().toJson(request.getAttribute("list")) %>;
+	                	calendar += "<td class = 'otherdays'> "+"<a href='#' onclick = 'click()'>"+count+"</a>" +"</td>";
+	                	/* for(var i=0;i<list.length;i++){
+	            			var bean = list[i];
+	            			var date = new Date(bean.training_record_date);
+	            			var ss = bean.training_record_date.split(" ");
+	            			var y = ss[2];
+	            			var d = ss[1].replace(",","");
+	            			var m = ss[0].replace("月","");
 
-	                		 if(year==y && (month+1)==m && count==d){
-	                			//追加したいタグを追加
-	                			calendar += "</td>";
-	                    	}
-	                		/* else{
-	                			 calendar += "</td>";
-	                		} */
-	                	}
-	                  }
+
+	            			if(year==y && (month+1)==m && count==d){
+	            				calendar +="<a href='#' javascript:OnLinkClick='Record(bean)'></a>	</td>";
+	            			}else{
+	            				calendar +="<a href='#' javascript:OnLinkClick='Record(bean)'></a>	</td>";
+	            			}
+	            		}
+ */
+		               /*  calendar += "<td class = 'otherdays' onclick = 'click(count)'>" + count  +" </td>"; */
+
 
 	                }
 	            }
@@ -226,6 +206,65 @@
 	    }
 	    return calendar;
 	}
+	//クリック時のイベント
+	function click(){
+		alert('Click');
+		var list = <%= new Gson().toJson(request.getAttribute("list")) %>;
+		for(var i=0;i<list.length;i++){
+			var bean = list[i];
+			var date = new Date(bean.training_record_date);
+			var ss = bean.training_record_date.split(" ");
+			var y = ss[2];
+			var d = ss[1].replace(",","");
+			var m = ss[0].replace("月","");
+
+			 if(year==y && (month+1)==m && count==d){
+				//追加したいタグを追加
+				var RL =document.getElementById("#recordList");
+				RL.innerHTML += "aaaa";
+				RL.insertAdjacentHTML('beforeend',"aaaaa");
+
+	    	}
+		}
+	}
+/*
+	function test(){
+
+		calendar += "<td class = 'today'><a href='javascript:OnLinkClick='Record(bean)'>" + count +"</a></td>";
+		for(var i=0;i<list.length;i++){
+			var bean = list[i];
+			var date = new Date(bean.training_record_date);
+			var ss = bean.training_record_date.split(" ");
+			var y = ss[2];
+			var d = ss[1].replace(",","");
+			var m = ss[0].replace("月","");
+
+
+			if(year==y && (month+1)==m && count==d){
+				<a href='#' javascript:OnLinkClick='Record(bean)'></a>
+			}else{
+				<a href='#' javascript:OnLinkClick='Record(bean)'></a>
+			}
+		}
+S
+	} */
+	<%-- function Record(){
+		var list = <%= new Gson().toJson(request.getAttribute("list")) %>;
+		for(var i=0;i<list.length;i++){
+			var bean = list[i];
+			var date = new Date(bean.training_record_date);
+			var menu = bean.training_menu;
+			var ss = bean.training_record_date.split(" ");
+			var y = ss[2];
+			var d = ss[1].replace(",","");
+			var m = ss[0].replace("月","");
+			if(year==y && (month+1)==m && count==d){
+		const element = document.querySelector('#recordList');
+		element.insertAdjacentHTML('beforeend',"<div class = 'training_menu'>menu</div>");
+	}
+	function NoRecord(){
+
+	} --%>
 
 	</script>
 
