@@ -19,7 +19,7 @@ body {
 
 
 
-
+/* ログアウトボタンデザイン */
 .logout {
   width: 260px;
   height: 35px;
@@ -64,6 +64,16 @@ body {
 ::-moz-input-placeholder{
    color: rgba(255,255,255,0.6);
 }
+
+.logout:hover {
+  color: #5AFF19;
+}
+
+.logout:active {
+  color: #5AFF19;
+}
+
+
 
 .error-message {
   color: red;
