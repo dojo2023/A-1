@@ -2,13 +2,22 @@
 
 body {
 	background-color:#c0c0c0;
+	font-family: georgia;
 
 }
 
 .title {
+	position: absolute;
+	top: 20%;
 	color: #FFFFFF;
 	font-size: 30px;
-	font-family: fantasy;
+	/* font-family: fantasy; */
+	/* font-family: "Times New Roman", Times, serif; */
+	font-family: georgia;
+	font-weight: bold;
+
+
+
 	/* text-align: center; */
 }
 
@@ -67,10 +76,12 @@ body {
 
 .logout:hover {
   color: #5AFF19;
+  background-color: #000000;
 }
 
 .logout:active {
   color: #5AFF19;
+  background-color: #000000;
 }
 
 
