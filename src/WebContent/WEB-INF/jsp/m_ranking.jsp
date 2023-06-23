@@ -17,14 +17,18 @@
 <body>
 
 <!-- 画面上部ステータス表示 -->
-	<div class="status">
-		<header>
-			<img src=""> <!-- ロゴ貼る -->
-			<p>${level}</p> <!--  {}の中身変える-->
-			<p><div id="current_date"></div> <!--  id名前合わせる-->
-			<p>${name}</p> <!--  {}の中身変える-->
-		</header>
-	</div>
+	<header>
+        <div class="status">
+            <div id="logo"><img src="./img/logo.png" width="260" height="260" alt="ロゴ"></div>
+            <div class="menucoler">
+            <h1 class="level pulsate">${level_session}</h1>
+            <div class="allname">
+            <div id="names">Name</div>
+            <div id="name">${user_name_session}</div>
+            </div>
+        </div>
+    </div>
+        </header>
 
 <div class="title">Monthly Ranking</div>
 <!-- ここにグラフ -->

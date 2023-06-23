@@ -24,6 +24,9 @@ body {
 {
     left: 0;
 }
+#logo {
+
+}
 #names
 {
 
@@ -81,7 +84,7 @@ h1.level {
     line-height: 1em;
     animation: pulsate 0.11s ease-in-out infinite alternate;
 }
-@keyframes pulsate {
+@keyframes level {
   100% {
       text-shadow:
       0 0 4px #fff,
