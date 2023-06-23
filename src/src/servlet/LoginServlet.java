@@ -64,9 +64,9 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("exp_sum_session", expSum);
 
 		//レベル計算
+		int requiredExp = 10;
 		for(int i=0; i<100; i++) {
-	    	int requiredExp = 10;
-	    	requiredExp = requiredExp + requiredExp * i;
+	    	requiredExp = (requiredExp + requiredExp * i) / 2;
 	    	if(requiredExp > expSum) {
 	    		int level = i + 1;
 	    		session.setAttribute("level_session", level);
