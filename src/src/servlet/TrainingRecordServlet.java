@@ -74,19 +74,17 @@ public class TrainingRecordServlet extends HttpServlet {
 				int trainingSet = Integer.parseInt(request.getParameter("training_set"));
 //				String trainingRecordDow = request.getParameter("training_record_dow");
 
-				//経験値表示
-				int expCurrentSum = trDao.sum(new Trainingrecord(userId));
-
-				//レベル計算
-				int requiredExp = 10;
-				int currentLevel = 0;
-				for(int i=0; i<100; i++) {
-					requiredExp = (requiredExp + requiredExp * i) / 2;
-					if(requiredExp > expCurrentSum) {
-						currentLevel = i + 1;
-						break;
-					};
-				};
+//				//レベルアップ用参考
+//
+//				int requiredExp = 10;
+//				int currentLevel = 0;
+//				for(int i=0; i<100; i++) {
+//					requiredExp = (requiredExp + requiredExp * i) / 2;
+//					if(requiredExp > expSum) {
+//						currentLevel = i + 1;
+//						break;
+//					};
+//				};
 
 				//TrainingmenuDaoの倍率だけのメソッドを用意してをnewする。
 				TrainingmenuDao tmDao = new TrainingmenuDao();
@@ -106,22 +104,28 @@ public class TrainingRecordServlet extends HttpServlet {
 				}
 				int trainingExp = EXP;
 
-				//経験値の即時反映
-				int expNewSum = expCurrentSum + trainingExp;
-				session.setAttribute("exp_sum_session", expNewSum);
+				//レベル判定
+			    currentLevel = 0;
+			    requiredExp = 10;
+			    for(int i=0; i<100; i++) {
+			    	requiredExp = (requiredExp + requiredExp * i) / 2;
+			    	if(requiredExp > expSum) {
+			    		currentLevel = i + 1;
+			    		break;
+			    	};
+			    };
 
-				//レベル計算
-				int level = 0;
-				for(int i=0; i<currentLevel; i++) {
-					requiredExp = (requiredExp + requiredExp * i) / 2;
-					if(requiredExp > expCurrentSum) {
-						level = currentLevel + 1;
-						//レベルアップ時の処理
-						request.setAttribute("levelUp", "レベルがアップしました！");
-						session.setAttribute("level_session", level);
-						break;
-					};
-				};
+			    requiredExp = 10;
+			    for(int i=0; i<currentLevel; i++) {
+			    	requiredExp = (requiredExp + requiredExp * i) / 2;
+			    };
+				if(requiredExp < expSum) {
+					//レベルアップ時の処理
+					request.setAttribute("leveldayo", "レベルがアップしました！");
+				} else {
+					//レベルアップしない時の処理
+					request.setAttribute("leveldayo", null);
+				}
 
 				// 登録処理を行う
 
@@ -135,6 +139,22 @@ public class TrainingRecordServlet extends HttpServlet {
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
 					dispatcher.forward(request, response);
 				}
+
+				//経験値の即時反映
+				int expSum = trDao.sum(new Trainingrecord(userId));
+				session.setAttribute("exp_sum_session", expSum);
+
+				//レベル計算
+				int requiredExp = 10;
+				int currentLevel = 0;
+				for(int i=0; i<100; i++) {
+			    	requiredExp = (requiredExp + requiredExp * i) / 2;
+			    	if(requiredExp > expSum) {
+			    		int level = i + 1;
+			    		session.setAttribute("level_session", level);
+			    		break;
+			    	};
+			    };
 
 			}
     }
