@@ -41,9 +41,9 @@ public class LoginServlet extends HttpServlet {
 		String pw = request.getParameter("PW");
 
 		// ログイン処理を行う
-		UserinformationDao UIDao = new UserinformationDao();
-		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		int userId =  UIDao.isLoginOK(new Userinformation(email, pw));
+		UserinformationDao uiDao = new UserinformationDao();
+		TrainingrecordDao trDao = new TrainingrecordDao ();
+		int userId =  uiDao.isLoginOK(new Userinformation(email, pw));
 		if(userId != 0) {
 			// ログイン成功
 			// セッションスコープにIDを格納する
@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("id",userId);
 
 		//セッションスコープに諸情報を格納する
-		Userinformation user = UIDao.ui(new Userinformation(userId));
+		Userinformation user = uiDao.ui(new Userinformation(userId));
 		session.setAttribute("user_name_session",user.getUserName());
 		session.setAttribute("user_birth_session",user.getUserBirth());
 		session.setAttribute("user_sex_session",user.getUserSex());
@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("user_mail_address_session",user.getUserMailAddress());
 
 		//経験値表示
-		int expSum = TRDao.sum(new Trainingrecord(userId));
+		int expSum = trDao.sum(new Trainingrecord(userId));
 		session.setAttribute("exp_sum_session", expSum);
 
 		//レベル計算
