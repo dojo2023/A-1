@@ -33,7 +33,7 @@
 	<form name="mypage" method="POST" action="/jiro_power/Mypage_UpdateDeleteServlet">
 
 		  <div class="user_name"><input type="text" name="user_name" value="${user_name_session}"
-		  placeholder="8文字以内" maxlength="8" ></div> <!-- user.username -->
+		  placeholder="8文字以内" maxlength="8" id="user_name" ></div> <!-- user.username -->
 		  <br>
 		  <p id="user_name_error" class="error-message">
 
@@ -46,14 +46,14 @@
 	      <c:otherwise>WOMEN</c:otherwise></c:choose></div>
 
 	      <div class="height">身長</div>
-	      <div class="height_input"><input type="text" name="user_height" value="${user_height_session}"
+	      <div class="height_input"><input type="text" name="user_height" id="height" value="${user_height_session}"
 	      placeholder="cm単位" min="1" max="300" required></div>
 	      <div class="unit_height">cm</div>
 	      <br>
 	      <p id="height_error" class="error-message"></p>
 
 	      <div class="weight">体重</div>
-	      <div class="weight_input"><input type="text" name="user_weight" value="${user_weight_session}"
+	      <div class="weight_input"><input type="text" name="user_weight" id="weight" value="${user_weight_session}"
 	      placeholder="kg単位" min="30" max="300" required></div>
 	      <div class="unit_weight">kg</div>
 	      <br>
@@ -66,7 +66,7 @@
 	      		<!-- 更新ボタン -->
  		  <div class="update" >
 			  <input type="image" src="./img/reload.png"  id="update" name= "update1" value = "update"
-			  onclick="document.getElementById('one').value='update'" onclick="showConfirmationDialog(event)">
+			  onclick="document.getElementById('one').value='update';myPageValidateForm(event);">
 				<!--   <label for="update">
 			      <img src="./img/reload.png" alt="Reload" >
 			      </label>-->
