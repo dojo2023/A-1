@@ -17,9 +17,9 @@
 <!-- 画面上部ステータス表示 -->
 	<header>
         <div class="status">
-            <div id="logo"><img src="./img/logo.png" width="260" height="260" alt="ロゴ"></div>
+            <div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
             <div class="menucoler">
-            <h1 class="level pulsate">${level_session}</h1>
+            <h1 class="level">${level_session}</h1>
             <div class="allname">
             <div id="names">Name</div>
             <div id="name">${user_name_session}</div>
@@ -30,8 +30,10 @@
 
 <div class="title">Weekly Ranking</div>
 <!-- ここにグラフ -->
+<div class="canvas">
 <canvas id="wmranking" width="300" height="400"></canvas>
 <canvas id="wwranking" width="300" height="400"></canvas>
+</div>
 <!-- 切り替えボタン -->
 <input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
 <input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">

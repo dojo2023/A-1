@@ -24,8 +24,11 @@ body {
 {
     left: 0;
 }
-#logo {
-
+img {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	width: 40%;
 }
 #names
 {
@@ -40,9 +43,9 @@ body {
 }
 .allname
 {
-    position: relative;
-    right: -17em;
-    top: 44%;
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 300px;
     font-size: 25px;
     display: flex;
@@ -78,7 +81,8 @@ body {
 }
 
 
-h1.level {
+.level {
+	text-align: center;
     color: #fff;
     font-size: 3em;
     line-height: 1em;
