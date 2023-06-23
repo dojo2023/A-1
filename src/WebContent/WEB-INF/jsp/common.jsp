@@ -14,7 +14,7 @@
 <!-- 画面上部ステータス表示 -->
 	<header>
         <div class="status">
-            <div id="logo"><img src="0qMHkiUhEaGNQct1687312152_1687312306.png" width="260" height="260" alt="ロゴ"></div>
+            <div id="logo"><img src="./img/logo.png" width="260" height="260" alt="ロゴ"></div>
             <div class="menucoler">
             <h1 class="level pulsate">$[level_session]</h1>
             <div class="allname">
