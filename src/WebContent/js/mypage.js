@@ -27,6 +27,11 @@ function myPageValidateForm(event) {
     document.getElementById("height_error").textContent = "※身長が入力されていません。";
     event.preventDefault(); // フォームの送信を中止
 	flgNumber+=1;
+  }else if(height > 300){
+    document.getElementById("height_error").textContent = "※適正な値が入力されていません。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+
   }else{
   	 document.getElementById("height_error").textContent = "";
   }
@@ -37,7 +42,17 @@ function myPageValidateForm(event) {
     document.getElementById("weight_error").textContent = "※体重が入力されていません。";
     event.preventDefault(); // フォームの送信を中止
 	flgNumber+=1;
-  }else{
+  } else if(weight > 300){
+  	document.getElementById("weight_error").textContent = "※適正な値が入力されていません。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+
+   }else if(weight < 30){
+    document.getElementById("weight_error").textContent = "※体重は30kg以上で入力してください。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+
+   }else{
   	 document.getElementById("weight_error").textContent = "";
   }
 
