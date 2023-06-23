@@ -54,6 +54,8 @@
    			  <input type="button" onclick="deleteLastRecord()" value="-">
               <input type = "submit" name="record" value="登録" id="submit">
               </form>
+              <br>
+              <p>${levelUp }</p>
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
         <ul>
@@ -100,10 +102,6 @@
             <div class="indicator"></div>
         </ul>
         </div>
-
-        <script src="calendar.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <script src="./js/common.js"></script>
 <script src="./js/training_record.js"></script>
