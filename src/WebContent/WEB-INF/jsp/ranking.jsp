@@ -89,7 +89,7 @@
 /* 横棒グラフの処理 */
 
 let rankData =<%= new Gson().toJson(request.getAttribute("rankList")) %>;
-alert(rankData[0].trainingExp)
+
 let context = document.querySelector("#ranking").getContext('2d')
 new Chart(context, {
   type: 'bar',
