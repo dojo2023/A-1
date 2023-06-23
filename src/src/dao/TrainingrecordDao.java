@@ -593,7 +593,7 @@ public class TrainingrecordDao {
 						String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
 								+ "from TRAINING_RECORD join USER_INFORMATION "
 								+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
-								+ "where TRAINING_RECORD_DATE like ? and USER_SEX = 1 "
+								+ "where training_record_date >= (NOW() - INTERVAL 7 DAY) and USER_SEX = 1 "
 								+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 						System.out.println(sql);
@@ -603,7 +603,7 @@ public class TrainingrecordDao {
 						if (stMonth.length()==1) {
 							stMonth = "0" + stMonth;
 						}
-						pStmt.setString(1, "%" + stYear + "-" + stMonth + "%");
+						// pStmt.setString(1, "%" + stYear + "-" + stMonth + "%");
 
 
 						// SQL文を実行し、結果表を取得する
@@ -648,7 +648,7 @@ public class TrainingrecordDao {
 				}
 
 
-				//女性月間総経験値を出すDAO
+				//女性週間総経験値を出すDAO
 				public List<Alltable> sumWeeklyWomen(Trainingrecord param) {
 					Connection conn = null;
 					List<Alltable> expSumList = new ArrayList<Alltable>();
@@ -674,7 +674,7 @@ public class TrainingrecordDao {
 						String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
 								+ "from TRAINING_RECORD join USER_INFORMATION "
 								+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
-								+ "where TRAINING_RECORD_DATE like ? and USER_SEX = 2 "
+								+ "where training_record_date >= (NOW() - INTERVAL 7 DAY) and USER_SEX = 2 "
 								+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 						System.out.println(sql);
@@ -684,7 +684,7 @@ public class TrainingrecordDao {
 						if (stMonth.length()==1) {
 							stMonth = "0" + stMonth;
 						}
-						pStmt.setString(1, "%" + stYear + "-" + stMonth + "%");
+						//pStmt.setString(1, "%" + stYear + "-" + stMonth + "%");
 
 
 						// SQL文を実行し、結果表を取得する

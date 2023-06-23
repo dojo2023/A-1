@@ -54,7 +54,7 @@ public class RankingServlet extends HttpServlet {
 		 // Daoからデータを取り出す
 		TrainingrecordDao trDao = new TrainingrecordDao ();
 		List<Alltable> expSum = trDao.sumAll(new Trainingrecord(userId));
-        // System.out.println(exp_sum.size());
+         System.out.println(expSum.size());
 
 				//とりあえずリクエストスコープへセットする
 				request.setAttribute("rankList", expSum);

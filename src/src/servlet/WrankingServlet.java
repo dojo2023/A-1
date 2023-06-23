@@ -54,6 +54,8 @@ public class WrankingServlet extends HttpServlet {
 		TrainingrecordDao trDao = new TrainingrecordDao ();
 		List<Alltable> expSumWM = trDao.sumWeeklyMen(new Trainingrecord(userId));
 		List<Alltable> expSumWW = trDao.sumWeeklyWomen(new Trainingrecord(userId));
+		System.out.println(expSumWM.size());
+		System.out.println(expSumWW.size());
         // System.out.println(exp_sum.size());
 
 				//とりあえずリクエストスコープへセットする
@@ -61,7 +63,7 @@ public class WrankingServlet extends HttpServlet {
 				request.setAttribute("wwrankList", expSumWW);
 
 				//chart.jspに遷移させる
-				String path="/WEB-INF/jsp/m_ranking.jsp";
+				String path="/WEB-INF/jsp/w_ranking.jsp";
 				RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 				dispatcher.forward(request, response);
 	}

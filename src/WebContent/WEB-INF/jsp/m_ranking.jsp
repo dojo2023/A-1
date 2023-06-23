@@ -96,10 +96,10 @@ let mmcontext = document.querySelector("#mmranking").getContext('2d')
 new Chart(mmcontext, {
   type: 'bar',
   data: {
-    labels: ['1'+mmrankData[0].user_name,'2'+mmrankData[1].user_name,'3'+mmrankData[2].user_name,'4'+mmrankData[3].user_name,'5'+mmrankData[4].user_name],
+    labels: ['1'+mmrankData[0].userName,'2'+mmrankData[1].userName,'3'+mmrankData[2].userName,'4'+mmrankData[3].userName,'5'+mmrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [mmrankData[0].training_exp, mmrankData[1].training_exp,mmrankData[2].training_exp,mmrankData[3].training_exp,mmrankData[4].training_exp],
+      data: [mmrankData[0].trainingExp, mmrankData[1].trainingExp,mmrankData[2].trainingExp,mmrankData[3].trainingExp,mmrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },
@@ -114,10 +114,10 @@ let mwcontext = document.querySelector("#mwranking").getContext('2d')
 new Chart(mwcontext, {
   type: 'bar',
   data: {
-    labels: ['1'+mwrankData[0].user_name,'2'+mwrankData[1].user_name,'3'+mwrankData[2].user_name,'4'+mwrankData[3].user_name,'5'+mwrankData[4].user_name],
+    labels: ['1'+mwrankData[0].userName,'2'+mwrankData[1].userName,'3'+mwrankData[2].userName,'4'+mwrankData[3].userName,'5'+mwrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [mwrankData[0].training_exp, mwrankData[1].training_exp,mwrankData[2].training_exp,mwrankData[3].training_exp,mwrankData[4].training_exp],
+      data: [mwrankData[0].trainingExp, mwrankData[1].trainingExp,mwrankData[2].trainingExp,mwrankData[3].trainingExp,mwrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },
