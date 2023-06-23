@@ -43,10 +43,10 @@ public class CalendarServlet extends HttpServlet {
 
 
 		int user_id = (int) session.getAttribute("id");
-		TrainingrecordDao tDao = new TrainingrecordDao();
+		TrainingrecordDao trDao = new TrainingrecordDao();
 
 		ArrayList<Trainingrecord>list= new ArrayList<Trainingrecord>();
-		list = tDao.select(new Trainingrecord(user_id));
+		list = trDao.select(new Trainingrecord(user_id));
 		request.setAttribute("list",list );
 
 		System.out.println(list.get(1).getTrainingRecordDate());

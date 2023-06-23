@@ -51,15 +51,15 @@ public class UserinformationDaoTest {
 				System.out.println("登録成功！");
 				List<Userinformation> cardList1 = dao.select(insTes);
 				for (Userinformation card : cardList1) {
-					System.out.println("USER_ID：" + card.getUser_id());
-						insTes.setUser_id(card.getUser_id());
-					System.out.println("USER_NAME：" + card.getUser_name());
-					System.out.println("USER_SEX : " + card.getUser_sex());
-					System.out.println("USER_BIRTH：" + card.getUser_birth());
-					System.out.println("USER_MAIL_ADDRESS : " + card.getUser_mail_address());
-					System.out.println("USER_PASSWORD : " + card.getUser_password());
-					System.out.println("USER_HEIGHT : " + card.getUser_height());
-					System.out.println("USER_WEIGHT : " + card.getUser_weight());
+					System.out.println("USER_ID：" + card.getUserId());
+						insTes.setUserId(card.getUserId());
+					System.out.println("USER_NAME：" + card.getUserName());
+					System.out.println("USER_SEX : " + card.getUserSex());
+					System.out.println("USER_BIRTH：" + card.getUserBirth());
+					System.out.println("USER_MAIL_ADDRESS : " + card.getUserMailAddress());
+					System.out.println("USER_PASSWORD : " + card.getUserPassword());
+					System.out.println("USER_HEIGHT : " + card.getUserHeight());
+					System.out.println("USER_WEIGHT : " + card.getUserWeight());
 					System.out.println();
 				}
 			}
@@ -79,9 +79,9 @@ public class UserinformationDaoTest {
 			System.out.println("更新成功！");
 			List<Userinformation> cardList1 = dao.select(upRec);
 			for (Userinformation card : cardList1) {
-				System.out.println("USER_NAME：" + card.getUser_name());
-				System.out.println("USER_HEIGHT : " + card.getUser_height());
-				System.out.println("USER_WEIGHT : " + card.getUser_weight());
+				System.out.println("USER_NAME：" + card.getUserName());
+				System.out.println("USER_HEIGHT : " + card.getUserHeight());
+				System.out.println("USER_WEIGHT : " + card.getUserWeight());
 			}
 		}
 		else {

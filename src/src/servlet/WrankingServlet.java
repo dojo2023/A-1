@@ -51,9 +51,9 @@ public class WrankingServlet extends HttpServlet {
 //		String userName = request.getParameter("user_name");
 
 		 // Daoからデータを取り出す
-		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		List<Alltable> expSumWM = TRDao.sumWeeklyMen(new Trainingrecord(userId));
-		List<Alltable> expSumWW = TRDao.sumWeeklyWomen(new Trainingrecord(userId));
+		TrainingrecordDao trDao = new TrainingrecordDao ();
+		List<Alltable> expSumWM = trDao.sumWeeklyMen(new Trainingrecord(userId));
+		List<Alltable> expSumWW = trDao.sumWeeklyWomen(new Trainingrecord(userId));
         // System.out.println(exp_sum.size());
 
 				//とりあえずリクエストスコープへセットする

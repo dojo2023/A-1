@@ -65,9 +65,9 @@ public class UserRegistServlet extends HttpServlet {
 				int userWeight = Integer.parseInt(request.getParameter("User_Weight"));
 				boolean flg = true;
 
-				UserinformationDao uDao = new UserinformationDao();
+				UserinformationDao uiDao = new UserinformationDao();
 		//メールアドレス重複チェックを行う
-				boolean mailAddressCheck = uDao.ums(new Userinformation(userMailAddress));
+				boolean mailAddressCheck = uiDao.ums(new Userinformation(userMailAddress));
 				if(mailAddressCheck == false) {
 //					System.out.println("aaaaaasssssddddd");
 //					request.setAttribute("mac", mailAddressCheck);
@@ -91,7 +91,7 @@ public class UserRegistServlet extends HttpServlet {
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
 			    	dispatcher.forward(request, response);
 				}else {
-					if(uDao.insert(new Userinformation(userName, userSex, userBirth, userMailAddress,
+					if(uiDao.insert(new Userinformation(userName, userSex, userBirth, userMailAddress,
 							userPassword, userHeight, userWeight))) {
 						//登録成功
 						//登録成功時の処理を書く

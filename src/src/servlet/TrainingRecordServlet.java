@@ -71,14 +71,14 @@ public class TrainingRecordServlet extends HttpServlet {
 //				String trainingRecordDow = request.getParameter("training_record_dow");
 
 				//TrainingmenuDaoの倍率だけのメソッドを用意してをnewする。
-				TrainingmenuDao TMDao = new TrainingmenuDao();
-				double mag =  TMDao.MAGMAG(new Trainingmenu(trainingMenu));
+				TrainingmenuDao tmDao = new TrainingmenuDao();
+				double mag =  tmDao.MAGMAG(new Trainingmenu(trainingMenu));
 				//Userinfortationの体重だけのメソッドを用意してnewする。
-				UserinformationDao UIDao = new UserinformationDao();
-				int weight = UIDao.UW(new Userinformation(userId));
+				UserinformationDao uiDao = new UserinformationDao();
+				int weight = uiDao.UW(new Userinformation(userId));
 				//Userinfortationの性別だけのメソッドを用意してnewする。
-				UIDao = new UserinformationDao();
-				int userSex = UIDao.US(new Userinformation(userId));
+				uiDao = new UserinformationDao();
+				int userSex = uiDao.US(new Userinformation(userId));
 				//経験値計算式
 				int EXP = 0;
 				if(userSex == 1) {
@@ -90,8 +90,8 @@ public class TrainingRecordServlet extends HttpServlet {
 				int trainingExp = EXP;
 
 				// 登録処理を行う
-				TrainingrecordDao TRDao = new TrainingrecordDao ();
-				if (TRDao.insert(new Trainingrecord(trainingRecordDate,
+				TrainingrecordDao trDao = new TrainingrecordDao ();
+				if (trDao.insert(new Trainingrecord(trainingRecordDate,
 						userId,trainingMenu, trainingWeight,
 						trainingCount,trainingSet,trainingExp/*, training_record_dow*/))) {	// 登録成功
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/training_record.jsp");
@@ -103,7 +103,7 @@ public class TrainingRecordServlet extends HttpServlet {
 				}
 
 				//経験値の即時反映
-				int expSum = TRDao.sum(new Trainingrecord(userId));
+				int expSum = trDao.sum(new Trainingrecord(userId));
 				session.setAttribute("exp_sum_session", expSum);
 
 				//レベル計算

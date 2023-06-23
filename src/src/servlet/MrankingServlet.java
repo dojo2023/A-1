@@ -51,9 +51,9 @@ public class MrankingServlet extends HttpServlet {
 //				String userName = request.getParameter("user_name");
 
 				 // Daoからデータを取り出す
-				TrainingrecordDao TRDao = new TrainingrecordDao ();
-				List<Alltable> expSumMm = TRDao.sumMonthlyMen(new Trainingrecord(userId));
-				List<Alltable> expSumMw = TRDao.sumMonthlyWomen(new Trainingrecord(userId));
+				TrainingrecordDao trDao = new TrainingrecordDao ();
+				List<Alltable> expSumMm = trDao.sumMonthlyMen(new Trainingrecord(userId));
+				List<Alltable> expSumMw = trDao.sumMonthlyWomen(new Trainingrecord(userId));
 		        // System.out.println(exp_sum.size());
 
 						//とりあえずリクエストスコープへセットする

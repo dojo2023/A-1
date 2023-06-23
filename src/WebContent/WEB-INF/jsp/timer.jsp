@@ -11,6 +11,21 @@
     <title>Timer with Progress Indicator</title>
 </head>
 <body>
+
+<!-- 画面上部ステータス表示 -->
+	<header>
+        <div class="status">
+            <div id="logo"><img src="0qMHkiUhEaGNQct1687312152_1687312306.png" width="260" height="260" alt="ロゴ"></div>
+            <div class="menucoler">
+            <h1 class="level pulsate">${level_session}</h1>
+            <div class="allname">
+            <div id="names">Name</div>
+            <div id="name"><p>${user_name_session}</div>
+            </div>
+        </div>
+    </div>
+        </header>
+
     <div class="container">
         <div class="wrapper">
             <p>
