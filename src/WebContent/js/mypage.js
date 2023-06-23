@@ -4,7 +4,7 @@
 var dialog; // ダイアログ要素の参照を保持する変数
 // フォームの送信時に実行される関数
 function myPageValidateForm(event) {
-	alert("aa");
+
   var userName = document.getElementById("user_name").value;
   var height = document.getElementById("height").value;
   var weight = document.getElementById("weight").value;

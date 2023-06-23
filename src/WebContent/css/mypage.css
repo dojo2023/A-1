@@ -16,15 +16,54 @@ body {
 	font-family: georgia;
 	font-weight: bold;
 
-
-
 	/* text-align: center; */
 }
 
+form {
+	position: absolute;
+	top: 25%;
+	text-align: center;
+}
 
-  .update {
-    cursor: pointer; /* マウスポインターを表示 */
+/* .height_input::after {
+  content: "kg"; */
+
+
+/* .weight_input::after {
+  content: "kg";
+}
+ */
+
+  .height_input, .weight_input {
+    display: inline-flex;
+    align-items: center;
   }
+
+  .unit_height, .unit_weight {
+    margin-left: 5px;
+  }
+
+
+.update {
+	position: absolute;
+	top: 100%;
+	right: 12%;
+
+}
+
+.share {
+	position: absolute;
+	top: 57.5%;
+	right: 62%;
+}
+
+.logout {
+	position: absolute;
+	top: 62.5%;
+}
+
+
+
 
 
 
