@@ -15,14 +15,20 @@ body {
     overflow: visible;
     z-index: 999;
     width: 100%;
-    height: 12em;
-    background: #000000;
+    height: 90px;
+    background: #242424;
     display: flex;
     align-items: center;
 }
 .status
 {
     left: 0;
+}
+img {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	width: 40%;
 }
 #names
 {
@@ -37,9 +43,9 @@ body {
 }
 .allname
 {
-    position: relative;
-    right: -17em;
-    top: 44%;
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 300px;
     font-size: 25px;
     display: flex;
@@ -75,13 +81,14 @@ body {
 }
 
 
-h1.level {
+.level {
+	text-align: center;
     color: #fff;
     font-size: 3em;
     line-height: 1em;
     animation: pulsate 0.11s ease-in-out infinite alternate;
 }
-@keyframes pulsate {
+@keyframes level {
   100% {
       text-shadow:
       0 0 4px #fff,

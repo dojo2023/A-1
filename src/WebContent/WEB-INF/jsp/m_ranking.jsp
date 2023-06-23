@@ -17,19 +17,25 @@
 <body>
 
 <!-- 画面上部ステータス表示 -->
-	<div class="status">
-		<header>
-			<img src=""> <!-- ロゴ貼る -->
-			<p>${level}</p> <!--  {}の中身変える-->
-			<p><div id="current_date"></div> <!--  id名前合わせる-->
-			<p>${name}</p> <!--  {}の中身変える-->
-		</header>
-	</div>
+	<header>
+        <div class="status">
+            <div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
+            <div class="menucoler">
+            <h1 class="level">${level_session}</h1>
+            <div class="allname">
+            <div id="names">Name</div>
+            <div id="name">${user_name_session}</div>
+            </div>
+        </div>
+    </div>
+        </header>
 
 <div class="title">Monthly Ranking</div>
 <!-- ここにグラフ -->
+<div class="canvas">
 <canvas id="mmranking" width="300" height="400"></canvas>
 <canvas id="mwranking" width="300" height="400"></canvas>
+</div>
 <!-- 切り替えボタン -->
 <input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
 <input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">
@@ -96,10 +102,10 @@ let mmcontext = document.querySelector("#mmranking").getContext('2d')
 new Chart(mmcontext, {
   type: 'bar',
   data: {
-    labels: ['1'+mmrankData[0].user_name,'2'+mmrankData[1].user_name,'3'+mmrankData[2].user_name,'4'+mmrankData[3].user_name,'5'+mmrankData[4].user_name],
+    labels: ['1'+mmrankData[0].userName,'2'+mmrankData[1].userName,'3'+mmrankData[2].userName,'4'+mmrankData[3].userName,'5'+mmrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [mmrankData[0].training_exp, mmrankData[1].training_exp,mmrankData[2].training_exp,mmrankData[3].training_exp,mmrankData[4].training_exp],
+      data: [mmrankData[0].trainingExp, mmrankData[1].trainingExp,mmrankData[2].trainingExp,mmrankData[3].trainingExp,mmrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },
@@ -114,10 +120,10 @@ let mwcontext = document.querySelector("#mwranking").getContext('2d')
 new Chart(mwcontext, {
   type: 'bar',
   data: {
-    labels: ['1'+mwrankData[0].user_name,'2'+mwrankData[1].user_name,'3'+mwrankData[2].user_name,'4'+mwrankData[3].user_name,'5'+mwrankData[4].user_name],
+    labels: ['1'+mwrankData[0].userName,'2'+mwrankData[1].userName,'3'+mwrankData[2].userName,'4'+mwrankData[3].userName,'5'+mwrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [mwrankData[0].training_exp, mwrankData[1].training_exp,mwrankData[2].training_exp,mwrankData[3].training_exp,mwrankData[4].training_exp],
+      data: [mwrankData[0].trainingExp, mwrankData[1].trainingExp,mwrankData[2].trainingExp,mwrankData[3].trainingExp,mwrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },

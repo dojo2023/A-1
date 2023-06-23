@@ -52,9 +52,9 @@ public class RankingServlet extends HttpServlet {
 //		String userName = request.getParameter("user_name");
 
 		 // Daoからデータを取り出す
-		TrainingrecordDao TRDao = new TrainingrecordDao ();
-		List<Alltable> expSum = TRDao.sumAll(new Trainingrecord(userId));
-        // System.out.println(exp_sum.size());
+		TrainingrecordDao trDao = new TrainingrecordDao ();
+		List<Alltable> expSum = trDao.sumAll(new Trainingrecord(userId));
+         System.out.println(expSum.size());
 
 				//とりあえずリクエストスコープへセットする
 				request.setAttribute("rankList", expSum);

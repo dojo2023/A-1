@@ -1,10 +1,35 @@
 @charset "UTF-8";
 
 body {
-	background-color:#c0c0c0;
-
+	background-color: gray;
 }
 
 .title {
-	color: #FFFFFF;
+	color: white;
 }
+
+canvas {
+	display: block;
+}
+
+body {
+		background-color:#c0c0c0;
+
+   }
+
+.title {
+		color: #FFFFFF;
+		text-align: center;
+		position: relative;
+   }
+
+  .canvas {
+	display: flex;
+	flex-direction: column;
+   }
+
+
+input[type="button"] {
+		display: flex;
+		justify-content: center;
+   }

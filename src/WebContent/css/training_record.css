@@ -7,6 +7,8 @@ body {
    position: relative;
    display: block;
   margin: auto;
+  background-color: black;
+  color: white;
 }
 
 #t_menu{
@@ -19,21 +21,52 @@ body {
    position: relative;
    bottom: 33px;
    left: 100px;
+   background-color: black;
+   color: white;
+   border-color: white;
+   border-radius: 15%;
 }
 
 .t_body2{
    position: relative;
+   display: block;
    bottom: 33px;
+   width: 48px;
    left: 100px;
    background-color: white;
-   margin-left: 10%;
+   margin-left: 0;
+   border-radius: 15%;
+   border-width: 8em;
+   float: right;
+   text-align: center;
+   font-size: 10px;
 }
 
 #submit{
    display: block;
   margin: auto;
+  background-color: black;
+  color: white;
+  border-color: #5aff19;
+  border-radius: 15%;
+  height: 20px;
+  width: 70px;
+  padding: auto;
 }
 
 .bt_addForm{
-   float: left;
+   float: right;
 }
+
+input[type="date"]::-webkit-inner-spin-button{
+   -webkit-appearance: none;
+}
+input[type="date"]::-webkit-clear-button{
+   -webkit-appearance: none;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+   /*省略*/
+   opacity: 0;
+}
+

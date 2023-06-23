@@ -8,13 +8,12 @@ body {
 .title {
 		color: #FFFFFF;
 		text-align: center;
-		position: absolute;
-		top: 0;
+		position: relative;
    }
 
 input[type="button"] {
-	position: absolute;
-        left: 0;
+		display: flex;
+		justify-content: center;
    }
 
 

@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>週間ランキングページ</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="/jiro_power/css/w_ranking.css">
+<link rel="stylesheet" href="/jiro_power/css/ranking.css">
 <link rel="stylesheet" href="/jiro_power/css/common.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
@@ -15,19 +15,25 @@
 </head>
 <body>
 <!-- 画面上部ステータス表示 -->
-	<div class="status">
-		<header>
-			<img src=""> <!-- ロゴ貼る -->
-			<p>${level}</p> <!--  {}の中身変える-->
-			<p><div id="current_date"></div> <!--  id名前合わせる-->
-			<p>${name}</p> <!--  {}の中身変える-->
-		</header>
-	</div>
+	<header>
+        <div class="status">
+            <div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
+            <div class="menucoler">
+            <h1 class="level">${level_session}</h1>
+            <div class="allname">
+            <div id="names">Name</div>
+            <div id="name">${user_name_session}</div>
+            </div>
+        </div>
+    </div>
+        </header>
 
 <div class="title">Weekly Ranking</div>
 <!-- ここにグラフ -->
+<div class="canvas">
 <canvas id="wmranking" width="300" height="400"></canvas>
 <canvas id="wwranking" width="300" height="400"></canvas>
+</div>
 <!-- 切り替えボタン -->
 <input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
 <input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">
@@ -88,14 +94,16 @@
 /* 横棒グラフの処理 */
 
 let wmrankData =<%= new Gson().toJson(request.getAttribute("wmrankList")) %>;
-let context = document.querySelector("#wmranking").getContext('2d')
-new Chart(context, {
+alert(wmrankData.length);
+alert(wmrankData[0].userName);
+let wmcontext = document.querySelector("#wmranking").getContext('2d')
+new Chart(wmcontext, {
   type: 'bar',
   data: {
-    labels: ['1','2','3','4','5'],
+    labels: ['1'+wmrankData[0].userName,'2'+wmrankData[1].userName,'3'+wmrankData[2].userName,'4'+wmrankData[3].userName,'5'+wmrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [wmrankData[0], wmrankData[1],wmrankData[2],wmrankData[3],wmrankData[4]],
+      data: [wmrankData[0].trainingExp, wmrankData[1].trainingExp,wmrankData[2].trainingExp,wmrankData[3].trainingExp,wmrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },
@@ -106,14 +114,14 @@ new Chart(context, {
 });
 
 let wwrankData =<%= new Gson().toJson(request.getAttribute("wwrankList")) %>;
-let context = document.querySelector("#wwranking").getContext('2d')
-new Chart(context, {
+let wwcontext = document.querySelector("#wwranking").getContext('2d')
+new Chart(wwcontext, {
   type: 'bar',
   data: {
-    labels: ['1','2','3','4','5'],
+    labels: ['1'+wwrankData[0].userName,'2'+wwrankData[1].userName,'3'+wwrankData[2].userName,'4'+wwrankData[3].userName,'5'+wwrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-      data: [wwrankData[0], wwrankData[1],wwrankData[2],wwrankData[3],wwrankData[4]],
+      data: [wwrankData[0].trainingExp, wwrankData[1].trainingExp,wwrankData[2].trainingExp,wwrankData[3].trainingExp,wwrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
   },

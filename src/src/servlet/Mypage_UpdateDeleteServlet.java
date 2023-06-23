@@ -64,9 +64,9 @@ public class Mypage_UpdateDeleteServlet extends HttpServlet {
 
 
 		//登録処理を行う
-		UserinformationDao UIDao = new UserinformationDao();
+		UserinformationDao uiDao = new UserinformationDao();
 		if (request.getParameter("update").equals("update")) {
-			if(UIDao.update(new Userinformation(userName, userHeight, userWeight, userId))) {
+			if(uiDao.update(new Userinformation(userName, userHeight, userWeight, userId))) {
 				//登録成功
 				//登録成功時の処理を書く
 				//セッションスコープにIDを格納する

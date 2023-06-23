@@ -16,23 +16,28 @@
 <body>
 
 <!-- 画面上部ステータス表示 -->
-	<div class="status">
 		<header>
-			<img src=""> <!-- ロゴ貼る -->
-			<p>${level}</p> <!--  {}の中身変える-->
-			<p><div id="current_date"></div> <!--  id名前合わせる-->
-			<p>${name}</p> <!--  {}の中身変える-->
-		</header>
-	</div>
+        <div class="status">
+            <div id="logo"><img src="./img/logo.png"  alt="ロゴ"></div>
+            <div class="menucoler">
+            <h1 class="level">${level_session}</h1>
+            <div class="allname">
+            <div id="names">Name</div>
+            <div id="name">${user_name_session}</div>
+            </div>
+        </div>
+    </div>
+        </header>
 
 <div class="title">Ranking</div>
 <!-- ここにグラフ -->
 <canvas id="ranking" width="300" height="400"></canvas>
 <!-- 切り替えボタン -->
-<input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
-<input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">
-<input type="button" value="Weekly" onclick="window.location.href='/jiro_power/WrankingServlet'">
-
+	<div>
+		<input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
+		<input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">
+		<input type="button" value="Weekly" onclick="window.location.href='/jiro_power/WrankingServlet'">
+	</div>
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
         <ul>
@@ -95,10 +100,10 @@ new Chart(context, {
   type: 'bar',
   data: {
 	  /* あとで10位まで項目追加 */
-    labels: ['1'+rankData[0].user_name,'2'+rankData[1].user_name,'3'+rankData[2].user_name,'4'+rankData[3].user_name,'5'+rankData[4].user_name,'6'+rankData[5].user_name],
+    labels: ['1'+rankData[0].userName,'2'+rankData[1].userName,'3'+rankData[2].userName,'4'+rankData[3].userName,'5'+rankData[4].userName,'6'+rankData[5].userName,'7'+rankData[6].userName,'8'+rankData[7].userName,'9'+rankData[8].userName,'10'+rankData[9].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する、10位まで追加予定 */
-      data: [rankData[0].training_exp, rankData[1].training_exp,rankData[2].training_exp,rankData[3].training_exp,rankData[4].training_exp,rankData[5].training_exp],
+      data: [rankData[0].trainingExp, rankData[1].trainingExp,rankData[2].trainingExp,rankData[3].trainingExp,rankData[4].trainingExp,rankData[5].trainingExp,rankData[6].trainingExp,rankData[7].trainingExp,rankData[8].trainingExp,rankData[9].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19']
     }]
   },

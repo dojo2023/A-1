@@ -15,7 +15,7 @@
 <!-- 画面上部ステータス表示 -->
 	<header>
         <div class="status">
-            <div id="logo"><img src="0qMHkiUhEaGNQct1687312152_1687312306.png" width="260" height="260" alt="ロゴ"></div>
+            <div id="logo"><img src="./img/logo.png" width="260" height="260" alt="ロゴ"></div>
             <div class="menucoler">
             <h1 class="level pulsate">${level_session}</h1>
             <div class="allname">
@@ -46,10 +46,12 @@
     </div>
     </div>
 
-    <!-- 画面下部メニューバー表示 -->
+    <hr>
+
+ <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
         <ul>
-            <li class="list ">
+            <li class="list">
                 <a href="/jiro_power/TrainingRecordServlet">
                     <span class="icon">
                     <ion-icon name="pencil-outline"></ion-icon>
@@ -91,8 +93,27 @@
             </li>
             <div class="indicator"></div>
         </ul>
-        </div>
+     </div>
 
+     <!--
+// 画面下部メニューバー表示
+	<div class="menu">
+		<footer>
+			<a href="/jiro_power/TrainingRecordServlet"><img src="./img/record.png"></a>
+			<a href="/jiro_power/CalendarServlet"><img src="./img/calender.png"></a>
+			<a href="/jiro_power/RankingServlet"><img src="./img/ranking.png"></a>
+			<a href="/jiro_power/TimerServlet"><img src="./img/timer.png"></a>
+			<a href="/jiro_power/MypageServlet"><img src="./img/mypage.png"></a>
+		</footer>
+	</div>
+ -->
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<script src="./js/common.js"></script>
     <script src="/jiro_power/js/timer.js"></script>
      <!-- <div class="timer center"></div> -->
 
