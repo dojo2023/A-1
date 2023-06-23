@@ -95,7 +95,12 @@ if (birth === "") {
   	document.getElementById("weight_error").textContent = "※適正な値が入力されていません。";
   	event.preventDefault(); // フォームの送信を中止
     return false;
-   } else {
+   } else if(weight < 30){
+    document.getElementById("weight_error").textContent = "※体重は30kg以上で入力してください。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+
+   }else {
   	 document.getElementById("weight_error").textContent = "";
   }
 
