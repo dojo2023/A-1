@@ -53,14 +53,12 @@
 	      <div class="height_input"><input type="text" name="user_height" id="height" value="${user_height_session}"
 	      placeholder="cm単位" min="1" max="300" required></div>
 	      <div class="unit_height">cm</div>
-	      <br>
 	      <p id="height_error" class="error-message"></p>
 
 	      <div class="weight">体重</div>
 	      <div class="weight_input"><input type="text" name="user_weight" id="weight" value="${user_weight_session}"
 	      placeholder="kg単位" min="30" max="300" required></div>
 	      <div class="unit_weight">kg</div>
-	      <br>
 	      <p id="weight_error" class="error-message"></p>
 
 	      <div class="mail_address">E-mail</div>
