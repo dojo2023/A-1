@@ -26,9 +26,9 @@ body {
 }
 img {
 	position: absolute;
-	top: -40px;
+	top: 10px;
 	left: 0;
-	width: 40%;
+	width: 45%;
 }
 #names
 {
@@ -41,13 +41,18 @@ img {
 {
     color: #5AFF19;
 }
+
+#name
+{
+    font-size: 38px;
+
+}
 .allname
 {
     position: absolute;
     right: 0;
     top: 0;
-    width: 300px;
-    font-size: 25px;
+    width: 35%;
     display: flex;
     border-bottom:  solid 7px #5AFF19;
 
@@ -73,11 +78,6 @@ img {
       0 0 92px #5AFF19,
       0 0 102px #5AFF19,
       0 0 151px #5AFF19;
-}
-#name
-{
-    font-size: 38px;
-
 }
 
 

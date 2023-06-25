@@ -33,13 +33,13 @@
 <div class="title">Monthly Ranking</div>
 <!-- ここにグラフ -->
 <div class="canvas">
-<canvas id="mmranking" width="300" height="400"></canvas>
-<canvas id="mwranking" width="300" height="400"></canvas>
+<canvas id="mmranking" width="350" height="250"></canvas>
+<canvas id="mwranking" width="350" height="250"></canvas>
 </div>
 <!-- 切り替えボタン -->
-<input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
-<input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">
-<input type="button" value="Weekly" onclick="window.location.href='/jiro_power/WrankingServlet'">
+<input type="button" value="Ranking" id="rank_button" onclick="window.location.href='/jiro_power/RankingServlet'">
+<input type="button" value="Monthly" id="mrank_button" onclick="window.location.href='/jiro_power/MrankingServlet'">
+<input type="button" value="Weekly" id="wrank_button" onclick="window.location.href='/jiro_power/WrankingServlet'">
 
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">

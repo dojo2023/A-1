@@ -11,6 +11,16 @@ canvas {
 	display: block;
 }
 
+#wmranking {
+	position: absolute;
+	top: 20%;
+}
+
+#wwranking {
+	position: absolute;
+	bottom: 40%;
+}
+
 body {
 		background-color:#c0c0c0;
 
@@ -19,18 +29,51 @@ body {
 .title {
 		color: #FFFFFF;
 		text-align: center;
-		position: relative;
+		position: absolute;
+		top: 15%;
    }
 
-   .canvas {
-	display: flex;
-	flex-direction: column;
-   }
+#wmranking {
+	position: absolute;
+	top: 20%;
+	left: 10%;
+}
 
-
+#wwranking {
+	position: absolute;
+	top: 50%;
+	left: 10%;
+}
 input[type="button"] {
-		display: flex;
-		justify-content: center;
+		position: absolute;
+		bottom: 15%;
+		background: #242424;
+  		border: 1px solid #242424;
+  		cursor: pointer;
+  		border-radius: 8px;
+  		color: white;
+  		font-family: 'Exo', sans-serif;
+  		font-size: 16px;
+  		font-weight: 400;
+ 		padding: 6px;
+ 		margin-top: 10px;
    }
+
+#rank_button {
+	position: absolute;
+	left: 20%;
+}
+
+#mrank_button {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#wrank_button {
+	position: absolute;
+	right: 20%;
+	border-color: #5aff19;
+}
 
 
