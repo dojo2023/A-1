@@ -101,21 +101,32 @@ new Chart(context, {
   data: {
 
     labels: ['1'+ rankData[0].userName,'2'+ rankData[1].userName,'3'+ rankData[2].userName,'4'+rankData[3].userName,'5'+rankData[4].userName,'6'+rankData[5].userName,'7'+rankData[6].userName,'8'+rankData[7].userName,'9'+rankData[8].userName,'10'+rankData[9].userName],
+
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
       label: "総合獲得経験値",
       data: [rankData[0].trainingExp, rankData[1].trainingExp,rankData[2].trainingExp,rankData[3].trainingExp,rankData[4].trainingExp,rankData[5].trainingExp,rankData[6].trainingExp,rankData[7].trainingExp,rankData[8].trainingExp,rankData[9].trainingExp],
-      backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19','#5AFF19'],
+      backgroundColor: ['#5AFF19'],
+      borderColor: ['#242424'],
+      borderWidth: 2,
     }]
   },
   options: {
-	  title: {
-          display: true,
-          label: '総合ランキング',
-          backgroundColor: ['#ffffff']
-         },
-  indexAxis: 'y',
-    responsive: false,
+	    indexAxis: 'y',
+	    responsive: false,
+		scales: {
+			x: {
+	            grid: {
+	              offset: true
+	            },
+	            fontColor: '#ffffff',
+	        },
+	        y: {
+	            grid: {
+	              offset: true
+	            }
+	        },
+  		}
   }
 });
 </script>
