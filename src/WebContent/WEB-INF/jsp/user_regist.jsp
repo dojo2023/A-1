@@ -86,7 +86,7 @@
 			</div>
 
 			<!-- <input type="submit" name="regist" value="登録" onclick="showConfirmationDialog(event)"> -->
-			<input type="button" name="regist" value="登録" onclick="showConfirmationDialog(event)">
+			<input type="button" name="regist" class="regist" value="登録" onclick="showConfirmationDialog(event)">
 
 		</form>
 	</div> <!-- id="login" -->

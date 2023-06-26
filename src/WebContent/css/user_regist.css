@@ -10,6 +10,9 @@ body {
     background-color:#c0c0c0;
     z-index: 0;
     font-family: "Times New Roman";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /*戻るボタン*/
@@ -31,8 +34,7 @@ body {
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
-    max-width: 280px;
-    padding: 30px 30px;
+    padding: 30px;
     color: #313131;
     transition: 0.3s ease-in-out;
     font-weight: 500;
@@ -56,14 +58,14 @@ body {
 img {
     overflow: visible;
     z-index: 999;
-    height: 90px;
+    height: auto;
     background: #242424;
     display: flex;
     align-items: center;
     position: absolute;
 	top: 1%;
-	left: 28%;
-	width: 43%;
+	left: 26%;
+	width: 50%;
 }
 
 /*registration*/
@@ -72,6 +74,7 @@ img {
 	position:absolute;
 	top:15%;
 	font-family: "Times New Roman";
+	font-size: 35px;
 }
 
 /*エラー表示*/
@@ -79,9 +82,89 @@ img {
   color: red;
 }
 
+.name{
+	position:absolute;
+	top:22%;
+	left:30%;
+	width:70%;
+}
 
+#user_name_error{
+	position:relative;
+	margin:0;
+}
 
+.mailAddress{
+	position:absolute;
+	top:30%;
+	left:30%;
+	width:70%;
+}
 
+#mail_address_error{
+	position:relative;
+	margin:0;
+}
+
+.password{
+	position:absolute;
+	top:38%;
+	left:30%;
+	width:70%;
+}
+
+#password_error{
+	position:relative;
+	margin:0;
+}
+
+.sex{
+	position:absolute;
+	top:46%;
+	left:30%;
+	width:70%;
+}
+
+.birth{
+	position:absolute;
+	top:52%;
+	left:30%;
+	width:70%;
+}
+
+#birth_error{
+	position:relative;
+	margin:0;
+}
+
+.height{
+	position:absolute;
+	top:60%;
+	left:30%;
+	width:70%;
+}
+
+#height_error{
+	position:relative;
+	margin:0;
+}
+.weight{
+	position:absolute;
+	top:68%;
+	left:30%;
+	width:70%;
+}
+
+#weight_error{
+	position:relative;
+	margin:0;
+}
+
+.regist{
+	position:absolute;
+	top:80%;
+	left:45%;
+}
 
 /* ダイアログボックス本体のカスタムスタイルを定義 */
 .custom-dialog {
@@ -100,14 +183,14 @@ img {
 	/*幅指定  */
 	width: 300px;
 	/*高さ指定  */
-	height: 200px;
+	height: 100px;
 
 	/*場所の指定を相対的にする  */
-	position: relative;  							/* absoluteで指定する */
+	position: absolute;  							/* absoluteで指定する */
 	/*今いる場所の上から30pxの場所へ移動  */
-	top: 30px;
+	top: 82%;
 	/*今いる場所の左から50pxの場所へ移動  */
-	left: 50px;
+	left: 10%;
 }
 
 /*右上のバツボタンのスタイル  */
