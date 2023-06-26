@@ -11,17 +11,25 @@
 </head>
 <body>
 
-<div class=title>Result</div>
-		<img src=""> <!-- ロゴ貼る -->
-		<p>${name}</p> <!--  {}の中身変える-->
-		<p>${level}</p> <!--  {}の中身変える-->
-		<p>${exp}</p> <!--  {}の中身変える-->
-		<p>${ranking}</p> <!--  {}の中身変える-->
-		<p>${wranking}</p> <!--  {}の中身変える-->
-		<p>${mranking}</p> <!--  {}の中身変える-->
-		<a href="http://twitter.com/share?text=【ツイートテキスト（※日本語をURLエンコードしたもの）】&url=【そのページのURL】" rel="nofollow">ツイート</a>
-		<a href="http://www.facebook.com/share.php?u=【そのページのURL】" target="_blank">Facebook</a>
-		<a href="https://social-plugins.line.me/lineit/share?url=【エンコードしたURL】" target="_blank">LINE</a>
+<div class="result">
+        <div class="reselt">
+            <div class="logos"><img src="0qMHkiUhEaGNQct1687312152_1687312306.png"></div>
+            <div id="share_name">${name}</div>
+            <div class="en">
+            <div id="share_level">${level_session}</div>
+            </div>
+            <div id="share_exp">${exp_sum_session}</div>
+            <div id="share_ranking">Ranking</div>
+            <div id="share_ranking_nam">${}</div>
+            <div id="share_w_ranking">Week:</div>
+            <div id="share_w_ranking_num">${}</div>
+            <div id="share_m_ranking">Month:</div>
+            <div id="share_m_ranking_num">${}</div>
+        </div>
+        <div class="circle"></div>
+
+
+    </div>
 
 <script src="./js/result.js"></script>
 </body>
