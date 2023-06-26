@@ -123,7 +123,7 @@ public class TrainingrecordDao {
 					+ "training_menu = ?,"
 					+ "training_weight = ?,"
 					+ "training_count = ?,"
-					+ "training_set = ?"
+					+ "training_set = ? "
 					+ "WHERE training_record_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -181,7 +181,7 @@ public class TrainingrecordDao {
 	}
 
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-	public boolean delete(String erase) {
+	public boolean delete(int param) {
 		Connection conn = null;
 		boolean result = false;
 

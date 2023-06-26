@@ -1,4 +1,4 @@
-/*全体*/
+/*
 		.wrapper{
 		    max-width: 600px;
 		    margin: 0 auto;
@@ -11,7 +11,7 @@
 		    margin: 1rem 0 0;
 		}
 
-		/*カレンダー*/
+		カレンダー
 		#calendar {
 		    text-align: center;
 		    width: 100%;
@@ -38,25 +38,25 @@
 
 
 
-		/*日曜日*/
+		日曜日
 		td:first-child {
 		    color: red;
 		}
-		/*土曜日*/
+		土曜日
 		td:last-child {
 		    color: blue;
 		}
-		/*前後月の日付*/
+		前後月の日付
 		td.disabled {
 		    color: #ccc;
 		}
-		/*本日*/
+		本日
 		td.today {
 		    background-color: #D65E72;
 		    color: #fff;
 		}
 
-		/*ボタン*/
+		ボタン
 		#next-prev-button {
 		    position: relative;
 		}
@@ -80,3 +80,4 @@
 		#next {
 		    float: right;
 		}
+ */

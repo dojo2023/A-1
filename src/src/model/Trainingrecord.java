@@ -69,8 +69,9 @@ public Trainingrecord(String trainingMenu, double trainingWeight, int trainingCo
 
 //トレーニング記録更新のコンストラクタ
 
-public Trainingrecord(String trainingMenu, double trainingWeight, int trainingCount, int trainingSet) {
+public Trainingrecord(int trainingRecordId ,String trainingMenu, double trainingWeight, int trainingCount, int trainingSet) {
 	super();
+	this.trainingRecordId = trainingRecordId;
 	this.trainingMenu = trainingMenu;
 	this.trainingWeight = trainingWeight;
 	this.trainingCount = trainingCount;
