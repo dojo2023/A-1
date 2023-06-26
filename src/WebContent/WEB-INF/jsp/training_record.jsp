@@ -60,7 +60,7 @@
                       </div>
                       </form>
                       <br>
-                      <p>${leveldayo}</p>
+                      <p>${level_up}</p>
         <!-- 画面下部メニューバー表示 -->
             <div class="menu">
                 <ul>

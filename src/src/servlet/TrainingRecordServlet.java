@@ -123,10 +123,10 @@ public class TrainingRecordServlet extends HttpServlet {
 			    };
 				if(requiredExp < expSum) {
 					//レベルアップ時の処理
-					request.setAttribute("leveldayo", "レベルがアップしました！");
+					request.setAttribute("level_up", "レベルがアップしました！");
 				} else {
 					//レベルアップしない時の処理
-					request.setAttribute("leveldayo", null);
+					request.setAttribute("level_up", null);
 				}
 
 				// 登録処理を行う
