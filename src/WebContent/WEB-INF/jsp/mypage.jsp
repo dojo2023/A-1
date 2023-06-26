@@ -49,20 +49,23 @@
 	      <div class="sex"><c:choose> <c:when test = "${user_sex_session == 1}">MEN</c:when>
 	      <c:otherwise>WOMEN</c:otherwise></c:choose></div>
 
-	      <div class="height">身長</div>
+	      <!-- <div class="height">身長</div> -->
+	      <label for="height" class="height">身長:</label>
 	      <div class="height_input"><input type="text" name="user_height" id="height" value="${user_height_session}"
 	      placeholder="cm単位" style="width: 80px; height: 35px;" min="1" max="300" required></div>
 	      <!-- <div class="unit_height">cm</div> -->
 	      <label for="height-input" class="unit_height">cm</label>
 	      <p id="height_error" class="error-message"></p>
 
-	      <div class="weight">体重</div>
+	      <!-- <div class="weight">体重</div> -->
+	      <label for="weight" class="weight">体重:</label>
 	      <div class="weight_input"><input type="text" name="user_weight" id="weight" value="${user_weight_session}"
 	      placeholder="kg単位" style="width: 80px; height: 35px;" min="30" max="300" required></div>
 	      <label for="weight-input" class="unit_weight">kg</label>
 	      <p id="weight_error" class="error-message"></p>
 
-	      <div class="mail_address">E-mail</div>
+	      <!-- <div class="mail_address">E-mail</div> -->
+	      <label for="mail_address" class="mail_address">E-mail:</label>
 	      <div class="mail_address_display">${user_mail_address_session}</div>
 
 		  <input type="hidden" name="update" id="one" >
