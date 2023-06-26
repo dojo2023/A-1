@@ -114,6 +114,13 @@ new Chart(context, {
   options: {
 	    indexAxis: 'y',
 	    responsive: false,
+	    plugins: {
+	    	legend: {
+	    		labels: {
+	    			color: '#ffffff'  //テキストカラー
+	    		}
+	    	}
+	    },
 		scales: {
 			x: {
 	            grid: {
@@ -124,8 +131,11 @@ new Chart(context, {
 	        y: {
 	            grid: {
 	              offset: true
+	            },
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
 	            }
-	        },
+	        }
   		}
   }
 });
