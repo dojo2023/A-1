@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 body {
-	background-color:#c0c0c0;
+	/* background-color:#c0c0c0; */
+	background-color:#242424;
 	font-family: georgia;
 
 }
@@ -19,11 +20,89 @@ body {
 	/* text-align: center; */
 }
 
+   input {
+/*     height: 35px; 高さを50ピクセルに設定 */
+/*     width: 80px; 幅を200ピクセルに設定 */
+	   font-family: georgia;
+	   color: white;
+	   text-align: center;
+
+  }
+
+/* ユーザー名スタイル */
+  	  .user_name input[type="text"] {
+  	   font-family: georgia;
+	   color: white;
+	   width: 100%;
+	   flex-grow: 1;
+       height: 60px;
+       padding: 12px;
+	   text-align: center;
+	   border-color: white;
+	   background-color: #242424;
+	   border: 1px solid white;
+ 	   border-radius: 5px;
+ 	   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ 	   font-size: 20px;
+
+
+  	  }
+
+  	.height_input input[type="text"] {
+  	   font-family: georgia;
+	   color: white;
+	   text-align: center;
+	   border-color: white;
+	   background-color: #242424;
+	   border: 1px solid white;
+ 	   border-radius: 5px;
+ 	   font-size: 20px;
+
+  	}
+
+    .weight_input input[type="text"] {
+       font-family: georgia;
+	   color: white;
+	   text-align: center;
+	   border-color: white;
+	   background-color: #242424;
+	   border: 1px solid white;
+ 	   border-radius: 5px;
+ 	   font-size: 20px;
+  	}
+
+
+
 form {
 	position: absolute;
 	top: 25%;
 	text-align: center;
+	padding: 60px;
+	background-color: #f2f2f2;		/* 背景いらない場合は消す */
+	border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
 }
+
+  /* 経験値のスタイル */
+  .exp {
+    font-size: 28px;
+    font-weight: bold;
+    color: #242424;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+    /* 身長と体重のスタイル */
+  .height_input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+  }
+
+
 
 /* .height_input::after {
   content: "kg"; */
@@ -41,13 +120,24 @@ form {
 
   .unit_height, .unit_weight {
     margin-left: 5px;
+    font-size: 20px;
   }
 
 
-.update {
+
+
+
+
+.update input[type="image"] {
 	position: absolute;
+	display: flex;
 	top: 100%;
 	right: 12%;
+	margin-top: 50px;
+	width: 60px;
+	height: 60px;
+	border: none;
+    background: none;
 
 }
 
@@ -57,6 +147,8 @@ form {
 	right: 59%;
 	z-index: 0;
 	width: 65px;
+	width: 60px;
+	height: 60px;
 
 }
 
@@ -67,6 +159,9 @@ form {
 
 
 
+hr {
+	color: white;
+}
 
 
 
@@ -130,6 +225,7 @@ form {
 
 .error-message {
   color: red;
+
 }
 
 

@@ -18,7 +18,7 @@
 <!-- 画面上部ステータス表示 -->
 	<header>
         <div class="status">
-            <div id="logo"><img src="./img/logo.png" width="260" height="260" alt="ロゴ"></div>
+            <div id="logo"><img src="./img/logo.png" alt="logo"></div>
             <div class="menucoler">
             	<h1 class="level pulsate">${level_session}</h1>
             	<div class="allname">
@@ -37,7 +37,7 @@
 	<form name="mypage" method="POST" action="/jiro_power/Mypage_UpdateDeleteServlet">
 
 		  <div class="user_name"><input type="text" name="user_name" value="${user_name_session}"
-		  placeholder="8文字以内" maxlength="8" id="user_name" ></div> <!-- user.username -->
+		  placeholder="8文字以内" maxlength="8" id="user_name" style="width: 140px; height: 35px;"></div> <!-- user.username -->
 
 		  <p id="user_name_error" class="error-message">
 
@@ -51,14 +51,14 @@
 
 	      <div class="height">身長</div>
 	      <div class="height_input"><input type="text" name="user_height" id="height" value="${user_height_session}"
-	      placeholder="cm単位" min="1" max="300" required></div>
+	      placeholder="cm単位" style="width: 80px; height: 35px;" min="1" max="300" required></div>
 	      <!-- <div class="unit_height">cm</div> -->
 	      <label for="height-input" class="unit_height">cm</label>
 	      <p id="height_error" class="error-message"></p>
 
 	      <div class="weight">体重</div>
 	      <div class="weight_input"><input type="text" name="user_weight" id="weight" value="${user_weight_session}"
-	      placeholder="kg単位" min="30" max="300" required></div>
+	      placeholder="kg単位" style="width: 80px; height: 35px;" min="30" max="300" required></div>
 	      <label for="weight-input" class="unit_weight">kg</label>
 	      <p id="weight_error" class="error-message"></p>
 
