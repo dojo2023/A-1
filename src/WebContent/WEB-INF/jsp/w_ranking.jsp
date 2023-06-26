@@ -102,6 +102,7 @@ new Chart(wmcontext, {
     labels: ['1'+wmrankData[0].userName,'2'+wmrankData[1].userName,'3'+wmrankData[2].userName,'4'+wmrankData[3].userName,'5'+wmrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
+        label: "週間獲得経験値",
       data: [wmrankData[0].trainingExp, wmrankData[1].trainingExp,wmrankData[2].trainingExp,wmrankData[3].trainingExp,wmrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
@@ -120,6 +121,7 @@ new Chart(wwcontext, {
     labels: ['1'+wwrankData[0].userName,'2'+wwrankData[1].userName,'3'+wwrankData[2].userName,'4'+wwrankData[3].userName,'5'+wwrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
+        label: "週間獲得経験値",
       data: [wwrankData[0].trainingExp, wwrankData[1].trainingExp,wwrankData[2].trainingExp,wwrankData[3].trainingExp,wwrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]

@@ -105,6 +105,7 @@ new Chart(mmcontext, {
     labels: ['1'+mmrankData[0].userName,'2'+mmrankData[1].userName,'3'+mmrankData[2].userName,'4'+mmrankData[3].userName,'5'+mmrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
+        label: "月間獲得経験値",
       data: [mmrankData[0].trainingExp, mmrankData[1].trainingExp,mmrankData[2].trainingExp,mmrankData[3].trainingExp,mmrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
@@ -123,6 +124,7 @@ new Chart(mwcontext, {
     labels: ['1'+mwrankData[0].userName,'2'+mwrankData[1].userName,'3'+mwrankData[2].userName,'4'+mwrankData[3].userName,'5'+mwrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
+        label: "月間獲得経験値",
       data: [mwrankData[0].trainingExp, mwrankData[1].trainingExp,mwrankData[2].trainingExp,mwrankData[3].trainingExp,mwrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
     }]
