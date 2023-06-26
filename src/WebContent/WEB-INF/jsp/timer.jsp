@@ -15,7 +15,7 @@
 <!-- 画面上部ステータス表示 -->
 	<header>
         <div class="status">
-            <div id="logo"><img src="./img/logo.png" width="260" height="260" alt="ロゴ"></div>
+            <div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
             <div class="menucoler">
             <h1 class="level pulsate">${level_session}</h1>
             <div class="allname">
@@ -36,6 +36,7 @@
 			<button class="minus-min">-</button>
 			<button class="plus-sec">+</button>
 			<button class="minus-sec">-</button>
+			<br>
 			<br>
 
 
