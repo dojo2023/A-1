@@ -105,8 +105,9 @@ public class TrainingRecordServlet extends HttpServlet {
 				int trainingExp = EXP;
 
 				//レベル判定
-			    currentLevel = 0;
-			    requiredExp = 10;
+				int currentLevel = 0;
+			    int requiredExp = 10;
+			    int expSum = trDao.sum(new Trainingrecord(userId));
 			    for(int i=0; i<100; i++) {
 			    	requiredExp = (requiredExp + requiredExp * i) / 2;
 			    	if(requiredExp > expSum) {
@@ -115,6 +116,7 @@ public class TrainingRecordServlet extends HttpServlet {
 			    	};
 			    };
 
+			    expSum = trDao.sum(new Trainingrecord(userId)) + trainingExp;
 			    requiredExp = 10;
 			    for(int i=0; i<currentLevel; i++) {
 			    	requiredExp = (requiredExp + requiredExp * i) / 2;
@@ -141,13 +143,12 @@ public class TrainingRecordServlet extends HttpServlet {
 				}
 
 				//経験値の即時反映
-				int expSum = trDao.sum(new Trainingrecord(userId));
+				expSum = trDao.sum(new Trainingrecord(userId));
 				session.setAttribute("exp_sum_session", expSum);
 
 				//レベル計算
-				int requiredExp = 10;
-				int currentLevel = 0;
-				for(int i=0; i<100; i++) {
+				requiredExp = 10;
+				for(int i=0; i<10000; i++) {
 			    	requiredExp = (requiredExp + requiredExp * i) / 2;
 			    	if(requiredExp > expSum) {
 			    		int level = i + 1;
