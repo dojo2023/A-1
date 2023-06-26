@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/jiro_power/css/login.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <!-- <link rel="stylesheet" href="/jiro_power/css/common.css"> -->
-<meta name="viewport" content="initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>ログイン</title>
 
 <!--     <style>
@@ -25,24 +25,31 @@
 </head>
 <body>
 
-	<img src=""> <!-- ロゴ貼る -->
+	<div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
 	<br>
     <div class="title">Login</div>
 
 	<div id="login">
 		<form name='form-login' id="fieldPassword" method="POST" action="/jiro_power/LoginServlet">
-			<span class="fontawesome-user"></span>
-				<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" >
-			<br>
-			<p id="mail_address_error" class="error-message"></p>
+			<div class="mailAddress">
+				<span class="fontawesome-user"></span>
+					<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" >
+				<br>
+			</div>
+			<div class=mailAddressError>
+				<p id="mail_address_error" class="error-message"></p>
+			</div>
 
 
 			<span class="fontawesome-lock"></span>
-			<div class= "password-wwrapper">
-
+			<div class= "password">
 				<input type="password" id="textPassword" name="PW" placeholder="password"
 				min="8" maxlength="20" >
 				<span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
+			</div>
+			<div class="passwordError">
+				<p id="password_error" class="error-message"></p>
+			</div>
 
 
 
@@ -53,11 +60,10 @@
       		</label>
 -->
 
-      		</div>
+			<div class="submit">
+				<input type="submit" name="login" value="　　ログイン　　" onclick="return validateForm()">
+			</div>
 
-			<p id="password_error" class="error-message"></p>
-
-			<input type="submit" name="login" value="ログイン" onclick="return validateForm()">
 			<div style="color:red">
 			${errMsg}
 			</div>
@@ -65,7 +71,9 @@
 
 	</div> <!-- id="login" -->
 
-	<input type="button" class="create" value="新規登録はこちら" onclick="window.location.href='/jiro_power/UserRegistServlet'">
+	<div class="regist">
+		<input type="button" class="create" value="新規登録はこちら" onclick="window.location.href='/jiro_power/UserRegistServlet'">
+	</div>
 
 	<a href="jiro_power/Web-INF/jsp/user_regist.jsp"></a>
 	<script src="/jiro_power/js/login.js"></script>
