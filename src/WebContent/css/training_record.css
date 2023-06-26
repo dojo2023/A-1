@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
    background-color:#c0c0c0;
+   font-family: 'Exo', sans-serif;
 }
 
 .input_form {
@@ -65,7 +66,7 @@ body {
   padding: auto;
   margin-top: 10px;
   position: relative;
-  left: 25px
+  left: 30px
 }
 
 .bt_addForm{

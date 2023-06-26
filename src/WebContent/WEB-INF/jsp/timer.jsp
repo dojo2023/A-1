@@ -32,10 +32,10 @@
                 <span class="mins">60</span>:<span class="seconds">00</span>
             </p> <br>
             <!-- セットボタン -->
-			<button class="plus-min">+</button>
-			<button class="minus-min">-</button>
-			<button class="plus-sec">+</button>
-			<button class="minus-sec">-</button>
+			<button class="plus-min">+m</button>
+			<button class="minus-min">-m</button>
+			<button class="plus-sec">+s</button>
+			<button class="minus-sec">-s</button>
 			<br>
 			<br>
 
