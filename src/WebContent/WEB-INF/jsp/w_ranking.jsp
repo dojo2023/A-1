@@ -31,13 +31,13 @@
 <div class="title">Weekly Ranking</div>
 <!-- ここにグラフ -->
 <div class="canvas">
-<canvas id="wmranking" width="300" height="400"></canvas>
-<canvas id="wwranking" width="300" height="400"></canvas>
+<canvas id="wmranking" width="350" height="250"></canvas>
+<canvas id="wwranking" width="350" height="250"></canvas>
 </div>
 <!-- 切り替えボタン -->
-<input type="button" value="Ranking" onclick="window.location.href='/jiro_power/RankingServlet'">
-<input type="button" value="Monthly" onclick="window.location.href='/jiro_power/MrankingServlet'">
-<input type="button" value="Weekly" onclick="window.location.href='/jiro_power/WrankingServlet'">
+<input type="button" value="Ranking" id="rank_button" onclick="window.location.href='/jiro_power/RankingServlet'">
+<input type="button" value="Monthly" id="mrank_button" onclick="window.location.href='/jiro_power/MrankingServlet'">
+<input type="button" value="Weekly" id="wrank_button" onclick="window.location.href='/jiro_power/WrankingServlet'">
 
 <!-- 画面下部メニューバー表示 -->
 	<div class="menu">
@@ -94,8 +94,7 @@
 /* 横棒グラフの処理 */
 
 let wmrankData =<%= new Gson().toJson(request.getAttribute("wmrankList")) %>;
-alert(wmrankData.length);
-alert(wmrankData[0].userName);
+
 let wmcontext = document.querySelector("#wmranking").getContext('2d')
 new Chart(wmcontext, {
   type: 'bar',

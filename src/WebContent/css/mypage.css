@@ -53,8 +53,11 @@ form {
 
 .share {
 	position: absolute;
-	top: 57.5%;
-	right: 62%;
+	top: 57%;
+	right: 59%;
+	z-index: 0;
+	width: 65px;
+
 }
 
 .logout {
