@@ -34,6 +34,7 @@
 <div class=title>My Page</div>
 
 
+
 	<form name="mypage" method="POST" action="/jiro_power/Mypage_UpdateDeleteServlet">
 
 		  <div class="user_name"><input type="text" name="user_name" value="${user_name_session}"
