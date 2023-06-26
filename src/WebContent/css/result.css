@@ -1,9 +1,122 @@
 @charset "UTF-8";
-body {
-	background-color: #c0c0c0;
+body{
+    background-color: black;
+    z-index: 0;
 }
 
-.title {
-	color: #ffffff;
+.result
+{
+    color: white;
+    position: relative;
+}
+.logo
+{
+    position: relative;
+}
+img
+{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 12%;
+    top: -65px;
+    z-index: 3;
+}
+#share_name
+{
+    position: absolute;
+    text-align: center;
+    top: 57%;
+    left: 27%;
+    z-index: 1;
+    font-size: 40px;
+        font-weight: bold;
+        color: white;
+        display: inline-block;
+
+        border-color: solid 10px black;
+
+    }
+#share_level
+{
+    position: absolute;
+    text-align: center;
+    font-size: 80px;
+    top: 320px;
+    left: 115px;
+    z-index: 2;
+}
+#share_exp
+{
+    position: absolute;
+    font-size: 20px;
+    top: 424px;
+    left: 165px;
+    z-index: 3;
+}
+#share_ranking
+{
+    position: absolute;
+    font-size: 30px;
+    top: 556px;
+    left: 140px;
 }
 
+#share_ranking_nam
+{
+    position: absolute;
+    font-size: 40px;
+    top: 600px;
+    left: 178px;
+}
+#share_w_ranking
+{
+    position: absolute;
+    font-size: 30px;
+    top: 680px;
+    left: 38px;
+}
+
+#share_w_ranking_num
+{
+    position: absolute;
+    font-size: 40px;
+    top: 673px;
+    left: 132px;
+
+}
+#share_m_ranking
+{
+    position: absolute;
+    font-size: 30px;
+    top: 680px;
+    left: 210px;
+}
+
+#share_m_ranking_num
+{
+    position: absolute;
+    font-size: 40px;
+    top: 671px;
+    left: 315px;
+
+}
+
+
+.circle{
+    position: relative;
+    top: 245px;
+    left: 67px;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 50px black,
+    inset 20px 0 80px black,
+    inset -20px 0 80px black,
+    inset 20px 0 120px black,
+    inset -20px 0 300px black,
+    0 0 50px black,
+    -10px 0 80px #5AFF19,
+    10px 0 50px black;
+  }

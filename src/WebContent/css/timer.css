@@ -25,28 +25,7 @@ body {
 {
     left: 0;
 }
-#names
-{
 
-    font-size: 23px;
-    margin-top: 16px;
-    margin-right: 40px;
-}
-#names::first-letter
-{
-    color: #5AFF19;
-}
-.allname
-{
-    position: relative;
-    right: -17em;
-    top: 44%;
-    width: 300px;
-    font-size: 25px;
-    display: flex;
-    border-bottom:  solid 7px #5AFF19;
-
-}
 .menucoler
 {
     color: white;
@@ -69,11 +48,7 @@ body {
       0 0 102px #5AFF19,
       0 0 151px #5AFF19;
 }
-#name
-{
-    font-size: 38px;
 
-}
 
 
 h1.level {
@@ -331,10 +306,19 @@ body
 }
 */
 
-button{
+.plus-min, .minus-min, .plus-sec, .minus-sec{
+    background-color: black;
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 50%;
+    color: white;
+    transition: all .2s ease;
+    outline: 0;
+}
+.btn-start, .btn-stop, .btn-reset{
     background-color: black;
     padding: 30px 30px;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 50%;
     color: white;
     transition: all .2s ease;

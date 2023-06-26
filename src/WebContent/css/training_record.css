@@ -3,43 +3,54 @@ body {
    background-color:#c0c0c0;
 }
 
+.input_form {
+ text-align: center;
+}
+
+
 #t_date{
-   position: relative;
-   display: block;
-  margin: auto;
+  text-align: center;
   background-color: black;
   color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 5px;
+  border: 2px solid white;
+  position: relative;
+  left: 17%;
 }
 
 #t_menu{
+   margin-bottom: 5%;
+   border-radius: 5px;
    position: relative;
-   bottom:10px;
-   right: 100px;
+   right: 53%;
 }
 
 .t_body{
-   position: relative;
-   bottom: 33px;
-   left: 100px;
    background-color: black;
    color: white;
-   border-color: white;
-   border-radius: 15%;
+   border: 2px solid white;
+   border-radius: 5px;
+   margin-bottom: 3%;
+   position: relative;
+   left: 55%;
+   bottom: 30px;
 }
 
 .t_body2{
-   position: relative;
-   display: block;
-   bottom: 33px;
    width: 48px;
-   left: 100px;
    background-color: white;
-   margin-left: 0;
-   border-radius: 15%;
+   border-radius: 3px;
    border-width: 8em;
+   position: relative;
+
    float: right;
    text-align: center;
    font-size: 10px;
+   margin-top: 5px;
+   left: 23%;
+   bottom:30px;
 }
 
 #submit{
@@ -47,26 +58,37 @@ body {
   margin: auto;
   background-color: black;
   color: white;
-  border-color: #5aff19;
-  border-radius: 15%;
-  height: 20px;
+  border: 2px solid #5aff19;
+  border-radius: 5px;
+  height: 30px;
   width: 70px;
   padding: auto;
+  margin-top: 10px;
+  position: relative;
+  left: 25px
 }
 
 .bt_addForm{
    float: right;
+   position: relative;
+   bottom:30px;
+   left:40px;
 }
 
-input[type="date"]::-webkit-inner-spin-button{
-   -webkit-appearance: none;
-}
-input[type="date"]::-webkit-clear-button{
-   -webkit-appearance: none;
+input[type="button"] {
+   background: #403f3f;
+     border: 2px solid white;
+     border-radius: 5px;
+     color: white;
+     height: 20px;
+     width: 30px;
+    margin-top: 5px;
+    text-align: center;
+    align-items: center;
+
 }
 
-input[type=date]::-webkit-calendar-picker-indicator {
-   /*省略*/
-   opacity: 0;
+#record{
+   border-bottom: 2px solid #868181;
+   height: 140px;
 }
-
