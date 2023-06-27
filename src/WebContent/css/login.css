@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color:#c0c0c0;
+    background-color:#333333;
     z-index: 0;
     font-family: "Times New Roman";
     margin: 0;
@@ -30,21 +30,105 @@ img {
 	left: 16%;
 }
 
+/*フォーム全体*/
+#login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #1e1e1e;
+  padding: 180px;
+  border: 1px solid #3d3c3c;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
 /*login*/
 .title {
 	color: #ffffff;
 	position:absolute;
 	top:31%;
+	left:42%;
 	font-family: "Times New Roman";
 	font-size: 35px;
 }
 
 /*メールアドレス*/
-.mailAddress{
+.wave-group1{
 	position:absolute;
 	top:39%;
 	left: 28%;
 	width:70%;
+}
+
+.wave-group1 .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 2px solid #515151;
+  background: transparent;
+}
+
+.wave-group1 .input:focus {
+  outline: none;
+}
+
+.wave-group1 .label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  top:32%;
+	left: 0;
+  display: flex;
+}
+
+.wave-group1 .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * .05s);
+}
+
+.wave-group1 .input:focus ~ label .label-char,
+.wave-group1 .input:valid ~ label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  font-family: "Times New Roman";
+  color: #5264AE;
+}
+
+.wave-group1 .bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.wave-group1 .bar:before,.wave-group1 .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group1 .bar:before {
+  left: 50%;
+}
+
+.wave-group1 .bar:after {
+  right: 50%;
+}
+
+.wave-group1 .input:focus ~ .bar:before,
+.wave-group1 .input:focus ~ .bar:after {
+  width: 50%;
 }
 
 .mailAddressError{
@@ -56,10 +140,79 @@ img {
 }
 
 /*パスワード*/
-.password{
+
+.wave-group2 .input {
 	position:absolute;
 	top:48%;
 	left: 28%;
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 2px solid #515151;
+  background: transparent;
+}
+
+.wave-group2 .input:focus {
+  outline: none;
+}
+
+.wave-group2 .label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  top:49%;
+	left: 28%;
+  display: flex;
+}
+
+.wave-group2 .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * .05s);
+}
+
+.wave-group2 .input:focus ~ label .label-char,
+.wave-group2 .input:valid ~ label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  font-family: "Times New Roman";
+  color: #5264AE;
+}
+
+.wave-group2 .bar {
+  position: absolute;
+  top:53%;
+	left: 28%;
+  display: block;
+  width: 200px;
+}
+
+.wave-group2 .bar:before,.wave-group2 .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group2 .bar:before {
+  left: 50%;
+}
+
+.wave-group2 .bar:after {
+  right: 50%;
+}
+
+.wave-group2 .input:focus ~ .bar:before,
+.wave-group2 .input:focus ~ .bar:after {
+  width: 50%;
 }
 
 .passwordError{
@@ -72,6 +225,7 @@ img {
 
 /*パスワード可視化等*/
 
+/*
 #showPasswordLabel {
   position: relative;
   cursor: pointer;
@@ -96,19 +250,66 @@ img {
 #showPasswordLabel:hover .strikethrough {
   display: block;
 }
+*/
 
 /* パスワード可視化の目の色 */
 #buttonEye {
 	color: white;
+	position:absolute;
+	top:49%;
+	left:80%;
 }
 
 /*ログインボタン*/
 .submit{
 	position:absolute;
-	top:65%;
+	top:60%;
 	left: 34%;
-	text-align:center;
-	border: 5px solid red;
+	border: 5px solid #5AFF19;
+	width: 200px;
+	height: 35px;
+	background: #242424;
+	border: 1px solid #242424;
+	cursor: pointer;
+	border-radius: 7px;
+	color: white;
+	font-family: georgia;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 12px;
+	box-shadow: 0 0 10px #5AFF19;
+}
+
+.submit {
+  opacity: 0.8;
+  text-align: center;
+}
+
+.submit :active{
+  opacity: 0.6;
+}
+
+.submit :focus{
+  outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(173, 176, 215, 0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+.submit:hover {
+  color: #5AFF19;
+  background-color: #000000;
+}
+
+.submit:active {
+  color: #5AFF19;
+  background-color: #000000;
 }
 
 /*新規登録ボタン*/
@@ -116,9 +317,51 @@ img {
 	position:absolute;
 	top:80%;
 	left: 34%;
-	text-align:center;
-	align-items: center;
 	border: 5px solid #5AFF19;
+	width: 200px;
+	height: 35px;
+	background: #242424;
+	border: 1px solid #242424;
+	cursor: pointer;
+	border-radius: 7px;
+	color: white;
+	font-family: georgia;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 12px;
+	box-shadow: 0 0 10px #5AFF19;
+}
+
+.regist {
+  opacity: 0.8;
+  text-align: center;
+}
+
+.regist :active{
+  opacity: 0.6;
+}
+
+.regist :focus{
+  outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(173, 176, 215, 0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+.regist:hover {
+  color: #5AFF19;
+  background-color: #000000;
+}
+
+.regist:active {
+  color: #5AFF19;
+  background-color: #000000;
 }
 
 /*
