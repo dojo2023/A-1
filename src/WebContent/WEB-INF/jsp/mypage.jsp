@@ -5,10 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<script src="https://kit.fontawesome.com/cd4fd21e2f.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/jiro_power/css/mypage.css">
 <link rel="stylesheet" href="/jiro_power/css/common.css">
 <meta name="viewport" content="initial-scale=1">
+<style>
 
+</style>
 
 <title>マイページ</title>
 
@@ -43,12 +47,29 @@
 		  <p id="user_name_error" class="error-message">
 
 
-		  <div class="exp">${exp_sum_session} exp</div>		<!-- 経験値表示 -->
+		  <!-- 経験値表示 -->
+		   <div class="exp">
+		   	<span class="decor">—</span>
+		   	${exp_sum_session}  exp
+		   	<span class="decor">—</span>
+		   </div>
 
-	      <div class="birthday_display">${user_birth_session}</div>
 
-	      <div class="sex"><c:choose> <c:when test = "${user_sex_session == 1}">MEN</c:when>
-	      <c:otherwise>WOMEN</c:otherwise></c:choose></div>
+	      <div class="birthday_display">
+	      <i class="fas fa-birthday-cake" style="color: #ffffff;"></i>
+	      ${user_birth_session}
+	      </div>
+
+	      <div class="sex">
+	      	<c:choose>
+		      	<c:when test = "${user_sex_session == 1}">
+		      	<i class="fas fa-mars"></i>MEN
+		      	</c:when>
+		      	<c:otherwise>
+		      	<i class="fas fa-venus"></i>WOMEN
+		      	</c:otherwise>
+	      	</c:choose>
+	      </div>
 
 	      <!-- <div class="height">身長</div> -->
 	      <label for="height" class="height">身長:</label>
@@ -66,29 +87,38 @@
 	      <p id="weight_error" class="error-message"></p>
 
 	      <!-- <div class="mail_address">E-mail</div> -->
-	      <label for="mail_address" class="mail_address">E-mail:</label>
+	      <label for="mail_address" class="mail_address"><i class="fas fa-envelope"></i>
+	      </label>
 	      <div class="mail_address_display">${user_mail_address_session}</div>
 
 		  <input type="hidden" name="update" id="one" >
 
 	      		<!-- 更新ボタン -->
- 		  <div class="update" >
-			  <input type="image" src="./img/reload.png"  id="update" name= "update1" value = "update"
+	      		<button id="update" name="update1" value="update" onclick="document.getElementById('one').value='update'; myPageValidateForm(event);">
+  					<i class="fas fa-sync-alt" style="color: #ffffff;"></i>
+				</button>
+
+
+<!--  		  <div class="update" >
+			  <input type="image" id="update" name= "update1" value = "update"
 			  onclick="document.getElementById('one').value='update';myPageValidateForm(event);">
-				<!--   <label for="update">
+			  <i class="fas fa-sync-alt" style="color: #ffffff;"></i>
+				  <label for="update">
 			      <img src="./img/reload.png" alt="Reload" >
-			      </label>-->
-		  </div>
+			      </label>
+		  </div> -->
 
 	</form>
 
 		<!-- シェアボタン -->
 	      	<div class="share" id="share">
-			<a href="/jiro_power/ResultServlet" target="_blank"><img src="./img/share.png"></a>
+			<a href="/jiro_power/ResultServlet" target="_blank">
+				<i class="fas fa-share-from-square" style="color: #ffffff;"></i>
+			</a>
 			</div>
 
-
-
+			<!-- aタグ内にいたシェアアイコン写真
+			<img src="./img/share.png"> -->
 
 		 <!--  シェアボタンと同じように更新ボタン書くか？？ -->
 		 	<!-- 更新ボタン -->

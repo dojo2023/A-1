@@ -11,17 +11,17 @@ body {
 	position: absolute;
 	top: 15%;
 	color: #FFFFFF;
-	font-size: 35px;
+	font-size: 40px;
 	/* font-family: fantasy; */
 	font-family: "Times New Roman", Times, serif;
 	/* font-family: georgia; */
 	font-weight: bold;
 	text-align: center;
 	margin-top: 20px;
- 	    text-shadow:
+/*  	    text-shadow:
       0 0 3px #fff,
       0 0 3px #fff,
-      0 0 5px #fff;
+      0 0 5px #fff; */
 
 }
 
@@ -125,6 +125,22 @@ form {
 
 }
 
+.birthday_display{
+	margin-bottom: 20px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.birthday_display i {
+  margin-right: 10px; /* アイコンとテキストの間のスペースを調整 */
+  font-size: 17px;
+}
+
+.sex i{
+  margin-right: 17px; /* アイコンとテキストの間のスペースを調整 */
+  font-size: 17px;
+}
+
 .mail_address_display {
   position: relative;
   bottom: 40px;
@@ -137,7 +153,7 @@ form {
 
 
 .mail_address_display, .birthday_display, .sex {
-	margin-bottom: 5px; /* Adjust the margin-bottom value as desired */
+	margin-bottom: 15px; /* Adjust the margin-bottom value as desired */
  	text-shadow: 1px 1px 1px #242424,
              -1px -1px 1px #242424,
              1px -1px 1px #242424,
@@ -148,13 +164,13 @@ form {
 
   /* 経験値のスタイル */
   .exp {
-    font-size: 26px;
-    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    font-family: 'Monotype Corsiva'; /* "Times New Roman", Times, serif; */
     font-weight: bold;
     color: white;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     position: relative;
     bottom: 40px;
 /*         text-shadow:
@@ -177,12 +193,34 @@ form {
     0 0 0.15em #5AFF19;
   	filter: saturate(20%); */
 
-  	text-shadow:
+/*   	text-shadow:
   	  0 0 1px #fff,
       0 0 1px #fff,
-      0 0 3px #fff;
-    text-decoration: underline;
+      0 0 3px #fff; */
+
+        text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 4px rgba(255, 255, 255, 0.5),
+    0 0 6px rgba(255, 255, 255, 0.5),
+    0 0 8px rgba(90, 255, 25, 0.5);
+
+    /* text-decoration: underline; */
+
   }
+
+
+.decor {
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 4px rgba(255, 255, 255, 0.5),
+    0 0 6px rgba(255, 255, 255, 0.5),
+    0 0 8px rgba(90, 255, 25, 0.5);
+  margin: 0 10px;
+}
+
 
 
 
@@ -191,7 +229,7 @@ form {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
   }
 
 
@@ -214,8 +252,38 @@ form {
     font-size: 20px;
   }
 
+/* i.fas.fa-sync-alt::before{
+	width: 500px;
+}
 
-.update input[type="image"] {
+.fas fa-sync-alt{
+	width: 50px;
+}
+.fas fa-sync-alt{
+	font-size:150px;
+} */
+
+ #update {
+  position: absolute;
+  float: right;
+  display: flex;
+  top: 80%;
+  right: 20%;
+  margin-top: 0px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 57px;
+
+}
+
+
+/* 従来のupdate */
+/* .update input[type="image"] {
 	position: absolute;
 	float: right;
 	display: flex;
@@ -227,9 +295,9 @@ form {
 	border: none;
     background: none;
 
-}
+} */
 
-.update {
+/* .update {
 	position: absolute;
 	left: 270px;
 	bottom: 30px;
@@ -237,28 +305,40 @@ form {
     align-items: center;
     bottom: 27.5%;
     margin-top: 20px;
-}
+} */
 
 .share {
 	position: absolute;
 	float: left;
-	margin-right: 10px;
+	margin-right: 0px;
 /* 	top: 57%; */
-	left: 25%;
+/* 	left: 25%; */
 	bottom: 27.5%;
 	right: 59%;
 	z-index: 0;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	margin-top: 20px;
+
+  	display: flex;
+  	top: 17%;
+  	right: 10%;
+  	margin-top: 0px;
+    border: none;
+  	background: none;
+  	align-items: center;
+  	justify-content: center;
+  	cursor: pointer;
+  	font-size: 50px;
 
 }
 
-  .share img {
-	width: 50px;
-	height: 50px;
-
-  }
+/*
+	.share img {
+		width: 50px;
+		height: 50px;
+  	}
+ */
 
 .logout {
 	position: fixed;
@@ -335,16 +415,12 @@ hr {
 }
 
 
-
 .error-message {
   position: relative;
   color: red;
   bottom: 42px;
   font-size: 14px;
-
-
 }
-
 
 
 /* ダイアログボックス本体のカスタムスタイルを定義 */
