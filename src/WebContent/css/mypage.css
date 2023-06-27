@@ -3,7 +3,7 @@
 body {
 	/* background-color:#c0c0c0; */
 	background-color:#242424;
-	font-family: georgia;
+	font-family: "Times New Roman", Times, serif;
 
 }
 
@@ -13,8 +13,8 @@ body {
 	color: #FFFFFF;
 	font-size: 35px;
 	/* font-family: fantasy; */
-	/* font-family: "Times New Roman", Times, serif; */
-	font-family: georgia;
+	font-family: "Times New Roman", Times, serif;
+	/* font-family: georgia; */
 	font-weight: bold;
 	text-align: center;
 	margin-top: 20px;
@@ -28,7 +28,7 @@ body {
    input {
 /*     height: 35px; 高さを50ピクセルに設定 */
 /*     width: 80px; 幅を200ピクセルに設定 */
-	   font-family: georgia;
+	   font-family: "Times New Roman", Times, serif;
 	   color: white;
 	   text-align: center;
 
@@ -37,7 +37,7 @@ body {
 /* ユーザー名スタイル */
   	  .user_name input[type="text"] {
   	   position: relative;
-  	   font-family: georgia;
+  	   font-family: "Times New Roman", Times, serif;
 	   color: white;
 	   width: 100%;
 	   flex-grow: 1;
@@ -56,7 +56,7 @@ body {
   	  }
 
   	.height_input input[type="text"] {
-  	   font-family: georgia;
+  	   font-family: "Times New Roman", Times, serif;
 	   color: white;
 	   text-align: center;
 	   border-color: white;
@@ -69,7 +69,7 @@ body {
   	}
 
     .weight_input input[type="text"] {
-       font-family: georgia;
+       font-family: "Times New Roman", Times, serif;
 	   color: white;
 	   text-align: center;
 	   border-color: white;
@@ -120,8 +120,8 @@ form {
   margin-bottom: 13px;
   font-size: 20px;
   color: white;
-  /* font-family: "Times New Roman", Times, serif; */
-  font-family: georgia;
+  font-family: "Times New Roman", Times, serif;
+  /* font-family: georgia; */
 
 }
 
@@ -131,8 +131,8 @@ form {
   margin-bottom: 13px;
   font-size: 26px;
   color: white;
-  /* font-family: "Times New Roman", Times, serif; */
-  font-family: georgia;
+  font-family: "Times New Roman", Times, serif;
+  /* font-family: georgia; */
 }
 
 
@@ -149,7 +149,7 @@ form {
   /* 経験値のスタイル */
   .exp {
     font-size: 26px;
-    font-family: georgia;
+    font-family: "Times New Roman", Times, serif;
     font-weight: bold;
     color: white;
     text-align: center;
@@ -289,7 +289,8 @@ hr {
   /* color: #736ca1; */
   color: white;
   /* font-family: 'Exo', sans-serif; */
-  font-family: georgia;
+  /* font-family: georgia; */
+  font-family: "Times New Roman", Times, serif;
   font-size: 16px;
   font-weight: 400;
   padding: 6px;
@@ -349,7 +350,7 @@ hr {
 	color: #ffffff;
 	/* 中央揃え */
 	text-align: center;
-	font-family: georgia;
+	font-family: "Times New Roman", Times, serif;
 	font-size: 20px;
 	/*背景色の指定  */
 	background-color: #242424;
