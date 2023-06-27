@@ -727,4 +727,202 @@ public class TrainingrecordDao {
 					// 結果を返す
 					return expSumList;
 				}
+
+				// ログインユーザーのランキング順位
+				public int rank(Trainingrecord param) {
+					Connection conn = null;
+					int result = 0;
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
+
+						// SQL文を準備する
+						String sql = "select RANK() over(order by sum(training_exp) desc) as RANKING from TRAINING_RECORD "
+								+ "where user_id =?";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+
+						// SQL文を完成させる
+
+						if (param.getUserId() != 0) {
+							pStmt.setInt(1, param.getUserId());
+						} else {
+							pStmt.setInt(1, 0);
+						}
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						if (rs.next()) {
+							result = rs.getInt("ranking");
+						}
+					} catch (SQLException e) {
+						e.printStackTrace();
+						result = 0;
+					} catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						result = 0;
+					} finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							} catch (SQLException e) {
+								e.printStackTrace();
+								result = 0;
+							}
+						}
+					}
+
+					// 結果を返す
+					return result;
+				}
+				// ログインユーザーの月間ランキング順位
+				public int mrank(Trainingrecord param) {
+					Connection conn = null;
+					int result = 0;
+
+					//日付指定
+					Date date = new Date(System.currentTimeMillis());
+					java.util.Date utilDate = date;
+//					Date sqlDate = new Date(utilDate.getTime());
+					Calendar c = Calendar.getInstance();
+					c.setTime(utilDate);
+					int month = c.get(Calendar.MONTH) +1;
+					int year = c.get(Calendar.YEAR);
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
+
+						// SQL文を準備する
+						String sql = "select RANK() over(order by sum(training_exp) desc) as MRANKING from TRAINING_RECORD "
+								+ "where user_id =? and training_record_date like ?";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+
+
+						// SQL文を完成させる
+
+						if (param.getUserId() != 0) {
+							pStmt.setInt(1, param.getUserId());
+						} else {
+							pStmt.setInt(1, 0);
+						}
+
+						System.out.println(sql);
+
+						String stYear = String.valueOf(year);
+						String stMonth = String.valueOf(month);
+						if (stMonth.length()==1) {
+							stMonth = "0" + stMonth;
+						}
+						pStmt.setString(2, "%" + stYear + "-" + stMonth + "%");
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						if (rs.next()) {
+							result = rs.getInt("mranking");
+						}
+					} catch (SQLException e) {
+						e.printStackTrace();
+						result = 0;
+					} catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						result = 0;
+					} finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							} catch (SQLException e) {
+								e.printStackTrace();
+								result = 0;
+							}
+						}
+					}
+
+					// 結果を返す
+					return result;
+				}
+
+				// ログインユーザーの週間ランキング順位
+				public int wrank(Trainingrecord param) {
+					Connection conn = null;
+					int result = 0;
+
+					//日付指定
+					Date date = new Date(System.currentTimeMillis());
+					java.util.Date utilDate = date;
+//					Date sqlDate = new Date(utilDate.getTime());
+					Calendar c = Calendar.getInstance();
+					c.setTime(utilDate);
+					int month = c.get(Calendar.MONTH) +1;
+					int year = c.get(Calendar.YEAR);
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
+
+						// SQL文を準備する
+						String sql = "select RANK() over(order by sum(training_exp) desc) as WRANKING from TRAINING_RECORD "
+								+ "where user_id =? and training_record_date >= (NOW() - INTERVAL 7 DAY)";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+
+
+						// SQL文を完成させる
+
+						if (param.getUserId() != 0) {
+							pStmt.setInt(1, param.getUserId());
+						} else {
+							pStmt.setInt(1, 0);
+						}
+
+						System.out.println(sql);
+
+						String stYear = String.valueOf(year);
+						String stMonth = String.valueOf(month);
+						if (stMonth.length()==1) {
+							stMonth = "0" + stMonth;
+						}
+						// pStmt.setString(2, "%" + stYear + "-" + stMonth + "%");
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						if (rs.next()) {
+							result = rs.getInt("wranking");
+						}
+					} catch (SQLException e) {
+						e.printStackTrace();
+						result = 0;
+					} catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						result = 0;
+					} finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							} catch (SQLException e) {
+								e.printStackTrace();
+								result = 0;
+							}
+						}
+					}
+
+					// 結果を返す
+					return result;
+				}
 }

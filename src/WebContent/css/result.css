@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body{
-    background-color: black;
+    background-color:#242424;
     z-index: 0;
 }
 
@@ -16,10 +16,9 @@ body{
 img
 {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    left: 12%;
-    top: -65px;
+    width: 100%;
+    left: 0;
+    top: 10%;
     z-index: 3;
 }
 #share_name
@@ -34,7 +33,7 @@ img
         color: white;
         display: inline-block;
 
-        border-color: solid 10px black;
+        border-color: solid 10px #242424;
 
     }
 #share_level
