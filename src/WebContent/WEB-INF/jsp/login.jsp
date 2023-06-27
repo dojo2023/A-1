@@ -31,22 +31,59 @@
 
 	<div id="login">
 		<form name='form-login' id="fieldPassword" method="POST" action="/jiro_power/LoginServlet">
+			<div class="wave-group1">
+				<input required type="email" id="mail_address" name="Mail_Address" class="input">
+<!-- 				<span class="bar"></span> -->
+				<label class="label">
+					<span class="label-char" style="--index: 0">M</span>
+					<span class="label-char" style="--index: 1">a</span>
+					<span class="label-char" style="--index: 2">i</span>
+					<span class="label-char" style="--index: 3">l</span>
+					<span class="label-char" style="--index: 4">_</span>
+					<span class="label-char" style="--index: 5">A</span>
+					<span class="label-char" style="--index: 6">d</span>
+					<span class="label-char" style="--index: 7">d</span>
+					<span class="label-char" style="--index: 8">r</span>
+					<span class="label-char" style="--index: 9">e</span>
+					<span class="label-char" style="--index: 10">s</span>
+					<span class="label-char" style="--index: 11">s</span>
+				</label>
+			</div>
+			<!--
 			<div class="mailAddress">
 				<span class="fontawesome-user"></span>
 					<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" >
 				<br>
 			</div>
+			 -->
 			<div class=mailAddressError>
 				<p id="mail_address_error" class="error-message"></p>
 			</div>
 
 
 			<span class="fontawesome-lock"></span>
+			<div class="wave-group2">
+				<input required type="password" id="textPassword" name="PW" class="input" min="8" maxlength="20">
+<!-- 				<span class="bar"></span> -->
+				<label class="label">
+					<span class="label-char" style="--index: 0">P</span>
+					<span class="label-char" style="--index: 1">a</span>
+					<span class="label-char" style="--index: 2">s</span>
+					<span class="label-char" style="--index: 3">s</span>
+					<span class="label-char" style="--index: 4">w</span>
+					<span class="label-char" style="--index: 5">o</span>
+					<span class="label-char" style="--index: 6">r</span>
+					<span class="label-char" style="--index: 7">d</span>
+				</label>
+				<span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
+			</div>
+			<!--
 			<div class= "password">
 				<input type="password" id="textPassword" name="PW" placeholder="password"
 				min="8" maxlength="20" >
 				<span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
 			</div>
+			 -->
 			<div class="passwordError">
 				<p id="password_error" class="error-message"></p>
 			</div>
