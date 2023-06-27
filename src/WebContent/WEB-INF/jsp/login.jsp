@@ -27,10 +27,10 @@
 
 	<div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
 	<br>
-    <div class="title">Login</div>
 
 	<div id="login">
-		<form name='form-login' id="fieldPassword" method="POST" action="/jiro_power/LoginServlet">
+		<form name='form-login' class="form" id="fieldPassword" method="POST" action="/jiro_power/LoginServlet">
+		<div class="title">Login</div>
 			<div class="wave-group1">
 				<input required type="email" id="mail_address" name="Mail_Address" class="input">
 <!-- 				<span class="bar"></span> -->
