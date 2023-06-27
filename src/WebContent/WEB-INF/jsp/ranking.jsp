@@ -107,7 +107,7 @@ new Chart(context, {
       label: "総合獲得経験値",
       data: [rankData[0].trainingExp, rankData[1].trainingExp,rankData[2].trainingExp,rankData[3].trainingExp,rankData[4].trainingExp,rankData[5].trainingExp,rankData[6].trainingExp,rankData[7].trainingExp,rankData[8].trainingExp,rankData[9].trainingExp],
       backgroundColor: ['#5AFF19'],
-      borderColor: ['#242424'],
+      borderColor: ['#ffffff'],
       borderWidth: 2,
     }]
   },
@@ -126,7 +126,9 @@ new Chart(context, {
 	            grid: {
 	              offset: true
 	            },
-	            fontColor: '#ffffff',
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
+	            }
 	        },
 	        y: {
 	            grid: {

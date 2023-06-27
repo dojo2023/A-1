@@ -111,9 +111,34 @@ new Chart(mmcontext, {
     }]
   },
   options: {
-  indexAxis: 'y',
-    responsive: false,
-  }
+	    indexAxis: 'y',
+	    responsive: false,
+	    plugins: {
+	    	legend: {
+	    		labels: {
+	    			color: '#ffffff'  //テキストカラー
+	    		}
+	    	}
+	    },
+		scales: {
+			x: {
+	            grid: {
+	              offset: true
+	            },
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
+	            }
+	        },
+	        y: {
+	            grid: {
+	              offset: true
+	            },
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
+	            }
+	        }
+		}
+}
 });
 
 let mwrankData =<%= new Gson().toJson(request.getAttribute("mwrankList")) %>;
@@ -130,9 +155,34 @@ new Chart(mwcontext, {
     }]
   },
   options: {
-  indexAxis: 'y',
-    responsive: false,
-  }
+	    indexAxis: 'y',
+	    responsive: false,
+	    plugins: {
+	    	legend: {
+	    		labels: {
+	    			color: '#ffffff'  //テキストカラー
+	    		}
+	    	}
+	    },
+		scales: {
+			x: {
+	            grid: {
+	              offset: true
+	            },
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
+	            }
+	        },
+	        y: {
+	            grid: {
+	              offset: true
+	            },
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
+	            }
+	        }
+		}
+}
 });
 </script>
 </body>

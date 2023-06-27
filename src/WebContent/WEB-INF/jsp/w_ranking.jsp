@@ -108,9 +108,34 @@ new Chart(wmcontext, {
     }]
   },
   options: {
-  indexAxis: 'y',
-    responsive: false,
-  }
+	    indexAxis: 'y',
+	    responsive: false,
+	    plugins: {
+	    	legend: {
+	    		labels: {
+	    			color: '#ffffff'  //テキストカラー
+	    		}
+	    	}
+	    },
+		scales: {
+			x: {
+	            grid: {
+	              offset: true
+	            },
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
+	            }
+	        },
+	        y: {
+	            grid: {
+	              offset: true
+	            },
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
+	            }
+	        }
+		}
+}
 });
 
 let wwrankData =<%= new Gson().toJson(request.getAttribute("wwrankList")) %>;
@@ -127,9 +152,34 @@ new Chart(wwcontext, {
     }]
   },
   options: {
-  indexAxis: 'y',
-    responsive: false,
-  }
+	    indexAxis: 'y',
+	    responsive: false,
+	    plugins: {
+	    	legend: {
+	    		labels: {
+	    			color: '#ffffff'  //テキストカラー
+	    		}
+	    	}
+	    },
+		scales: {
+			x: {
+	            grid: {
+	              offset: true
+	            },
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
+	            }
+	        },
+	        y: {
+	            grid: {
+	              offset: true
+	            },
+	            ticks: {
+	            	color: '#ffffff'  //テキストカラー
+	            }
+	        }
+		}
+}
 });
 </script>
 </body>

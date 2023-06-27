@@ -13,8 +13,7 @@
 canvas {
 		position: absolute;
 		top: 25%;
-		background-color: #c0c0c0;
-		font-size: 50%;
+
 }
 
 input[type="button"] {
