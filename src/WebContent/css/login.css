@@ -21,14 +21,14 @@ body {
 img {
     overflow: visible;
     z-index: 999;
-    height: 21%;
-    width: 70%;
+    height: 15%;
+    width: 75%;
     background: #333333;
     display: flex;
     align-items: center;
     position: absolute;
 	top: 7%;
-	left: 16%;
+	left: 14%;
 }
 
 /*フォーム全体*/
@@ -37,7 +37,7 @@ img {
   flex-direction: column;
   gap: 10px;
   background: #1e1e1e;
-  padding: 180px;
+  padding: 45%;
   border: 1px solid #3d3c3c;
   border-radius: 10px;
   color: white;
@@ -52,7 +52,7 @@ img {
 	top:31%;
 	left:42%;
 	font-family: "Times New Roman";
-	font-size: 35px;
+	font-size: 180%;
 }
 
 /*メールアドレス*/
@@ -268,7 +268,7 @@ img {
 	margin: 0 auto;
 	position:absolute;
  	top:60%;
-	left: 34%;
+	left: 28%;
 	border: 5px solid #5AFF19;
 	width: 200px;
 	height: 35px;
@@ -290,7 +290,7 @@ img {
 	margin: 0 auto;
 	position:absolute;
  	top:60%;
-	left: 34%;
+	left: 28%;
 	border: 5px solid #5AFF19;
 	width: 200px;
 	height: 35px;
