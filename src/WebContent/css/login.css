@@ -5,6 +5,7 @@ body {
 	height: 100%;
 	position: relative;
     display: flex;
+    flex-direction: column;  /* 追加 */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -22,7 +23,7 @@ img {
     z-index: 999;
     height: 21%;
     width: 70%;
-    background: #242424;
+    background: #333333;
     display: flex;
     align-items: center;
     position: absolute;
@@ -152,6 +153,7 @@ img {
   border: none;
   border-bottom: 2px solid #515151;
   background: transparent;
+  color: white;  		/* passwordテキストカラー白 */
 }
 
 .wave-group2 .input:focus {
@@ -261,9 +263,11 @@ img {
 }
 
 /*ログインボタン*/
-.submit{
+.submit input{
+	display: block;
+	margin: 0 auto;
 	position:absolute;
-	top:60%;
+ 	top:60%;
 	left: 34%;
 	border: 5px solid #5AFF19;
 	width: 200px;
@@ -273,7 +277,7 @@ img {
 	cursor: pointer;
 	border-radius: 7px;
 	color: white;
-	font-family: georgia;
+	font-family: "Times New Roman", Times, serif;
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
@@ -281,16 +285,42 @@ img {
 	box-shadow: 0 0 10px #5AFF19;
 }
 
-.submit {
+.create{
+	display: block;
+	margin: 0 auto;
+	position:absolute;
+ 	top:60%;
+	left: 34%;
+	border: 5px solid #5AFF19;
+	width: 200px;
+	height: 35px;
+	background: #242424;
+	border: 1px solid #242424;
+	cursor: pointer;
+	border-radius: 7px;
+	color: white;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 150px;
+	box-shadow: 0 0 10px #5AFF19;
+
+}
+
+.submit input {
+  margin-bottom: 10px;
   opacity: 0.8;
   text-align: center;
 }
 
-.submit :active{
+.submit input:active, .create:active{
+  color: #5AFF19;
+  background-color: #000000;
   opacity: 0.6;
 }
 
-.submit :focus{
+.submit input:focus, .create:focus {
   outline: none;
 }
 
@@ -302,12 +332,12 @@ img {
    color: rgba(255,255,255,0.6);
 }
 
-.submit:hover {
+.submit input:hover, .create:hover {
   color: #5AFF19;
   background-color: #000000;
 }
 
-.submit:active {
+.submit input:active, .create:active {
   color: #5AFF19;
   background-color: #000000;
 }

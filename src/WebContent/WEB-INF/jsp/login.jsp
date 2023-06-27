@@ -98,8 +98,12 @@
 -->
 
 			<div class="submit">
-				<input type="submit" name="login" value="　　ログイン　　" onclick="return validateForm()">
+				<input type="submit" name="login" value="　　Login　　" onclick="return validateForm()">
 			</div>
+
+<!-- 					ログアウトボタン
+			<input type="button" class="logout" value="Logout"
+			onclick="window.location.href='/jiro_power/LoginServlet'"> -->
 
 			<div style="color:red">
 			${errMsg}
@@ -108,9 +112,9 @@
 
 	</div> <!-- id="login" -->
 
-	<div class="regist">
+	<!-- <div class="regist"> -->
 		<input type="button" class="create" value="新規登録はこちら" onclick="window.location.href='/jiro_power/UserRegistServlet'">
-	</div>
+	<!-- </div> -->
 
 	<a href="jiro_power/Web-INF/jsp/user_regist.jsp"></a>
 	<script src="/jiro_power/js/login.js"></script>
