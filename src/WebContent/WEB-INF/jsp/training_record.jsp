@@ -60,7 +60,9 @@
                       </div>
                       </form>
                       <br>
-                      <p>${level_up}</p>
+                      <div class="levelUp">
+                      	<p>${level_up}</p>
+                      </div>
         <!-- 画面下部メニューバー表示 -->
             <div class="menu">
                 <ul>

@@ -71,6 +71,7 @@ img {
   border: none;
   border-bottom: 2px solid #515151;
   background: transparent;
+  color: white;
 }
 
 .wave-group1 .input:focus {
@@ -83,7 +84,7 @@ img {
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  top:32%;
+  top:0;
 	left: 0;
   display: flex;
 }
@@ -98,7 +99,7 @@ img {
   transform: translateY(-20px);
   font-size: 14px;
   font-family: "Times New Roman";
-  color: #5264AE;
+  color: #5AFF19;
 }
 
 .wave-group1 .bar {
@@ -181,7 +182,7 @@ img {
   transform: translateY(-20px);
   font-size: 14px;
   font-family: "Times New Roman";
-  color: #5264AE;
+  color: #5AFF19;
 }
 
 .wave-group2 .bar {
@@ -340,6 +341,14 @@ img {
 .submit input:active, .create:active {
   color: #5AFF19;
   background-color: #000000;
+}
+
+#duplicated-error{
+	position: absolute;
+    width: 400px;
+    top: 68%;
+    left: 6%;
+    font-size: 12px;
 }
 
 /*新規登録ボタン*/
