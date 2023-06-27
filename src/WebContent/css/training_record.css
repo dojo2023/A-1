@@ -96,3 +96,10 @@ input[type="button"] {
    border-bottom: 2px solid #868181;
    height: 140px;
 }
+
+.levelUp{
+	color: white;
+    position: absolute;
+    top: 78%;
+    left: 30%;
+}
