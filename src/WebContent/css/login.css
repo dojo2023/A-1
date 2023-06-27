@@ -65,7 +65,7 @@ img {
 
 .wave-group1 .input {
   font-size: 16px;
-  padding: 10px 10px 10px 5px;
+  padding: 1px 10px 10px 5px;
   display: block;
   width: 200px;
   border: none;
@@ -133,7 +133,7 @@ img {
   width: 50%;
 }
 
-.mailAddressError{
+.mail-address-error{
 	position:absolute;
 	top:42%;
 	left: 15%;
@@ -218,7 +218,7 @@ img {
   width: 50%;
 }
 
-.passwordError{
+.password-error{
 	position:absolute;
 	top:51%;
 	left: 15%;

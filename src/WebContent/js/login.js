@@ -49,31 +49,31 @@
 
 		/*event.preventDefault(); // デフォルトのフォーム送信を防ぐ*/
 
-		  var mailAddress = document.getElementById("mail_address").value;
+		  var mailAddress = document.getElementById("mail-address").value;
 		  var password = document.getElementById("textPassword").value;
 
 
 		let n=0;
 		// メールアドレスのチェック
 		if (mailAddress == "") {
-		  document.getElementById("mail_address_error").textContent = "※メールアドレスが入力されていません。";
+		  document.getElementById("mail-address-error").textContent = "※メールアドレスが入力されていません。";
 		  /*event.preventDefault(); // フォームの送信を中止*/
 		  n+=1;
 		} else {
-		  document.getElementById("mail_address_error").textContent = ""; // エラーメッセージをクリア
+		  document.getElementById("mail-address-error").textContent = ""; // エラーメッセージをクリア
 		}
 
 		// パスワードのチェック
 		if (password === "") {
-		  document.getElementById("password_error").textContent = "※パスワードが入力されていません。";
+		  document.getElementById("password-error").textContent = "※パスワードが入力されていません。";
 		 /* event.preventDefault(); // フォームの送信を中止*/
 		  n+=1;
 		} else if (password.length < 8) {
-		  document.getElementById("password_error").textContent = "※パスワードは8文字以上入力してください。";
+		  document.getElementById("password-error").textContent = "※パスワードは8文字以上入力してください。";
 		  /*event.preventDefault(); // フォームの送信を中止*/
 		  n+=1;
 		} else {
-		  document.getElementById("password_error").textContent = ""; // エラーメッセージをクリア
+		  document.getElementById("password-error").textContent = ""; // エラーメッセージをクリア
 		}
 
 		if(n!=0){

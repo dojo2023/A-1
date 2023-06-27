@@ -32,7 +32,7 @@
 		<form name='form-login' class="form" id="fieldPassword" method="POST" action="/jiro_power/LoginServlet">
 		<div class="title">Login</div>
 			<div class="wave-group1">
-				<input required type="email" id="mail_address" name="Mail_Address" class="input">
+				<input required type="email" id="mail-address" name="mail-address" class="input">
 <!-- 				<span class="bar"></span> -->
 				<label class="label">
 					<span class="label-char" style="--index: 0">M</span>
@@ -56,14 +56,14 @@
 				<br>
 			</div>
 			 -->
-			<div class=mailAddressError>
-				<p id="mail_address_error" class="error-message"></p>
+			<div class=mail-address-error>
+				<p id="mail-address-error" class="error-message"></p>
 			</div>
 
 
 			<span class="fontawesome-lock"></span>
 			<div class="wave-group2">
-				<input required type="password" id="textPassword" name="PW" class="input" min="8" maxlength="20">
+				<input required type="password" id="password" name="password" class="input" min="8" maxlength="20">
 <!-- 				<span class="bar"></span> -->
 				<label class="label">
 					<span class="label-char" style="--index: 0">P</span>
@@ -84,8 +84,8 @@
 				<span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
 			</div>
 			 -->
-			<div class="passwordError">
-				<p id="password_error" class="error-message"></p>
+			<div class="password-error">
+				<p id="password-error" class="error-message"></p>
 			</div>
 
 
@@ -116,7 +116,7 @@
 		<input type="button" class="create" value="Sign Up" onclick="window.location.href='/jiro_power/UserRegistServlet'">
 	<!-- </div> -->
 
-	<a href="jiro_power/Web-INF/jsp/user_regist.jsp"></a>
+<!-- 	<a href="jiro_power/Web-INF/jsp/user_regist.jsp"></a> -->
 	<script src="/jiro_power/js/login.js"></script>
 
 </body>
