@@ -349,25 +349,26 @@ hr {
 	color: #ffffff;
 	/* 中央揃え */
 	text-align: center;
+	font-family: georgia;
+	font-size: 20px;
 	/*背景色の指定  */
 	background-color: #242424;
 	/*内余白の指定  */
-	padding: 10px;
+	padding: 19px;
 	/*まわりの線の指定  */
 	border: 1px solid #5aff19;
 	/*枠の角を丸める  */
-	border-radius: 5px;
+	border-radius: 7px;
 	/*幅指定  */
 	width: 300px;
 	/*高さ指定  */
-	height: 200px;
-
+	height: 180px;
 	/*場所の指定を相対的にする  */
 	position: relative;  							/* absoluteで指定する */
 	/*今いる場所の上から30pxの場所へ移動  */
-	top: 30px;
+	top: 240px;
 	/*今いる場所の左から50pxの場所へ移動  */
-	left: 50px;
+	left: 0px;
 }
 
 /*右上のバツボタンのスタイル  */
@@ -383,11 +384,11 @@ hr {
 	width: 130px;
 	height: 40px;
 	color: #fff;
-	border-radius: 50px;
+	border-radius: 10px;
 	padding: 10px 25px;
 	font-family: 'Lato', sans-serif;
 	font-weight: 500;
-	font-size: 16px;
+	font-size: 20px;
 	background: transparent;
 	cursor: pointer;
 	transition: all 0.3s ease;
@@ -399,6 +400,7 @@ hr {
 	text-shadow: 2px 2px 3px rgba(255, 255, 255, .5), -4px -4px 6px
 		rgba(116, 125, 136, .2);
 	outline: none;
+	margin-top: 40px;
 }
 
 /*ホバーなどの設定 */
@@ -443,11 +445,11 @@ hr {
 	width: 130px;
 	height: 40px;
 	color: #fff;
-	border-radius: 50px;
+	border-radius: 10px;
 	padding: 10px 25px;
 	font-family: 'Lato', sans-serif;
 	font-weight: 500;
-	font-size: 16px;
+	font-size: 20px;
 	background: transparent;
 	cursor: pointer;
 	transition: all 0.3s ease;
@@ -459,6 +461,7 @@ hr {
 	text-shadow: 2px 2px 3px rgba(255, 255, 255, .5), -4px -4px 6px
 		rgba(116, 125, 136, .2);
 	outline: none;
+	margin-top: 40px;
 }
 /*ホバーなどの設定 */
 .btn-2 {
