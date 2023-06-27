@@ -252,7 +252,6 @@ form {
 	height: 60px;
 	margin-top: 20px;
 
-
 }
 
   .share img {
@@ -338,7 +337,11 @@ hr {
 
 
 .error-message {
+  position: relative;
   color: red;
+  bottom: 42px;
+  font-size: 14px;
+
 
 }
 
