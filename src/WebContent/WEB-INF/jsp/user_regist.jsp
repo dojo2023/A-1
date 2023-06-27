@@ -18,37 +18,39 @@
 		<div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
 	</div>
 
-<div class="title">Registration</div>
-
 	<div id="regist">
 		<form id="myForm" name='user_regist' method="POST" action="/jiro_power/UserRegistServlet" >
-			<div class="name">
-				<label>ユーザー名</label><br>
-				<input type="text" id="user_name" name="User_Name" value="${param.User_Name}"
-				placeholder="8文字以内" maxlength="8" required>
-				<br>
+			<div class="title">Registration</div>
+			<div class="Name">
+<!-- 				<label>Name：</label><br> -->
+				<input type="text" class="input-field" id="user_name" name="User_Name" value="${param.User_Name}"
+				placeholder="8字以内" maxlength="8" required>
+				<label for="input-field" class="input-label">Name</label>
+<!-- 				<span class="input-highlight"></span> -->
+			<br>
 				<p id="user_name_error" class="error-message"></p> <!-- ユーザー名のエラーメッセージ -->
 			</div>
 
 			<div class="mailAddress">
-				<label>メールアドレス</label><br>
-				<input type="email" id="mail_address" name="Mail_Address" placeholder="mail_address" value="${param.Mail_Address}" required>
-				<br>
+<!-- 				<label>E-mail：</label><br> -->
+				<input type="email" class="input-field" id="mail_address" name="Mail_Address" placeholder="E-mail" value="${param.Mail_Address}" required>
+				<label for="input-field" class="input-label">E-mail</label>
+			<br>
 				<p id="mail_address_error" class="error-message"></p> <!-- メールアドレスのエラーメッセージ -->
 				<span class="error-message">${mac}</span><!-- エラーメッセージを赤色で表示 -->
 				<br>
 			</div>
 
 			<div class="password">
-				<label>パスワード</label><br>
-				<input type="password" id="password" name="Password" placeholder="8文字以上20文字以下"
+<!-- 				<label>Password：</label><br> -->
+				<input type="password" class="input-field" id="password" name="Password" placeholder="8字以上20字以下"
 				min="8" maxlength="20" required>
+				<label for="input-field" class="input-label">Password</label>
 				<br>
 				<p id="password_error" class="error-message"></p>
 			</div>
 
 			<div class="sex">
-				<label>性別</label><br>
 				<input type="radio" id="sexChoice1" name="User_Sex" value="1" checked>
 				<label>man</label>
 
@@ -58,8 +60,9 @@
 			</div>
 
 			<div class="birth">
-				<label>生年月日</label><br>
-				<input type="date" id="birth" name="User_Birth" max="9999-12-31" value="${param.User_Birth}" required>
+<!-- 				<label>生年月日：</label><br> -->
+				<input type="date" class="input-field" id="birth" name="User_Birth" max="9999-12-31" value="${param.User_Birth}" required>
+				<label for="input-field" class="input-label">Birth</label>
 				<br>
 				<p id="birth_error" class="error-message"></p>
 			</div>
@@ -72,15 +75,17 @@
 -->
 
 			<div class="height">
-				<label>身長</label><br>
-				<input type="number" id="height" name="User_Height" value="${param.User_Height}" placeholder="cm単位" min="1" max="300">
+<!-- 				<label>身長：</label><br> -->
+				<input type="number" class="input-field" id="height" name="User_Height" value="${param.User_Height}" placeholder="〇〇cm" min="1" max="300">
+				<label for="input-field" class="input-label">Height</label>
 				<br>
 				<p id="height_error" class="error-message"></p>
 			</div>
 
 			<div class="weight">
-				<label>体重</label><br>
-				<input type="number" id="weight" name="User_Weight" placeholder="kg単位" min="30" max="300" value="${param.User_Weight}" required>
+<!-- 				<label>体重：</label><br> -->
+				<input type="number" class="input-field" id="weight" name="User_Weight" placeholder="〇〇kg" min="30" max="300" value="${param.User_Weight}" required>
+				<label for="input-field" class="input-label">Weight</label>
 				<br>
 				<p id="weight_error" class="error-message"></p>
 			</div>
@@ -89,7 +94,7 @@
 			<input type="button" name="regist" class="regist" value="登録" onclick="showConfirmationDialog(event)">
 
 		</form>
-	</div> <!-- id="login" -->
+	</div> <!-- id="regist" -->
 <script src="/jiro_power/js/user_regist.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color:#c0c0c0;
+    background-color:#333333;
     z-index: 0;
     font-family: "Times New Roman";
     margin: 0;
@@ -22,12 +22,12 @@ body {
 	overflow: visible;
     z-index: 999;
 	top: 17px;
-	left: 0;
+	left: 2%;
 	width: 0;
 }
 
 .button001 button {
-    background: #eee;
+    background: #1e1e1e;
     border-radius: 10px;
     position: relative;
     display: flex;
@@ -35,7 +35,7 @@ body {
     align-items: center;
     margin: 0 auto;
     padding: 30px;
-    color: #313131;
+    color: #eee;
     transition: 0.3s ease-in-out;
     font-weight: 500;
 }
@@ -44,8 +44,8 @@ body {
     content: '';
     width: 10px;
     height: 10px;
-    border-left: 2px solid #333333;
-    border-bottom: 2px solid #333333;
+    border-left: 2px solid #eee;
+    border-bottom: 2px solid #eee;
     transform: rotate(45deg) translateY(-50%);
     position: absolute;
     top: 50%;
@@ -59,7 +59,7 @@ img {
     overflow: visible;
     z-index: 999;
     height: 10%;
-    background: #242424;
+    background: #333333;
     display: flex;
     align-items: center;
     position: absolute;
@@ -68,103 +68,182 @@ img {
 	width: 50%;
 }
 
+/*フォーム全体*/
+#regist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #1e1e1e;
+  padding: 320px 180px;
+  border: 1px solid #3d3c3c;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
 /*registration*/
 .title {
 	color: #ffffff;
 	position:absolute;
 	top:15%;
+	left:30%;
 	font-family: "Times New Roman";
 	font-size: 35px;
 }
 
 /*エラー表示*/
 .error-message {
-  color: red;
-}
-
-.name{
-	position:absolute;
-	top:22%;
-	left:30%;
-	width:70%;
-}
-
-#user_name_error{
+	color: red;
 	position:relative;
 	margin:0;
+	padding:0;
+	bottom: 10px;
+	font-size:12px;
 }
 
+/*登録項目のアクティブ表示*/
+.input-field{
+	display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+  color:white;
+}
+
+.input-label {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 16px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/*
+.input-highlight {
+  position: absolute;
+  top: 98%;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+}
+*/
+
+.input-field:focus + .input-label {
+  top: -10px;
+  font-size: 12px;
+  color: #5AFF19;
+}
+
+.input-field:focus + .input-label + .input-highlight {
+  width: 100%;
+}
+
+/*名前*/
+.Name {
+  position:absolute;
+	top:21%;
+	left:25%;
+}
+
+/*メールアドレス*/
 .mailAddress{
 	position:absolute;
-	top:30%;
-	left:30%;
-	width:70%;
+	top:29%;
+	left:25%;
 }
 
-#mail_address_error{
-	position:relative;
-	margin:0;
-}
-
+/*パスワード*/
 .password{
 	position:absolute;
-	top:38%;
-	left:30%;
-	width:70%;
-}
-
-#password_error{
-	position:relative;
-	margin:0;
+	top:37%;
+	left:25%;
 }
 
 .sex{
 	position:absolute;
-	top:46%;
-	left:30%;
+	top:45%;
+	left:17%;
 	width:70%;
 }
 
 .birth{
 	position:absolute;
-	top:52%;
-	left:30%;
-	width:70%;
-}
-
-#birth_error{
-	position:relative;
-	margin:0;
+	top:51%;
+	left:25%;
+	color:white;
 }
 
 .height{
 	position:absolute;
-	top:60%;
-	left:30%;
-	width:70%;
+	top:59%;
+	left:25%;
 }
 
-#height_error{
-	position:relative;
-	margin:0;
-}
 .weight{
 	position:absolute;
-	top:68%;
-	left:30%;
-	width:70%;
-}
-
-#weight_error{
-	position:relative;
-	margin:0;
+	top:67%;
+	left:25%;
 }
 
 .regist{
 	position:absolute;
-	top:80%;
-	left:45%;
+	top:75%;
+	left:30%;
+	  width: 200px;
+  height: 35px;
+  background: #242424;
+  border: 1px solid #242424;
+  cursor: pointer;
+  border-radius: 7px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 6px;
+  margin-top: 12px;
+  box-shadow: 0 0 10px #5AFF19;
 }
+
+.submit {
+  opacity: 0.8;
+  text-align: center;
+}
+
+.submit :active{
+  opacity: 0.6;
+}
+
+.submit :focus{
+  outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(173, 176, 215, 0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+.submit:hover {
+  color: #5AFF19;
+  background-color: #000000;
+}
+
+.submit:active {
+  color: #5AFF19;
+  background-color: #000000;
+}
+
 
 /* ダイアログボックス本体のカスタムスタイルを定義 */
 .custom-dialog {
