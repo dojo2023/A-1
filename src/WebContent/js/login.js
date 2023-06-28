@@ -6,7 +6,7 @@
 /*新しい目隠し機能*/
 
       function pushHideButton() {
-        var txtPass = document.getElementById("textPassword");
+        var txtPass = document.getElementById("password");
         var btnEye = document.getElementById("buttonEye");
         if (txtPass.type === "text") {
           txtPass.type = "password";
@@ -20,7 +20,7 @@
 /*
 	目隠し機能
 	function togglePasswordVisibility() {
-	  var passwordField = document.getElementById("pw");
+	  var passwordField = document.getElementById("password");
 	  var strikethrough = document.querySelector("#showPasswordLabel .strikethrough");
 
 	  if (passwordField.type === "password") {
@@ -102,7 +102,7 @@
 
 /*  document.querySelector('form[name="form-login"]').addEventListener('submit', function(event) {
     var mailAddress = document.getElementById('mail_address').value;
-    var password = document.getElementById('pw').value;
+    var password = document.getElementById('password').value;
     var mailAddressError = document.getElementById('mail_address_error');
     var passwordError = document.getElementById('password_error');
     var isValid = true;

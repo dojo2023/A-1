@@ -22,12 +22,11 @@
             <div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
             <div class="menucoler">
             <h1 class="level">${level_session}</h1>
-            <div class="allname">
-            <div id="names">Name</div>
+
             <div id="name">${user_name_session}</div>
             </div>
         </div>
-    </div>
+
         </header>
 
 <div class="title">Monthly Ranking</div>
@@ -102,12 +101,14 @@ let mmcontext = document.querySelector("#mmranking").getContext('2d')
 new Chart(mmcontext, {
   type: 'bar',
   data: {
-    labels: ['1'+mmrankData[0].userName,'2'+mmrankData[1].userName,'3'+mmrankData[2].userName,'4'+mmrankData[3].userName,'5'+mmrankData[4].userName],
+    labels: ['1：'+mmrankData[0].userName,'2：'+mmrankData[1].userName,'3：'+mmrankData[2].userName,'4：'+mmrankData[3].userName,'5：'+mmrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-        label: "月間獲得経験値",
+        label: "男性　月間獲得経験値",
       data: [mmrankData[0].trainingExp, mmrankData[1].trainingExp,mmrankData[2].trainingExp,mmrankData[3].trainingExp,mmrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
+      borderColor: ['#ffffff'],
+      borderWidth: 1,
     }]
   },
   options: {
@@ -116,7 +117,10 @@ new Chart(mmcontext, {
 	    plugins: {
 	    	legend: {
 	    		labels: {
-	    			color: '#ffffff'  //テキストカラー
+	    			color: '#ffffff',  //テキストカラー
+	    			font: {
+	    				size: 15
+	    			}
 	    		}
 	    	}
 	    },
@@ -126,7 +130,10 @@ new Chart(mmcontext, {
 	              offset: true
 	            },
 	            ticks: {
-	            	color: '#ffffff'  //テキストカラー
+	            	color: '#ffffff',  //テキストカラー
+	            	font: {
+	    				size: 10
+	    			}
 	            }
 	        },
 	        y: {
@@ -134,7 +141,10 @@ new Chart(mmcontext, {
 	              offset: true
 	            },
 	            ticks: {
-	            	color: '#ffffff'  //テキストカラー
+	            	color: '#ffffff',  //テキストカラー
+	            	font: {
+	    				size: 15
+	    			}
 	            }
 	        }
 		}
@@ -146,12 +156,14 @@ let mwcontext = document.querySelector("#mwranking").getContext('2d')
 new Chart(mwcontext, {
   type: 'bar',
   data: {
-    labels: ['1'+mwrankData[0].userName,'2'+mwrankData[1].userName,'3'+mwrankData[2].userName,'4'+mwrankData[3].userName,'5'+mwrankData[4].userName],
+    labels: ['1：'+mwrankData[0].userName,'2：'+mwrankData[1].userName,'3：'+mwrankData[2].userName,'4：'+mwrankData[3].userName,'5：'+mwrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-        label: "月間獲得経験値",
+        label: "女性　月間獲得経験値",
       data: [mwrankData[0].trainingExp, mwrankData[1].trainingExp,mwrankData[2].trainingExp,mwrankData[3].trainingExp,mwrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
+      borderColor: ['#ffffff'],
+      borderWidth: 1,
     }]
   },
   options: {
@@ -160,7 +172,10 @@ new Chart(mwcontext, {
 	    plugins: {
 	    	legend: {
 	    		labels: {
-	    			color: '#ffffff'  //テキストカラー
+	    			color: '#ffffff',  //テキストカラー
+	    			font: {
+	    				size: 15
+	    			}
 	    		}
 	    	}
 	    },
@@ -170,7 +185,10 @@ new Chart(mwcontext, {
 	              offset: true
 	            },
 	            ticks: {
-	            	color: '#ffffff'  //テキストカラー
+	            	color: '#ffffff',  //テキストカラー
+	            	font: {
+	    				size: 10
+	    			}
 	            }
 	        },
 	        y: {
@@ -178,7 +196,10 @@ new Chart(mwcontext, {
 	              offset: true
 	            },
 	            ticks: {
-	            	color: '#ffffff'  //テキストカラー
+	            	color: '#ffffff',  //テキストカラー
+	            	font: {
+	    				size: 15
+	    			}
 	            }
 	        }
 		}

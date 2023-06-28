@@ -23,7 +23,7 @@ public class TrainingmenuDao{
 
 					// SQL文を準備する
 					String sqlTm = "select training_menu_magnification "
-						+ "from training_menu where training_menu = ?";
+						+ "from TRAINING_MENU where training_menu = ?";
 					PreparedStatement pStmtTm = conn.prepareStatement(sqlTm);
 					pStmtTm.setString(1,tm.getTrainingMenu());
 
