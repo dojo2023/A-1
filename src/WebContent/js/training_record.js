@@ -50,22 +50,109 @@ function addForm() {
     } //if(recordElements.length!=1)の閉じかっこ
     } //function deleteLastRecord()の閉じかっこ
 
+/* エラーメッセージ*/
+
+// フォームの送信時に実行される関数
+function validateForm(event) {
+
+  var date = document.getElementById("t_date").value;
+  var weight = document.getElementById("training_weight").value;
+  var count = document.getElementById("training_count").value;
+  var set = document.getElementById("training_set").value;
+  var flgNumber=0;
+
+  // 日付のチェック
+  if (date === "") {
+    ddocument.getElementById("date_error").textContent = "※日付が入力されていません。";
+  event.preventDefault(); // フォームの送信を中止
+  flgNumber+=1;
+} else {
+  var currentDate = new Date();
+  var selectedDate = new Date(date);
+  if (selectedDate > currentDate) {
+    document.getElementById("date_error").textContent = "※未来の日付は選択できません。";
+    event.preventDefault(); // フォームの送信を中止
+    return false;
+  } else {
+    document.getElementById("date_error").textContent = "";
+  }
+
+  // 器具重量のチェック
+  if (weight === "") {
+    if (weight === "") {
+    document.getElementById("weight_error").textContent = "※重量が入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    flgNumber+=1;
+  }else if(weight > 999){
+  	document.getElementById("weight_error").textContent = "※適正な値が入力されていません。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+   } else if(weight < 1){
+    document.getElementById("weight_error").textContent = "※適正な値が入力されていません。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+
+   }else {
+  	 document.getElementById("weight_error").textContent = "";
+  }
+
+  // トレーニング回数のチェック
+  if (count === "") {
+    if (count === "") {
+    document.getElementById("count_error").textContent = "※回数が入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    flgNumber+=1;
+  }else if(count > 999){
+  	document.getElementById("count_error").textContent = "※適正な値が入力されていません。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+   } else if(weight < 1){
+    document.getElementById("count_error").textContent = "※適正な値が入力されていません。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+
+   }else {
+  	 document.getElementById("count_error").textContent = "";
+  }
+
+  // セット数のチェック
+if (set === "") {
+  if (set === "") {
+    document.getElementById("set_error").textContent = "※セット数が入力されていません。";
+    event.preventDefault(); // フォームの送信を中止
+    flgNumber+=1;
+  }else if(set > 999){
+  	document.getElementById("set_error").textContent = "※適正な値が入力されていません。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+   } else if(set < 1){
+    document.getElementById("_error").textContent = "※適正な値が入力されていません。";
+  	event.preventDefault(); // フォームの送信を中止
+    return false;
+
+   }else {
+  	 document.getElementById("set_error").textContent = "";
+  }
+
+
    // 登録ボタンクリック時の処理
 
  var dialog;
 
 function showConfirmationDialog(event) {
   event.preventDefault(); // デフォルトのフォーム送信を防ぐ
+ alert("non");
+if(flgNumber==0){
+ 			 event.preventDefault(); // デフォルトのフォーム送信を防ぐ
 
   // フォームのバリデーションを実行
- /* if (validateForm(event)) {
-	    // 確認ダイアログを表示
+      /*if (validateForm(event)) {
+	   // 確認ダイアログを表示
 	    if (confirm("登録しますか？")) {
 	      // フォームを送信
-	      document.getElementById("form").submit(); // フォームを送信する
+	      document.getElementById("form").submit(); // フォームを送信する*/
     }
-*/
-
+}
   if (dialog) {
 				// 既存のダイアログが存在する場合は削除する
 				dialog.remove();
@@ -126,5 +213,4 @@ function showConfirmationDialog(event) {
 			//そのダイアログボックスをbodyの一番うしろに表示する
 			document.body.appendChild(dialog);
 
-
-}
+}}}}}

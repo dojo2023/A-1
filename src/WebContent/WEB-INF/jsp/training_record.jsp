@@ -28,7 +28,7 @@
         <!--テンプレート作成-->
                <template id="form-template">
                   <div class="record" id="record">
-                      <input type="date"  name="training_record_date" id="t_date" Required/><br>
+                      <input type="date"  name="training_record_date" id="t_date" /><br>
                          <select name="training_menu" id="t_menu">
                             <option>ベンチプレス</option>
                             <option>チェストプレス</option>
@@ -44,19 +44,25 @@
                             <option>アームカール</option>
                             <option>腹筋</option>
                          </select><br>
-                            <input type = "number" name="training_weight" min="1" max="999" class="t_body" Required/><label class="t_body2">kg</label><br>
-                            <input type="number" name="training_count" min="1" max="999" class="t_body" Required/><label class="t_body2">回</label><br>
-                            <input type = "number" name="training_set" min="1" max="999" class="t_body" Required/><label class="t_body2">セット</label><br>
+                            <input type = "number" name="training_weight" class="t_body" id="training_weight"/><label class="t_body2">kg</label><br>
+                            <input type="number" name="training_count"  class="t_body" id="training_count"/><label class="t_body2">回</label><br>
+                            <input type = "number" name="training_set"  class="t_body" id="training_set"/><label class="t_body2">セット</label><br>
                    </div>
                 </template>
               </div>
+              <p id="date_error" class="error-message"></p>
+              <p id="weight_error" class="error-message"></p>
+              <p id=",count_error" class="error-message"></p>
+              <p id="set_error" class="error-message"></p>
+              <input type="hidden" name="update" id="one" >
         <!--ボタンをクリックしたらJavascriptファイル内の関数addForm()を実行する-->
-                      <input type = "submit" name="record" value="登録" id="submit"
-                      onclick="showConfirmationDialog(event)">
+                      <input type = "button" name="record" value="登録" id="submit2"
+                      onclick="document.getElementById('one').value='update'; validateForm(event);">
                       <div class="bt_addForm">
                         <input type="button" value="+" onclick="addForm()">
                         <input type="button" value="-" onclick="deleteLastRecord()">
                       </div>
+
                       </form>
                       <br>
                       <div class="levelUp">
@@ -109,10 +115,9 @@
                 </ul>
                 </div>
 
- <!--                 <script src="calendar.js"></script> -->
+               <!-- <script src="calendar.js"></script> -->
                 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
                 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 
         <script src="./js/common.js"></script>
         <script src="./js/training_record.js"></script>
