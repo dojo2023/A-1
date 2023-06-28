@@ -38,7 +38,7 @@
 
 
 
-	<form name="mypage" method="POST" action="/jiro_power/Mypage_UpdateDeleteServlet">
+	<form name="mypage" id="myForm" method="POST" action="/jiro_power/Mypage_UpdateDeleteServlet">
 
 		  <div class="user_name"><input type="text" name="user_name" value="${user_name_session}"
 		  placeholder="8文字以内" maxlength="8" id="user_name" style="width: 200px; height: 35px;"></div> <!-- user.username -->
@@ -55,20 +55,27 @@
 
 
 	      <div class="birthday_display">
-	      <i class="fas fa-birthday-cake" style="color: #ffffff;"></i>
-	      ${user_birth_session}
+	           ${user_birth_session}
 	      </div>
+
+	      <!-- <i class="fas fa-birthday-cake" style="color: #ffffff;"></i> -->
 
 	      <div class="sex">
 	      	<c:choose>
 		      	<c:when test = "${user_sex_session == 1}">
-		      	<i class="fas fa-mars"></i>MEN
+		      	</i>MEN
 		      	</c:when>
 		      	<c:otherwise>
-		      	<i class="fas fa-venus"></i>WOMEN
+		      	</i>WOMEN
 		      	</c:otherwise>
 	      	</c:choose>
 	      </div>
+
+
+		  <!--
+	      <i class="fas fa-mars">
+	      <i class="fas fa-venus">
+	       -->
 
 	      <!-- <div class="height">身長</div> -->
 	      <label for="height" class="height">身長:</label>

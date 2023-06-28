@@ -55,24 +55,16 @@ public class ResultServlet extends HttpServlet {
 
 
 		// リザルト画面ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-				dispatcher.forward(request, response);
-
-
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		/*HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/jiro_power/LoginServlet");
-			return;
-		}*/
 		// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
     }
 }
 

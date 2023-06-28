@@ -22,13 +22,12 @@ public class Alltable implements Serializable{
 	private int trainingCount;
 	private int trainingSet;
 	private int trainingExp;
-	private String trainingRecordDow;
 
 	//こっからコンストラクタ
 	public Alltable(int userId, String userName, int userSex, String userBirth, String userMailAddress,
 			String userPassword, int userHeight, int userWeight, int trainingMenuId, String trainingMenu,
 			double trainingMenuMagnification, int trainingRecordId, String trainingRecordDate, double trainingWeight,
-			int trainingCount, int trainingSet, int trainingExp, String trainingRecordDow) {
+			int trainingCount, int trainingSet, int trainingExp) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
@@ -47,7 +46,6 @@ public class Alltable implements Serializable{
 		this.trainingCount = trainingCount;
 		this.trainingSet = trainingSet;
 		this.trainingExp = trainingExp;
-		this.trainingRecordDow = trainingRecordDow;
 	}
 
 	public Alltable() {
@@ -190,14 +188,6 @@ public class Alltable implements Serializable{
 
 	public void setTrainingExp(int trainingExp) {
 		this.trainingExp = trainingExp;
-	}
-
-	public String getTrainingRecordDow() {
-		return trainingRecordDow;
-	}
-
-	public void setTrainingRecordDow(String trainingRecordDow) {
-		this.trainingRecordDow = trainingRecordDow;
 	}
 
 }

@@ -52,7 +52,7 @@
               </div>
         <!--ボタンをクリックしたらJavascriptファイル内の関数addForm()を実行する-->
                       <input type = "submit" name="record" value="登録" id="submit"
-                      onclick value='登録'; myPageValidateForm(event);>
+                      onclick="showConfirmationDialog(event)">
                       <div class="bt_addForm">
                         <input type="button" value="+" onclick="addForm()">
                         <input type="button" value="-" onclick="deleteLastRecord()">
@@ -109,9 +109,10 @@
                 </ul>
                 </div>
 
-                <script src="calendar.js"></script>
+<!--                 <script src="calendar.js"></script>
                 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
                 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+ -->
 
         <script src="./js/common.js"></script>
         <script src="./js/training_record.js"></script>

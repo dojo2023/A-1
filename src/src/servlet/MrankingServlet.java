@@ -41,41 +41,29 @@ public class MrankingServlet extends HttpServlet {
 			return;
 		}
 
-		// 月間ランキングページにフォワードする
-		/* RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/m_ranking.jsp");
-		dispatcher.forward(request, response); */
-
 		// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				int userId =  (int) session.getAttribute("id");
-//				String userName = request.getParameter("user_name");
+			request.setCharacterEncoding("UTF-8");
+			int userId =  (int) session.getAttribute("id");
 
-				 // Daoからデータを取り出す
-				TrainingrecordDao trDao = new TrainingrecordDao ();
-				List<Alltable> expSumMm = trDao.sumMonthlyMen(new Trainingrecord(userId));
-				List<Alltable> expSumMw = trDao.sumMonthlyWomen(new Trainingrecord(userId));
-		        // System.out.println(exp_sum.size());
+			 // Daoからデータを取り出す
+			TrainingrecordDao trDao = new TrainingrecordDao ();
+			List<Alltable> expSumMm = trDao.sumMonthlyMen(new Trainingrecord(userId));
+			List<Alltable> expSumMw = trDao.sumMonthlyWomen(new Trainingrecord(userId));
 
-						//とりあえずリクエストスコープへセットする
-						request.setAttribute("mmrankList", expSumMm);
-						request.setAttribute("mwrankList", expSumMw);
+			//とりあえずリクエストスコープへセットする
+			request.setAttribute("mmrankList", expSumMm);
+			request.setAttribute("mwrankList", expSumMw);
 
-						//chart.jspに遷移させる
-						String path="/WEB-INF/jsp/m_ranking.jsp";
-						RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-						dispatcher.forward(request, response);
+			//chart.jspに遷移させる
+			String path="/WEB-INF/jsp/m_ranking.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+			dispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-//		HttpSession session = request.getSession();
-		/*if (session.getAttribute("id") == null) {
-			response.sendRedirect("/jiro_power/LoginServlet");
-			return;
-		}*/
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
     }

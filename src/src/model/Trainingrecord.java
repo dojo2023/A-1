@@ -15,11 +15,10 @@ private double trainingWeight;
 private int trainingCount;
 private int trainingSet;
 private int trainingExp;
-//private String trainingRecordDow;
 
 //コンストラクタ
 public Trainingrecord( int trainingRecordId, Date trainingRecordDate,int userId,String trainingMenu, double trainingWeight,
-		int trainingCount, int trainingSet, int trainingExp/*, String trainingRecordDow*/) {
+		int trainingCount, int trainingSet, int trainingExp) {
 	super();
 
 	this.trainingRecordId = trainingRecordId;
@@ -30,13 +29,11 @@ public Trainingrecord( int trainingRecordId, Date trainingRecordDate,int userId,
 	this.trainingCount = trainingCount;
 	this.trainingSet = trainingSet;
 	this.trainingExp = trainingExp;
-//	this.trainingRecordDow =trainingRecordDow;
 }
 
 //String型の初期値null避け
 	public Trainingrecord() {
 		this.trainingMenu = "";
-//		this.setTraining_record_dow("");
 	}
 
 //トレーニング記録登録のコンストラクタ
@@ -51,7 +48,6 @@ public Trainingrecord(Date trainingRecordDate, int userId, String trainingMenu,
 	this.trainingCount = trainingCount;
 	this.trainingSet = trainingSet;
 	this.trainingExp = trainingExp;
-//	this.trainingRecordDow = trainingRecordDow;
 }
 
 
@@ -160,11 +156,4 @@ public void setTrainingExp(int trainingExp) {
 	this.trainingExp = trainingExp;
 }
 
-//public String getTrainingRecordDow() {
-//	return trainingRecordDow;
-//}
-//
-//public void setTrainingRecordDow(String trainingRecordDow) {
-//	this.trainingRecordDow = trainingRecordDow;
-//}
 }
