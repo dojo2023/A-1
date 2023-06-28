@@ -1,19 +1,17 @@
 @charset "UTF-8";
 
 .title {
-		font-size: 250%;
-		font-family: "Times New Roman";
-
-		color: #FFFFFF;
-		text-align: center;
-		position: absolute;
-		top: 13%;
+	font-size: 250%;
+	font-family: "Times New Roman";
+	color: #FFFFFF;
+	text-align: center;
+	position: absolute;
+	top: 13%;
 }
 
 canvas {
 	display: block;
 }
-
 
 #mmranking {
 	position: absolute;
@@ -27,21 +25,20 @@ canvas {
 	left: 5%;
 }
 
-
 input[type="button"] {
-		position: absolute;
-		bottom: 15%;
-		background: #242424;
-  		border: 1px solid #242424;
-  		cursor: pointer;
-  		border-radius: 8px;
-  		color: white;
-  		font-family: 'Exo', sans-serif;
-  		font-size: 16px;
-  		font-weight: 400;
- 		padding: 6px;
- 		margin-top: 10px;
-   }
+	position: absolute;
+	bottom: 15%;
+	background: #242424;
+	border: 1px solid #242424;
+	cursor: pointer;
+	border-radius: 8px;
+	color: white;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
 
 #rank_button {
 	position: absolute;
@@ -56,11 +53,11 @@ input[type="button"] {
 	transform: translateX(-50%);
 	border: solid 2px;
 	border-color: #5aff19;
-	 background: #242424;
-	  border-radius: 7px;
-	  color: white;
-	  font-family: "Times New Roman";
-	  box-shadow: 0 0 10px #5AFF19;
+	background: #242424;
+	border-radius: 7px;
+	color: white;
+	font-family: "Times New Roman";
+	box-shadow: 0 0 10px #5AFF19;
 }
 
 #wrank_button {
@@ -69,4 +66,3 @@ input[type="button"] {
 	border: solid 1px;
 	border-color: #fff;
 }
-

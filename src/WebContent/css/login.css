@@ -154,7 +154,7 @@ img {
 	border: none;
 	border-bottom: 2px solid #515151;
 	background: transparent;
-	color: white;  		/* passwordテキストカラー白 */
+	color: white;
 }
 
 .wave-group2 .input:focus {
@@ -303,11 +303,6 @@ img {
 	color: rgba(255,255,255,0.6);
 }
 
-.submit input:hover, .create:hover {
-	color: #5AFF19;
-	background-color: #000000;
-}
-
 .submit input:active, .create:active {
 	color: #5AFF19;
 	background-color: #000000;
@@ -361,11 +356,6 @@ img {
 
 ::-moz-input-placeholder{
 	color: rgba(255,255,255,0.6);
-}
-
-.regist:hover {
-	color: #5AFF19;
-	background-color: #000000;
 }
 
 .regist:active {

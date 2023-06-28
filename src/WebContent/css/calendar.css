@@ -1,16 +1,16 @@
 @charset "UTF-8";
 body {
-   background-color:#333333;
-  font-family: "Times New Roman", Times, serif;
-   display:block;
+	background-color:#333333;
+	font-family: "Times New Roman", Times, serif;
+	display:block;
 }
 
 
 
 /* 予定のある日の枠の色 */
 .highlight {
- 	background-color: #c51010;
-  	height:42px;
+	background-color: #c51010;
+	height:42px;
 	width:57px;
 }
 
@@ -60,25 +60,25 @@ td{
 
 input[type=submit]{
 	font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+	font-weight: bold;
 	background-color:#555555;
-    border: 2px solid #555555;
-    border-radius: 10px;
-    height:25px;
-    width:50px;
+	border: 2px solid #555555;
+	border-radius: 10px;
+	height:25px;
+	width:50px;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-    border: 1px solid #d3d3d3;
-    background: #e6e6e6 ;
-    font-weight: normal;
-    color: #555555;
+	border: 1px solid #d3d3d3;
+	background: #e6e6e6 ;
+	font-weight: normal;
+	color: #555555;
 }
 
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
 	color:#c51010;
-   font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
 }
 
 .ui-datepicker td span, .ui-datepicker td a {
@@ -86,9 +86,9 @@ input[type=submit]{
 }
 
 .ui-widget-content {
-    border: 1px solid #aaaaaa;
-    background: #333333;
-    color: white;
+	border: 1px solid #aaaaaa;
+	background: #333333;
+	color: white;
 }
 
 .trainingList{
@@ -97,6 +97,27 @@ input[type=submit]{
 	height:120px;
 	margin:0 auto;
 	border:3px solid;
+}
+
+.trainingListN{
+	margin:0 auto;
+	text-align:center;
+	background-color:white;
+	width:360px;
+	height:120px;
+	border:3px solid;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.nodata{
+	margin:20px;
+	font-size:27px;
+}
+
+.recordLink{
+	text-align:center;
+	font-size:20px;
 }
 
 #listArea{
@@ -115,7 +136,7 @@ input[type=submit]{
 	margin-top:20px;
 	margin-left:20px;
 	font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .trainingWeight{
@@ -124,7 +145,7 @@ input[type=submit]{
 	margin-top:30px;
 	width:80px;
 	font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .kg{
@@ -132,7 +153,6 @@ input[type=submit]{
 	margin-left:310px;
 	margin-top:30px;
 	font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .trainingCount{
@@ -141,7 +161,7 @@ input[type=submit]{
 	margin-top:60px;
 	width:80px;
 	font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .count{
@@ -166,8 +186,6 @@ input[type=submit]{
 	margin-left:310px;
 	margin-top:90px;
 	font-family: Arial, Helvetica, sans-serif;
-
-
 }
 
 .trainingExp{
@@ -175,7 +193,7 @@ input[type=submit]{
 	margin-top:50px;
 	margin-left:30px;
 	font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .update{
