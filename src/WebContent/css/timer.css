@@ -272,7 +272,8 @@ body
     background-color: black;
     z-index: -1;
     border-radius: 50%;
-    left: -21%;
+    left: -40%;
+
     top: -70px;
     animation-name: shine;
     animation-duration: 5s;
