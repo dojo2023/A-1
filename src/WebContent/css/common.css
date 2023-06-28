@@ -35,10 +35,11 @@ img {
     font-size: 120%;
     position: absolute;
     text-align: center;
-    right: 0%;
+    right: 1%;
     top: 30%;
 	width: 35%;
-    border-bottom:  solid 5px #5AFF19;
+	padding-bottom: 5px;
+    border-bottom:  solid 3px #5aff19;
 }
 .menucoler
 {
