@@ -20,12 +20,11 @@
             <div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
             <div class="menucoler">
             <h1 class="level">${level_session}</h1>
-            <div class="allname">
-            <div id="names">Name</div>
+
             <div id="name">${user_name_session}</div>
             </div>
         </div>
-    </div>
+
         </header>
 
 <div class="title">Weekly Ranking</div>

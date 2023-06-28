@@ -29,36 +29,16 @@ img {
 	left: 0;
 	width: 43%;
 }
-#names
-{
-
-    font-size: 80%;
-    padding-bottom: 5%;
-    margin-top: 20%;
-    margin-right: 20%;
-}
-#names::first-letter
-{
-    color: #5AFF19;
-}
 
 #name
 {
-    font-size: 200%;
+    font-size: 120%;
     position: absolute;
-    right: 10%;
-    top: 10%;
-
-}
-.allname
-{
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: flex;
-    width: 35%;
-    border-bottom:  solid 7px #5AFF19;
-
+    text-align: center;
+    right: 0%;
+    top: 30%;
+	width: 35%;
+    border-bottom:  solid 5px #5AFF19;
 }
 .menucoler
 {
@@ -68,7 +48,8 @@ img {
 .level /*idは＃*/
 {
     position: absolute;
-    right: 43%;
+    left: 50%;
+    transform: transformX(-50%);
     top: 23%;
     font-size: 40px;
     color: #fff;
