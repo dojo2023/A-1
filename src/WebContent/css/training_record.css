@@ -17,14 +17,21 @@ body {
 	border-radius: 5px;
 	border: 2px solid white;
 	position: relative;
-	left: 17%;
+	top:15px;
+	left: 0%;
+	height: 45px;
+	font-size: 20px;
 }
 
 #t_menu{
 	margin-bottom: 5%;
 	border-radius: 5px;
 	position: relative;
-	right: 53%;
+	right: 0%;
+	top:20px;
+	height: 45px;
+	width:144.33px;
+	font-size: 20px;
 }
 
 .t_body{
@@ -35,21 +42,27 @@ body {
 	margin-bottom: 3%;
 	position: relative;
 	left: 55%;
-	bottom: 30px;
+	bottom: 115px;
+	height: 45px;
+	width: 60px;
+	font-size: 25px;
+}
+
+#deletebt{
+	box-shadow: 0 0 10px red;
+	border: 2px solid  red;
 }
 
 .t_body2{
-	width: 48px;
-	background-color: white;
+	color: white;
 	border-radius: 3px;
 	border-width: 8em;
 	position: relative;
-	float: right;
-	text-align: center;
-	font-size: 10px;
+	font-size: 25px;
 	margin-top: 5px;
-	left: 23%;
-	bottom:30px;
+	left: 60%;
+	bottom:110px;
+	height: 45px;
 }
 
 #submit2{
@@ -59,21 +72,23 @@ body {
 	color: white;
 	border: 2px solid  #5AFF19;
 	border-radius: 5px;
-	height: 30px;
+	height: 45px;
 	width: 70px;
 	padding: auto;
 	margin-top: 10px;
 	position: relative;
-	left: 30px;
+	left: 0px;
+	bottom:20px;
 	margin-top: 12px;
 	box-shadow: 0 0 10px #5AFF19;
+	font-size: 20px;
 }
 
 .bt_addForm{
 	float: right;
 	position: relative;
-	bottom:30px;
-	left:40px;
+	bottom:55px;
+	right:60px;
 }
 
 input[type="button"] {
@@ -81,7 +96,7 @@ input[type="button"] {
 	border: 2px solid white;
 	border-radius: 5px;
 	color: white;
-	height: 20px;
+	height: 30px;
 	width: 30px;
 	margin-top: 5px;
 	text-align: center;
@@ -89,8 +104,11 @@ input[type="button"] {
 }
 
 #record{
-	border-bottom: 2px solid #868181;
-	height: 140px;
+	height: 200px;
+	width:350px;
+	border-bottom:solid 3px rgb(85, 84, 94);
+	position: relative;
+	left: 10px;
 }
 
 .levelUp{
@@ -264,6 +282,7 @@ input[type="button"] {
 	position:relative;
 	margin:0;
 	padding:0;
-	bottom: 10px;
-	font-size:12px;
+	bottom: 40px;
+	font-size:14px;
+	left:-10px;
 }

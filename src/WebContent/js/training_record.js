@@ -17,7 +17,7 @@ let i = 1
 
 function addForm() {
     // 5個で処理を終了
-    if (i > 4) {
+    if (i > 3) {
         return;
 
     } else {

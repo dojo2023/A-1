@@ -48,19 +48,19 @@
                             <input type="number" name="training_count"  class="t_body" id="training_count"/><label class="t_body2">回</label><br>
                             <input type = "number" name="training_set"  class="t_body" id="training_set"/><label class="t_body2">セット</label><br>
                    </div>
+                    <p id="date_error" class="error-message">ああああああああああああああ</p>
+                    <p id="weight_error" class="error-message"></p>
+                    <p id=",count_error" class="error-message"></p>
+                    <p id="set_error" class="error-message"></p>
                 </template>
               </div>
-              <p id="date_error" class="error-message"></p>
-              <p id="weight_error" class="error-message"></p>
-              <p id=",count_error" class="error-message"></p>
-              <p id="set_error" class="error-message"></p>
               <input type="hidden" name="update" id="one" >
         <!--ボタンをクリックしたらJavascriptファイル内の関数addForm()を実行する-->
                       <input type = "button" name="record" value="登録" id="submit2"
                       onclick="document.getElementById('one').value='update'; validateForm(event);">
                       <div class="bt_addForm">
                         <input type="button" value="+" onclick="addForm()">
-                        <input type="button" value="-" onclick="deleteLastRecord()">
+                        <input type="button" id="deletebt" value="-" onclick="deleteLastRecord()">
                       </div>
 
                       </form>
