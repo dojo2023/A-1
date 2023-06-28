@@ -98,12 +98,14 @@ let wmcontext = document.querySelector("#wmranking").getContext('2d')
 new Chart(wmcontext, {
   type: 'bar',
   data: {
-    labels: ['1'+wmrankData[0].userName,'2'+wmrankData[1].userName,'3'+wmrankData[2].userName,'4'+wmrankData[3].userName,'5'+wmrankData[4].userName],
+    labels: ['1：'+wmrankData[0].userName,'2：'+wmrankData[1].userName,'3：'+wmrankData[2].userName,'4：'+wmrankData[3].userName,'5：'+wmrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-        label: "週間獲得経験値",
+        label: "男性　週間獲得経験値",
       data: [wmrankData[0].trainingExp, wmrankData[1].trainingExp,wmrankData[2].trainingExp,wmrankData[3].trainingExp,wmrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
+      borderColor: ['#ffffff'],
+      borderWidth: 1,
     }]
   },
   options: {
@@ -112,7 +114,10 @@ new Chart(wmcontext, {
 	    plugins: {
 	    	legend: {
 	    		labels: {
-	    			color: '#ffffff'  //テキストカラー
+	    			color: '#ffffff', //テキストカラー
+	    			font: {
+	    				size: 15
+	    			}
 	    		}
 	    	}
 	    },
@@ -122,7 +127,10 @@ new Chart(wmcontext, {
 	              offset: true
 	            },
 	            ticks: {
-	            	color: '#ffffff'  //テキストカラー
+	            	color: '#ffffff',  //テキストカラー
+	            	font: {
+	    				size: 10
+	    			}
 	            }
 	        },
 	        y: {
@@ -130,7 +138,10 @@ new Chart(wmcontext, {
 	              offset: true
 	            },
 	            ticks: {
-	            	color: '#ffffff'  //テキストカラー
+	            	color: '#ffffff',  //テキストカラー
+	            	font: {
+	    				size: 15
+	    			}
 	            }
 	        }
 		}
@@ -142,12 +153,14 @@ let wwcontext = document.querySelector("#wwranking").getContext('2d')
 new Chart(wwcontext, {
   type: 'bar',
   data: {
-    labels: ['1'+wwrankData[0].userName,'2'+wwrankData[1].userName,'3'+wwrankData[2].userName,'4'+wwrankData[3].userName,'5'+wwrankData[4].userName],
+    labels: ['1：'+wwrankData[0].userName,'2：'+wwrankData[1].userName,'3：'+wwrankData[2].userName,'4：'+wwrankData[3].userName,'5：'+wwrankData[4].userName],
     datasets: [{
       /* ここで取得した配列の中身を分解して配置する */
-        label: "週間獲得経験値",
+        label: "女性　週間獲得経験値",
       data: [wwrankData[0].trainingExp, wwrankData[1].trainingExp,wwrankData[2].trainingExp,wwrankData[3].trainingExp,wwrankData[4].trainingExp],
       backgroundColor: ['#5AFF19', '#5AFF19', '#5AFF19','#5AFF19','#5AFF19'],
+      borderColor: ['#ffffff'],
+      borderWidth: 1,
     }]
   },
   options: {
@@ -156,7 +169,10 @@ new Chart(wwcontext, {
 	    plugins: {
 	    	legend: {
 	    		labels: {
-	    			color: '#ffffff'  //テキストカラー
+	    			color: '#ffffff',  //テキストカラー
+	    			font: {
+	    				size: 15
+	    			}
 	    		}
 	    	}
 	    },
@@ -166,7 +182,10 @@ new Chart(wwcontext, {
 	              offset: true
 	            },
 	            ticks: {
-	            	color: '#ffffff'  //テキストカラー
+	            	color: '#ffffff',  //テキストカラー
+	            	font: {
+	    				size: 10
+	    			}
 	            }
 	        },
 	        y: {
@@ -174,7 +193,10 @@ new Chart(wwcontext, {
 	              offset: true
 	            },
 	            ticks: {
-	            	color: '#ffffff'  //テキストカラー
+	            	color: '#ffffff',  //テキストカラー
+	            	font: {
+	    				size: 15
+	    			}
 	            }
 	        }
 		}
