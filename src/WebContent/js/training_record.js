@@ -63,7 +63,7 @@ function validateForm(event) {
 
   // 日付のチェック
   if (date === "") {
-    ddocument.getElementById("date_error").textContent = "※日付が入力されていません。";
+    document.getElementById("date_error").textContent = "※日付が入力されていません。";
   event.preventDefault(); // フォームの送信を中止
   flgNumber+=1;
 } else {
