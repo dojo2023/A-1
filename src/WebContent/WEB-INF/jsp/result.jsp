@@ -37,6 +37,5 @@
 <a href="http://twitter.com/share?text=【ツイートテキスト（※日本語をURLエンコードしたもの）】&url=【そのページのURL】" rel="nofollow" id="twitter"><img src="./img/twitter.png"></a>
 		<a href="http://www.facebook.com/share.php?u=【そのページのURL】" target="_blank" id="facebook"><img src="./img/facebook.png"></a>
 
-<script src="./js/result.js"></script>
 </body>
 </html>
