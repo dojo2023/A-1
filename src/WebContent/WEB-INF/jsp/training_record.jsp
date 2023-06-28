@@ -53,7 +53,7 @@
               </div>
         <!--ボタンをクリックしたらJavascriptファイル内の関数addForm()を実行する-->
                       <input type = "submit" name="record" value="登録" id="submit"
-                      onclick value='登録'; myPageValidateForm(event);>
+                      onclick="showConfirmationDialog(event)">
                       <div class="bt_addForm">
                         <input type="button" value="+" onclick="addForm()">
                         <input type="button" value="-" onclick="deleteLastRecord()">
