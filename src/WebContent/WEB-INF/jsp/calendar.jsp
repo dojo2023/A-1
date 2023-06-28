@@ -131,17 +131,19 @@
 	        	//クリックするたび、表示されたボックスを削除する
 	        	 // .trainingListクラスの要素を取得
 	        	  var trainingListElements = document.getElementsByClassName("trainingList");
+	        	  var trainingListElementsN = document.getElementsByClassName("trainingListN");
 	        	  // 要素が存在する場合にのみ削除処理を実行
 	        	  if ( trainingListElements.length > 0) {
+	        			while ( trainingListElements.length > 0) {
+	        			trainingListElements[0].remove();
+	        			}
+	        	  }
+	        	  // 要素が存在する場合にのみ削除処理を実行
+	        	  if ( trainingListElementsN.length > 0) {
 	        		  //作業途中のボックスのための確認ダイアログ
-	        		  if (confirm("開いているボックスがあります。閉じてもよろしいですか？")) {
-	        			  //消す
-	        			  while ( trainingListElements.length > 0) {
-	        				  trainingListElements[0].remove();
-	    	        	  }
-	        		  }else {
-	        			 	return false;
-	        		  }
+	        		 while ( trainingListElementsN.length > 0) {
+	        			trainingListElementsN[0].remove();
+	        			}
 	        	  }
 	            // 押した日付を年、月、日で取得する
 	            var ans = dateText.split("/");
@@ -398,178 +400,24 @@
 	            //HTMLの作成：合致するものが無かったら空の要素を作成する
 	         	if(flg==0){
 	         		 // 要素の作成（合致するものがあったので、データを入れる）
-    	            const divElement = document.createElement('div');
-    	            divElement.classList.add('trainingList');
+    	            const divElementN = document.createElement('div');
+    	            divElementN.classList.add('trainingListN');
 
-    	            const formElement = document.createElement('form');
-    	            formElement.action = '/jiro_power/Calendar_UpdateDeleteServlet';
-    	            formElement.method = 'POST';
+    	            const pElement = document.createElement('p');
+    	            pElement.classList.add("nodata");
+    	            pElement.innerHTML="NO DATA";
 
-					//トレーニングメニュー
-    	            const selectElementM = document.createElement('select');
-    	            selectElementM.name = 'trainingMenu';
-    	            selectElementM.classList.add ('trainingMenu');
+    	            const aElement = document.createElement('a');
+    	            aElement.classList.add("recordLink");
+    	            aElement.href = '/jiro_power/TrainingRecordServlet';
+    	            aElement.innerText='記録を追加する';
 
-
-    	            //トレーニングメニュー内容
-    	            	 //ベンチプレス
-
-	    	            const benchPress = document.createElement("option");
-	    	            benchPress.text = 'ベンチプレス';
-	    	            benchPress.value = 'ベンチプレス';
-
-    	            //チェストプレス
-
-	    	            const chestPress = document.createElement("option");
-	    	            chestPress.text = 'チェストプレス';
-	    	            chestPress.value = 'チェストプレス';
-
-
-	    	          //ダンベルフライ
-
-	    	            const dumbbellFly = document.createElement("option");
-	    	            dumbbellFly.text = 'ダンベルフライ';
-	    	            dumbbellFly.value = 'ダンベルフライ';
-
-
-
-	    	          //ラットプルダウン
-	    	            const latPullDown = document.createElement("option");
-	    	            latPullDown.text = 'ラットプルダウン';
-	    	            latPullDown.value = 'ラットプルダウン';
-
-
-
-	    	          //デッドリフト
-	    	            const deadLift = document.createElement("option");
-	    	            deadLift.text = 'デットリフト';
-	    	            deadLift.value = 'デットリフト';
-
-
-	    	          //スクワット
-	    	            const squat = document.createElement("option");
-	    	            squat.text = 'スクワット';
-	    	            squat.value = 'スクワット';
-
-
-	    	          //レッグプレス
-	    	            const legPress = document.createElement("option");
-	    	            legPress.text = 'レッグプレス';
-	    	            legPress.value = 'レッグプレス';
-
-	    	          //レッグエクステンション
-	    	            const legExtension = document.createElement("option");
-	    	            legExtension.text = 'レッグエクステンション';
-	    	            legExtension.value = 'レッグエクステンション';
-
-
-
-	    	          //サイドレイズ
-	    	            const sideRaise = document.createElement("option");
-	    	            sideRaise.text = 'サイドレイズ';
-	    	            sideRaise.value = 'サイドレイズ';
-
-
-
-	    	          //フロントレイズ
-	    	            const frontRaise = document.createElement("option");
-	    	            frontRaise.text = 'フロントレイズ';
-	    	            frontRaise.value = 'フロントレイズ';
-
-
-	    	          //ショルダープレス
-	    	            const shoulderPress = document.createElement("option");
-	    	            shoulderPress.text = 'ショルダープレス';
-	    	            shoulderPress.value = 'ショルダープレス';
-
-
-	    	          //アームカール
-	    	            const armCurl = document.createElement("option");
-	    	            armCurl.text = 'アームカール';
-	    	            armCurl.value = 'アームカール';
-
-
-
-	    	          //腹筋
-	    	            const abdominal = document.createElement("option");
-	    	            abdominal.text = '腹筋';
-	    	            abdominal.value = '腹筋';
-
-
-
-	    	           //トレーニング重量
-	    	            const inputElementW = document.createElement('input');
-	    	            inputElementW.type = 'number';
-	    	            inputElementW.name = 'trainingWeight';
-	    	            inputElementW.classList.add ('trainingWeight');
-
-
-	    	            //トレーニング回数
-	    	            const inputElementC = document.createElement('input');
-	    	            inputElementC.type = 'number';
-	    	            inputElementC.name = 'trainingCount';
-	    	            inputElementC.classList.add ('trainingCount');
-
-	    	            //トレーニングセット数
-	    	            const inputElementS = document.createElement('input');
-	    	            inputElementS.type = 'number';
-	    	            inputElementS.name = 'trainingSet';
-	    	            inputElementS.classList.add ('trainingSet');
-
-	    	            //トレーニング経験値
-	    	            const ElementE = document.createElement('div');
-	    	            ElementE.className='trainingExp';
-
-
-	    	         	//トレーニングID(hidden)
-	    	             const inputElementI = document.createElement('input');
-	    	            inputElementI.hidden = 'number';
-	    	            inputElementI.name = 'trainingRecordId';
-	    	            inputElementI.classList.add ('trainingRecordId');
-
-
-	    	            const submitElementU = document.createElement('input');
-	    	            submitElementU.type = 'submit';
-	    	            submitElementU.classList.add ('update');
-	    	            submitElementU.name = 'update';
-	    	            submitElementU.value = 'update';
-
-	    	            const submitElementD = document.createElement('input');
-	    	            submitElementD.type = 'submit';
-	    	            submitElementD.classList.add ('delete');
-	    	            submitElementD.name = 'delete';
-	    	            submitElementD.value = 'delete';
-
-
-	    	            formElement.appendChild(selectElementM);
-	    	            selectElementM.appendChild(benchPress);
-	    	            selectElementM.appendChild(chestPress);
-	    	            selectElementM.appendChild(dumbbellFly);
-	    	            selectElementM.appendChild(latPullDown);
-	    	            selectElementM.appendChild(deadLift);
-	    	            selectElementM.appendChild(squat);
-	    	            selectElementM.appendChild(legPress);
-	    	            selectElementM.appendChild(legExtension);
-	    	            selectElementM.appendChild(sideRaise);
-	    	            selectElementM.appendChild(frontRaise);
-	    	            selectElementM.appendChild(shoulderPress);
-	    	            selectElementM.appendChild(armCurl);
-	    	            selectElementM.appendChild(abdominal);
-
-	    	         	formElement.appendChild(inputElementW);
-	    	            formElement.appendChild(inputElementC);
-	    	            formElement.appendChild(inputElementS);
-	    	            formElement.appendChild(inputElementI);
-
-	    	            formElement.appendChild(submitElementU);
-	    	            formElement.appendChild(submitElementD);
-
-	    	            divElement.appendChild(formElement);
-	    	            divElement.appendChild(ElementE);
+						divElementN.appendChild(pElement);
+	    	            divElementN.appendChild(aElement);
 
 
 	    	            const bodyElement = document.querySelector('body');
-	    	            listArea.appendChild(divElement);
+	    	            listArea.appendChild(divElementN);
 
 	    	            flg++;
 	          		 }

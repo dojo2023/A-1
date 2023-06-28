@@ -99,6 +99,27 @@ input[type=submit]{
 	border:3px solid;
 }
 
+.trainingListN{
+	margin:0 auto;
+	text-align:center;
+	background-color:white;
+	width:360px;
+	height:120px;
+	border:3px solid;
+	font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.nodata{
+	margin:20px;
+	font-size:27px;
+}
+
+.recordLink{
+	text-align:center;
+	font-size:20px;
+}
+
 #listArea{
 	background-color:rgba(128, 128, 128, 0.5);
 	position:relative;
@@ -191,3 +212,4 @@ input[type=submit]{
 	margin-left:110px;
 	color:red;
 }
+
