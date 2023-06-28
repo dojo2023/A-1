@@ -315,6 +315,10 @@
 		    	            //今回データを入れている場所
 		    	            inputElementC.value =list[i].trainingCount;
 
+		    	            const ElementC = document.createElement('div');
+		    	            ElementC.className='count';
+		    	            ElementC.innerHTML = "回";
+
 		    	            //トレーニングセット数
 		    	            const inputElementS = document.createElement('input');
 		    	            inputElementS.type = 'number';
@@ -322,6 +326,10 @@
 		    	            inputElementS.classList.add ('trainingSet');
 		    	            //今回データを入れている場所
 		    	            inputElementS.value =list[i].trainingSet;
+
+		    	            const ElementS = document.createElement('div');
+		    	            ElementS.className='set';
+		    	            ElementS.innerHTML = "set";
 
 		    	            //トレーニング経験値
 		    	            const ElementE = document.createElement('div');
@@ -339,7 +347,7 @@
 
 		    	            const submitElementU = document.createElement('input');
 		    	            submitElementU.type = 'submit';
-		    	            submitElementU.classList.add ('update');
+		    	   			submitElementU.classList.add ('update');
 		    	            submitElementU.name = 'update';
 		    	            submitElementU.value = 'update';
 
@@ -370,6 +378,10 @@
 		    	            formElement.appendChild(inputElementS);
 		    	            formElement.appendChild(inputElementI);
 							divElement.appendChild(ElementE);
+							divElement.appendChild(ElementW);
+							divElement.appendChild(ElementC);
+							divElement.appendChild(ElementS);
+
 		    	            formElement.appendChild(submitElementU);
 		    	            formElement.appendChild(submitElementD);
 
