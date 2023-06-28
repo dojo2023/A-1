@@ -81,6 +81,7 @@ public class Mypage_UpdateDeleteServlet extends HttpServlet {
 		}
 		else {//登録失敗
 			//登録失敗時の処理を書く
+			System.out.println("失敗");
 		}
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");

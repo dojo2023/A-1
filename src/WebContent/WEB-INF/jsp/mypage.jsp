@@ -38,7 +38,7 @@
 
 
 
-	<form name="mypage" method="POST" action="/jiro_power/Mypage_UpdateDeleteServlet">
+	<form name="mypage" id="myForm" method="POST" action="/jiro_power/Mypage_UpdateDeleteServlet">
 
 		  <div class="user_name"><input type="text" name="user_name" value="${user_name_session}"
 		  placeholder="8文字以内" maxlength="8" id="user_name" style="width: 200px; height: 35px;"></div> <!-- user.username -->
