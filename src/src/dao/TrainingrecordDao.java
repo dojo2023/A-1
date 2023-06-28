@@ -36,7 +36,7 @@ public class TrainingrecordDao {
 					+ "training_count,"
 					+ "training_set,"
 					+ "training_exp)"
-					+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
+					+ "values(?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -124,7 +124,7 @@ public class TrainingrecordDao {
 					+ "training_weight = ?,"
 					+ "training_count = ?,"
 					+ "training_set = ? "
-					+ "WHERE training_record_id = ?";
+					+ "where training_record_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -232,7 +232,7 @@ public class TrainingrecordDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from TRAINING_RECORD WHERE "
+			String sql = "select * from TRAINING_RECORD where "
 					+ "user_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -362,7 +362,7 @@ public class TrainingrecordDao {
 					+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
 					+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 10";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			System.out.println(sql);
+//			System.out.println(sql);
 
 
 			// SQL文を実行し、結果表を取得する
@@ -376,7 +376,7 @@ public class TrainingrecordDao {
 
 				Alltable al = new Alltable();
 
-				al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+				al.setTrainingExp(rs.getInt("sum(training_exp)"));
 				al.setUserName(rs.getString("user_name"));
 				expSumList.add(al);
 			}
@@ -432,10 +432,10 @@ public class TrainingrecordDao {
 				String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
 						+ "from TRAINING_RECORD join USER_INFORMATION "
 						+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
-						+ "where TRAINING_RECORD_DATE like ? and USER_SEX = 1 "
-						+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
+						+ "where TRAINING_RECORD_DATE like ? and user_sex = 1 "
+						+ "group by TRAINING_RECORD.user_id order by sum (training_exp) desc limit 5";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
-				System.out.println(sql);
+//				System.out.println(sql);
 
 				String stYear = String.valueOf(year);
 				String stMonth = String.valueOf(month);
@@ -456,7 +456,7 @@ public class TrainingrecordDao {
 
 					Alltable al = new Alltable();
 
-					al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+					al.setTrainingExp(rs.getInt("sum(training_exp)"));
 					al.setUserName(rs.getString("user_name"));
 					expSumList.add(al);
 				}
@@ -512,10 +512,10 @@ public class TrainingrecordDao {
 						String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
 								+ "from TRAINING_RECORD join USER_INFORMATION "
 								+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
-								+ "where TRAINING_RECORD_DATE like ? and USER_SEX = 2 "
-								+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
+								+ "where TRAINING_RECORD_DATE like ? and user_sex = 2 "
+								+ "group by TRAINING_RECORD.user_id order by sum (training_exp) desc limit 5";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
-						System.out.println(sql);
+//						System.out.println(sql);
 
 						String stYear = String.valueOf(year);
 						String stMonth = String.valueOf(month);
@@ -536,7 +536,7 @@ public class TrainingrecordDao {
 
 							Alltable al = new Alltable();
 
-							al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+							al.setTrainingExp(rs.getInt("sum(training_exp)"));
 							al.setUserName(rs.getString("user_name"));
 							expSumList.add(al);
 						}
@@ -580,7 +580,7 @@ public class TrainingrecordDao {
 					Calendar c = Calendar.getInstance();
 					c.setTime(utilDate);
 					int month = c.get(Calendar.MONTH) +1;
-					int year = c.get(Calendar.YEAR);
+//					int year = c.get(Calendar.YEAR);
 
 					try {
 						// JDBCドライバを読み込む
@@ -593,12 +593,12 @@ public class TrainingrecordDao {
 						String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
 								+ "from TRAINING_RECORD join USER_INFORMATION "
 								+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
-								+ "where training_record_date >= (NOW() - INTERVAL 7 DAY) and USER_SEX = 1 "
-								+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
+								+ "where training_record_date >= (NOW() - INTERVAL 7 DAY) and user_sex = 1 "
+								+ "group by TRAINING_RECORD.user_id order by sum (training_exp) desc limit 5";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
-						System.out.println(sql);
+//						System.out.println(sql);
 
-						String stYear = String.valueOf(year);
+//						String stYear = String.valueOf(year);
 						String stMonth = String.valueOf(month);
 						if (stMonth.length()==1) {
 							stMonth = "0" + stMonth;
@@ -617,7 +617,7 @@ public class TrainingrecordDao {
 
 							Alltable al = new Alltable();
 
-							al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+							al.setTrainingExp(rs.getInt("sum(training_exp)"));
 							al.setUserName(rs.getString("user_name"));
 							expSumList.add(al);
 						}
@@ -661,7 +661,7 @@ public class TrainingrecordDao {
 					Calendar c = Calendar.getInstance();
 					c.setTime(utilDate);
 					int month = c.get(Calendar.MONTH) +1;
-					int year = c.get(Calendar.YEAR);
+//					int year = c.get(Calendar.YEAR);
 
 					try {
 						// JDBCドライバを読み込む
@@ -674,12 +674,12 @@ public class TrainingrecordDao {
 						String sql = "select TRAINING_RECORD.user_id, sum (training_exp), USER_INFORMATION.user_name as EXP_SUM "
 								+ "from TRAINING_RECORD join USER_INFORMATION "
 								+ "on TRAINING_RECORD.user_id = USER_INFORMATION.user_id "
-								+ "where training_record_date >= (NOW() - INTERVAL 7 DAY) and USER_SEX = 2 "
-								+ "group by TRAINING_RECORD.USER_ID order by sum (training_exp) desc limit 5";
+								+ "where training_record_date >= (NOW() - INTERVAL 7 DAY) and user_sex = 2 "
+								+ "group by TRAINING_RECORD.user_id order by sum (training_exp) desc limit 5";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
-						System.out.println(sql);
+//						System.out.println(sql);
 
-						String stYear = String.valueOf(year);
+//						String stYear = String.valueOf(year);
 						String stMonth = String.valueOf(month);
 						if (stMonth.length()==1) {
 							stMonth = "0" + stMonth;
@@ -698,7 +698,7 @@ public class TrainingrecordDao {
 
 							Alltable al = new Alltable();
 
-							al.setTrainingExp(rs.getInt("SUM(TRAINING_EXP)"));
+							al.setTrainingExp(rs.getInt("sum(training_exp)"));
 							al.setUserName(rs.getString("user_name"));
 							expSumList.add(al);
 						}
@@ -780,6 +780,8 @@ public class TrainingrecordDao {
 					// 結果を返す
 					return result;
 				}
+
+
 				// ログインユーザーの月間ランキング順位
 				public int mrank(Trainingrecord param) {
 					Connection conn = null;
@@ -815,7 +817,7 @@ public class TrainingrecordDao {
 							pStmt.setInt(1, 0);
 						}
 
-						System.out.println(sql);
+//						System.out.println(sql);
 
 						String stYear = String.valueOf(year);
 						String stMonth = String.valueOf(month);
@@ -865,7 +867,7 @@ public class TrainingrecordDao {
 					Calendar c = Calendar.getInstance();
 					c.setTime(utilDate);
 					int month = c.get(Calendar.MONTH) +1;
-					int year = c.get(Calendar.YEAR);
+//					int year = c.get(Calendar.YEAR);
 
 					try {
 						// JDBCドライバを読み込む
@@ -888,9 +890,9 @@ public class TrainingrecordDao {
 							pStmt.setInt(1, 0);
 						}
 
-						System.out.println(sql);
+//						System.out.println(sql);
 
-						String stYear = String.valueOf(year);
+//						String stYear = String.valueOf(year);
 						String stMonth = String.valueOf(month);
 						if (stMonth.length()==1) {
 							stMonth = "0" + stMonth;
