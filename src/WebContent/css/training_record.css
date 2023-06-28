@@ -54,7 +54,7 @@ body {
    bottom:30px;
 }
 
-#submit{
+#submit2{
    display: block;
   margin: auto;
   background-color: black;
@@ -262,3 +262,12 @@ input[type="button"] {
 		inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
 }
 
+/*エラー表示*/
+.error-message {
+	color: red;
+	position:relative;
+	margin:0;
+	padding:0;
+	bottom: 10px;
+	font-size:12px;
+}

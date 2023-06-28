@@ -72,6 +72,7 @@ public class TrainingRecordServlet extends HttpServlet {
 		double trainingWeight = Double.parseDouble(request.getParameter("training_weight"));
 		int trainingCount = Integer.parseInt(request.getParameter("training_count"));
 		int trainingSet = Integer.parseInt(request.getParameter("training_set"));
+		boolean flg = true;
 
 		//TrainingmenuDaoの倍率だけのメソッドを用意してをnewする。
 		TrainingmenuDao tmDao = new TrainingmenuDao();
