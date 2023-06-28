@@ -23,14 +23,15 @@ body{
 #share_name
 {
     position: absolute;
-    top: 60%;
+    top: 105%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 300%;
+    z-index: 3;
+    font-size: 25px;
     font-family: "Times New Roman";
     font-weight: bold;
     color: white;
-	border-bottom: solid 7px  #5AFF19;
+
 
     }
 
@@ -137,7 +138,7 @@ body{
 
 .circle{
      position: relative;
-    top: 245px;
+    top: 230px;
     left: 67px;
   width: 270px;
   height: 270px;
