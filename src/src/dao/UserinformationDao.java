@@ -27,7 +27,7 @@ public class UserinformationDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select * from user_information where user_mail_address = ? and user_password = ?";
+			String sql = "select * from USER_INFORMATION where user_mail_address = ? and user_password = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1,userInformation.getUserMailAddress());
 			pStmt.setString(2,userInformation.getUserPassword());
@@ -86,7 +86,7 @@ public class UserinformationDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from User_information WHERE "
+			String sql = "select * from USER_INFORMATION WHERE "
 					+ "user_id =?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -165,8 +165,9 @@ public class UserinformationDao {
 
 			// SQL文を準備する
 						String sql = "insert into USER_INFORMATION "
-								+ "(USER_NAME,USER_SEX,USER_BIRTH,USER_MAIL_ADDRESS,USER_PASSWORD,USER_HEIGHT,USER_WEIGHT)"
-								+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
+								+ "(user_name, user_sex, user_birth, user_mail_address, "
+								+ "user_password, user_height, user_weight)"
+								+ "values(?, ?, ?, ?, ?, ?, ?)";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -262,7 +263,7 @@ public class UserinformationDao {
 
 			// SQL文を準備する
 			String sqlUms = "select * "
-				+ "from user_information where user_mail_address = ?";
+				+ "from USER_INFORMATION where user_mail_address = ?";
 			PreparedStatement pStmtUms = conn.prepareStatement(sqlUms);
 			pStmtUms.setString(1,umc.getUserMailAddress());
 
@@ -375,7 +376,7 @@ public class UserinformationDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
-				String sql = "update USER_INFORMATION set USER_NAME=?, USER_HEIGHT=?, USER_WEIGHT=? where USER_ID=?";
+				String sql = "update USER_INFORMATION set user_name=?, user_height=?, user_weight=? where user_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -450,7 +451,7 @@ public class UserinformationDao {
 
 				// SQL文を準備する
 				String sqlUw = "select user_weight "
-					+ "from user_information where user_id = ?";
+					+ "from USER_INFORMATION where user_id = ?";
 				PreparedStatement pStmtUw = conn.prepareStatement(sqlUw);
 				pStmtUw.setInt(1,uw.getUserId());
 
@@ -458,7 +459,7 @@ public class UserinformationDao {
 				ResultSet rs = pStmtUw.executeQuery();
 
 			if (rs.next()) {
-				result =rs.getInt("User_weight");
+				result =rs.getInt("user_weight");
 			};
 			}
 			catch (SQLException e) {
@@ -501,8 +502,8 @@ public class UserinformationDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
 
 				// SQL文を準備する
-				String sqlUs = "select User_sex "
-					+ "from user_information where user_id = ?";
+				String sqlUs = "select user_sex "
+					+ "from USER_INFORMATION where user_id = ?";
 				PreparedStatement pStmtUs = conn.prepareStatement(sqlUs);
 				pStmtUs.setInt(1,us.getUserId());
 
