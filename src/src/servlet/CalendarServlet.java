@@ -50,6 +50,7 @@ public class CalendarServlet extends HttpServlet {
 		request.setAttribute("list",list );
 
 		System.out.println(list.get(1).getTrainingRecordDate());
+		System.out.println(list.get(1).getTrainingMenu());
 
 
 		/*CalendarBeans bean = new CalendarBeans();

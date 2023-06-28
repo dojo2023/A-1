@@ -6,30 +6,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Datepickerカレンダー</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<style>
-		/* 予定のある日の枠の色 */
-		.highlight {
-		  background-color: red;
-		}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1">
 
-		/* 表示箇所を真ん中にするCSS */
-		.ui-datepicker {
-			margin-left:30%;
-		}
-	</style>
-
-<title>Calendar</title>
+	<link rel="stylesheet" href="/jiro_power/css/common.css">
+	<title>Datepickerカレンダー</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<!-- <link rel="stylesheet" href="/jiro/css/jquery-ui.css"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="/jiro_power/css/calendar.css">
+	<title>Calendar</title>
 </head>
 <body>
+<!-- 画面上部ステータス表示 -->
+	<header>
+        <div class="status">
+            <div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
+            <div class="menucoler">
+            <h1 class="level">${level_session}</h1>
+            <div class="allname">
+            <div id="names">Name</div>
+            <div id="name">${user_name_session}</div>
+            </div>
+        </div>
+    </div>
+        </header>
     <div id="app">
     <div id="datepicker"></div>
+    <div id ="listArea"></div>
 
-</div>
+
+	</div>
+	 <!-- 画面下部メニューバー表示 -->
+            <div class="menu">
+                <ul>
+                    <li class="list ">
+                        <a href="/jiro_power/TrainingRecordServlet">
+                            <span class="icon">
+                            <ion-icon name="pencil-outline"></ion-icon>
+                            </span>
+                            <span class="text">Record</span>
+                        </a>
+                    </li>
+                    <li class="list active">
+                        <a href="/jiro_power/CalendarServlet">
+                            <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            </span>
+                            <span class="text">Calendar</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="/jiro_power/RankingServlet">
+                            <span class="icon">
+                            <ion-icon name="trophy-outline"></ion-icon>
+                            </span>
+                            <span class="text">Ranking</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="/jiro_power/TimerServlet">
+                            <span class="icon">
+                            <ion-icon name="timer-outline"></ion-icon>
+                            </span>
+                            <span class="text">Timer</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="/jiro_power/MypageServlet">
+                            <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                            </span>
+                            <span class="text">Mypage</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+                </div>
 
  <script>
 	 var list = <%=new Gson().toJson(request.getAttribute("list")) %>;
@@ -45,13 +99,6 @@
 
 	}
 
-     //日付を擬似的に作成する（テストの為）
-   /*   var dates = [];
-     dates.push(new Date("2023-06-10"));
-     dates.push(new Date("2023-06-10"));
-     dates.push(new Date("2023-06-15"));
-     dates.push(new Date("2023-06-24"));
- */
 
 
 	//読み込まれた際に実行する
@@ -146,7 +193,7 @@
 		    	            chestPress.text = 'チェストプレス';
 		    	            chestPress.value = 'チェストプレス';
 		    	            if(list[i].trainingMenu=='チェストプレス'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	 chestPress.setAttribute('selected','selected');
 		    	            }
 
 		    	          //ダンベルフライ
@@ -155,7 +202,7 @@
 		    	            dumbbellFly.text = 'ダンベルフライ';
 		    	            dumbbellFly.value = 'ダンベルフライ';
 		    	            if(list[i].trainingMenu=='ダンベルフライ'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	dumbbellFly.setAttribute('selected','selected')
 		    	            }
 
 
@@ -164,7 +211,7 @@
 		    	            latPullDown.text = 'ラットプルダウン';
 		    	            latPullDown.value = 'ラットプルダウン';
 		    	            if(list[i].trainingMenu=='ラットプルダウン'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	latPullDown.setAttribute('selected','selected')
 		    	            }
 
 
@@ -173,7 +220,7 @@
 		    	            deadLift.text = 'デットリフト';
 		    	            deadLift.value = 'デットリフト';
 		    	            if(list[i].trainingMenu=='デットリフト'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	deadLift.setAttribute('selected','selected')
 		    	            }
 
 
@@ -182,7 +229,7 @@
 		    	            squat.text = 'スクワット';
 		    	            squat.value = 'スクワット';
 		    	            if(list[i].trainingMenu=='スクワット'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	 squat.setAttribute('selected','selected')
 		    	            }
 
 
@@ -191,7 +238,7 @@
 		    	            legPress.text = 'レッグプレス';
 		    	            legPress.value = 'レッグプレス';
 		    	            if(list[i].trainingMenu=='レッグプレス'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	legPress.setAttribute('selected','selected')
 		    	            }
 
 
@@ -200,7 +247,7 @@
 		    	            legExtension.text = 'レッグエクステンション';
 		    	            legExtension.value = 'レッグエクステンション';
 		    	            if(list[i].trainingMenu=='レッグエクステンション'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	legExtension.setAttribute('selected','selected')
 		    	            }
 
 
@@ -209,7 +256,7 @@
 		    	            sideRaise.text = 'サイドレイズ';
 		    	            sideRaise.value = 'サイドレイズ';
 		    	            if(list[i].trainingMenu=='サイドレイズ'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	sideRaise.setAttribute('selected','selected')
 		    	            }
 
 
@@ -218,7 +265,7 @@
 		    	            frontRaise.text = 'フロントレイズ';
 		    	            frontRaise.value = 'フロントレイズ';
 		    	            if(list[i].trainingMenu=='チェストプレスフロントレイズ'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	frontRaise.setAttribute('selected','selected')
 		    	            }
 
 
@@ -227,7 +274,7 @@
 		    	            shoulderPress.text = 'ショルダープレス';
 		    	            shoulderPress.value = 'ショルダープレス';
 		    	            if(list[i].trainingMenu=='ショルダープレス'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	shoulderPress.setAttribute('selected','selected')
 		    	            }
 
 
@@ -236,7 +283,7 @@
 		    	            armCurl.text = 'アームカール';
 		    	            armCurl.value = 'アームカール';
 		    	            if(list[i].trainingMenu=='アームカール'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	armCurl.setAttribute('selected','selected')
 		    	            }
 
 
@@ -245,7 +292,7 @@
 		    	            abdominal.text = '腹筋';
 		    	            abdominal.value = '腹筋';
 		    	            if(list[i].trainingMenu=='腹筋'){
-		    	            	 chestPress.setAttribute('selected','selected')
+		    	            	abdominal.setAttribute('selected','selected')
 		    	            }
 
 
@@ -256,6 +303,11 @@
 		    	            inputElementW.classList.add ('trainingWeight');
 		    	            //今回データを入れている場所
 		    	            inputElementW.value =list[i].trainingWeight;
+
+		    	            const ElementW = document.createElement('div');
+		    	            ElementW.className='kg';
+		    	            ElementW.innerHTML = "kg";
+
 
 		    	            //トレーニング回数
 		    	            const inputElementC = document.createElement('input');
@@ -276,7 +328,7 @@
 		    	            //トレーニング経験値
 		    	            const ElementE = document.createElement('div');
 		    	            ElementE.className='trainingExp';
-		    	            ElementE.innerHTML = list[i].trainingExp;
+		    	            ElementE.innerHTML = "EXP："+ list[i].trainingExp;
 
 		    	          //トレーニングID(hidden)
 		    	             const inputElementI = document.createElement('input');
@@ -328,45 +380,197 @@
 
 
 		    	            const bodyElement = document.querySelector('body');
-		    	            bodyElement.appendChild(divElement);
+		    	            listArea.appendChild(divElement);
 
 		    	            flg++;
 		          		 }
 					 }
 	            //HTMLの作成：合致するものが無かったら空の要素を作成する
 	         	if(flg==0){
-			  		// 要素の作成
-	   	            const divElement = document.createElement('div');
-	   	            divElement.classList.add('aaa');
+	         		 // 要素の作成（合致するものがあったので、データを入れる）
+    	            const divElement = document.createElement('div');
+    	            divElement.classList.add('trainingList');
 
-	   	            const formElement = document.createElement('form');
-	   	            formElement.action = '飛び先';
-	   	            formElement.method = 'post';
+    	            const formElement = document.createElement('form');
+    	            formElement.action = '/jiro_power/Calendar_UpdateDeleteServlet';
+    	            formElement.method = 'POST';
 
-	   	            const inputElement = document.createElement('input');
-	   	            inputElement.type = 'text';
-	   	            inputElement.name = 'date';
-	   	         	//合致しなかったのでデータを入れなかった場所
-	   	            inputElement.value ='';
-
-	   	            const submitElement = document.createElement('input');
-	   	            submitElement.type = 'submit';
-	   	            submitElement.value = 'クリック';
+					//トレーニングメニュー
+    	            const selectElementM = document.createElement('select');
+    	            selectElementM.name = 'trainingMenu';
+    	            selectElementM.classList.add ('trainingMenu');
 
 
-  					formElement.appendChild(inputElementM);
-  					formElement.appendChild(inputElementW);
-	   	            formElement.appendChild(submitElement);
+    	            //トレーニングメニュー内容
+    	            	 //ベンチプレス
 
-	   	            divElement.appendChild(formElement);
+	    	            const benchPress = document.createElement("option");
+	    	            benchPress.text = 'ベンチプレス';
+	    	            benchPress.value = 'ベンチプレス';
 
-	   	            const bodyElement = document.querySelector('body');
-	   	            bodyElement.appendChild(divElement);
+    	            //チェストプレス
+
+	    	            const chestPress = document.createElement("option");
+	    	            chestPress.text = 'チェストプレス';
+	    	            chestPress.value = 'チェストプレス';
+
+
+	    	          //ダンベルフライ
+
+	    	            const dumbbellFly = document.createElement("option");
+	    	            dumbbellFly.text = 'ダンベルフライ';
+	    	            dumbbellFly.value = 'ダンベルフライ';
+
+
+
+	    	          //ラットプルダウン
+	    	            const latPullDown = document.createElement("option");
+	    	            latPullDown.text = 'ラットプルダウン';
+	    	            latPullDown.value = 'ラットプルダウン';
+
+
+
+	    	          //デッドリフト
+	    	            const deadLift = document.createElement("option");
+	    	            deadLift.text = 'デットリフト';
+	    	            deadLift.value = 'デットリフト';
+
+
+	    	          //スクワット
+	    	            const squat = document.createElement("option");
+	    	            squat.text = 'スクワット';
+	    	            squat.value = 'スクワット';
+
+
+	    	          //レッグプレス
+	    	            const legPress = document.createElement("option");
+	    	            legPress.text = 'レッグプレス';
+	    	            legPress.value = 'レッグプレス';
+
+	    	          //レッグエクステンション
+	    	            const legExtension = document.createElement("option");
+	    	            legExtension.text = 'レッグエクステンション';
+	    	            legExtension.value = 'レッグエクステンション';
+
+
+
+	    	          //サイドレイズ
+	    	            const sideRaise = document.createElement("option");
+	    	            sideRaise.text = 'サイドレイズ';
+	    	            sideRaise.value = 'サイドレイズ';
+
+
+
+	    	          //フロントレイズ
+	    	            const frontRaise = document.createElement("option");
+	    	            frontRaise.text = 'フロントレイズ';
+	    	            frontRaise.value = 'フロントレイズ';
+
+
+	    	          //ショルダープレス
+	    	            const shoulderPress = document.createElement("option");
+	    	            shoulderPress.text = 'ショルダープレス';
+	    	            shoulderPress.value = 'ショルダープレス';
+
+
+	    	          //アームカール
+	    	            const armCurl = document.createElement("option");
+	    	            armCurl.text = 'アームカール';
+	    	            armCurl.value = 'アームカール';
+
+
+
+	    	          //腹筋
+	    	            const abdominal = document.createElement("option");
+	    	            abdominal.text = '腹筋';
+	    	            abdominal.value = '腹筋';
+
+
+
+	    	           //トレーニング重量
+	    	            const inputElementW = document.createElement('input');
+	    	            inputElementW.type = 'number';
+	    	            inputElementW.name = 'trainingWeight';
+	    	            inputElementW.classList.add ('trainingWeight');
+
+
+	    	            //トレーニング回数
+	    	            const inputElementC = document.createElement('input');
+	    	            inputElementC.type = 'number';
+	    	            inputElementC.name = 'trainingCount';
+	    	            inputElementC.classList.add ('trainingCount');
+
+	    	            //トレーニングセット数
+	    	            const inputElementS = document.createElement('input');
+	    	            inputElementS.type = 'number';
+	    	            inputElementS.name = 'trainingSet';
+	    	            inputElementS.classList.add ('trainingSet');
+
+	    	            //トレーニング経験値
+	    	            const ElementE = document.createElement('div');
+	    	            ElementE.className='trainingExp';
+
+
+	    	         	//トレーニングID(hidden)
+	    	             const inputElementI = document.createElement('input');
+	    	            inputElementI.hidden = 'number';
+	    	            inputElementI.name = 'trainingRecordId';
+	    	            inputElementI.classList.add ('trainingRecordId');
+
+
+	    	            const submitElementU = document.createElement('input');
+	    	            submitElementU.type = 'submit';
+	    	            submitElementU.classList.add ('update');
+	    	            submitElementU.name = 'update';
+	    	            submitElementU.value = 'update';
+
+	    	            const submitElementD = document.createElement('input');
+	    	            submitElementD.type = 'submit';
+	    	            submitElementD.classList.add ('delete');
+	    	            submitElementD.name = 'delete';
+	    	            submitElementD.value = 'delete';
+
+
+	    	            formElement.appendChild(selectElementM);
+	    	            selectElementM.appendChild(benchPress);
+	    	            selectElementM.appendChild(chestPress);
+	    	            selectElementM.appendChild(dumbbellFly);
+	    	            selectElementM.appendChild(latPullDown);
+	    	            selectElementM.appendChild(deadLift);
+	    	            selectElementM.appendChild(squat);
+	    	            selectElementM.appendChild(legPress);
+	    	            selectElementM.appendChild(legExtension);
+	    	            selectElementM.appendChild(sideRaise);
+	    	            selectElementM.appendChild(frontRaise);
+	    	            selectElementM.appendChild(shoulderPress);
+	    	            selectElementM.appendChild(armCurl);
+	    	            selectElementM.appendChild(abdominal);
+
+	    	         	formElement.appendChild(inputElementW);
+	    	            formElement.appendChild(inputElementC);
+	    	            formElement.appendChild(inputElementS);
+	    	            formElement.appendChild(inputElementI);
+
+	    	            formElement.appendChild(submitElementU);
+	    	            formElement.appendChild(submitElementD);
+
+	    	            divElement.appendChild(formElement);
+	    	            divElement.appendChild(ElementE);
+
+
+	    	            const bodyElement = document.querySelector('body');
+	    	            listArea.appendChild(divElement);
+
+	    	            flg++;
+	          		 }
 			  	}
-	         }
+
         });
     });
   </script>
+    <script src="./js/common.js"></script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 
 </body>
