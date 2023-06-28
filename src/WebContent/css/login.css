@@ -136,7 +136,7 @@ img {
 .mail-address-error{
 	position:absolute;
 	top:42%;
-	left: 15%;
+	left: 10%;
 	width:80%;
 	font-size:17px;
 }
@@ -221,8 +221,8 @@ img {
 .password-error{
 	position:absolute;
 	top:51%;
-	left: 15%;
-	width:80%;
+	left: 2%;
+	width:100%;
 	font-size:17px;
 }
 

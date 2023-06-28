@@ -50,7 +50,7 @@
 		/*event.preventDefault(); // デフォルトのフォーム送信を防ぐ*/
 
 		  var mailAddress = document.getElementById("mail-address").value;
-		  var password = document.getElementById("textPassword").value;
+		  var password = document.getElementById("password").value;
 
 
 		let n=0;
@@ -87,7 +87,8 @@
 	function validateEmail(email) {
 	  var regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 	  return regex.test(email);
-	}*/
+	}
+*/
 
 
 /*	else if (!validateEmail(mailAddress)) {
