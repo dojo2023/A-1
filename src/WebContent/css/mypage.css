@@ -268,7 +268,7 @@ form {
   float: right;
   display: flex;
   top: 80%;
-  right: 20%;
+  right: 10%;
   margin-top: 0px;
   width: 50px;
   height: 50px;
@@ -277,7 +277,7 @@ form {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 57px;
+  font-size: 52px;
 
 }
 
@@ -329,7 +329,7 @@ form {
   	align-items: center;
   	justify-content: center;
   	cursor: pointer;
-  	font-size: 50px;
+  	font-size: 48px;
 
 }
 

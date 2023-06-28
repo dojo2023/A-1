@@ -4,45 +4,45 @@ body {
 	width: 100%;
 	height: 100%;
 	position: relative;
-    display: flex;
-    flex-direction: column;  /* 追加 */
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color:#333333;
-    z-index: 0;
-    font-family: "Times New Roman";
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	display: flex;
+	flex-direction: column;  /* 追加 */
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color:#333333;
+	z-index: 0;
+	font-family: "Times New Roman", Times, serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 /*ロゴ*/
 img {
-    overflow: visible;
-    z-index: 999;
-    height: 15%;
-    width: 75%;
-    background: #333333;
-    display: flex;
-    align-items: center;
-    position: absolute;
+	overflow: visible;
+	z-index: 999;
+	height: 15%;
+	width: 75%;
+	background: #333333;
+	display: flex;
+	align-items: center;
+	position: absolute;
 	top: 7%;
 	left: 14%;
 }
 
 /*フォーム全体*/
 #login {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: #1e1e1e;
-  padding: 45%;
-  border: 1px solid #3d3c3c;
-  border-radius: 10px;
-  color: white;
-  text-align: center;
-  font-size: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	background: #1e1e1e;
+	padding: 45%;
+	border: 1px solid #3d3c3c;
+	border-radius: 10px;
+	color: white;
+	text-align: center;
+	font-size: 20px;
 }
 
 /*login*/
@@ -51,7 +51,7 @@ img {
 	position:absolute;
 	top:31%;
 	left:42%;
-	font-family: "Times New Roman";
+	font-family: "Times New Roman", Times, serif;
 	font-size: 180%;
 }
 
@@ -64,73 +64,73 @@ img {
 }
 
 .wave-group1 .input {
-  font-size: 16px;
-  padding: 1px 10px 10px 5px;
-  display: block;
-  width: 200px;
-  border: none;
-  border-bottom: 2px solid #515151;
-  background: transparent;
-  color: white;
+	font-size: 16px;
+	padding: 1px 10px 10px 5px;
+	display: block;
+	width: 200px;
+	border: none;
+	border-bottom: 2px solid #515151;
+	background: transparent;
+	color: white;
 }
 
 .wave-group1 .input:focus {
-  outline: none;
+	outline: none;
 }
 
 .wave-group1 .label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  top:0;
+	color: #999;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	top:0;
 	left: 0;
-  display: flex;
+	display: flex;
 }
 
 .wave-group1 .label-char {
-  transition: 0.2s ease all;
-  transition-delay: calc(var(--index) * .05s);
+	transition: 0.2s ease all;
+	transition-delay: calc(var(--index) * .05s);
 }
 
 .wave-group1 .input:focus ~ label .label-char,
 .wave-group1 .input:valid ~ label .label-char {
-  transform: translateY(-20px);
-  font-size: 14px;
-  font-family: "Times New Roman";
-  color: #5AFF19;
+	transform: translateY(-20px);
+	font-size: 14px;
+	font-family: "Times New Roman", Times, serif;
+	color: #5AFF19;
 }
 
 .wave-group1 .bar {
-  position: relative;
-  display: block;
-  width: 200px;
+	position: relative;
+	display: block;
+	width: 200px;
 }
 
 .wave-group1 .bar:before,.wave-group1 .bar:after {
-  content: '';
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #5264AE;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #5264AE;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
 }
 
 .wave-group1 .bar:before {
-  left: 50%;
+	left: 50%;
 }
 
 .wave-group1 .bar:after {
-  right: 50%;
+	right: 50%;
 }
 
 .wave-group1 .input:focus ~ .bar:before,
 .wave-group1 .input:focus ~ .bar:after {
-  width: 50%;
+	width: 50%;
 }
 
 .mail-address-error{
@@ -147,75 +147,75 @@ img {
 	position:absolute;
 	top:48%;
 	left: 28%;
-  font-size: 16px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 200px;
-  border: none;
-  border-bottom: 2px solid #515151;
-  background: transparent;
-  color: white;  		/* passwordテキストカラー白 */
+	font-size: 16px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 200px;
+	border: none;
+	border-bottom: 2px solid #515151;
+	background: transparent;
+	color: white;  		/* passwordテキストカラー白 */
 }
 
 .wave-group2 .input:focus {
-  outline: none;
+	outline: none;
 }
 
 .wave-group2 .label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  top:49%;
+	color: #999;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	top:49%;
 	left: 28%;
-  display: flex;
+	display: flex;
 }
 
 .wave-group2 .label-char {
-  transition: 0.2s ease all;
-  transition-delay: calc(var(--index) * .05s);
+	transition: 0.2s ease all;
+	transition-delay: calc(var(--index) * .05s);
 }
 
 .wave-group2 .input:focus ~ label .label-char,
 .wave-group2 .input:valid ~ label .label-char {
-  transform: translateY(-20px);
-  font-size: 14px;
-  font-family: "Times New Roman";
-  color: #5AFF19;
+	transform: translateY(-20px);
+	font-size: 14px;
+	font-family: "Times New Roman", Times, serif;
+	color: #5AFF19;
 }
 
 .wave-group2 .bar {
-  position: absolute;
-  top:53%;
+	position: absolute;
+	top:53%;
 	left: 28%;
-  display: block;
-  width: 200px;
+	display: block;
+	width: 200px;
 }
 
 .wave-group2 .bar:before,.wave-group2 .bar:after {
-  content: '';
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #5264AE;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #5264AE;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
 }
 
 .wave-group2 .bar:before {
-  left: 50%;
+	left: 50%;
 }
 
 .wave-group2 .bar:after {
-  right: 50%;
+	right: 50%;
 }
 
 .wave-group2 .input:focus ~ .bar:before,
 .wave-group2 .input:focus ~ .bar:after {
-  width: 50%;
+	width: 50%;
 }
 
 .password-error{
@@ -225,35 +225,6 @@ img {
 	width:80%;
 	font-size:17px;
 }
-
-/*パスワード可視化等*/
-
-/*
-#showPasswordLabel {
-  position: relative;
-  cursor: pointer;
-}
-
-#showPasswordLabel img {
-  width: 24px;
-  height: 24px;
-}
-
-.strikethrough {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  display: none;
-  width: 18px;
-  height: 2px;
-  background-color: white;
-}
-
-#showPasswordLabel:hover .strikethrough {
-  display: block;
-}
-*/
 
 /* パスワード可視化の目の色 */
 #buttonEye {
@@ -268,13 +239,12 @@ img {
 	display: block;
 	margin: 0 auto;
 	position:absolute;
- 	top:60%;
+	top:60%;
 	left: 28%;
-	border: 5px solid #5AFF19;
+	border: 3px solid #5AFF19;
 	width: 200px;
 	height: 35px;
 	background: #242424;
-	border: 1px solid #242424;
 	cursor: pointer;
 	border-radius: 7px;
 	color: white;
@@ -310,45 +280,45 @@ img {
 }
 
 .submit input {
-  margin-bottom: 10px;
-  opacity: 0.8;
-  text-align: center;
+	margin-bottom: 10px;
+	opacity: 0.8;
+	text-align: center;
 }
 
 .submit input:active, .create:active{
-  color: #5AFF19;
-  background-color: #000000;
-  opacity: 0.6;
+	color: #5AFF19;
+	background-color: #000000;
+	opacity: 0.6;
 }
 
 .submit input:focus, .create:focus {
-  outline: none;
+	outline: none;
 }
 
 ::-webkit-input-placeholder{
-   color: rgba(173, 176, 215, 0.6);
+	color: rgba(173, 176, 215, 0.6);
 }
 
 ::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
+	color: rgba(255,255,255,0.6);
 }
 
 .submit input:hover, .create:hover {
-  color: #5AFF19;
-  background-color: #000000;
+	color: #5AFF19;
+	background-color: #000000;
 }
 
 .submit input:active, .create:active {
-  color: #5AFF19;
-  background-color: #000000;
+	color: #5AFF19;
+	background-color: #000000;
 }
 
 #duplicated-error{
 	position: absolute;
-    width: 400px;
-    top: 68%;
-    left: 6%;
-    font-size: 12px;
+	width: 400px;
+	top: 68%;
+	left: 6%;
+	font-size: 12px;
 }
 
 /*新規登録ボタン*/
@@ -373,71 +343,37 @@ img {
 }
 
 .regist {
-  opacity: 0.8;
-  text-align: center;
+	opacity: 0.8;
+	text-align: center;
 }
 
 .regist :active{
-  opacity: 0.6;
+	opacity: 0.6;
 }
 
 .regist :focus{
-  outline: none;
+	outline: none;
 }
 
 ::-webkit-input-placeholder{
-   color: rgba(173, 176, 215, 0.6);
+	color: rgba(173, 176, 215, 0.6);
 }
 
 ::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
+	color: rgba(255,255,255,0.6);
 }
 
 .regist:hover {
-  color: #5AFF19;
-  background-color: #000000;
+	color: #5AFF19;
+	background-color: #000000;
 }
 
 .regist:active {
-  color: #5AFF19;
-  background-color: #000000;
+	color: #5AFF19;
+	background-color: #000000;
 }
-
-/*
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
-*
-
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-*/
-
-
-/*
-#showPassword {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  -ms-appearance: none;
-  width: 32px;
-  height: 30px;
-  background-image: url(/jiro_power/img/eye6.png);
-  background-size: cover;
-  cursor: pointer;
-  position:relative;
-  top:12.5px;
-  top:7	px;
-
-}
-*/
-
-
 
 /* エラーメッセージのデザイン */
 .error-message {
-  color: red;
+	color: red;
 }

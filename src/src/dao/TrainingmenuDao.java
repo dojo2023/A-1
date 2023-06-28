@@ -9,53 +9,49 @@ import java.sql.SQLException;
 import model.Trainingmenu;
 
 public class TrainingmenuDao{
-	// 引数tmで指定されたレコードを登録し、成功したらtrueを返す
-			public double MAGMAG(Trainingmenu tm) {
-				Connection conn = null;
-				double result = 0;
 
+	// トレーニングメニューごとの倍率を引き出すSQL文
+
+	public double MAGMAG(Trainingmenu tm) {
+		Connection conn = null;
+		double result = 0;
+
+		try {
+			Class.forName("org.h2.Driver");
+
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
+
+			String sqlTm = "select training_menu_magnification "
+					+ "from TRAINING_MENU where training_menu = ?";
+			PreparedStatement pStmtTm = conn.prepareStatement(sqlTm);
+			pStmtTm.setString(1,tm.getTrainingMenu());
+
+			ResultSet rs = pStmtTm.executeQuery();
+
+			if (rs.next()) {
+				result =rs.getDouble( "training_menu_magnification");
+			};
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			result = 0;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			result = 0;
+		}
+		finally {
+			if (conn != null) {
 				try {
-					// JDBCドライバを読み込む
-					Class.forName("org.h2.Driver");
-
-					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/A1/myGex", "sa", "");
-
-					// SQL文を準備する
-					String sqlTm = "select training_menu_magnification "
-						+ "from training_menu where training_menu = ?";
-					PreparedStatement pStmtTm = conn.prepareStatement(sqlTm);
-					pStmtTm.setString(1,tm.getTrainingMenu());
-
-					// SELECT文を実行し、結果表を取得する
-					ResultSet rs = pStmtTm.executeQuery();
-
-				if (rs.next()) {
-					result =rs.getDouble( "training_menu_magnification");
-				};
+					conn.close();
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
 					result = 0;
 				}
-				catch (ClassNotFoundException e) {
-					e.printStackTrace();
-					result = 0;
-				}
-				finally {
-					// データベースを切断
-					if (conn != null) {
-						try {
-							conn.close();
-						}
-						catch (SQLException e) {
-							e.printStackTrace();
-							result = 0;
-						}
-					}
-				}
-
-				// 結果を返す
-						return result;
 			}
+		}
+
+		return result;
+	}
 }

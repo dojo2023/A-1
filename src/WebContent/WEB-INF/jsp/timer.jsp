@@ -18,11 +18,10 @@
             <div id="logo"><img src="./img/logo.png" alt="ロゴ"></div>
             <div class="menucoler">
             <h1 class="level pulsate">${level_session}</h1>
-            <div class="allname">
-            <div id="names">Name</div>
+
             <div id="name"><p>${user_name_session}</div>
             </div>
-        </div>
+
     </div>
         </header>
 
