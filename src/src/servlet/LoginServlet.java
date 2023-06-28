@@ -65,10 +65,16 @@ public class LoginServlet extends HttpServlet {
 
 		//レベル計算
 		int requiredExp = 10;
-		for(int i=0; i<100; i++) {
-	    	requiredExp = (requiredExp + requiredExp * i) / 2;
+		int amountOfRise = 0;
+		for(int i=1; i<10000; i++) {
+			if(i % 2 != 0) {
+				amountOfRise = requiredExp + i / 2;
+				requiredExp = (requiredExp + requiredExp * i) / 2;
+			} else {
+				requiredExp = requiredExp + amountOfRise;
+			}
 	    	if(requiredExp > expSum) {
-	    		int level = i + 1;
+	    		int level = i;
 	    		session.setAttribute("level_session", level);
 	    		break;
 	    	};
