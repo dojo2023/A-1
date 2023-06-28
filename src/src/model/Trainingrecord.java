@@ -84,6 +84,8 @@ public Trainingrecord(Date trainingRecordDate, int userId) {
 	this.userId = userId;
 }
 
+
+
 //経験値計算用
 public Trainingrecord(int userId) {
 	super();
