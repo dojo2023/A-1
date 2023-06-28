@@ -40,33 +40,18 @@ public class CalendarServlet extends HttpServlet {
 			return;
 		}
 
-
-
-		int user_id = (int) session.getAttribute("id");
+		int userId = (int) session.getAttribute("id");
 		TrainingrecordDao trDao = new TrainingrecordDao();
 
 		ArrayList<Trainingrecord>list= new ArrayList<Trainingrecord>();
-		list = trDao.select(new Trainingrecord(user_id));
+		list = trDao.select(new Trainingrecord(userId));
 		request.setAttribute("list",list );
 
 		System.out.println(list.get(1).getTrainingRecordDate());
 		System.out.println(list.get(1).getTrainingMenu());
 
-
-		/*CalendarBeans bean = new CalendarBeans();
-		bean.setDate(new Date());
-		bean.setName("山田");
-		//ひとつだけだけど、ArrayListに値を入れる（0と１番目だけ）
-		ArrayList<CalendarBeans> list = new ArrayList<CalendarBeans>();
-		list.add(bean);
-		list.add(bean);
-		request.setAttribute("list",list );*/
-
-
-
-
-		// カレンダーページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/calendar.jsp");
+	// カレンダーページにフォワードする
+	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/calendar.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -80,8 +65,9 @@ public class CalendarServlet extends HttpServlet {
 			response.sendRedirect("/jiro_power/LoginServlet");
 			return;
 		}
-		// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
+
+	// リクエストパラメータを取得する
+	request.setCharacterEncoding("UTF-8");
     }
 }
 

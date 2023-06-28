@@ -41,28 +41,21 @@ public class RankingServlet extends HttpServlet {
 			return;
 		}
 
-		/*// ランキングページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking.jsp");
-		dispatcher.forward(request, response);
-		*/
-
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		int userId =  (int) session.getAttribute("id");
-//		String userName = request.getParameter("user_name");
 
 		 // Daoからデータを取り出す
 		TrainingrecordDao trDao = new TrainingrecordDao ();
 		List<Alltable> expSum = trDao.sumAll(new Trainingrecord(userId));
-         System.out.println(expSum.size());
 
-				//とりあえずリクエストスコープへセットする
-				request.setAttribute("rankList", expSum);
+		//リクエストスコープへセットする
+		request.setAttribute("rankList", expSum);
 
-				//chart.jspに遷移させる
-				String path="/WEB-INF/jsp/ranking.jsp";
-				RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-				dispatcher.forward(request, response);
+		//chart.jspに遷移させる
+		String path="/WEB-INF/jsp/ranking.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -76,7 +69,6 @@ public class RankingServlet extends HttpServlet {
 			return;
 		}
 		// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
     }
-
 }

@@ -29,11 +29,10 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// セッションスコープを破棄する
-				HttpSession session = request.getSession();
-				session.invalidate();
+		HttpSession session = request.getSession();
+		session.invalidate();
 
-				// ログインページにリダイレクトする
-				response.sendRedirect("/LoginServlet");
-			}
-
+		// ログインページにリダイレクトする
+		response.sendRedirect("/LoginServlet");
+	}
 }

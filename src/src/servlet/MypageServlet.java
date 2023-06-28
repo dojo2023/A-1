@@ -36,15 +36,8 @@ public class MypageServlet extends HttpServlet {
 			return;
 		}
 
-
 		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 		dispatcher.forward(request, response);
 	}
-
-
-
-
-	/*シェア画面（リザルト画面）*/
-    }
-
+}
