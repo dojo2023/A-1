@@ -10,7 +10,7 @@ body {
 /* 予定のある日の枠の色 */
 .highlight {
 	background-color: #c51010;
-	height:42px;
+	height:45px;
 	width:57px;
 }
 
@@ -31,7 +31,7 @@ body {
 .ui-datepicker {
 	position:relative;
 	width:100%;
-	height:350px;
+	height:370px;
 	position:fixed;
 }
 
@@ -56,6 +56,7 @@ body {
 }
 td{
 	width:40px;
+	height: 48px;
 }
 
 input[type=submit]{
@@ -73,6 +74,7 @@ input[type=submit]{
 	background: #e6e6e6 ;
 	font-weight: normal;
 	color: #555555;
+	margin:0 auto;
 }
 
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
@@ -124,7 +126,7 @@ input[type=submit]{
 	background-color:rgba(128, 128, 128, 0.5);
 	position:relative;
 	padding-top:20px;
-	padding-bottom:110px;
+	padding-bottom:120px;
 	top:140px;
 	width:100%;
 	height:420px;
