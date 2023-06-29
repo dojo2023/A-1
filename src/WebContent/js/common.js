@@ -88,6 +88,6 @@ function showConfirmationDialog(event) {
 		list.forEach((item) =>
 			item.addEventListener('click',activeLink));
 
-			alert(list);
+			alert("こんにちは");
 
 }
