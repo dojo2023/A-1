@@ -1,39 +1,40 @@
 @charset "UTF-8";
 body{
-    background-color:#242424;
-    z-index: 0;
+	background-color:#242424;
+	z-index: 0;
 }
 
 .result
 {
-    color: white;
-    position: relative;
+	color: white;
+	position: relative;
 }
+
 .logo
 {
-    position: relative;
+	position: relative;
 }
+
 .logos img
 {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 5%;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 5%;
 }
+
 #share_name
 {
-    position: absolute;
-    top: 105%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    font-size: 25px;
-    font-family: "Times New Roman";
-    font-weight: bold;
-    color: white;
-
-
-    }
+	position: absolute;
+	top: 105%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 3;
+	font-size: 25px;
+	font-family: "Times New Roman";
+	font-weight: bold;
+	color: white;
+}
 
 #lv {
 	color: white;
@@ -42,119 +43,110 @@ body{
 	z-index: 3;
 	top: 138%;
 	left: 35%;
-	 font-family: "Times New Roman";
+	font-family: "Times New Roman";
 }
 
 #share_level
 {
-	 font-family: "Times New Roman";
-    position: absolute;
-    text-align: center;
-    font-size: 500%;
-    color: white;
-    top: 120%;
+	font-family: "Times New Roman";
+	position: absolute;
+	text-align: center;
+	font-size: 500%;
+	color: white;
+	top: 120%;
 	left: 51%;
 	transform: translateX(-50%);
 	z-index: 3;
 	text-shadow:
-     /*  0 0 7px #fff, */
-     /*  0 0 10px #fff, */
-      0 0 21px #fff,
-      0 0 42px #5AFF19,
-      0 0 82px #5AFF19,
-      0 0 92px #5AFF19,
-     /*  0 0 102px #5AFF19, */
-      0 0 151px #5AFF19;
+		0 0 21px #fff,
+		0 0 42px #5AFF19,
+		0 0 82px #5AFF19,
+		0 0 92px #5AFF19,
+		0 0 151px #5AFF19;
 }
 
 #share_exp
 {
-	 font-family: "Times New Roman";
-    position: absolute;
-    font-size: 150%;
-    top: 160%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
+	font-family: "Times New Roman";
+	position: absolute;
+	font-size: 150%;
+	top: 160%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 3;
 }
-
 
 #share_ranking
 {
 	font-family: "Times New Roman";
-    position: absolute;
-    font-size: 220%;
-    top: 210%;
-    left: 50%;
-    transform: translateX(-50%);
-
+	position: absolute;
+	font-size: 220%;
+	top: 210%;
+	left: 50%;
+	transform: translateX(-50%);
 }
+
 #share_ranking::first-letter
 {
-    color: #5AFF19;
+	color: #5AFF19;
 }
+
 #share_ranking_nam
 {
-	 font-family: "Times New Roman";
-    position: absolute;
-    font-size: 220%;
-    top: 225%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-shadow:
-     /*  0 0 7px #fff, */
-     /*  0 0 10px #fff, */
-      0 0 21px #fff,
-      0 0 42px #5AFF19,
-      0 0 82px #5AFF19,
-      0 0 92px #5AFF19,
-      0 0 102px #5AFF19,
-      0 0 151px #5AFF19;
+	font-family: "Times New Roman";
+	position: absolute;
+	font-size: 220%;
+	top: 225%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-shadow:
+		0 0 21px #fff,
+		0 0 42px #5AFF19,
+		0 0 82px #5AFF19,
+		0 0 92px #5AFF19,
+		0 0 102px #5AFF19,
+		0 0 151px #5AFF19;
 }
 
 #share_w_ranking
 {
-	 font-family: "Times New Roman";
-    position: absolute;
-    font-size: 200%;
-    top: 245%;
-    left: 15%;
-    border-bottom: solid 2px  #5AFF19;
+	font-family: "Times New Roman";
+	position: absolute;
+	font-size: 200%;
+	top: 245%;
+	left: 15%;
+	border-bottom: solid 2px  #5AFF19;
 }
-
 
 #share_m_ranking
 {
-	 font-family: "Times New Roman";
-    position: absolute;
-    font-size: 200%;
-    top: 245%;
-    right: 15%;
-    border-bottom: solid 2px  #5AFF19;
+	font-family: "Times New Roman";
+	position: absolute;
+	font-size: 200%;
+	top: 245%;
+	right: 15%;
+	border-bottom: solid 2px  #5AFF19;
 }
 
-
-
-
 .circle{
-     position: relative;
-    top: 230px;
-    left: 67px;
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-    box-shadow:
-    inset 0 0 50px black,
-    inset 20px 0 80px black,
-    inset -20px 0 80px black,
-    inset 20px 0 120px black,
-    inset -20px 0 300px black,
-    0 0 50px black,
-    -10px 0 80px #5AFF19,
-    10px 0 50px black;
-  }
+	position: relative;
+	top: 230px;
+	left: 67px;
+	width: 270px;
+	height: 270px;
+	border-radius: 50%;
+	box-shadow:
+		inset 0 0 50px black,
+		inset 20px 0 80px black,
+		inset -20px 0 80px black,
+		inset 20px 0 120px black,
+		inset -20px 0 300px black,
+		0 0 50px black,
+		-10px 0 80px #5AFF19,
+		10px 0 50px black;
+}
 
- #twitter {
+#twitter {
 	position: absolute;
 	bottom: 7%;
 	left: 30%;
@@ -163,7 +155,7 @@ body{
 #twitter img {
 	width: 60px;
 	height: 60px;
-  }
+}
 
 #facebook {
 	position: absolute;

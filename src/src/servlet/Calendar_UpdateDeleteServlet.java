@@ -45,22 +45,16 @@ public class Calendar_UpdateDeleteServlet extends HttpServlet {
 			if(request.getParameter("update")!=null) {
 					if (request.getParameter("update").equals("update")) {
 						if (tDao.update(new Trainingrecord(trainingRecordId,trainingMenu, trainingWeight, trainingCount,trainingSet))){
-							System.out.println("更新完了");
 						}
-					}else {
-						System.out.println("更新失敗");
 					}
-				}
+			}
 		//削除処理
-				if(request.getParameter("delete")!=null) {
-					if(request.getParameter("delete").equals("delete")) {
-						if(tDao.delete(trainingRecordId)) {
-							System.out.println("削除成功");
-						}
-					}else {
-						System.out.println("削除失敗");
+			if(request.getParameter("delete")!=null) {
+				if(request.getParameter("delete").equals("delete")) {
+					if(tDao.delete(trainingRecordId)) {
 					}
 				}
+			}
 
 
 

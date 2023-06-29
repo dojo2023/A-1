@@ -1,10 +1,8 @@
 @charset "UTF-8";
 
 body {
-	/* background-color:#c0c0c0; */
 	background-color:#242424;
 	font-family: "Times New Roman", Times, serif;
-
 }
 
 .title {
@@ -12,80 +10,64 @@ body {
 	top: 15%;
 	color: #FFFFFF;
 	font-size: 40px;
-	/* font-family: fantasy; */
 	font-family: "Times New Roman", Times, serif;
-	/* font-family: georgia; */
 	font-weight: bold;
 	text-align: center;
 	margin-top: 20px;
-/*  	    text-shadow:
-      0 0 3px #fff,
-      0 0 3px #fff,
-      0 0 5px #fff; */
-
 }
 
    input {
-/*     height: 35px; 高さを50ピクセルに設定 */
-/*     width: 80px; 幅を200ピクセルに設定 */
 	   font-family: "Times New Roman", Times, serif;
 	   color: white;
 	   text-align: center;
-
   }
 
 /* ユーザー名スタイル */
-  	  .user_name input[type="text"] {
-  	   position: relative;
-  	   font-family: "Times New Roman", Times, serif;
-	   color: white;
-	   width: 100%;
-	   flex-grow: 1;
-       height: 60px;
-       padding: 12px;
-	   text-align: center;
-	   border-color: white;
-	   background-color: #242424;
-	   border: 1px solid white;
- 	   border-radius: 5px;
- 	   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
- 	   font-size: 20px;
- 	   bottom: 10px;
+.user_name input[type="text"] {
+	position: relative;
+	font-family: "Times New Roman", Times, serif;
+	color: white;
+	width: 100%;
+	flex-grow: 1;
+	height: 60px;
+	padding: 12px;
+	text-align: center;
+	border-color: white;
+	background-color: #242424;
+	border: 1px solid white;
+	border-radius: 5px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+	font-size: 20px;
+	bottom: 10px;
+}
 
+.height_input input[type="text"] {
+	font-family: "Times New Roman", Times, serif;
+	color: white;
+	text-align: center;
+	border-color: white;
+	background-color: #242424;
+	border: 1px solid white;
+	border-radius: 5px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+	font-size: 20px;
+}
 
-  	  }
+.weight_input input[type="text"] {
+	font-family: "Times New Roman", Times, serif;
+	color: white;
+	text-align: center;
+	border-color: white;
+	background-color: #242424;
+	border: 1px solid white;
+	border-radius: 5px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+	font-size: 20px;
+}
 
-  	.height_input input[type="text"] {
-  	   font-family: "Times New Roman", Times, serif;
-	   color: white;
-	   text-align: center;
-	   border-color: white;
-	   background-color: #242424;
-	   border: 1px solid white;
- 	   border-radius: 5px;
- 	   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
- 	   font-size: 20px;
-
-  	}
-
-    .weight_input input[type="text"] {
-       font-family: "Times New Roman", Times, serif;
-	   color: white;
-	   text-align: center;
-	   border-color: white;
-	   background-color: #242424;
-	   border: 1px solid white;
- 	   border-radius: 5px;
- 	   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
- 	   font-size: 20px;
-  	}
-
-
-  	input[type="text"]:focus {
-	  border-color: #5AFF19;
-	}
-
-
+input[type="text"]:focus {
+	border-color: #5AFF19;
+}
 
 form {
 	position: absolute;
@@ -93,15 +75,12 @@ form {
 	text-align: center;
 	padding: 70px;
 	background-color: rgba(128, 128, 128, 0.5);		/* 背景いらない場合は消す #f2f2f2;*/
-	/* background-image: url('/jiro_power/img/muscle5.png'); */ /* 筋肉マン */
 	background-size: cover;
-	/* filter: blur(5px); ぼかしの強度を調整 */
 	border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	max-width: 600px;
+	margin: 0 auto;
 }
-
 
 
 .user_name,
@@ -115,230 +94,133 @@ form {
 .weight_input,
 .unit_weight,
 .mail_address {
-  position: relative;
-  bottom: 40px;
-  margin-bottom: 13px;
-  font-size: 20px;
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-  /* font-family: georgia; */
-
+	position: relative;
+	bottom: 40px;
+	margin-bottom: 13px;
+	font-size: 20px;
+	color: white;
+	font-family: "Times New Roman", Times, serif;
 }
 
-.birthday_display{
+.birthday_display {
 	margin-bottom: 20px;
 	font-size: 20px;
 	text-align: center;
 }
 
 .birthday_display i {
-  margin-right: 10px; /* アイコンとテキストの間のスペースを調整 */
-  font-size: 17px;
+	margin-right: 10px; /* アイコンとテキストの間のスペースを調整 */
+	font-size: 17px;
 }
 
-.sex i{
-  margin-right: 17px; /* アイコンとテキストの間のスペースを調整 */
-  font-size: 17px;
+.sex i {
+	margin-right: 17px; /* アイコンとテキストの間のスペースを調整 */
+	font-size: 17px;
 }
 
 .mail_address_display {
-  position: relative;
-  bottom: 40px;
-  margin-bottom: 13px;
-  font-size: 26px;
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-  /* font-family: georgia; */
+	position: relative;
+	bottom: 40px;
+	margin-bottom: 13px;
+	font-size: 26px;
+	color: white;
+	font-family: "Times New Roman", Times, serif;
 }
-
 
 .mail_address_display, .birthday_display, .sex {
 	margin-bottom: 15px; /* Adjust the margin-bottom value as desired */
- 	text-shadow: 1px 1px 1px #242424,
-             -1px -1px 1px #242424,
-             1px -1px 1px #242424,
-             -1px 1px 1px #242424;
-
+	text-shadow:
+		1px 1px 1px #242424,
+		-1px -1px 1px #242424,
+		1px -1px 1px #242424,
+		-1px 1px 1px #242424;
 }
-
 
   /* 経験値のスタイル */
-  .exp {
-    font-size: 30px;
-    font-family: 'Monotype Corsiva'; /* "Times New Roman", Times, serif; */
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    position: relative;
-    bottom: 40px;
-/*         text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #5AFF19,
-      0 0 50px #5AFF19,
-      0 0 50px #5AFF19,
-      0 0 80px #5AFF19,
-      0 0 80px #5AFF19; */
-
-/*        text-shadow:
-      0 0 2px #fff,
-      0 0 2px #fff,
-      0 0 2px #fff,
-    0 0 0.20em #5AFF19,
-    0 0 0.10em #5AFF19,
-    0 0 0.15em #5AFF19,
-    0 0 0.15em #5AFF19;
-  	filter: saturate(20%); */
-
-/*   	text-shadow:
-  	  0 0 1px #fff,
-      0 0 1px #fff,
-      0 0 3px #fff; */
-
-        text-shadow:
-    0 0 2px rgba(255, 255, 255, 0.5),
-    0 0 4px rgba(255, 255, 255, 0.5),
-    0 0 6px rgba(255, 255, 255, 0.5),
-    0 0 8px rgba(90, 255, 25, 0.5);
-
-    /* text-decoration: underline; */
-
-  }
-
+.exp {
+	font-size: 30px;
+	font-family: 'Monotype Corsiva'; /* "Times New Roman", Times, serif; */
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	position: relative;
+	bottom: 40px;
+	text-shadow:
+		0 0 2px rgba(255, 255, 255, 0.5),
+		0 0 4px rgba(255, 255, 255, 0.5),
+		0 0 6px rgba(255, 255, 255, 0.5),
+		0 0 8px rgba(90, 255, 25, 0.5);
+}
 
 .decor {
-  display: inline-block;
-  font-size: 20px;
-  color: white;
-  text-shadow:
-    0 0 2px rgba(255, 255, 255, 0.5),
-    0 0 4px rgba(255, 255, 255, 0.5),
-    0 0 6px rgba(255, 255, 255, 0.5),
-    0 0 8px rgba(90, 255, 25, 0.5);
-  margin: 0 10px;
+	display: inline-block;
+	font-size: 20px;
+	color: white;
+	text-shadow:
+		0 0 2px rgba(255, 255, 255, 0.5),
+		0 0 4px rgba(255, 255, 255, 0.5),
+		0 0 6px rgba(255, 255, 255, 0.5),
+		0 0 8px rgba(90, 255, 25, 0.5);
+	margin: 0 10px;
 }
-
-
-
 
     /* 身長と体重のスタイル */
-  .height_input {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    /* margin-top: 5px; */
-  }
-
-
-/* .height_input::after {
-  content: "kg"; */
-
-
-/* .weight_input::after {
-  content: "kg";
-}
- */
-
-  .height_input, .weight_input {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .unit_height, .unit_weight {
-    margin-left: 5px;
-    font-size: 20px;
-  }
-
-/* i.fas.fa-sync-alt::before{
-	width: 500px;
+.height_input {
+	display: flex;
+	align-items: center;
+	gap: 15px;
 }
 
-.fas fa-sync-alt{
-	width: 50px;
-}
-.fas fa-sync-alt{
-	font-size:150px;
-} */
-
- #update {
-  position: absolute;
-  float: right;
-  display: flex;
-  top: 80%;
-  right: 10%;
-  margin-top: 0px;
-  width: 50px;
-  height: 50px;
-  border: none;
-  background: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 52px;
-
+.height_input, .weight_input {
+	display: inline-flex;
+	align-items: center;
 }
 
+.unit_height, .unit_weight {
+	margin-left: 5px;
+	font-size: 20px;
+}
 
-/* 従来のupdate */
-/* .update input[type="image"] {
+#update {
 	position: absolute;
 	float: right;
 	display: flex;
-	top: 100%;
-	right: 12%;
-	margin-top: 50px;
+	top: 80%;
+	right: 10%;
+	margin-top: 0px;
 	width: 50px;
 	height: 50px;
 	border: none;
-    background: none;
-
-} */
-
-/* .update {
-	position: absolute;
-	left: 270px;
-	bottom: 30px;
-    float: right;
-    align-items: center;
-    bottom: 27.5%;
-    margin-top: 20px;
-} */
+	background: none;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	font-size: 52px;
+}
 
 .share {
 	position: absolute;
 	float: left;
 	margin-right: 0px;
-/* 	top: 57%; */
-/* 	left: 25%; */
 	bottom: 27.5%;
 	right: 59%;
 	z-index: 0;
 	width: 50px;
 	height: 50px;
 	margin-top: 20px;
-
-  	display: flex;
-  	top: 17%;
-  	right: 10%;
-  	margin-top: 0px;
-    border: none;
-  	background: none;
-  	align-items: center;
-  	justify-content: center;
-  	cursor: pointer;
-  	font-size: 48px;
-
+	display: flex;
+	top: 17%;
+	right: 10%;
+	margin-top: 0px;
+	border: none;
+	background: none;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	font-size: 48px;
 }
-
-/*
-	.share img {
-		width: 50px;
-		height: 50px;
-  	}
- */
 
 .logout {
 	position: fixed;
@@ -348,80 +230,60 @@ form {
 	top: 80.5%;
 }
 
-
-
 hr {
 	color: white;
 }
 
-
-
 /* ログアウトボタンデザイン */
 .logout {
-  width: 200px;
-  height: 35px;
-  /* background: #f0eeee; */
-  background: #242424;
-  border: 1px solid #242424;
-  cursor: pointer;
-  border-radius: 7px;
-  /* color: #736ca1; */
-  color: white;
-  /* font-family: 'Exo', sans-serif; */
-  /* font-family: georgia; */
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 6px;
-  margin-top: 12px;
-/*   text-shadow:
-    0 0 0.05em #5AFF19,
-    0 0 0.10em #5AFF19,
-    0 0 0.15em #5AFF19,
-    0 0 0.15em #5AFF19;
-  filter: saturate(30%); */
-  box-shadow: 0 0 10px #5AFF19;
+	width: 200px;
+	height: 35px;
+	background: #242424;
+	border: 1px solid #242424;
+	cursor: pointer;
+	border-radius: 7px;
+	color: white;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 12px;
+	box-shadow: 0 0 10px #5AFF19;
 }
 
 .logout {
-  opacity: 0.8;
-  text-align: center;
+	opacity: 0.8;
+	text-align: center;
 }
 
-.logout :active{
-  opacity: 0.6;
+.logout :active {
+	opacity: 0.6;
 }
 
-.logout :focus{
-  outline: none;
+.logout :focus {
+	outline: none;
 }
 
-::-webkit-input-placeholder{
-   color: rgba(173, 176, 215, 0.6);
+::-webkit-input-placeholder {
+	color: rgba(173, 176, 215, 0.6);
 }
 
-::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
-}
-
-.logout:hover {
-  color: #5AFF19;
-  background-color: #000000;
+::-moz-input-placeholder {
+	color: rgba(255,255,255,0.6);
 }
 
 .logout:active {
-  color: #5AFF19;
-  background-color: #000000;
+	color: #5AFF19;
+	background-color: #000000;
 }
 
 
 .error-message {
-  position: relative;
-  color: red;
-  bottom: 42px;
-  font-size: 14px;
+	position: relative;
+	color: red;
+	bottom: 42px;
+	font-size: 14px;
 }
-
 
 /* ダイアログボックス本体のカスタムスタイルを定義 */
 .custom-dialog {
@@ -444,7 +306,7 @@ hr {
 	/*高さ指定  */
 	height: 180px;
 	/*場所の指定を相対的にする  */
-	position: relative;  							/* absoluteで指定する */
+	position: relative;
 	/*今いる場所の上から30pxの場所へ移動  */
 	top: 240px;
 	/*今いる場所の左から50pxの場所へ移動  */
@@ -543,6 +405,7 @@ hr {
 	outline: none;
 	margin-top: 40px;
 }
+
 /*ホバーなどの設定 */
 .btn-2 {
 	border: none;
@@ -564,14 +427,6 @@ hr {
 	transition: all 0.3s ease;
 }
 
-.btn-2:hover {
-	background: transparent;
-	box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5), -4px -4px 6px 0
-		rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
-		inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-	color: #fff;
-}
-
 .btn-2:hover:after {
 	-webkit-transform: scale(2) rotate(180deg);
 	transform: scale(2) rotate(180deg);
@@ -579,6 +434,3 @@ hr {
 		rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
 		inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
 }
-
-
-

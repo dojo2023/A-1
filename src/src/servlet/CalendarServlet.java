@@ -47,9 +47,6 @@ public class CalendarServlet extends HttpServlet {
 		list = trDao.select(new Trainingrecord(userId));
 		request.setAttribute("list",list );
 
-		System.out.println(list.get(1).getTrainingRecordDate());
-		System.out.println(list.get(1).getTrainingMenu());
-
 	// カレンダーページにフォワードする
 	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/calendar.jsp");
 		dispatcher.forward(request, response);

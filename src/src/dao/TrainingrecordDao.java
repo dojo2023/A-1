@@ -171,7 +171,7 @@ public class TrainingrecordDao {
 
 	// トレーニング記録の削除SQL文
 
-	public boolean delete(int param) {
+	public boolean delete(int trainingRecordId) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -182,6 +182,10 @@ public class TrainingrecordDao {
 
 			String sql = "delete from TRAINING_RECORD where training_record_id = ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+
+			pStmt.setInt(1, trainingRecordId);
+
 
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
@@ -202,6 +206,8 @@ public class TrainingrecordDao {
 
 		return result;
 	}
+
+
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 
@@ -784,4 +790,6 @@ public class TrainingrecordDao {
 
 		return result;
 	}
+
+
 }
