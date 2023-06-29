@@ -104,8 +104,9 @@
   					<i class="fas fa-sync-alt" style="color: #ffffff;"></i>
 				</button>
 
-
-<!--  		  <div class="update" >
+		  <!--    -->
+		  <!--
+		  <div class="update" >
 			  <input type="image" id="update" name= "update1" value = "update"
 			  onclick="document.getElementById('one').value='update';myPageValidateForm(event);">
 			  <i class="fas fa-sync-alt" style="color: #ffffff;"></i>
@@ -123,33 +124,11 @@
 			</a>
 			</div>
 
-			<!-- aタグ内にいたシェアアイコン写真
-			<img src="./img/share.png"> -->
-
-		 <!--  シェアボタンと同じように更新ボタン書くか？？ -->
-		 	<!-- 更新ボタン -->
-<!-- 	      	<div class="update" id="update">
-			<a href="/jiro_power/MypageServle"><img src="./img/reload.png"></a>
-			</div> -->
-
 
 		<!-- ログアウトボタン -->
 			<input type="button" class="logout" value="Logout"
 			onclick="window.location.href='/jiro_power/LoginServlet'">
 
-
-<!-- 	<div class="logout" id="logout">
-	 <a href="/jiro_power/LogoutServlet"><img src=""></a> srcの後、ログアウトアイコンのリンク入れる
-	</div>
-
-	<input type="submit" class="logout" value="Logout" id="pass">
--->
-
-<!-- 	<form>
-  		<input type="button" class="logout" value="Logout" id="pass">
-	</form>
-
-	<a href="/jiro_power/LoginServlet" class="logout">Logout</a> -->
 
 
 	<hr>

@@ -20,7 +20,6 @@ body {
 	   font-family: "Times New Roman", Times, serif;
 	   color: white;
 	   text-align: center;
-
   }
 
 /* ユーザー名スタイル */
@@ -39,7 +38,7 @@ body {
 	border-radius: 5px;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
 	font-size: 20px;
-	 bottom: 10px;
+	bottom: 10px;
 }
 
 .height_input input[type="text"] {
@@ -84,7 +83,6 @@ form {
 }
 
 
-
 .user_name,
 .esp,
 .birthday_display,
@@ -95,8 +93,7 @@ form {
 .weight,
 .weight_input,
 .unit_weight,
-.mail_address
-{
+.mail_address {
 	position: relative;
 	bottom: 40px;
 	margin-bottom: 13px;
@@ -105,7 +102,7 @@ form {
 	font-family: "Times New Roman", Times, serif;
 }
 
-.birthday_display{
+.birthday_display {
 	margin-bottom: 20px;
 	font-size: 20px;
 	text-align: center;
@@ -116,7 +113,7 @@ form {
 	font-size: 17px;
 }
 
-.sex i{
+.sex i {
 	margin-right: 17px; /* アイコンとテキストの間のスペースを調整 */
 	font-size: 17px;
 }
@@ -259,19 +256,19 @@ hr {
 	text-align: center;
 }
 
-.logout :active{
+.logout :active {
 	opacity: 0.6;
 }
 
-.logout :focus{
+.logout :focus {
 	outline: none;
 }
 
-::-webkit-input-placeholder{
+::-webkit-input-placeholder {
 	color: rgba(173, 176, 215, 0.6);
 }
 
-::-moz-input-placeholder{
+::-moz-input-placeholder {
 	color: rgba(255,255,255,0.6);
 }
 
