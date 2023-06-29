@@ -28,6 +28,8 @@ function showConfirmationDialog(event) {
 
 	dialog.appendChild(closeButton);
 
+	/* aaaaaaa */
+
 
 	//<input type="button">を作成する　confirmButtonという変数に格納
 		var confirmButton = document.createElement("button");
