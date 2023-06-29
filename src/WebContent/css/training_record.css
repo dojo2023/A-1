@@ -78,7 +78,7 @@ body {
 	margin-top: 10px;
 	position: relative;
 	left: 0px;
-	bottom:20px;
+	bottom:-30px;
 	margin-top: 12px;
 	box-shadow: 0 0 10px #5AFF19;
 	font-size: 20px;
@@ -87,7 +87,7 @@ body {
 .bt_addForm{
 	float: right;
 	position: relative;
-	bottom:55px;
+	bottom:5px;
 	right:60px;
 }
 
@@ -140,14 +140,14 @@ input[type="button"] {
 	/*幅指定  */
 	width: 300px;
 	/*高さ指定  */
-	height: 100px;
+	height: 200px;
 
 	/*場所の指定を相対的にする  */
 	position: absolute;  							/* absoluteで指定する */
 	/*今いる場所の上から30pxの場所へ移動  */
-	top: 82%;
+	top: 50%;
 	/*今いる場所の左から50pxの場所へ移動  */
-	left: 10%;
+	left: 15%;
 }
 
 /*右上のバツボタンのスタイル  */
@@ -172,6 +172,7 @@ input[type="button"] {
 	cursor: pointer;
 	transition: all 0.3s ease;
 	position: relative;
+	top:30%;
 	display: inline-block;
 	box-shadow:
 		inset 2px 2px 2px 0px rgba(255, 255, 255, .5), inset -7px
@@ -236,6 +237,7 @@ input[type="button"] {
 	cursor: pointer;
 	transition: all 0.3s ease;
 	position: relative;
+	top:30%;
 	display: inline-block;
 	box-shadow:
 		inset 2px 2px 2px 0px rgba(255, 255, 255, .5), inset -7px
@@ -282,7 +284,17 @@ input[type="button"] {
 	position:relative;
 	margin:0;
 	padding:0;
-	bottom: 40px;
-	font-size:14px;
-	left:-10px;
+	bottom: 70px;
+	font-size:3px;
+	left:10px;
+}
+#date_error{
+	color: red;
+	position:relative;
+	margin:0;
+	padding:0;
+	bottom: 120px;
+	font-size:3px;
+	left:10px;
+
 }
