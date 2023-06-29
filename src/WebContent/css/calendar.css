@@ -36,8 +36,8 @@ body {
 }
 
 .ui-state-default{
-	height:40px;
-	width:55px;
+	height:44px;
+	width:53px;
 }
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
 	border: 1px solid #d3d3d3;
@@ -124,8 +124,8 @@ input[type=submit]{
 	background-color:rgba(128, 128, 128, 0.5);
 	position:relative;
 	padding-top:20px;
-	padding-bottom:100px;
-	top:120px;
+	padding-bottom:110px;
+	top:140px;
 	width:100%;
 	height:420px;
 	overflow : scroll;
