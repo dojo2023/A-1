@@ -28,7 +28,6 @@ function showConfirmationDialog(event) {
 
 	dialog.appendChild(closeButton);
 
-	/* aaaaaaa */
 
 
 	//<input type="button">を作成する　confirmButtonという変数に格納
@@ -89,5 +88,6 @@ function showConfirmationDialog(event) {
 			item.addEventListener('click',activeLink));
 
 			alert(list);
+			alert(fariha);
 
 }
